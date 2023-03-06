@@ -1,39 +1,5 @@
 <a name="readme-top"></a>
 
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-OPTIONAL SECTIONS:
-- FAQ
-
-After you're finished please remove all the comments and instructions!
--->
-
-<div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -60,11 +26,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [MEAL-MASTER] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+**[Meal-Master]** is a...
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -203,19 +167,36 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **Dave Zagabe**
 
-👤 **Author1**
+- GitHub: [@daveZag](https://github.com/daveZag)
+- Twitter: [@davezagabe2](https://twitter.com/davezagabe2)
+- LinkedIn: [@davezagabe](https://www.linkedin.com/in/davezagabe/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Kasaija Kenneth**
 
-👤 **Author2**
+- [GitHub:](https://github.com/Kasaija-Kenneth)
+- [Twitter:](https://twitter.com/kenn_ug)
+- [LinkedIn:](https://www.linkedin.com/in/kasaija-kenneth/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Kaweesi Matia**
+
+- GitHub: [@Kaweesi-Matia](https://github.com/Kaweesi-Matia)
+- Twitter: [@kaweesimatia](https://twitter.com/kaweesimatia)
+- LinkedIn: [Kaweesi Matia](https://www.linkedin.com/in/kaweesi-matia/)
+
+👤 **Olivier Kango**
+
+- GitHub: [@github_olivier](https://github.com/Olivier-Kango)
+- Twitter: [@twitter_olivier](https://twitter.com/olivierkango1)
+- LinkedIn: [@LinkedIn_olivier](https://www.linkedin.com/in/olivier-kango-b990601b8/)
+
+
+👤 **Elijah Odjegba** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+
+  - GitHub: [![GitHub Badge](https://img.shields.io/badge/-Elijahdre-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/Elijahdre)
+  - Twitter: [![Twitter Badge](https://img.shields.io/badge/-kingglijah-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/kingglijah)
+  - LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-Elijah--Odjegba-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://www.linkedin.com/in/elijah-odjegba)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
