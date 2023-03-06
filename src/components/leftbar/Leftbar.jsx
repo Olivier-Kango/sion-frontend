@@ -10,7 +10,7 @@ const Leftbar = () => {
     <div className="leftbar-container">
       <div className="leftbar-header">
         <div className="logo">
-          Logo
+          Meal Mater
         </div>
       </div>
       <nav className="nav">
@@ -21,11 +21,6 @@ const Leftbar = () => {
           <Link to="/" style={{ textDecoration: 'none' }}>
             <div className={(pathname === '/') ? 'active' : 'item'}>
               <span>HOME</span>
-            </div>
-          </Link>
-          <Link to="/food" style={{ textDecoration: 'none' }}>
-            <div className={(pathname === '/food') ? 'active' : 'item'}>
-              <span>FOODS</span>
             </div>
           </Link>
           <Link to="/ordering" style={{ textDecoration: 'none' }}>

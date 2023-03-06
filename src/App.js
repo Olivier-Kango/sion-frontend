@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 // Components
-import Food from './components/food/Food';
 import AddFood from './components/food/AddFood';
 import FoodDetails from './components/food/FoodDetails';
 import Leftbar from './components/leftbar/Leftbar';
@@ -20,7 +19,6 @@ const App = () => (
     <Leftbar />
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/food" element={<Food />} />
       <Route path="/addfood" element={<AddFood />} />
       <Route path="/fooddetails" element={<FoodDetails />} />
       <Route path="/login" element={<Login />} />
