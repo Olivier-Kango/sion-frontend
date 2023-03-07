@@ -1,29 +1,33 @@
-import logo from './logo.svg';
+import React from 'react';
+// Routers
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// Components
+import AddFood from './components/food/AddFood';
+import FoodDetails from './components/food/FoodDetails';
+import Leftbar from './components/leftbar/Leftbar';
+import Login from './components/login/Login';
+import Register from './components/register/Register';
+import Home from './components/home/Home';
+import Ordering from './components/ordering/Ordering';
+import AddOrder from './components/ordering/AddOrder';
+import Footer from './components/footer/Footer';
+
+const App = () => (
+  <div className="App">
+    <Leftbar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/addfood" element={<AddFood />} />
+      <Route path="/fooddetails" element={<FoodDetails />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/ordering" element={<Ordering />} />
+      <Route path="/addorder" element={<AddOrder />} />
+      <Route path="/footer" element={<Footer />} />
+    </Routes>
+  </div>
+);
 
 export default App;
