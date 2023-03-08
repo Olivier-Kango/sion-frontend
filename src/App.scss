@@ -1,0 +1,10 @@
+.App {
+  display: grid;
+  grid-template-columns: 20% 80%;
+
+  .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
