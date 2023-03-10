@@ -43,8 +43,8 @@ const Ordering = () => {
   return (
     <section className="orders-section">
       <h2 className="navbar-brand">MY ORDERS</h2>
-      <div className="card-group order-lists mx-auto">
-        {localOrders.length === 0 ? <span>Please Order a Food</span> : localOrders.map((order) => {
+      <div className="order-lists">
+        {localOrders.length === 0 ? <p className="s">Please Order a Food</p> : localOrders.map((order) => {
           const food = foods.find((f) => f.id === order.food_id);
           return (
             <div className="card  me-2" key={order.id} style={{ backgroundColor: '#fbfbfb' }}>
