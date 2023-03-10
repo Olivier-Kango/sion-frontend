@@ -50,7 +50,7 @@ const Ordering = () => {
                 <small className="text-muted">{order.created_at}</small>
               </p>
               <Link to={`${order.id}`} onClick={() => dispatch(singleOrder())}>
-                <button type="button" className="form-control btn btn-outline-secondary mx-auto">view order</button>
+                <button type="button" className="form-control btn btn-outline-secondary mx-auto">Delete</button>
               </Link>
             </div>
           </div>
