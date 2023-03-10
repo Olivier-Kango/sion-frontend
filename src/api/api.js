@@ -15,14 +15,14 @@ export const fetchAllOrders = async () => {
   }
 };
 
-export const fetchSingleOrder = async () => {
-  try {
-    const response = await axios.get('api/v1/orders/1');
-    return response.data;
-  } catch (e) {
-    throw e.toString();
-  }
-};
+// export const fetchSingleOrder = async (orderId) => {
+//   try {
+//     const response = await axios.get(`api/v1/orders/${orderId}`);
+//     return response.data;
+//   } catch (e) {
+//     throw e.toString();
+//   }
+// };
 
 export const fetchDeleteOrder = async (orderId) => {
   try {

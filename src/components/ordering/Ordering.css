@@ -46,3 +46,13 @@
   height: 200px;
   border: 1px solid #ccc;
 }
+
+span {
+  display: block;
+  color: red;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+  margin: 0 auto;
+  font-size: 20px;
+}
