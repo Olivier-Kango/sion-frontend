@@ -19,6 +19,13 @@ const orderReducer = (state = initiaState, { type, payload }) => {
       order: payload,
     };
   }
+
+  if (type === Actions.DELETE_ORDER) {
+    return {
+      ...state,
+      order: payload,
+    };
+  }
   return state;
 };
 

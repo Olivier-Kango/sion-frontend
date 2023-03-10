@@ -34,7 +34,15 @@
 
 .card-title {
   display: flex;
+  text-align: center;
   justify-content: center;
   text-transform: uppercase;
   font-size: 14px;
+  height: 26px;
+  padding-bottom: 5px;
+}
+
+.card-img-top {
+  height: 200px;
+  border: 1px solid #ccc;
 }

@@ -1,10 +1,14 @@
 import axios from 'axios';
 
-axios.defaults.baseUrl = 'http://localhost:5000/';
+export default axios.create({
+  baseURL: 'http://localhost:5000/',
+});
+
+// axios.defaults.baseUrl = 'http://localhost:5000/';
 
 export const fetchAllOrders = async () => {
   try {
-    const response = await axios.get('api/v1/foods');
+    const response = await axios.get('api/v1/orders');
     return response.data;
   } catch (e) {
     throw e.toString();
@@ -13,7 +17,16 @@ export const fetchAllOrders = async () => {
 
 export const fetchSingleOrder = async () => {
   try {
-    const response = await axios.get('api/v1/foods/1');
+    const response = await axios.get('api/v1/orders/1');
+    return response.data;
+  } catch (e) {
+    throw e.toString();
+  }
+};
+
+export const fetchDeleteOrder = async (orderId) => {
+  try {
+    const response = await axios.delete(`api/v1/orders/${orderId}`);
     return response.data;
   } catch (e) {
     throw e.toString();
