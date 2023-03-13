@@ -5,20 +5,24 @@
   height: 100vh;
 }
 
+.card {
+  margin-top: 20px;
+}
+
 .orders-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* width: 80%; */
   max-width: 60rem;
   margin: 1rem auto;
 }
 
 .order-lists {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  gap: 5px;
   width: 100%;
   margin: 1rem 0;
   padding: 1rem;
@@ -45,4 +49,14 @@
 .card-img-top {
   height: 200px;
   border: 1px solid #ccc;
+}
+
+.s {
+  display: block;
+  color: red;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+  margin: 0 auto;
+  font-size: 20px;
 }
