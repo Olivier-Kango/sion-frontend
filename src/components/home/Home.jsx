@@ -60,7 +60,7 @@ const Home = () => {
             centeredSlides
             spaceBetween={20}
             navigation
-            pagination={{ clickable: true, type: 'bullets' }}
+            // pagination={{ clickable: true, type: 'bullets' }}
             scrollbar={{ draggable: true }}
             modules={[Pagination, Navigation]}
             style={{ display: foods.length === 0 ? 'unset' : 'flex' }}

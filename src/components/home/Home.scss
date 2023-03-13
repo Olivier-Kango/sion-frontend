@@ -26,6 +26,10 @@
       padding: 1rem 0;
       text-align: center;
 
+      .swiper-scrollbar {
+        display: none;
+      }
+
       span {
         display: block;
         color: red;
