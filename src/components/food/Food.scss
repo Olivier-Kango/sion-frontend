@@ -1,4 +1,8 @@
 .food-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 5% 0 0;
+
   h1 {
     color: #96c03d;
     text-align: center;
@@ -8,23 +12,24 @@
 
   .button-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 20px;
 
     .link-back {
       display: inline-block;
-      margin-top: 10px;
-      padding: 8px 16px;
-      background-color: #f8f8f8;
-      color: #333;
+      margin-top: 30px;
+      font-size: 26px;
+      padding: 10px 35px;
+      background-color: #96c03d;
+      color: white;
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 0 40px 40px 0;
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
       transition: all 0.2s ease-in-out;
     }
 
     .link-back:hover {
-      background-color: #96c03d;
+      background-color: #6b8d22;
       color: #fff;
     }
   }
@@ -34,12 +39,56 @@
     height: 450px;
     border-radius: 5px;
     border: 1px solid #96c03d;
-    margin-bottom: 10px;
+    margin: 0 10% 0 10%;
   }
 
-  p {
-    color: gray;
-    margin: 0;
-    text-align: center;
+  .food-details-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20%;
+
+    div {
+      width: 300px;
+      text-align: end;
+
+      h1 {
+        text-align: end;
+      }
+
+      p {
+        margin: 0;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+
+        span:nth-child(even) {
+          font-weight: bold;
+        }
+      }
+
+      p:nth-child(odd) {
+        background-color: rgba(128, 128, 128, 0.162);
+      }
+    }
+
+    .button-order {
+      display: inline-block;
+      margin-top: 30px;
+      font-size: 20px;
+      padding: 10px 35px;
+      background-color: #96c03d;
+      border: 1px solid #96c03d;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .button-order:hover {
+      background-color: #6b8d22;
+      color: #fff;
+    }
   }
 }
