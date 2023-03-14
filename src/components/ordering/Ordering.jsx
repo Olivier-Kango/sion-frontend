@@ -1,12 +1,10 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { allOrders, deleteOrder } from '../../redux/actions/OrderActions';
-// import { allOrders, singleOrder, deleteOrder } from '../../redux/actions/OrderActions';
 import { getAllFoods } from '../../redux/foods/foods';
-import styles from './Ordering.css';
+import styles from './Ordering.scss';
 
 const Ordering = () => {
   const dispatch = useDispatch();
@@ -24,10 +22,6 @@ const Ordering = () => {
   useEffect(() => {
     setLocalOrders(orders[0] || []);
   }, [orders]);
-
-  // useEffect(() => {
-  //   dispatch(singleOrder());
-  // }, [dispatch]);
 
   if (!orders[0]) {
     return (

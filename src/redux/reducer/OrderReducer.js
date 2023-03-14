@@ -26,6 +26,13 @@ const orderReducer = (state = initiaState, { type, payload }) => {
       order: payload,
     };
   }
+
+  if (type === Actions.ADD_ORDER) {
+    return {
+      ...state,
+      order: payload,
+    };
+  }
   return state;
 };
 

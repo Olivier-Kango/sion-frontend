@@ -84,7 +84,7 @@ const Home = () => {
                       {food.unit_price}
                       &nbsp;$ (USD)
                     </p>
-                    <Link to={`addorder/${food.id}`}>
+                    <Link to={`/addorder/${food.id}`}>
                       <button type="button" className="button">
                         Order
                         {' '}
