@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { allOrders, deleteOrder } from '../../redux/actions/OrderActions';
 // import { allOrders, singleOrder, deleteOrder } from '../../redux/actions/OrderActions';
@@ -24,10 +24,6 @@ const Ordering = () => {
   useEffect(() => {
     setLocalOrders(orders[0] || []);
   }, [orders]);
-
-  // useEffect(() => {
-  //   dispatch(singleOrder());
-  // }, [dispatch]);
 
   if (!orders[0]) {
     return (
