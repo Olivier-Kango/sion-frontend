@@ -1,0 +1,45 @@
+.food-details {
+  h1 {
+    color: #96c03d;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 26px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .link-back {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #f8f8f8;
+      color: #333;
+      text-decoration: none;
+      border-radius: 4px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .link-back:hover {
+      background-color: #96c03d;
+      color: #fff;
+    }
+  }
+
+  .img-details {
+    width: 450px;
+    height: 450px;
+    border-radius: 5px;
+    border: 1px solid #96c03d;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: gray;
+    margin: 0;
+    text-align: center;
+  }
+}
