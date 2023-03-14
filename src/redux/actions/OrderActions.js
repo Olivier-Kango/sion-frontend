@@ -20,4 +20,5 @@ export const addOrder = (order) => async (dispatch) => {
   };
   const addedOrder = await fetchAddOrder(permittedOrder);
   dispatch({ type: Actions.ADD_ORDER, payload: addedOrder });
+  return addedOrder;
 };
