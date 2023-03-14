@@ -57,3 +57,42 @@
   margin: 0 auto;
   font-size: 20px;
 }
+
+.add-order-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-order-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+}
+
+.add-order-form-group {
+  margin-bottom: 10px;
+}
+
+.add-order-form label {
+  margin-right: 10px;
+}
+
+.add-order-form select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 200px;
+}
+
+.add-order-form input[type="number"],
+.add-order-form input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 200px;
+}
