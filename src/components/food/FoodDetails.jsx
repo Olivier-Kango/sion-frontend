@@ -1,42 +1,34 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { getFoodDetails } from '../../redux/foods/foodDetails';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useParams, Link } from 'react-router-dom';
+import './Food.scss';
 
 const FoodDetails = () => {
   const { id } = useParams();
-  const food = useSelector((state) => state.food);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (id) {
-      dispatch(getFoodDetails(id));
-    }
-  }, [dispatch, id]);
-
-  // console.log(food);
+  const foods = useSelector((state) => state.foods);
+  const food = foods.find((f) => f.id === parseInt(id, 10));
 
   return (
-
-    <div>
-      <p><h1>Find Food details below</h1></p>
-      <br />
-      <h2>
-        Food Name:
-        {food.name}
-      </h2>
+    <div className="food-details">
+      <h1>
+        {food?.name}
+      </h1>
+      <img src={food?.image} className="img-details" alt={food?.name} />
       <p>
-        <h2>
-          Food Quantity:
-          {food.quantity}
-        </h2>
+        We have
+        {' '}
+        {food?.quantity}
+        {' '}
+        {food?.name}
+        {' '}
+        for a price of
+        {' '}
+        {food?.unit_price}
+        $ per dish
       </p>
-      <p>
-        <h2>
-          Unit Price:
-          {food.unit_price}
-        </h2>
-      </p>
+      <div className="button-container">
+        <Link to="/" className="link-back">Back to Home</Link>
+      </div>
     </div>
 
   );
