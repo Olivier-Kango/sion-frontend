@@ -14,7 +14,6 @@ import 'swiper/css/scrollbar';
 const Home = () => {
   const [, setSwiperRef] = useState(null);
   const [done, setDone] = useState(undefined);
-  const [foo, setFoo] = useState([]);
 
   const dispatch = useDispatch();
   const foods = useSelector((state) => state.foods);
@@ -25,15 +24,15 @@ const Home = () => {
     }
   }, [dispatch, foods]);
 
-  useEffect(() => {
-    setFoo(foods);
-  }, [foods]);
+  // useEffect(() => {
+  //   setFoo(foods);
+  // }, [foods]);
 
   useEffect(() => {
-    if (foo) {
+    if (foods.length > 0) {
       setDone(true);
     }
-  }, [foo, foods]);
+  }, [foods]);
 
   return (
     <div className="container">
@@ -60,7 +59,6 @@ const Home = () => {
             centeredSlides
             spaceBetween={20}
             navigation
-            // pagination={{ clickable: true, type: 'bullets' }}
             scrollbar={{ draggable: true }}
             modules={[Pagination, Navigation]}
             style={{ display: foods.length === 0 ? 'unset' : 'flex' }}
@@ -79,7 +77,7 @@ const Home = () => {
                     <p className="quantity">
                       Quantity:&nbsp;
                       {food.quantity}
-                      &nbsp;pcs
+                      &nbsp;dishes
                     </p>
                     <p>
                       Unit Price:&nbsp;
