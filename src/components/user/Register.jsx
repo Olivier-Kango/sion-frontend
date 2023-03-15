@@ -39,7 +39,7 @@ const Register = () => {
     <section className="auth-section flex justify-center items-center h-full ">
       <div className="auth-left-section w-1/2 bg-white text-white flex justify-center items-center" />
       <div className="auth-form-section w-1/2 flex justify-center items-center flex-col gap-2">
-        <h2 className="text-4xl font-bold -mt-16 mb-16">Register</h2>
+        <h2 className="text-4xl font-bold -mt-2 mb-16">Register</h2>
 
         <form
           ref={formRef}

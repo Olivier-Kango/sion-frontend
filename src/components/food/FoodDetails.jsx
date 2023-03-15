@@ -25,7 +25,7 @@ const FoodDetails = () => {
       <div className="food-details-img">
         <img src={food?.image} className="img-details" alt={food?.name} />
         <div className="button-container">
-          <Link to="/" className="link-back">&#8882;</Link>
+          <Link to="/home" className="link-back">&#8882;</Link>
         </div>
       </div>
       <div className="food-details-body">

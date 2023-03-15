@@ -1,7 +1,7 @@
 import { Outlet, Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line
-import LeftBar from '../leftBar/LeftBar';
+import LeftBar from '../leftbar/Leftbar.jsx';
 import './PrivateRoutes.scss';
 
 const PrivateRoutes = ({ loggedIn }) => {

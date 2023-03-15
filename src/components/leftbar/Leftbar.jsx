@@ -4,12 +4,12 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Footer from '../footer/Footer';
 import { userLogout } from '../../redux/users/users';
-import './LeftBar.scss';
+import './Leftbar.scss';
 
 const LeftBar = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data?.name);
-  const username = user.charAt(0).toUpperCase() + user.slice(1);
+  const username = user?.charAt(0).toUpperCase() + user?.slice(1);
   const { pathname } = useLocation();
 
   const handleLogout = () => {
@@ -28,7 +28,7 @@ const LeftBar = () => {
             <span className="font-semibold">{` ${username}`}</span>
             ✋🏼
           </div>
-          <Link to="/" style={{ textDecoration: 'none' }}>
+          <Link to="/home" style={{ textDecoration: 'none' }}>
             <div className={pathname === '/' ? 'active' : 'item'}>
               <span>HOME</span>
             </div>
