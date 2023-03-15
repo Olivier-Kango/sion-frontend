@@ -1,7 +1,7 @@
 import { Outlet, Navigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import LeftBar from '../leftbar/LeftBar';
+import LeftBar from '../leftBar/LeftBar';
 import './PrivateRoutes.scss';
 
 const PrivateRoutes = ({ loggedIn }) => {
