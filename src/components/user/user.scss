@@ -1,0 +1,20 @@
+.auth-left-section {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.538),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('../../assets/meal-bg.jpg') no-repeat;
+  background-position: center;
+  background-size: 155%;
+  height: 100%;
+}
+
+.auth-form {
+  width: 100%;
+
+  input {
+    width: 70%;
+  }
+}

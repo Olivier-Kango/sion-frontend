@@ -1,39 +1,55 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Footer from '../footer/Footer';
-import './Leftbar.scss';
+import { useSelector, useDispatch } from 'react-redux';
 
-const Leftbar = () => {
+import Footer from '../footer/Footer';
+import { userLogout } from '../../redux/users/users';
+import './LeftBar.scss';
+
+const LeftBar = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.data?.name);
+  const username = user.charAt(0).toUpperCase() + user.slice(1);
   const { pathname } = useLocation();
+
+  const handleLogout = () => {
+    dispatch(userLogout());
+  };
 
   return (
     <div className="leftbar-container">
       <div className="leftbar-header">
-        <div className="logo">
-          Meal Mater
-        </div>
+        <div className="logo">Meal Mater</div>
       </div>
       <nav className="nav">
         <div className="links">
           <div className="user">
-            USER_NAME
+            Hello
+            <span className="font-semibold">{` ${username}`}</span>
+            ✋🏼
           </div>
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <div className={(pathname === '/') ? 'active' : 'item'}>
+            <div className={pathname === '/' ? 'active' : 'item'}>
               <span>HOME</span>
             </div>
           </Link>
           <Link to="/ordering" style={{ textDecoration: 'none' }}>
-            <div className={(pathname === '/ordering') ? 'active' : 'item'}>
+            <div className={pathname === '/ordering' ? 'active' : 'item'}>
               <span>MY ORDERINGS</span>
             </div>
           </Link>
           <Link to="/addfood" style={{ textDecoration: 'none' }}>
-            <div className={(pathname === '/addfood') ? 'active' : 'item'}>
+            <div className={pathname === '/addfood' ? 'active' : 'item'}>
               <span>ADD FOOD</span>
             </div>
           </Link>
-          <div className="item logout">LOGOUT</div>
+          <button
+            type="button"
+            className="item logout"
+            onClick={() => handleLogout()}
+          >
+            LOGOUT
+          </button>
         </div>
       </nav>
       <div className="leftbar-footer">
@@ -43,4 +59,4 @@ const Leftbar = () => {
   );
 };
 
-export default Leftbar;
+export default LeftBar;

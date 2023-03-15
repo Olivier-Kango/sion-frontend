@@ -1,0 +1,22 @@
+.splash-section {
+  background: url('../assets/meal-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  .splash-container {
+    background: linear-gradient(258deg, #24665692, #2b246662);
+  }
+}
+
+.splash-card {
+  background-color: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(10px);
+  padding: 5rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.267);
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
