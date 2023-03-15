@@ -6,7 +6,7 @@ import { userSignup } from '../../redux/users/users';
 const Register = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  const { error } = user;
+  const error = user.error['signup-error'];
   const navigate = useNavigate();
   const formRef = useRef();
 

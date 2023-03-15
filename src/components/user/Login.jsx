@@ -8,7 +8,7 @@ import './user.scss';
 const Login = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  const { error } = user;
+  const error = user.error['login-error'];
   const navigate = useNavigate();
   const formRef = useRef();
 

@@ -67,7 +67,11 @@ const getCurrentUser = createAsyncThunk(GET_CURRENT_USER, async () => {
 });
 
 const initialState = {
-  error: '',
+  error: {
+    'login-error': '',
+    'logout-error': '',
+    'signup-error': '',
+  },
   loggedIn: false,
   data: {},
 };
@@ -81,19 +85,24 @@ const usersSlice = createSlice({
       if (action.payload.status?.code === 200) {
         return {
           ...state,
-          error: action.payload.error,
           loggedIn: true,
           data: action.payload.data,
         };
       }
       return {
         ...state,
-        error: action.payload.status?.message || action.payload.error,
+        error: {
+          ...state.error,
+          'login-error': action.payload.status?.message || action.payload.error,
+        },
       };
     });
     builder.addCase(userLogout.fulfilled, (state, action) => ({
       ...state,
-      error: action.payload.error,
+      error: {
+        ...state.error,
+        'logout-error': action.payload.status?.message || action.payload.error,
+      },
       loggedIn: false,
       data: {},
     }));
@@ -107,7 +116,11 @@ const usersSlice = createSlice({
       }
       return {
         ...state,
-        error: action.payload.status?.message || action.payload.error,
+        error: {
+          ...state.error,
+          'signup-error':
+            action.payload.status?.message || action.payload.error,
+        },
       };
     });
   },

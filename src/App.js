@@ -19,21 +19,34 @@ import PrivateRoutes from './components/protectedRoute/PrivateRoutes';
 import Splash from './pages/Splash';
 
 const App = () => {
-  const loggedIn = useSelector((state) => state.user.loggedIn);
+  const user = useSelector((state) => state.user);
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Splash />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
-        <Route element={<PrivateRoutes loggedIn={loggedIn} />}>
+        <Route element={<PrivateRoutes isAllowed={!!user.loggedIn} redirectPath="/login" />}>
           <Route path="/home" element={<Home />} />
           <Route path="/fooddetails/:id" element={<FoodDetails />} />
           <Route path="/ordering" element={<Ordering />} />
           <Route path="/addorder/:id" element={<AddOrder />} />
           <Route path="/footer" element={<Footer />} />
         </Route>
-        <Route path="/addfood" element={<AddFood />} />
+
+        <Route
+          path="/addfood"
+          element={
+           (
+             <PrivateRoutes
+               redirectPath="/home"
+               isAllowed={!!user.loggedIn && user.role === 'admin'}
+             >
+               <AddFood />
+             </PrivateRoutes>
+            )
+          }
+        />
       </Routes>
     </div>
   );
