@@ -4,23 +4,28 @@ import PropTypes from 'prop-types';
 import LeftBar from '../leftbar/LeftBar';
 import './PrivateRoutes.scss';
 
-const PrivateRoutes = ({ loggedIn }) => {
+const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const TOKEN = localStorage.getItem('JWT_TOKEN');
-  if (loggedIn === false || TOKEN === 'null' || !TOKEN) {
-    return <Navigate to="/login" />;
+  if (!isAllowed || TOKEN === 'null' || !TOKEN) {
+    return <Navigate to={redirectPath} replace />;
   }
   return (
-    <section className="page-container">
-      <LeftBar />
-      <div className="home">
-        <Outlet />
-      </div>
-    </section>
+    children || (
+      <section className="page-container">
+        <LeftBar />
+        <div className="home">
+          <Outlet />
+        </div>
+      </section>
+    )
   );
 };
 
+/* eslint-disable */
 PrivateRoutes.propTypes = {
-  loggedIn: PropTypes.bool.isRequired,
+  isAllowed: PropTypes.bool.isRequired,
+  children: PropTypes.node,
+  redirectPath: PropTypes.string,
 };
 
 export default PrivateRoutes;
