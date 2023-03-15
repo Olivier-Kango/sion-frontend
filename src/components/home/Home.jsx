@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
-import ReactLoading from 'react-loading';
-import { getAllFoods } from '../../redux/foods/foods';
+import { getAllFoods, deleteFood } from '../../redux/foods/foods';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -24,15 +23,15 @@ const Home = () => {
     }
   }, [dispatch, foods]);
 
-  // useEffect(() => {
-  //   setFoo(foods);
-  // }, [foods]);
-
   useEffect(() => {
     if (foods.length > 0) {
       setDone(true);
     }
   }, [foods]);
+
+  const handleDelete = (id) => {
+    dispatch(deleteFood(id));
+  };
 
   return (
     <div className="container">
@@ -46,7 +45,7 @@ const Home = () => {
             width: '100vw',
           }}
         >
-          <ReactLoading type="spokes" color="#a51c30ff" height={150} width={150} />
+          <p className="s">Please Add a Food</p>
         </div>
       ) : (
         <div className="home-cont">
@@ -63,7 +62,7 @@ const Home = () => {
             modules={[Pagination, Navigation]}
             style={{ display: foods.length === 0 ? 'unset' : 'flex' }}
           >
-            {foods.length === 0 ? <span>You need to Add Food first!!!</span> : foods.map((food) => (
+            {foods.length === 0 ? <span>Add Food first!!!</span> : foods.map((food) => (
               <SwiperSlide key={food.id}>
                 <Link to={`/fooddetails/${food.id}`}>
                   <img src={food.image} alt={food.name} />
@@ -91,6 +90,9 @@ const Home = () => {
                         {food.name}
                       </button>
                     </Link>
+                    <button type="button" className="button" onClick={() => handleDelete(food.id)}>
+                      Remove
+                    </button>
                   </div>
                 </div>
               </SwiperSlide>
