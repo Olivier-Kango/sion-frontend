@@ -28,62 +28,49 @@
 
 # 📖 [MEAL-MASTER] <a name="about-project"></a>
 
-**[Meal-Master]** is a...
+**[Meal-Master]** is a fullstack web application that is built on rails framework and React that enables a user to create an account, sign-in, order foods of their liking, and/or delete their orders.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
-<details>
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
   </ul>
-</details>
 
-<details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://api.rubyonrails.org/">Rails.js</a></li>
   </ul>
-</details>
 
-<details>
-<summary>Database</summary>
+  <summary>Database</summary>
   <ul>
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
-</details>
-
-<!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **[Fetch all orders from API endpoint]**
+- **[Fetch all foods from API endpoint]**
+- **[Authenticate users]**
+- **[Add food]**
+- **[Delete food]**
+- **[Place orders]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
 - [Live Demo Link](https://google.com)
+
+### 🚀 Backend <a name="backend"></a>
+
+- [Backend link](https://github.com/DaveZag/meal-master-backend) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
-
-## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
+### 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
 
@@ -91,63 +78,48 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+> - [Install Git](https://git-scm.com/)
+> - Install a code editor of your choice
+> - Knwoledge of javascript and react
+> - Github account is required
+> - [Install nodejs](https://nodejs.org/ca/blog/release/v16.19.0)
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
-
 ```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/DaveZag/meal-master-frontend
 ```
---->
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
-
 ```sh
-  cd my-project
-  gem install
+  cd meal-master-frontend # Change directory into project folder
+  npm install # Installs project dependencies
 ```
---->
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
 ```sh
-  rails server
+  npm start # for running the project in development mode
+  npm run build # for building the project for production
+
+  npx stylelint "**/*.{css,scss}" --fix # Stylelint errors auto correct
+  npx eslint "**/*.{js,jsx}" --fix # Eslint errors auto correct
 ```
---->
 
 ### Run tests
 
 To run tests, run the following command:
 
-<!--
-Example command:
-
 ```sh
-  bin/rails test test/models/article_test.rb
+  npm test  # for running the tests
 ```
---->
 
 ### Deployment
 
@@ -167,36 +139,37 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Dave Zagabe**
+👤 **Dave Zagabe** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-- GitHub: [@daveZag](https://github.com/daveZag)
-- Twitter: [@davezagabe2](https://twitter.com/davezagabe2)
-- LinkedIn: [@davezagabe](https://www.linkedin.com/in/davezagabe/)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/daveZag/)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/davezagabe/)
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/davezagabe2/)
 
-👤 **Kasaija Kenneth**
+👤 **Kasaija Kenneth** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-- [GitHub:](https://github.com/Kasaija-Kenneth)
-- [Twitter:](https://twitter.com/kenn_ug)
-- [LinkedIn:](https://www.linkedin.com/in/kasaija-kenneth/)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kasaija-Kenneth/)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kasaija-kenneth/)
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/kenn_ug/)
 
-👤 **Kaweesi Matia**
+👤 **Kaweesi Matia** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-- GitHub: [@Kaweesi-Matia](https://github.com/Kaweesi-Matia)
-- Twitter: [@kaweesimatia](https://twitter.com/kaweesimatia)
-- LinkedIn: [Kaweesi Matia](https://www.linkedin.com/in/kaweesi-matia/)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kaweesi-Matia/)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kaweesi-matia/)
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/kaweesimatia/)
 
-👤 **Olivier Kango**
+👤 **Olivier Kango** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-- GitHub: [@github_olivier](https://github.com/Olivier-Kango)
-- Twitter: [@twitter_olivier](https://twitter.com/olivierkango1)
-- LinkedIn: [@LinkedIn_olivier](https://www.linkedin.com/in/olivier-kango-b990601b8/)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Olivier-Kango/)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/olivier-kango-b990601b8/)
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/olivierkango1/)
 
 
 👤 **Elijah Odjegba** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
-  - GitHub: [![GitHub Badge](https://img.shields.io/badge/-Elijahdre-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/Elijahdre)
-  - Twitter: [![Twitter Badge](https://img.shields.io/badge/-kingglijah-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/kingglijah)
-  - LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-Elijah--Odjegba-white?logo=LinkedIn&logoColor=0A66C2&style=plastic)](https://www.linkedin.com/in/elijah-odjegba)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Elijahdre/)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/elijah-odjegba/)
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/kingglijah/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -204,10 +177,8 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
+- [ ] **[Improvements on UI design]**
+- [ ] **[Mobile version]**
 - [ ] **[new_feature_3]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -236,25 +207,23 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
+I would like to acknowledge:
 
-I would like to thank...
+- [Microverse](https://www.microverse.org/) for the opportunity to work on this project
+- [The creative common](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) for the design
+- Design from [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) -->
+## ❓ FAQ <a name="faq"></a>
 
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+- **How I can run this project?**
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+  - After cloning repository, run `npm install` to install all dependencies. Then run `npm start` to run the project.
 
-- **[Question_1]**
+- **How I can run tests?**
 
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
+  - After cloning repository, run `npm install` to install all dependencies. Then run `npm test` to run the tests.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -263,7 +232,5 @@ I would like to thank...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

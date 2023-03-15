@@ -9,9 +9,7 @@ import orderReducer from './reducer/OrderReducer';
 import userReducer from './users/users';
 
 const rootReducer = combineReducers({
-  // food: reducerSingleFood,
   orders: orderReducer,
-  // order: reducerSingleOrder,
   foods: reducerFood,
   // newFood: reducerAddFood,
   user: userReducer,

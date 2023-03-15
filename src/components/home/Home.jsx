@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
-import ReactLoading from 'react-loading';
-import { getAllFoods } from '../../redux/foods/foods';
+import { getAllFoods, deleteFood } from '../../redux/foods/foods';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -14,7 +13,6 @@ import 'swiper/css/scrollbar';
 const Home = () => {
   const [, setSwiperRef] = useState(null);
   const [done, setDone] = useState(undefined);
-  const [foo, setFoo] = useState([]);
 
   const dispatch = useDispatch();
   const foods = useSelector((state) => state.foods);
@@ -24,14 +22,14 @@ const Home = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    setFoo(foods);
-  }, [foods]);
-
-  useEffect(() => {
-    if (foo) {
+    if (foods.length > 0) {
       setDone(true);
     }
-  }, [foo, foods]);
+  }, [foods]);
+
+  const handleDelete = (id) => {
+    dispatch(deleteFood(id));
+  };
 
   return (
     <div className="container">
@@ -45,7 +43,7 @@ const Home = () => {
             width: '100vw',
           }}
         >
-          <ReactLoading type="spokes" color="#a51c30ff" height={150} width={150} />
+          <p className="s">Please Add a Food</p>
         </div>
       ) : (
         <div className="home-cont">
@@ -58,12 +56,11 @@ const Home = () => {
             centeredSlides
             spaceBetween={20}
             navigation
-            pagination={{ clickable: true, type: 'bullets' }}
             scrollbar={{ draggable: true }}
             modules={[Pagination, Navigation]}
             style={{ display: foods.length === 0 ? 'unset' : 'flex' }}
           >
-            {foods.length === 0 ? <span>You need to Add Food first!!!</span> : foods.map((food) => (
+            {foods.length === 0 ? <span>Add Food first!!!</span> : foods.map((food) => (
               <SwiperSlide key={food.id}>
                 <Link to={`/fooddetails/${food.id}`}>
                   <img src={food.image} alt={food.name} />
@@ -77,20 +74,23 @@ const Home = () => {
                     <p className="quantity">
                       Quantity:&nbsp;
                       {food.quantity}
-                      &nbsp;pcs
+                      &nbsp;dishes
                     </p>
                     <p>
                       Unit Price:&nbsp;
                       {food.unit_price}
                       &nbsp;$ (USD)
                     </p>
-                    <Link to={`addorder/${food.id}`}>
+                    <Link to={`/addorder/${food.id}`}>
                       <button type="button" className="button">
                         Order
                         {' '}
                         {food.name}
                       </button>
                     </Link>
+                    <button type="button" className="button" onClick={() => handleDelete(food.id)}>
+                      Remove
+                    </button>
                   </div>
                 </div>
               </SwiperSlide>

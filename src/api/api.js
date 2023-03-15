@@ -4,8 +4,6 @@ export default axios.create({
   baseURL: 'http://localhost:5000/',
 });
 
-// axios.defaults.baseUrl = 'http://localhost:5000/';
-
 export const fetchAllOrders = async () => {
   try {
     const response = await axios.get('api/v1/orders');
@@ -15,18 +13,18 @@ export const fetchAllOrders = async () => {
   }
 };
 
-export const fetchSingleOrder = async () => {
+export const fetchDeleteOrder = async (orderId) => {
   try {
-    const response = await axios.get('api/v1/orders/1');
+    const response = await axios.delete(`api/v1/orders/${orderId}`);
     return response.data;
   } catch (e) {
     throw e.toString();
   }
 };
 
-export const fetchDeleteOrder = async (orderId) => {
+export const fetchAddOrder = async (order) => {
   try {
-    const response = await axios.delete(`api/v1/orders/${orderId}`);
+    const response = await axios.post('api/v1/orders', { order });
     return response.data;
   } catch (e) {
     throw e.toString();

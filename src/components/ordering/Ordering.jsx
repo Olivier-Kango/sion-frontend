@@ -1,11 +1,10 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { allOrders, singleOrder, deleteOrder } from '../../redux/actions/OrderActions';
+import { allOrders, deleteOrder } from '../../redux/actions/OrderActions';
 import { getAllFoods } from '../../redux/foods/foods';
-import styles from './Ordering.css';
+import styles from './Ordering.scss';
 
 const Ordering = () => {
   const dispatch = useDispatch();
@@ -13,14 +12,16 @@ const Ordering = () => {
   const { order, orders } = orderData;
   const foods = useSelector((state) => state.foods);
 
+  const [localOrders, setLocalOrders] = useState([]);
+
   useEffect(() => {
     dispatch(allOrders());
     dispatch(getAllFoods());
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(singleOrder());
-  }, [dispatch]);
+    setLocalOrders(orders[0] || []);
+  }, [orders]);
 
   if (!orders[0]) {
     return (
@@ -30,13 +31,14 @@ const Ordering = () => {
 
   const handleDelete = (id) => {
     dispatch(deleteOrder(id));
+    setLocalOrders(localOrders.filter((order) => order.id !== id));
   };
 
   return (
     <section className="orders-section">
       <h2 className="navbar-brand">MY ORDERS</h2>
-      <div className="card-group order-lists mx-auto">
-        {orders[0].map((order) => {
+      <div className="order-lists">
+        {localOrders.length === 0 ? <p className="s">Please Order a Food</p> : localOrders.map((order) => {
           const food = foods.find((f) => f.id === order.food_id);
           return (
             <div className="card  me-2" key={order.id} style={{ backgroundColor: '#fbfbfb' }}>
@@ -65,7 +67,7 @@ const Ordering = () => {
                   {' '}
                   {order.delivery_point}
                 </p>
-                <button type="button" className="form-control btn btn-outline-secondary mx-auto" onClick={() => dispatch(deleteOrder(order.id))}>
+                <button type="button" className="form-control btn btn-outline-secondary mx-auto" onClick={() => handleDelete(order.id)}>
                   Delete
                 </button>
               </div>
