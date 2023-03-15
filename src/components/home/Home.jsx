@@ -18,10 +18,8 @@ const Home = () => {
   const foods = useSelector((state) => state.foods);
 
   useEffect(() => {
-    if (foods.length === 0) {
-      dispatch(getAllFoods());
-    }
-  }, [dispatch, foods]);
+    dispatch(getAllFoods());
+  }, [dispatch]);
 
   useEffect(() => {
     if (foods.length > 0) {

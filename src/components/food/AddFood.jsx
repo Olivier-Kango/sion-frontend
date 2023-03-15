@@ -40,7 +40,7 @@ const AddFood = () => {
           <p>Your food has been added successfully!</p>
           <div className="success-actions">
             <button type="button" onClick={handleContinueShopping}>Continue Adding</button>
-            <Link to="/">
+            <Link to="/home">
               <button type="button">Go to Home</button>
             </Link>
           </div>
