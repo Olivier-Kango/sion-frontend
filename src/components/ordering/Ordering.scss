@@ -109,9 +109,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 60%;
 
     .add-order-form-group {
       margin-bottom: 10px;
+      width: 100%;
 
       input[type="number"],
       input[type="text"] {
