@@ -47,7 +47,7 @@ const Home = () => {
         </div>
       ) : (
         <div className="home-cont">
-          <h2>OUR MEALS</h2>
+          <h1>OUR MEALS</h1>
           <p className="title-bar">Please select a meal</p>
 
           <Swiper

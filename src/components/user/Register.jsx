@@ -18,6 +18,7 @@ const Register = () => {
       user: {
         name: data.name,
         email: data.email,
+        role: data.role,
         password: data.password,
         password_confirmation: data.password_confirmation,
       },
@@ -59,6 +60,14 @@ const Register = () => {
             type="email"
             name="email"
             placeholder="Email"
+            required
+            className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
+          />
+
+          <input
+            type="text"
+            name="role"
+            placeholder="Role, ex:'admin'"
             required
             className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
           />

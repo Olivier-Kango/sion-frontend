@@ -11,7 +11,6 @@ import userReducer from './users/users';
 const rootReducer = combineReducers({
   orders: orderReducer,
   foods: reducerFood,
-  // newFood: reducerAddFood,
   user: userReducer,
 });
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { addOrder } from '../../redux/actions/OrderActions';
 import './Ordering.scss';
@@ -7,11 +7,13 @@ import './Ordering.scss';
 const AddOrder = () => {
   const { id } = useParams();
   const foodId = parseInt(id, 10);
+  const userId = useSelector((state) => state.user?.data.id);
+  const foods = useSelector((state) => state.foods);
+  const food = foods.find((f) => f.id === parseInt(id, 10));
 
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState('');
   const [deliveryPoint, setDeliveryPoint] = useState('');
-  const [userId, setUserId] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -27,7 +29,6 @@ const AddOrder = () => {
     }
     setQuantity('');
     setDeliveryPoint('');
-    setUserId('');
   };
 
   const handleContinueShopping = () => {
@@ -52,8 +53,12 @@ const AddOrder = () => {
         </div>
       ) : (
         <>
-          <h2>Add Order</h2>
-          <p className="error">Please add a Quantiy, a Delivery point & Valid User</p>
+          <h2>
+            Order
+            {' '}
+            {food.name}
+          </h2>
+          <p className="error">Please add a Quantiy & a Delivery point</p>
           <form onSubmit={handleSubmit} className="add-order-form">
             <div className="add-order-form-group">
               <input
@@ -75,15 +80,7 @@ const AddOrder = () => {
               <input type="hidden" id="foodId" value={foodId} />
             </div>
             <div className="add-order-form-group">
-              <select id="userId" value={userId} onChange={(e) => setUserId(e.target.value)}>
-                <option value="">Select User</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-              </select>
+              <input type="hidden" id="userId" value={userId} />
             </div>
             <button type="submit">Add Order</button>
           </form>

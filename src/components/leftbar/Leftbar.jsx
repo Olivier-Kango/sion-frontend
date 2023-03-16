@@ -8,8 +8,9 @@ import './Leftbar.scss';
 
 const LeftBar = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.data?.name);
-  const username = user?.charAt(0).toUpperCase() + user?.slice(1);
+  const user = useSelector((state) => state.user.data?.email);
+  const useremail = user?.charAt(0).toUpperCase() + user?.slice(1);
+  const username = useremail.split('@')[0];
   const { pathname } = useLocation();
 
   const handleLogout = () => {
@@ -19,7 +20,7 @@ const LeftBar = () => {
   return (
     <div className="leftbar-container">
       <div className="leftbar-header">
-        <div className="logo">Meal Mater</div>
+        <div className="logo">Meal Master</div>
       </div>
       <nav className="nav">
         <div className="links">
@@ -29,7 +30,7 @@ const LeftBar = () => {
             ✋🏼
           </div>
           <Link to="/home" style={{ textDecoration: 'none' }}>
-            <div className={pathname === '/' ? 'active' : 'item'}>
+            <div className={pathname === '/home' ? 'active' : 'item'}>
               <span>HOME</span>
             </div>
           </Link>
