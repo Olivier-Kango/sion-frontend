@@ -16,6 +16,7 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const foods = useSelector((state) => state.foods);
+  const user = useSelector((state) => state.user.data);
 
   useEffect(() => {
     dispatch(getAllFoods());
@@ -48,7 +49,11 @@ const Home = () => {
       ) : (
         <div className="home-cont">
           <h1>OUR MEALS</h1>
-          <p className="title-bar">Please select a meal</p>
+          <p className="title-bar">
+            Please select a meal
+            <br />
+            <span>(Note: Only admins are allowed to Add or Delete Foods)</span>
+          </p>
 
           <Swiper
             onSwiper={setSwiperRef}
@@ -71,13 +76,8 @@ const Home = () => {
                     <h2>{food.name}</h2>
                   </Link>
                   <div>
-                    <p className="quantity">
-                      Quantity:&nbsp;
-                      {food.quantity}
-                      &nbsp;dishes
-                    </p>
                     <p>
-                      Unit Price:&nbsp;
+                      Price:&nbsp;
                       {food.unit_price}
                       &nbsp;$ (USD)
                     </p>
@@ -88,7 +88,15 @@ const Home = () => {
                         {food.name}
                       </button>
                     </Link>
-                    <button type="button" className="button" onClick={() => handleDelete(food.id)}>
+                    <button
+                      type="button"
+                      className="button"
+                      onClick={() => {
+                        if (user.role === 'admin') {
+                          handleDelete(food.id);
+                        }
+                      }}
+                    >
                       Remove
                     </button>
                   </div>

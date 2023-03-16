@@ -15,6 +15,7 @@
     h2 {
       margin-top: 10px;
       font-weight: 700;
+      font-size: 20px;
     }
 
     .title-bar {
@@ -22,6 +23,11 @@
       font-weight: 500;
       border-bottom: 4px dotted rgba(0, 0, 0, 0.192);
       padding-bottom: 10px;
+      text-align: center;
+
+      span {
+        color: rgba(255, 0, 0, 0.45);
+      }
     }
 
     .swiper {

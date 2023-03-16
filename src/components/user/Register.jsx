@@ -67,7 +67,7 @@ const Register = () => {
           <input
             type="text"
             name="role"
-            placeholder="Role, ex:'admin'"
+            placeholder="Role"
             required
             className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
           />

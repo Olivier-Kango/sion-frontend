@@ -8,9 +8,8 @@ import './Leftbar.scss';
 
 const LeftBar = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.data?.email);
-  const useremail = user?.charAt(0).toUpperCase() + user?.slice(1);
-  const username = useremail.split('@')[0];
+  const user = useSelector((state) => state.user.data?.name);
+  const username = user?.charAt(0).toUpperCase() + user?.slice(1);
   const { pathname } = useLocation();
 
   const handleLogout = () => {

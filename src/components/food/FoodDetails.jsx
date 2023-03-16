@@ -36,17 +36,6 @@ const FoodDetails = () => {
           <br />
           <p>
             <span>
-              Quantity
-            </span>
-            <span>
-              {' '}
-              {food?.quantity}
-              {' '}
-              dishes
-            </span>
-          </p>
-          <p>
-            <span>
               Price
             </span>
             <span>

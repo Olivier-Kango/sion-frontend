@@ -40,7 +40,7 @@ const App = () => {
            (
              <PrivateRoutes
                redirectPath="/home"
-               isAllowed={!!user.loggedIn && user.role === 'admin'}
+               isAllowed={!!user.loggedIn && user.data.role === 'admin'}
              >
                <AddFood />
              </PrivateRoutes>

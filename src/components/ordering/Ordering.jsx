@@ -37,6 +37,16 @@ const Ordering = () => {
   return (
     <section className="orders-section">
       <h2 className="navbar-brand">MY ORDERS</h2>
+      <h2 className="navbar-brand">
+        Total amount :
+        {' '}
+        {localOrders.reduce((total, order) => {
+          const food = foods.find((food) => food.id === order.food_id);
+          return total + (food.unit_price * order.quantity);
+        }, 0)}
+        {' '}
+        $
+      </h2>
       <div className="order-lists">
         {localOrders.length === 0 ? <p className="s">Please Order a Food</p> : localOrders.map((order) => {
           const food = foods.find((f) => f.id === order.food_id);
@@ -58,7 +68,7 @@ const Ordering = () => {
                 <p className="card-text">
                   Order price:
                   {' '}
-                  {food.unit_price}
+                  {food.unit_price * order.quantity}
                   {' '}
                   $ (USD)
                 </p>
