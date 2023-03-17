@@ -11,7 +11,7 @@ const Splash = () => (
             Order your favorite foods from your favorite site😉
           </p>
         </div>
-        <div className="mt-10 w-4/6 flex justify-between mx-auto">
+        <div className="mt-10 w-4/6 flex justify-between mx-auto text-center link-button">
           <Link
             to="/signup"
             className="border border-lime-500 py-3 px-7 ml-3 text-white hover:scale-105"
