@@ -19,4 +19,15 @@
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
+
+  @media screen and (max-width: 600px) {
+    .link-button {
+      flex-direction: column-reverse;
+      gap: 1rem;
+    }
+
+    .link-button a {
+      margin: 0 !important;
+    }
+  }
 }
