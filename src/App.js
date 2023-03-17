@@ -14,6 +14,7 @@ import Ordering from './components/ordering/Ordering';
 import AddOrder from './components/ordering/AddOrder';
 import Footer from './components/footer/Footer';
 import PrivateRoutes from './components/protectedRoute/PrivateRoutes';
+import LeftBar from './components/leftbar/Leftbar';
 
 // pages
 import Splash from './pages/Splash';
@@ -26,7 +27,11 @@ const App = () => {
         <Route path="/" element={<Splash />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
-        <Route element={<PrivateRoutes isAllowed={!!user.loggedIn} redirectPath="/login" />}>
+        <Route
+          element={
+            <PrivateRoutes isAllowed={!!user.loggedIn} redirectPath="/login" />
+          }
+        >
           <Route path="/home" element={<Home />} />
           <Route path="/fooddetails/:id" element={<FoodDetails />} />
           <Route path="/ordering" element={<Ordering />} />
@@ -37,13 +42,16 @@ const App = () => {
         <Route
           path="/addfood"
           element={
-           (
-             <PrivateRoutes
-               redirectPath="/home"
-               isAllowed={!!user.loggedIn && user.data.role === 'admin'}
-             >
-               <AddFood />
-             </PrivateRoutes>
+            (
+              <PrivateRoutes
+                redirectPath="/home"
+                isAllowed={!!user.loggedIn && user.data.role === 'admin'}
+              >
+                <section className="page-container">
+                  <LeftBar />
+                  <AddFood />
+                </section>
+              </PrivateRoutes>
             )
           }
         />
