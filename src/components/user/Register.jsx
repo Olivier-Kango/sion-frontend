@@ -90,7 +90,7 @@ const Register = () => {
         <h3 className="text-red-500 text-lg mx-auto error">{error}</h3>
 
         <div>
-          Already have an account?
+          <span>Already have an account?</span>
           <Link
             to="/login"
             className="text-lime-600 font-medium underline hover:text-lime-700 ml-2"
