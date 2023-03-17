@@ -62,7 +62,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://google.com)
+- [Live Demo Link](https://master-meal.netlify.app/)
 
 ### 🚀 Backend <a name="backend"></a>
 
