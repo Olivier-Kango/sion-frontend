@@ -68,7 +68,7 @@ const Login = () => {
         )}
 
         <div>
-          Create an account:
+          <span>Create an account:</span>
           <Link
             to="/signup"
             className="text-lime-600 font-medium underline hover:text-lime-700 ml-2"
