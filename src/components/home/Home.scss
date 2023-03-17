@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    margin-top: -4rem;
     width: 100%;
 
     h1 {
@@ -37,6 +38,7 @@
       width: 100%;
       padding: 1rem 0;
       text-align: center;
+      margin-top: 4rem;
 
       .swiper-scrollbar {
         display: none;
@@ -113,4 +115,13 @@
       }
     }
   }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background: rgba(0, 0, 0, 0.216);
+  backdrop-filter: blur(20px);
+  width: fit-content;
+  padding: 1rem 0;
+  color: rgb(25, 224, 25) !important;
 }
