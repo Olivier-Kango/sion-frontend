@@ -15,7 +15,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  <!-- - [Deployment](#triangular_flag_on_post-deployment) -->
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -26,9 +26,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [MEAL-MASTER] <a name="about-project"></a>
+# 📖 MEAL-MASTER <a name="about-project"></a>
 
-**[Meal-Master]** is a fullstack web application that is built on rails framework and React that enables a user to create an account, sign-in, order foods of their liking, and/or delete their orders.
+**Meal-Master** is a fullstack web application that is built on rails framework and React that enables a user to create an account, sign-in, order foods of their liking, and/or delete their orders.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -41,7 +41,7 @@
 
   <summary>Server</summary>
   <ul>
-    <li><a href="https://api.rubyonrails.org/">Rails.js</a></li>
+    <li><a href="https://api.rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 
   <summary>Database</summary>
@@ -64,9 +64,10 @@
 
 - [Live Demo Link](https://master-meal.netlify.app/)
 
-### 🚀 Backend <a name="backend"></a>
 
-- [Backend link](https://github.com/DaveZag/meal-master-backend) 
+### Backend <a name="backend"></a>
+
+- [Backend repository](https://github.com/DaveZag/meal-master-backend) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -78,18 +79,18 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-> - [Install Git](https://git-scm.com/)
-> - Install a code editor of your choice
-> - Knwoledge of javascript and react
-> - Github account is required
-> - [Install nodejs](https://nodejs.org/ca/blog/release/v16.19.0)
+> - [Install Git](https://git-scm.com/).
+> - Install a code editor of your choice.
+> - Knowledge of javascript,react and Ruby on Rails.
+> - Github account is required.
+> - [Install nodejs](https://nodejs.org/ca/blog/release/v16.19.0).
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/DaveZag/meal-master-frontend
+  git clone https://github.com/DaveZag/meal-master-frontend.git
 ```
 
 ### Install
@@ -107,8 +108,7 @@ To run the project, execute the following command:
 
 ```sh
   npm start # for running the project in development mode
-  npm run build # for building the project for production
-
+  
   npx stylelint "**/*.{css,scss}" --fix # Stylelint errors auto correct
   npx eslint "**/*.{js,jsx}" --fix # Eslint errors auto correct
 ```
@@ -121,17 +121,6 @@ To run tests, run the following command:
   npm test  # for running the tests
 ```
 
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
