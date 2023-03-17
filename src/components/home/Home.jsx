@@ -49,15 +49,11 @@ const Home = () => {
       ) : (
         <div className="home-cont">
           <h1>OUR MEALS</h1>
-          <p className="title-bar">
-            Please select a meal
-            <br />
-            <span>(Note: Only admins are allowed to Add or Delete Foods)</span>
-          </p>
+          <p className="title-bar">Please select a meal</p>
 
           <Swiper
             onSwiper={setSwiperRef}
-            slidesPerView={3}
+            slidesPerView={4}
             centeredSlides
             spaceBetween={20}
             navigation
@@ -65,44 +61,51 @@ const Home = () => {
             modules={[Pagination, Navigation]}
             style={{ display: foods.length === 0 ? 'unset' : 'flex' }}
           >
-            {foods.length === 0 ? <span>Add Food first!!!</span> : foods.map((food) => (
-              <SwiperSlide key={food.id}>
-                <Link to={`/fooddetails/${food.id}`}>
-                  <img src={food.image} alt={food.name} />
-                </Link>
-
-                <div className="card-body">
+            {foods.length === 0 ? (
+              <span>Add Food first!!!</span>
+            ) : (
+              foods.map((food) => (
+                <SwiperSlide
+                  key={food.id * Math.random(10000) + Math.random(5000)}
+                >
                   <Link to={`/fooddetails/${food.id}`}>
-                    <h2>{food.name}</h2>
+                    <img src={food.image} alt={food.name} />
                   </Link>
-                  <div>
-                    <p>
-                      Price:&nbsp;
-                      {food.unit_price}
-                      &nbsp;$ (USD)
-                    </p>
-                    <Link to={`/addorder/${food.id}`}>
-                      <button type="button" className="button">
-                        Order
-                        {' '}
-                        {food.name}
-                      </button>
+
+                  <div className="card-body">
+                    <Link to={`/fooddetails/${food.id}`}>
+                      <h2>{food.name}</h2>
                     </Link>
-                    <button
-                      type="button"
-                      className="button"
-                      onClick={() => {
-                        if (user.role === 'admin') {
-                          handleDelete(food.id);
-                        }
-                      }}
-                    >
-                      Remove
-                    </button>
+                    <div>
+                      <p>
+                        Price:&nbsp;
+                        {food.unit_price}
+                        &nbsp;$ (USD)
+                      </p>
+                      <Link to={`/addorder/${food.id}`}>
+                        <button type="button" className="button">
+                          Order
+                          {food.name}
+                        </button>
+                      </Link>
+                      {user.role === 'admin' ? (
+                        <button
+                          type="button"
+                          className="button"
+                          onClick={() => {
+                            handleDelete(food.id);
+                          }}
+                        >
+                          Remove
+                        </button>
+                      ) : (
+                        ''
+                      )}
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              ))
+            )}
           </Swiper>
         </div>
       )}
