@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:5000/';
+axios.defaults.baseURL = 'https://meal-master-backend.onrender.com/';
 
 // Actions
 export const getAllFoods = createAsyncThunk('GET_ALL_FOODS', async () => {
