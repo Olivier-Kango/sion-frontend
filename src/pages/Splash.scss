@@ -7,6 +7,14 @@
   .splash-container {
     background: linear-gradient(258deg, #24665692, #2b246662);
   }
+
+  @media screen and (max-width: 550px) {
+    background-position-x: 15%;
+
+    .splash-container {
+      padding: 0 1rem;
+    }
+  }
 }
 
 .splash-card {
@@ -19,4 +27,18 @@
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
+
+  @media screen and (max-width: 550px) {
+    background-color: transparent;
+    padding: 1rem 0.5rem;
+
+    .link-button {
+      flex-direction: column-reverse;
+      gap: 1rem;
+    }
+
+    .link-button a {
+      margin: 0 !important;
+    }
+  }
 }

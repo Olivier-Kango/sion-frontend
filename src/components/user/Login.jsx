@@ -67,11 +67,11 @@ const Login = () => {
           ''
         )}
 
-        <div>
-          Create an account:
+        <div className="options-container">
+          <span>Create an account:</span>
           <Link
             to="/signup"
-            className="text-lime-600 font-medium underline hover:text-lime-700 ml-2"
+            className="text-lime-600 font-medium underline hover:text-lime-700 ml-2 "
           >
             Sign Up
           </Link>
