@@ -1,13 +1,14 @@
 section {
   .auth-left-section {
-    background: linear-gradient(
+    background:
+      linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.61),
         rgba(0, 0, 0, 0.4)
       ),
       url('../../assets/meal-bg.jpg') no-repeat;
     background-position: center;
-    background-size: 155%;
+    background-size: cover;
     height: 100%;
   }
 
@@ -20,21 +21,6 @@ section {
   }
 
   @media screen and (max-width: 768px) {
-    .auth-form-section {
-      width: 100%;
-    }
-    .auth-left-section {
-      background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.758),
-          rgba(0, 0, 0, 0.57)
-        ),
-        url('../../assets/meal-bg.jpg') no-repeat;
-      background-position: 15%;
-      background-size: 155%;
-      height: 100%;
-    }
-
     .options-container {
       display: flex;
       justify-content: center;
@@ -46,10 +32,19 @@ section {
     .auth-left-section {
       position: relative;
       width: 100% !important;
-      background-size: cover;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.758),
+          rgba(0, 0, 0, 0.57)
+        ),
+        url('../../assets/meal-bg.jpg') no-repeat;
+      background-position: 15%;
+      height: 100%;
     }
 
     .auth-form-section {
+      width: 100%;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -83,7 +78,6 @@ section {
 
       div a {
         color: white;
-
         display: flex;
         justify-content: center;
         border-radius: 0.375rem;

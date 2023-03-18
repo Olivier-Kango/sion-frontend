@@ -7,7 +7,10 @@
   .splash-container {
     background: linear-gradient(258deg, #24665692, #2b246662);
   }
+
   @media screen and (max-width: 550px) {
+    background-position-x: 15%;
+
     .splash-container {
       padding: 0 1rem;
     }

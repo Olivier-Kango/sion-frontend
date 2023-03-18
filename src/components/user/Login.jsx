@@ -67,7 +67,7 @@ const Login = () => {
           ''
         )}
 
-        <div className='options-container'>
+        <div className="options-container">
           <span>Create an account:</span>
           <Link
             to="/signup"
