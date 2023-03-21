@@ -8,6 +8,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [Preview](#preview)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
@@ -58,18 +59,17 @@
 - **[Delete food]**
 - **[Place orders]**
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Preview <a name="preview"></a>
+
+![Desktop Preview](./preview/meal_master.jpg)
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://master-meal.netlify.app/)
 
-
 ### Backend <a name="backend"></a>
 
-- [Backend repository](https://github.com/DaveZag/meal-master-backend) 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- [Backend repository](https://github.com/DaveZag/meal-master-backend)
 
 ### 💻 Getting Started <a name="getting-started"></a>
 
@@ -108,7 +108,7 @@ To run the project, execute the following command:
 
 ```sh
   npm start # for running the project in development mode
-  
+
   npx stylelint "**/*.{css,scss}" --fix # Stylelint errors auto correct
   npx eslint "**/*.{js,jsx}" --fix # Eslint errors auto correct
 ```
@@ -121,10 +121,8 @@ To run tests, run the following command:
   npm test  # for running the tests
 ```
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- AUTHORS -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
 
@@ -152,15 +150,11 @@ To run tests, run the following command:
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/olivier-kango-b990601b8/)
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/olivierkango1/)
 
-
 👤 **Elijah Odjegba** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
 
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Elijahdre/)
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/elijah-odjegba/)
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/kingglijah/)
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
@@ -170,8 +164,6 @@ To run tests, run the following command:
 - [ ] **[Mobile version]**
 - [ ] **[new_feature_3]**
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -179,8 +171,6 @@ To run tests, run the following command:
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SUPPORT -->
 
@@ -202,8 +192,6 @@ I would like to acknowledge:
 - [The creative common](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) for the design
 - Design from [Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## ❓ FAQ <a name="faq"></a>
 
 - **How I can run this project?**
@@ -213,8 +201,6 @@ I would like to acknowledge:
 - **How I can run tests?**
 
   - After cloning repository, run `npm install` to install all dependencies. Then run `npm test` to run the tests.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
