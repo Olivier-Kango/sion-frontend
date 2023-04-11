@@ -85,6 +85,7 @@ const Home = () => {
                       <Link to={`/addorder/${food.id}`}>
                         <button type="button" className="button">
                           Order
+                          {' '}
                           {food.name}
                         </button>
                       </Link>
