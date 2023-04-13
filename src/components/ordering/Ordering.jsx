@@ -14,6 +14,9 @@ const Ordering = () => {
 
   const [localOrders, setLocalOrders] = useState([]);
 
+  // Add the currentUser to the component's state
+  const [currentUser, setCurrentUser] = useState(null);
+
   useEffect(() => {
     dispatch(allOrders());
     dispatch(getAllFoods());
