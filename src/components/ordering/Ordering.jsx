@@ -11,6 +11,7 @@ const Ordering = () => {
   const orderData = useSelector((state) => state.orders);
   const { order, orders } = orderData;
   const foods = useSelector((state) => state.foods);
+  const user_id = useSelector((state) => state.user.data?.id);
 
   const [localOrders, setLocalOrders] = useState([]);
 
