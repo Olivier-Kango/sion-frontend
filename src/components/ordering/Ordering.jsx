@@ -53,39 +53,42 @@ const Ordering = () => {
       <div className="order-lists">
         {localOrders.length === 0 ? <p className="s">Please Order a Food</p> : localOrders.map((order) => {
           const food = foods.find((f) => f.id === order.food_id);
-          return (
-            <div className="card  me-2" key={order.id} style={{ backgroundColor: '#fbfbfb' }}>
-              <img src={food.image} className="card-img-top" alt={order.name} />
-              <div className="card-body">
-                <h5 className="card-title">{food.name}</h5>
-                <p className="card-text">
-                  Order date:
-                  {' '}
-                  {order.created_at.slice(0, 10)}
-                </p>
-                <p className="card-text">
-                  Ordered on:
-                  {' '}
-                  {order.created_at.slice(11, 19)}
-                </p>
-                <p className="card-text">
-                  Order price:
-                  {' '}
-                  {food.unit_price * order.quantity}
-                  {' '}
-                  $ (USD)
-                </p>
-                <p className="card-text">
-                  Ordered at:
-                  {' '}
-                  {order.delivery_point}
-                </p>
-                <button type="button" className="form-control btn btn-outline-secondary mx-auto" onClick={() => handleDelete(order.id)}>
-                  Delete
-                </button>
+
+          if (currentUser && currentUser.id === order.user_id) {
+            return (
+              <div className="card  me-2" key={order.id} style={{ backgroundColor: '#fbfbfb' }}>
+                <img src={food.image} className="card-img-top" alt={order.name} />
+                <div className="card-body">
+                  <h5 className="card-title">{food.name}</h5>
+                  <p className="card-text">
+                    Order date:
+                    {' '}
+                    {order.created_at.slice(0, 10)}
+                  </p>
+                  <p className="card-text">
+                    Ordered on:
+                    {' '}
+                    {order.created_at.slice(11, 19)}
+                  </p>
+                  <p className="card-text">
+                    Order price:
+                    {' '}
+                    {food.unit_price * order.quantity}
+                    {' '}
+                    $ (USD)
+                  </p>
+                  <p className="card-text">
+                    Ordered at:
+                    {' '}
+                    {order.delivery_point}
+                  </p>
+                  <button type="button" className="form-control btn btn-outline-secondary mx-auto" onClick={() => handleDelete(order.id)}>
+                    Delete
+                  </button>
+                </div>
               </div>
-            </div>
-          );
+            );
+          }
         })}
       </div>
     </section>
