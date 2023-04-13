@@ -53,7 +53,6 @@ const Ordering = () => {
       <div className="order-lists">
         {localOrders.length === 0 ? <p className="s">Please Order a Food</p> : localOrders.map((order) => {
           const food = foods.find((f) => f.id === order.food_id);
-
           if (currentUser && currentUser.id === order.user_id) {
             return (
               <div className="card  me-2" key={order.id} style={{ backgroundColor: '#fbfbfb' }}>
@@ -89,6 +88,7 @@ const Ordering = () => {
               </div>
             );
           }
+          return null;
         })}
       </div>
     </section>
