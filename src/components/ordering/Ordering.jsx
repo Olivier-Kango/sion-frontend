@@ -51,6 +51,8 @@ const Ordering = () => {
       <div className="order-lists">
         {localOrders.length === 0 ? <p className="s">Please Order a Food</p> : localOrders.map((order) => {
           const food = foods.find((f) => f.id === order.food_id);
+
+          // if (user_id === order.user_id) {
           return (
             <div className="card  me-2" key={order.id} style={{ backgroundColor: '#fbfbfb' }}>
               <img src={food.image} className="card-img-top" alt={order.name} />
