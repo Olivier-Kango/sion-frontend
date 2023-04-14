@@ -16,7 +16,6 @@ const Ordering = () => {
 
   useEffect(() => {
     dispatch(allOrders());
-    dispatch(getAllFoods());
   }, [dispatch]);
 
   useEffect(() => {
