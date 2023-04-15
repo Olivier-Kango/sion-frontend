@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { allOrders, deleteOrder } from '../../redux/actions/OrderActions';
-import { getAllFoods } from '../../redux/foods/foods';
 import styles from './Ordering.scss';
 
 const Ordering = () => {
