@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { allOrders, deleteOrder } from '../../redux/actions/OrderActions';
 import styles from './Ordering.scss';
+import { getAllFoods } from '../../redux/foods/foods';
 
 const Ordering = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const Ordering = () => {
 
   useEffect(() => {
     dispatch(allOrders());
+    dispatch(getAllFoods());
   }, [dispatch]);
 
   useEffect(() => {
@@ -40,7 +42,7 @@ const Ordering = () => {
         {' '}
         {localOrders.reduce((total, order) => {
           const food = foods.find((food) => food.id === order.food_id);
-          return total + (food.unit_price * order.quantity);
+          return total + (food?.unit_price * order.quantity);
         }, 0)}
         {' '}
         $
@@ -50,9 +52,9 @@ const Ordering = () => {
           const food = foods.find((f) => f.id === order.food_id);
           return (
             <div className="card  me-2" key={order.id} style={{ backgroundColor: '#fbfbfb' }}>
-              <img src={food.image} className="card-img-top" alt={order.name} />
+              <img src={food?.image} className="card-img-top" alt={order.name} />
               <div className="card-body">
-                <h5 className="card-title">{food.name}</h5>
+                <h5 className="card-title">{food?.name}</h5>
                 <p className="card-text">
                   Order date:
                   {' '}
@@ -66,7 +68,7 @@ const Ordering = () => {
                 <p className="card-text">
                   Order price:
                   {' '}
-                  {food.unit_price * order.quantity}
+                  {food?.unit_price * order.quantity}
                   {' '}
                   $ (USD)
                 </p>
