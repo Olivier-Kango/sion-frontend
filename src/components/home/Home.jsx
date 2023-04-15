@@ -89,6 +89,7 @@ const Home = () => {
                           {food.name}
                         </button>
                       </Link>
+                      <br />
                       {user.role === 'admin' ? (
                         <button
                           type="button"
