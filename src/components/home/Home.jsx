@@ -53,7 +53,7 @@ const Home = () => {
 
           <Swiper
             onSwiper={setSwiperRef}
-            slidesPerView={4}
+            slidesPerView={3.2}
             centeredSlides
             spaceBetween={20}
             navigation
