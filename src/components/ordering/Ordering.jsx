@@ -8,7 +8,7 @@ import styles from './Ordering.scss';
 const Ordering = () => {
   const dispatch = useDispatch();
   const orderData = useSelector((state) => state.orders);
-  const { order, orders } = orderData;
+  const { orders } = orderData;
   const foods = useSelector((state) => state.foods);
 
   const [localOrders, setLocalOrders] = useState([]);
