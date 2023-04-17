@@ -70,6 +70,7 @@
           height: 200px;
           border-radius: 50%;
           border: 4px solid #96c03d;
+          transition: transform 0.5s ease;
         }
 
         img:hover {
