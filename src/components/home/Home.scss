@@ -125,3 +125,8 @@
   padding: 1rem 0;
   color: rgb(25, 224, 25) !important;
 }
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.180);
+}
