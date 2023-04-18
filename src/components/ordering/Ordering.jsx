@@ -3,14 +3,15 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { allOrders, deleteOrder } from '../../redux/actions/OrderActions';
-import { getAllFoods } from '../../redux/foods/foods';
 import styles from './Ordering.scss';
+import { getAllFoods } from '../../redux/foods/foods';
 
 const Ordering = () => {
   const dispatch = useDispatch();
   const orderData = useSelector((state) => state.orders);
-  const { order, orders } = orderData;
+  const { orders } = orderData;
   const foods = useSelector((state) => state.foods);
+  const u_id = useSelector((state) => state.user.data?.id);
 
   const [localOrders, setLocalOrders] = useState([]);
 
@@ -34,27 +35,30 @@ const Ordering = () => {
     setLocalOrders(localOrders.filter((order) => order.id !== id));
   };
 
+  const userOrders = localOrders.filter((order) => order.user_id === u_id);
+
   return (
     <section className="orders-section">
       <h2 className="navbar-brand">MY ORDERS</h2>
       <h2 className="navbar-brand">
         Total amount :
         {' '}
-        {localOrders.reduce((total, order) => {
-          const food = foods.find((food) => food.id === order.food_id);
-          return total + (food.unit_price * order.quantity);
+        {userOrders.reduce((total, order) => {
+          const food = foods.find((food) => food?.id === order.food_id);
+          const total_amount = total + (food?.unit_price * order.quantity);
+          return total_amount || 0;
         }, 0)}
         {' '}
         $
       </h2>
       <div className="order-lists">
-        {localOrders.length === 0 ? <p className="s">Please Order a Food</p> : localOrders.map((order) => {
+        {userOrders.length === 0 ? <p className="s">Please Order a Food</p> : userOrders.map((order) => {
           const food = foods.find((f) => f.id === order.food_id);
           return (
             <div className="card  me-2" key={order.id} style={{ backgroundColor: '#fbfbfb' }}>
-              <img src={food.image} className="card-img-top" alt={order.name} />
+              <img src={food?.image} className="card-img-top" alt={order.name} />
               <div className="card-body">
-                <h5 className="card-title">{food.name}</h5>
+                <h5 className="card-title">{food?.name}</h5>
                 <p className="card-text">
                   Order date:
                   {' '}
@@ -68,7 +72,7 @@ const Ordering = () => {
                 <p className="card-text">
                   Order price:
                   {' '}
-                  {food.unit_price * order.quantity}
+                  {food?.unit_price * order.quantity}
                   {' '}
                   $ (USD)
                 </p>
