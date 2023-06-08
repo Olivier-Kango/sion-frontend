@@ -27,9 +27,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 MEAL-MASTER <a name="about-project"></a>
+# 📖 PSS-DIGITAL <a name="about-project"></a>
 
-**Meal-Master** is a fullstack web application that is built on rails framework and React that enables a user to create an account, sign-in, order foods of their liking, and/or delete their orders.
+**PSS-Digital** is a proven digital solution that makes online shopping easy, convenient, and enjoyable for customers. The application also helps other businesses maximize their customer base through e-commerce. With PSS Digital, we help you achieve success while also supporting you in efficient business management.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -69,7 +69,7 @@
 
 ### Backend <a name="backend"></a>
 
-- [Backend repository](https://github.com/DaveZag/meal-master-backend)
+- [Backend repository](https://github.com/Olivier-Kango/pss-digital-backend)
 
 ### 💻 Getting Started <a name="getting-started"></a>
 
@@ -90,7 +90,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/DaveZag/meal-master-frontend.git
+  git clone https://github.com/Olivier-Kango/pss-digital-frontend.git
 ```
 
 ### Install
@@ -98,7 +98,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd meal-master-frontend # Change directory into project folder
+  cd pss-digital-frontend # Change directory into project folder
   npm install # Installs project dependencies
 ```
 
