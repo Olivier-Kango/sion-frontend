@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'https://meal-master-backend.onrender.com/',
+  baseURL: 'https://pss-digital-backend.onrender.com/',
 });
 
 export const fetchAllOrders = async () => {
