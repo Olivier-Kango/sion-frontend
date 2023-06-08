@@ -65,7 +65,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://master-meal.netlify.app/)
+- [Live Demo Link](https://pss-digital.netlify.app/)
 
 ### Backend <a name="backend"></a>
 
