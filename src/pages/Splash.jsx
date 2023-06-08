@@ -7,10 +7,10 @@ const Splash = () => (
       <div className="splash-card sm:">
         <div className="sm:px-3 text-center">
           <h1 className="font-bold text-white text-4xl sm:text-6xl ">
-            Meal Master
+            PSS Digital
           </h1>
           <p className="text-xl text-slate-50 mt-2">
-            Order your favorite foods from your favorite site😉
+            Order your favorite products from your favorite site😉
           </p>
         </div>
         <div className="mt-10 w-4/6 flex justify-between mx-auto text-center link-button">
