@@ -5,8 +5,8 @@ import { Routes, Route } from 'react-router-dom';
 import './App.scss';
 
 // Components
-import AddFood from './components/food/AddFood';
-import FoodDetails from './components/food/FoodDetails';
+import AddProduct from './components/product/AddProduct';
+import ProductDetails from './components/product/ProductDetails';
 import Login from './components/user/Login';
 import Register from './components/user/Register';
 import Home from './components/home/Home';
@@ -33,14 +33,14 @@ const App = () => {
           }
         >
           <Route path="/home" element={<Home />} />
-          <Route path="/fooddetails/:id" element={<FoodDetails />} />
+          <Route path="/productdetails/:id" element={<ProductDetails />} />
           <Route path="/ordering" element={<Ordering />} />
           <Route path="/addorder/:id" element={<AddOrder />} />
           <Route path="/footer" element={<Footer />} />
         </Route>
 
         <Route
-          path="/addfood"
+          path="/addproduct"
           element={
             (
               <PrivateRoutes
@@ -49,7 +49,7 @@ const App = () => {
               >
                 <section className="page-container">
                   <LeftBar />
-                  <AddFood />
+                  <AddProduct />
                 </section>
               </PrivateRoutes>
             )

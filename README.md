@@ -53,10 +53,10 @@
 ### Key Features <a name="key-features"></a>
 
 - **[Fetch all orders from API endpoint]**
-- **[Fetch all foods from API endpoint]**
+- **[Fetch all products from API endpoint]**
 - **[Authenticate users]**
-- **[Add food]**
-- **[Delete food]**
+- **[Add product]**
+- **[Delete product]**
 - **[Place orders]**
 
 ## Preview <a name="preview"></a>
