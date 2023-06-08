@@ -4,20 +4,20 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { allOrders, deleteOrder } from '../../redux/actions/OrderActions';
 import styles from './Ordering.scss';
-import { getAllFoods } from '../../redux/foods/foods';
+import { getAllProducts } from '../../redux/products/products';
 
 const Ordering = () => {
   const dispatch = useDispatch();
   const orderData = useSelector((state) => state.orders);
   const { orders } = orderData;
-  const foods = useSelector((state) => state.foods);
+  const products = useSelector((state) => state.products);
   const u_id = useSelector((state) => state.user.data?.id);
 
   const [localOrders, setLocalOrders] = useState([]);
 
   useEffect(() => {
     dispatch(allOrders());
-    dispatch(getAllFoods());
+    dispatch(getAllProducts());
   }, [dispatch]);
 
   useEffect(() => {
@@ -44,21 +44,21 @@ const Ordering = () => {
         Total amount :
         {' '}
         {userOrders.reduce((total, order) => {
-          const food = foods.find((food) => food?.id === order.food_id);
-          const total_amount = total + (food?.unit_price * order.quantity);
+          const product = products.find((product) => product?.id === order.product_id);
+          const total_amount = total + (product?.unit_price * order.quantity);
           return total_amount || 0;
         }, 0)}
         {' '}
         $
       </h2>
       <div className="order-lists">
-        {userOrders.length === 0 ? <p className="s">Please Order a Food</p> : userOrders.map((order) => {
-          const food = foods.find((f) => f.id === order.food_id);
+        {userOrders.length === 0 ? <p className="s">Please Order a Product</p> : userOrders.map((order) => {
+          const product = products.find((f) => f.id === order.product_id);
           return (
             <div className="card  me-2" key={order.id} style={{ backgroundColor: '#fbfbfb' }}>
-              <img src={food?.image} className="card-img-top" alt={order.name} />
+              <img src={product?.image} className="card-img-top" alt={order.name} />
               <div className="card-body">
-                <h5 className="card-title">{food?.name}</h5>
+                <h5 className="card-title">{product?.name}</h5>
                 <p className="card-text">
                   Order date:
                   {' '}
@@ -72,7 +72,7 @@ const Ordering = () => {
                 <p className="card-text">
                   Order price:
                   {' '}
-                  {food?.unit_price * order.quantity}
+                  {product?.unit_price * order.quantity}
                   {' '}
                   $ (USD)
                 </p>

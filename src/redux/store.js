@@ -4,13 +4,13 @@ import { logger } from 'redux-logger';
 import throttle from 'lodash.throttle';
 
 import { saveState, loadState } from '../local_storage/local_storage';
-import reducerFood from './foods/foods';
+import reducerProduct from './products/products';
 import orderReducer from './reducer/OrderReducer';
 import userReducer from './users/users';
 
 const rootReducer = combineReducers({
   orders: orderReducer,
-  foods: reducerFood,
+  products: reducerProduct,
   user: userReducer,
 });
 

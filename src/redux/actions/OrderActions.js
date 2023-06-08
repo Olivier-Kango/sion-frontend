@@ -15,7 +15,7 @@ export const addOrder = (order) => async (dispatch) => {
   const permittedOrder = {
     quantity: order.quantity,
     delivery_point: order.delivery_point,
-    food_id: order.food_id,
+    product_id: order.product_id,
     user_id: order.user_id,
   };
   const addedOrder = await fetchAddOrder(permittedOrder);

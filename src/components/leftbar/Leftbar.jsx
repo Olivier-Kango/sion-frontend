@@ -38,9 +38,9 @@ const LeftBar = () => {
               <span>MY ORDERINGS</span>
             </div>
           </Link>
-          <Link to="/addfood" style={{ textDecoration: 'none' }}>
-            <div className={pathname === '/addfood' ? 'active' : 'item'}>
-              <span>ADD FOOD</span>
+          <Link to="/addproduct" style={{ textDecoration: 'none' }}>
+            <div className={pathname === '/addproduct' ? 'active' : 'item'}>
+              <span>ADD PRODUCT</span>
             </div>
           </Link>
           <button

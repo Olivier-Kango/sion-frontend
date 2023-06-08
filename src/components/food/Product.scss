@@ -1,4 +1,4 @@
-.food-details {
+.product-details {
   display: flex;
   justify-content: space-between;
   padding: 3% 5% 0 0;
@@ -43,7 +43,7 @@
     margin: 0 10% 0 10%;
   }
 
-  .food-details-body {
+  .product-details-body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;

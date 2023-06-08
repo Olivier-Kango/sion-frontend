@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
-import { getAllFoods, deleteFood } from '../../redux/foods/foods';
+import { getAllProducts, deleteProduct } from '../../redux/products/products';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,21 +15,21 @@ const Home = () => {
   const [done, setDone] = useState(undefined);
 
   const dispatch = useDispatch();
-  const foods = useSelector((state) => state.foods);
+  const products = useSelector((state) => state.products);
   const user = useSelector((state) => state.user.data);
 
   useEffect(() => {
-    dispatch(getAllFoods());
+    dispatch(getAllProducts());
   }, [dispatch]);
 
   useEffect(() => {
-    if (foods.length > 0) {
+    if (products.length > 0) {
       setDone(true);
     }
-  }, [foods]);
+  }, [products]);
 
   const handleDelete = (id) => {
-    dispatch(deleteFood(id));
+    dispatch(deleteProduct(id));
   };
 
   return (
@@ -44,7 +44,7 @@ const Home = () => {
             width: '100vw',
           }}
         >
-          <p className="s">Please Add a Food</p>
+          <p className="s">Please Add a Product</p>
         </div>
       ) : (
         <div className="home-cont">
@@ -59,34 +59,34 @@ const Home = () => {
             navigation
             scrollbar={{ draggable: true }}
             modules={[Pagination, Navigation]}
-            style={{ display: foods.length === 0 ? 'unset' : 'flex' }}
+            style={{ display: products.length === 0 ? 'unset' : 'flex' }}
           >
-            {foods.length === 0 ? (
-              <span>Add Food first!!!</span>
+            {products.length === 0 ? (
+              <span>Add Product first!!!</span>
             ) : (
-              foods.map((food) => (
+              products.map((product) => (
                 <SwiperSlide
-                  key={food.id * Math.random(10000) + Math.random(5000)}
+                  key={product.id * Math.random(10000) + Math.random(5000)}
                 >
-                  <Link to={`/fooddetails/${food.id}`}>
-                    <img src={food.image} alt={food.name} />
+                  <Link to={`/productdetails/${product.id}`}>
+                    <img src={product.image} alt={product.name} />
                   </Link>
 
                   <div className="card-body">
-                    <Link to={`/fooddetails/${food.id}`}>
-                      <h2>{food.name}</h2>
+                    <Link to={`/productdetails/${product.id}`}>
+                      <h2>{product.name}</h2>
                     </Link>
                     <div>
                       <p>
                         Price:&nbsp;
-                        {food.unit_price}
+                        {product.unit_price}
                         &nbsp;$ (USD)
                       </p>
-                      <Link to={`/addorder/${food.id}`}>
+                      <Link to={`/addorder/${product.id}`}>
                         <button type="button" className="button">
                           Order
                           {' '}
-                          {food.name}
+                          {product.name}
                         </button>
                       </Link>
                       <br />
@@ -95,7 +95,7 @@ const Home = () => {
                           type="button"
                           className="button"
                           onClick={() => {
-                            handleDelete(food.id);
+                            handleDelete(product.id);
                           }}
                         >
                           Remove

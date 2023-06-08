@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addFood } from '../../redux/foods/foods';
+import { addProduct } from '../../redux/products/products';
 import '../ordering/Ordering.scss';
 
-const AddFood = () => {
+const AddProduct = () => {
   const dispatch = useDispatch();
   const [name, setname] = useState('');
   const [image, setimage] = useState('');
@@ -13,12 +13,12 @@ const AddFood = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await dispatch(addFood({
+    const response = await dispatch(addProduct({
       name,
       image,
       unit_price: unitPrice,
     }));
-    if (response.type === 'ADD_FOOD/fulfilled') {
+    if (response.type === 'ADD_PRODUCT/fulfilled') {
       setIsSubmitted(true);
     }
     setname('');
@@ -34,7 +34,7 @@ const AddFood = () => {
     <div className="add-order-container">
       {isSubmitted ? (
         <div className="success-message">
-          <p>Your food has been added successfully!</p>
+          <p>Your product has been added successfully!</p>
           <div className="success-actions">
             <button type="button" onClick={handleContinueShopping}>Continue Adding</button>
             <Link to="/home">
@@ -44,11 +44,11 @@ const AddFood = () => {
         </div>
       ) : (
         <>
-          <h2>Add Food</h2>
+          <h2>Add Product</h2>
           <p className="error">Please add name, img-src & price</p>
           <form onSubmit={handleSubmit} className="add-order-form">
             <div className="add-order-form-group">
-              <input type="text" id="name" value={name} onChange={(e) => setname(e.target.value)} placeholder="Enter food's Name" />
+              <input type="text" id="name" value={name} onChange={(e) => setname(e.target.value)} placeholder="Enter product's Name" />
             </div>
             <div className="add-order-form-group">
               <input type="text" id="image" value={image} onChange={(e) => setimage(e.target.value)} placeholder="Add src (url) of the image" />
@@ -66,7 +66,7 @@ const AddFood = () => {
                 placeholder="Enter Unit Price"
               />
             </div>
-            <button type="submit">Add Food</button>
+            <button type="submit">Add Product</button>
           </form>
         </>
       )}
@@ -74,4 +74,4 @@ const AddFood = () => {
   );
 };
 
-export default AddFood;
+export default AddProduct;

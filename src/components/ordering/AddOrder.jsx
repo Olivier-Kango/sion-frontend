@@ -6,10 +6,10 @@ import './Ordering.scss';
 
 const AddOrder = () => {
   const { id } = useParams();
-  const foodId = parseInt(id, 10);
+  const productId = parseInt(id, 10);
   const userId = useSelector((state) => state.user?.data.id);
-  const foods = useSelector((state) => state.foods);
-  const food = foods.find((f) => f.id === parseInt(id, 10));
+  const products = useSelector((state) => state.products);
+  const product = products.find((f) => f.id === parseInt(id, 10));
 
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState('');
@@ -21,7 +21,7 @@ const AddOrder = () => {
     const response = await dispatch(addOrder({
       quantity,
       delivery_point: deliveryPoint,
-      food_id: foodId,
+      product_id: productId,
       user_id: userId,
     }));
     if (response && response.id) {
@@ -56,7 +56,7 @@ const AddOrder = () => {
           <h2>
             Order
             {' '}
-            {food.name}
+            {product.name}
           </h2>
           <p className="error">Please add a Quantiy & a Delivery point</p>
           <form onSubmit={handleSubmit} className="add-order-form">
@@ -77,7 +77,7 @@ const AddOrder = () => {
               <input type="text" id="deliveryPoint" value={deliveryPoint} onChange={(e) => setDeliveryPoint(e.target.value)} placeholder="Delivery Point" />
             </div>
             <div className="add-order-form-group">
-              <input type="hidden" id="foodId" value={foodId} />
+              <input type="hidden" id="productId" value={productId} />
             </div>
             <div className="add-order-form-group">
               <input type="hidden" id="userId" value={userId} />

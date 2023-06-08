@@ -1,37 +1,37 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { getAllFoods } from '../../redux/foods/foods';
-import './Food.scss';
+import { getAllProducts } from '../../redux/products/products';
+import './Product.scss';
 
-const FoodDetails = () => {
+const ProductDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const foods = useSelector((state) => state.foods);
-  const food = foods.find((f) => f.id === parseInt(id, 10));
+  const products = useSelector((state) => state.products);
+  const product = products.find((f) => f.id === parseInt(id, 10));
 
   useEffect(() => {
-    if (foods.length === 0) {
-      dispatch(getAllFoods());
+    if (products.length === 0) {
+      dispatch(getAllProducts());
     }
-  }, [dispatch, foods]);
+  }, [dispatch, products]);
 
-  if (!food) {
-    return <div>Food not found</div>;
+  if (!product) {
+    return <div>Product not found</div>;
   }
 
   return (
-    <div className="food-details">
-      <div className="food-details-img">
-        <img src={food?.image} className="img-details" alt={food?.name} />
+    <div className="product-details">
+      <div className="product-details-img">
+        <img src={product?.image} className="img-details" alt={product?.name} />
         <div className="button-container">
           <Link to="/home" className="link-back">&#8882;</Link>
         </div>
       </div>
-      <div className="food-details-body">
+      <div className="product-details-body">
         <div>
           <h1>
-            {food?.name}
+            {product?.name}
           </h1>
           <br />
           <p>
@@ -40,7 +40,7 @@ const FoodDetails = () => {
             </span>
             <span>
               {' '}
-              {food?.unit_price}
+              {product?.unit_price}
               $ per dish
             </span>
           </p>
@@ -50,7 +50,7 @@ const FoodDetails = () => {
             </span>
             <span>
               {' '}
-              {food?.created_at.slice(0, 10)}
+              {product?.created_at.slice(0, 10)}
             </span>
           </p>
           <p>
@@ -59,15 +59,15 @@ const FoodDetails = () => {
             </span>
             <span>
               {' '}
-              {food?.created_at.slice(11, 16)}
+              {product?.created_at.slice(11, 16)}
             </span>
           </p>
         </div>
-        <Link to={`/addorder/${food.id}`}>
+        <Link to={`/addorder/${product.id}`}>
           <button type="button" className="button-order">
             Order
             {' '}
-            {food.name}
+            {product.name}
           </button>
         </Link>
       </div>
@@ -76,4 +76,4 @@ const FoodDetails = () => {
   );
 };
 
-export default FoodDetails;
+export default ProductDetails;
