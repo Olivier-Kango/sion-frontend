@@ -48,8 +48,8 @@ const Home = () => {
         </div>
       ) : (
         <div className="home-cont">
-          <h1>OUR MEALS</h1>
-          <p className="title-bar">Please select a meal</p>
+          <h1>OUR PRODUCTS</h1>
+          <p className="title-bar">Please select a Product</p>
 
           <Swiper
             onSwiper={setSwiperRef}

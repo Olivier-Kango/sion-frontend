@@ -61,7 +61,7 @@
 
 ## Preview <a name="preview"></a>
 
-![Desktop Preview](./preview/meal_master.jpg)
+![Desktop Preview](./src/assets/pss-bg.jpg)
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
