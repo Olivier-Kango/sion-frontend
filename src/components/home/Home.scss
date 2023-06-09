@@ -1,3 +1,5 @@
+$main-color: #003087;
+
 .container {
   .home-cont {
     display: flex;
@@ -69,7 +71,7 @@
           width: 200px;
           height: 200px;
           border-radius: 50%;
-          border: 4px solid #96c03d;
+          border: 4px solid $main-color;
           transition: transform 0.5s ease;
         }
 
@@ -90,7 +92,7 @@
           }
 
           h2:hover {
-            color: #96c03d;
+            color: $main-color;
             text-decoration: underline;
           }
 
@@ -103,9 +105,9 @@
           .button {
             display: inline-block;
             cursor: pointer;
-            border: 1px solid #426000;
+            border: 1px solid #001f5a;
             color: #fff;
-            background: #598200;
+            background: $main-color;
             text-decoration: none;
             padding: 4px 10px;
             border-radius: 4px;
@@ -114,7 +116,7 @@
           }
 
           .button:hover {
-            background: #426000b7;
+            background: #001f5a;
           }
         }
       }
@@ -128,7 +130,7 @@
   backdrop-filter: blur(20px);
   width: fit-content;
   padding: 1rem 0;
-  color: rgb(25, 224, 25) !important;
+  color: $main-color !important;
 }
 
 .swiper-button-next:hover,
