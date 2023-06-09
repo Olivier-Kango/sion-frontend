@@ -10,19 +10,19 @@ const Splash = () => (
             PSS Digital
           </h1>
           <p className="text-xl text-slate-50 mt-2">
-            Order your favorite products from your favorite site😉
+            Order your favorite products from your favorite site.
           </p>
         </div>
         <div className="mt-10 w-4/6 flex justify-center gap-4 mx-auto text-center link-button">
           <Link
             to="/signup"
-            className="border border-lime-500 py-3 px-7 ml-3 text-white hover:scale-105"
+            className="border py-3 px-7 ml-3 text-white hover:scale-105"
           >
             Sign Up
           </Link>
           <Link
             to="/login"
-            className="bg-lime-500 py-3 px-7  mr-3 hover:scale-105"
+            className="py-3 px-7  mr-3 hover:scale-105"
           >
             Sign In
           </Link>
