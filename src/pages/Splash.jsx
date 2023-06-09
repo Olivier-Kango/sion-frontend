@@ -13,7 +13,7 @@ const Splash = () => (
             Order your favorite products from your favorite site😉
           </p>
         </div>
-        <div className="mt-10 w-4/6 flex justify-between mx-auto text-center link-button">
+        <div className="mt-10 w-4/6 flex justify-center gap-4 mx-auto text-center link-button">
           <Link
             to="/signup"
             className="border border-lime-500 py-3 px-7 ml-3 text-white hover:scale-105"
