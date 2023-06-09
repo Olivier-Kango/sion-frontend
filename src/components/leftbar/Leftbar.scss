@@ -1,3 +1,5 @@
+$main-color: #003087;
+
 .leftbar-container {
   position: sticky;
   display: flex;
@@ -48,7 +50,7 @@
 }
 
 .active {
-  background-color: #96c03d;
+  background-color: $main-color;
   color: white;
   font-weight: 600;
   padding: 10px;
@@ -56,13 +58,9 @@
 }
 
 .item:hover {
-  background-color: #97c03d3a;
+  background-color: #002f871f;
 }
 
 .leftbar-footer {
   padding: 10px;
-}
-
-.logout:hover {
-  background: rgba(255, 0, 0, 0.167);
 }
