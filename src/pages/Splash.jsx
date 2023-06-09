@@ -4,7 +4,7 @@ import './Splash.scss';
 const Splash = () => (
   <section className="splash-section w-full">
     <div className="splash-container w-full h-full flex justify-center items-center flex-col">
-      <div className="splash-card sm:">
+      <div className="splash-card sm:mb-20">
         <div className="sm:px-3 text-center">
           <h1 className="font-bold text-white text-4xl sm:text-6xl ">
             PSS Digital
