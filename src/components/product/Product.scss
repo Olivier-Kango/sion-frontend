@@ -1,5 +1,6 @@
 $main-color: #0a66c2;
 $main-color-hover: #094a80;
+$gray: #e4e6eb;
 
 .product-details {
   display: flex;
@@ -42,7 +43,7 @@ $main-color-hover: #094a80;
     width: 450px;
     height: 450px;
     border-radius: 5px;
-    border: 1px solid $main-color;
+    border: 1.5px solid $gray;
     margin: 0 10% 0 10%;
   }
 
@@ -72,7 +73,7 @@ $main-color-hover: #094a80;
       }
 
       p:nth-child(odd) {
-        background-color: rgba(128, 128, 128, 0.162);
+        background-color: $gray;
       }
     }
 

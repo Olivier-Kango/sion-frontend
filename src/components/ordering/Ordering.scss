@@ -1,3 +1,6 @@
+$main-color: #0a66c2;
+$main-color-hover: #094a80;
+
 .loading {
   display: flex;
   justify-content: center;
@@ -85,7 +88,7 @@
 
       button {
         padding: 10px 20px;
-        background-color: #5cb85c;
+        background-color: $main-color;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -94,7 +97,7 @@
         margin: 10px;
 
         &:hover {
-          background-color: #256025;
+          background-color: $main-color-hover;
         }
       }
     }
@@ -125,7 +128,7 @@
 
         &:focus {
           outline: none;
-          border-bottom-color: #5cb85c;
+          border-bottom-color: $main-color;
         }
       }
 
@@ -138,14 +141,14 @@
 
         &:focus {
           outline: none;
-          border-bottom-color: #5cb85c;
+          border-bottom-color: $main-color;
         }
       }
     }
 
     button[type="submit"] {
       padding: 10px 20px;
-      background-color: #5cb85c;
+      background-color: $main-color;
       color: #fff;
       border: none;
       border-radius: 5px;
@@ -153,7 +156,7 @@
       cursor: pointer;
 
       &:hover {
-        background-color: #256025;
+        background-color: $main-color-hover;
       }
     }
   }
