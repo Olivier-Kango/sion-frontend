@@ -19,7 +19,7 @@ const LeftBar = () => {
   return (
     <div className="leftbar-container">
       <div className="leftbar-header">
-        <div className="logo">Meal Master</div>
+        <div className="logo">PSS Digital</div>
       </div>
       <nav className="nav">
         <div className="links">
