@@ -18,6 +18,11 @@ $main-color: #003087;
       padding: 0 1rem;
     }
   }
+
+  @media screen and (max-width: 479px) {
+    background: url('../assets/pss-bg-phone-small.jpg');
+    background-size: 100% 100%;
+  }
 }
 
 .splash-card {
@@ -55,5 +60,11 @@ $main-color: #003087;
     p {
       font-size: 1rem;
     }
+  }
+
+  @media screen and (max-width:  479px) {
+    max-width: 95% !important;
+    max-height: 80% !important;
+    margin-bottom: 4.5rem;
   }
 }
