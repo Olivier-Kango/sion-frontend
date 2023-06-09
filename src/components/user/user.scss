@@ -97,7 +97,6 @@ section {
         display: flex;
         justify-content: center;
         border-radius: 0.375rem;
-        background: $main-color;
         font-weight: 600;
         font-size: 20px;
         padding: 0.5rem 0.75rem;
@@ -106,7 +105,7 @@ section {
       }
 
       div a:hover {
-        background-color: #001f5a;
+        background-color: $main-color;
       }
     }
   }

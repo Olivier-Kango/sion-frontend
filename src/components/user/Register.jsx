@@ -81,7 +81,7 @@ const Register = () => {
 
           <button
             type="submit"
-            className="group relative flex w-1/3 justify-center mt-3 rounded-md bg-green-600 py-2 px-3 text-xl font-semibold text-white hover:bg-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="group relative flex w-1/3 justify-center mt-3 rounded-md py-2 px-3 text-xl font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Register
           </button>
@@ -93,7 +93,7 @@ const Register = () => {
           <span>Already have an account?</span>
           <Link
             to="/login"
-            className="text-lime-600 font-medium underline hover:text-lime-700 ml-2"
+            className="font-medium underline ml-2"
           >
             Login
           </Link>
