@@ -1,6 +1,6 @@
 .splash-section {
-  background: url('../assets/pss-logo.png');
-  background-size: 100% 111.5%;
+  background: url('../assets/pss-bg.jpg');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 100vh;
 
@@ -8,8 +8,9 @@
     background: linear-gradient(258deg, #24665692, #2b246662);
   }
 
-  @media screen and (max-width: 550px) {
-    background-position-x: 15%;
+  @media screen and (max-width: 768px) {
+    background: url('../assets/pss-bg-phone.jpg');
+    background-size: 100% 100%;
 
     .splash-container {
       padding: 0 1rem;
@@ -28,7 +29,7 @@
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width:  768px) {
     background-color: transparent;
     padding: 1rem 0.5rem;
 
