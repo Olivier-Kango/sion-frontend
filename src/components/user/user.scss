@@ -1,4 +1,5 @@
-$main-color: #003087;
+$main-color: #0a66c2;
+$main-color-hover: #094a80;
 
 section {
   .auth-left-section {
@@ -30,7 +31,7 @@ section {
     }
 
     button:hover {
-      background: #001f5a !important;
+      background: $main-color-hover !important;
     }
   }
 

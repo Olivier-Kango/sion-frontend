@@ -1,4 +1,5 @@
-$main-color: #003087;
+$main-color: #0a66c2;
+$main-color-hover: #094a80;
 
 .product-details {
   display: flex;
@@ -32,7 +33,7 @@ $main-color: #003087;
     }
 
     .link-back:hover {
-      background-color: #001f5a;
+      background-color: $main-color-hover;
       color: #fff;
     }
   }
@@ -90,7 +91,7 @@ $main-color: #003087;
     }
 
     .button-order:hover {
-      background-color: #001f5a;
+      background-color: $main-color-hover;
       color: #fff;
     }
   }
