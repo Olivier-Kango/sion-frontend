@@ -17,6 +17,7 @@ const Home = () => {
   const [, setSwiperRef] = useState(null);
   const [done, setDone] = useState(undefined);
   const [showLeftbar, setShowLeftbar] = useState(false);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
@@ -38,25 +39,27 @@ const Home = () => {
 
   return (
     <div className="container">
-      <div
-        className="hamburger-button"
-        onClick={() => setShowLeftbar(true)}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            setShowLeftbar(true);
-          }
-        }}
-        role="button"
-        tabIndex={0}
-      >
-        <div className="line" />
-        <div className="line" />
-        <div className="line" />
-      </div>
+      {isMobile && (
+        <div
+          className="hamburger-button"
+          onClick={() => setShowLeftbar(true)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              setShowLeftbar(true);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+        >
+          <span />
+          <span />
+          <span />
+        </div>
+      )}
 
       {showLeftbar && (
       <div className="leftbar-container">
-        <LeftBar />
+        {isMobile && <LeftBar />}
         <div
           className="close-button"
           onClick={() => setShowLeftbar(false)}
