@@ -122,68 +122,6 @@ $main-color-hover: #094a80;
       }
     }
   }
-
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 100% 0;
-
-    .hamburger-button {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 99;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      outline: none;
-    }
-
-    .hamburger-button span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background-color: $main-color;
-      margin-bottom: 5px;
-      transition: transform 0.3s ease;
-    }
-    
-    .hamburger-button span:last-child {
-      margin-bottom: 0;
-    }
-    
-    .hamburger-button.open span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    
-    .hamburger-button.open span:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .hamburger-button.open span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    // .leftbar-container {
-    //   position: fixed;
-    //   top: 0;
-    //   left: 0;
-    //   width: 250px;
-    //   height: 100%;
-    //   background-color: #f8f8f8;
-    //   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-    //   transform: translateX(-100%);
-    //   transition: transform 0.3s ease;
-    // }
-    
-    .leftbar-container.open {
-      transform: translateX(0);
-    }
-  }
 }
 
 .swiper-button-next,

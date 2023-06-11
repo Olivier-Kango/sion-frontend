@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
-import { useMediaQuery } from '@mui/material';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
-import LeftBar from '../leftbar/Leftbar';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -15,8 +13,6 @@ import 'swiper/css/scrollbar';
 const Home = () => {
   const [, setSwiperRef] = useState(null);
   const [done, setDone] = useState(undefined);
-  const [showLeftbar, setShowLeftbar] = useState(false);
-  const isMobile = useMediaQuery('(max-width: 768px)');
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
@@ -36,30 +32,8 @@ const Home = () => {
     dispatch(deleteProduct(id));
   };
 
-  const handleHamburgerClick = () => {
-    setShowLeftbar(!showLeftbar);
-  };
-
   return (
     <div className="container">
-      <div
-        className={`hamburger-button${showLeftbar ? ' open' : ''}`}
-        onClick={handleHamburgerClick}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            handleHamburgerClick();
-          }
-        }}
-        role="button"
-        tabIndex={0}
-      >
-        <span />
-        <span />
-        <span />
-      </div>
-
-      {showLeftbar && isMobile && <LeftBar />}
-
       {!done ? (
         <div
           style={{
