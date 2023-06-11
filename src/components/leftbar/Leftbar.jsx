@@ -7,7 +7,7 @@ import Footer from '../footer/Footer';
 import { userLogout } from '../../redux/users/users';
 import './Leftbar.scss';
 
-const LeftBar = ({ open }) => {
+const LeftBar = ({ open, handleLinkClick }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data?.name);
   const username = user?.charAt(0).toUpperCase() + user?.slice(1);
@@ -29,17 +29,17 @@ const LeftBar = ({ open }) => {
             <span className="font-semibold">{` ${username}`}</span>
             ✋🏼
           </div>
-          <Link to="/home" style={{ textDecoration: 'none' }}>
+          <Link to="/home" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/home' ? 'active' : 'item'}>
               <span>HOME</span>
             </div>
           </Link>
-          <Link to="/ordering" style={{ textDecoration: 'none' }}>
+          <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/ordering' ? 'active' : 'item'}>
               <span>MY ORDERINGS</span>
             </div>
           </Link>
-          <Link to="/addproduct" style={{ textDecoration: 'none' }}>
+          <Link to="/addproduct" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/addproduct' ? 'active' : 'item'}>
               <span>ADD PRODUCT</span>
             </div>
@@ -62,6 +62,7 @@ const LeftBar = ({ open }) => {
 
 LeftBar.propTypes = {
   open: PropTypes.bool.isRequired,
+  handleLinkClick: PropTypes.func.isRequired,
 };
 
 export default LeftBar;
