@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
-import { XIcon } from '@heroicons/react/solid';
 import { useMediaQuery } from '@mui/material';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
 import LeftBar from '../leftbar/Leftbar';
@@ -37,15 +36,23 @@ const Home = () => {
     dispatch(deleteProduct(id));
   };
 
+  const handleHamburgerClick = () => {
+    setShowLeftbar(true);
+  };
+
+  const handleCloseClick = () => {
+    setShowLeftbar(false);
+  };
+
   return (
     <div className="container">
       {isMobile && (
         <div
-          className="hamburger-button"
-          onClick={() => setShowLeftbar(true)}
+          className={`hamburger-button${showLeftbar ? ' open' : ''}`}
+          onClick={handleHamburgerClick}
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
-              setShowLeftbar(true);
+              handleHamburgerClick();
             }
           }}
           role="button"
@@ -58,20 +65,20 @@ const Home = () => {
       )}
 
       {showLeftbar && (
-      <div className="leftbar-container">
+      <div className="leftbar-container open">
         {isMobile && <LeftBar />}
         <div
           className="close-button"
-          onClick={() => setShowLeftbar(false)}
+          onClick={handleCloseClick}
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
-              setShowLeftbar(false);
+              handleCloseClick();
             }
           }}
           role="button"
           tabIndex={0}
         >
-          <XIcon className="h-6 w-6" />
+          <i className="fa fa-times" />
         </div>
       </div>
       )}
