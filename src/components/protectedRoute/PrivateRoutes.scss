@@ -52,19 +52,19 @@ $main-color-hover: #094a80;
       margin-bottom: 5px;
       transition: transform 0.3s ease;
     }
-    
+
     .hamburger-button span:last-child {
       margin-bottom: 0;
     }
-    
+
     .hamburger-button.open span:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
     }
-    
+
     .hamburger-button.open span:nth-child(2) {
       opacity: 0;
     }
-    
+
     .hamburger-button.open span:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
     }
@@ -89,6 +89,7 @@ $main-color-hover: #094a80;
         transform: translateX(100%);
         opacity: 0;
       }
+
       100% {
         transform: translateX(21%);
         opacity: 1;
@@ -100,16 +101,17 @@ $main-color-hover: #094a80;
         transform: translateX(21%);
         opacity: 1;
       }
+
       100% {
         transform: translateX(100%);
         opacity: 0;
       }
     }
-    
+
     .leftbar-container.open {
       animation-name: slideIn;
     }
-    
+
     .leftbar-container.closed {
       animation-name: slideOut;
     }
