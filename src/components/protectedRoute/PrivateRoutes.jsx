@@ -38,7 +38,8 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               <span />
               <span />
             </div>
-            {showLeftbar && <LeftBar />}
+            {showLeftbar && <div className="overlay" />}
+            {showLeftbar && <LeftBar open={showLeftbar} />}
           </>
         ) : (
           <LeftBar />

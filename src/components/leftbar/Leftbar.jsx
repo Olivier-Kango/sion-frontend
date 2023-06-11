@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Footer from '../footer/Footer';
 import { userLogout } from '../../redux/users/users';
 import './Leftbar.scss';
 
-const LeftBar = () => {
+const LeftBar = ({ open }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data?.name);
   const username = user?.charAt(0).toUpperCase() + user?.slice(1);
@@ -17,7 +18,7 @@ const LeftBar = () => {
   };
 
   return (
-    <div className="leftbar-container">
+    <div className={`leftbar-container${open ? ' open' : ''}`}>
       <div className="leftbar-header">
         <div className="logo">PSS Digital</div>
       </div>
@@ -57,6 +58,10 @@ const LeftBar = () => {
       </div>
     </div>
   );
+};
+
+LeftBar.propTypes = {
+  open: PropTypes.bool.isRequired,
 };
 
 export default LeftBar;
