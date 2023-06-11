@@ -14,6 +14,10 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     setShowLeftbar(!showLeftbar);
   };
 
+  const handleLinkClick = () => {
+    setShowLeftbar(false);
+  };
+
   const isMobile = useMediaQuery('(max-width: 768px)');
   if (!isAllowed || TOKEN === 'null' || !TOKEN) {
     return <Navigate to={redirectPath} replace />;
@@ -38,8 +42,18 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               <span />
               <span />
             </div>
-            {showLeftbar && <div className="overlay" />}
-            {showLeftbar && <LeftBar open={showLeftbar} />}
+            {showLeftbar
+            && (
+            <div
+              className="overlay"
+              onClick={handleLinkClick}
+              onKeyDown={handleLinkClick}
+              role="button"
+              tabIndex={0}
+              aria-label="Close"
+            />
+            )}
+            {showLeftbar && <LeftBar open={showLeftbar} handleLinkClick={handleLinkClick} />}
           </>
         ) : (
           <LeftBar />
