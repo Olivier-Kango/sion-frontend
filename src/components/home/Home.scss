@@ -158,7 +158,6 @@ $main-color-hover: #094a80;
     
     .hamburger-button.open span:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
-      transform: translateY(8px) rotate(45deg);
     }
     
     .hamburger-button.open span:nth-child(2) {
@@ -169,58 +168,20 @@ $main-color-hover: #094a80;
       transform: translateY(-8px) rotate(-45deg);
     }
 
-    .leftbar-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 250px;
-      height: 100%;
-      background-color: #f8f8f8;
-      box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-      transform: translateX(-100%);
-      transition: transform 0.3s ease;
-    }
+    // .leftbar-container {
+    //   position: fixed;
+    //   top: 0;
+    //   left: 0;
+    //   width: 250px;
+    //   height: 100%;
+    //   background-color: #f8f8f8;
+    //   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    //   transform: translateX(-100%);
+    //   transition: transform 0.3s ease;
+    // }
     
     .leftbar-container.open {
       transform: translateX(0);
-    }
-
-    .close-button {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      outline: none;
-    }
-
-    .close-button::before,
-    .close-button::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 3px;
-      background-color: #000;
-      transition: transform 0.3s ease;
-    }
-
-    .close-button::before {
-      transform: rotate(45deg);
-    }
-
-    .close-button::after {
-      transform: rotate(-45deg);
-    }
-
-    .close-button.open::before,
-    .close-button.open::after {
-      transform: rotate(0);
     }
   }
 }

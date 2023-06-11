@@ -37,51 +37,28 @@ const Home = () => {
   };
 
   const handleHamburgerClick = () => {
-    setShowLeftbar(true);
-  };
-
-  const handleCloseClick = () => {
-    setShowLeftbar(false);
+    setShowLeftbar(!showLeftbar);
   };
 
   return (
     <div className="container">
-      {isMobile && (
-        <div
-          className={`hamburger-button${showLeftbar ? ' open' : ''}`}
-          onClick={handleHamburgerClick}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              handleHamburgerClick();
-            }
-          }}
-          role="button"
-          tabIndex={0}
-        >
-          <span />
-          <span />
-          <span />
-        </div>
-      )}
-
-      {showLeftbar && (
-      <div className="leftbar-container open">
-        {isMobile && <LeftBar />}
-        <div
-          className="close-button"
-          onClick={handleCloseClick}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              handleCloseClick();
-            }
-          }}
-          role="button"
-          tabIndex={0}
-        >
-          <i className="fa fa-times" />
-        </div>
+      <div
+        className={`hamburger-button${showLeftbar ? ' open' : ''}`}
+        onClick={handleHamburgerClick}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            handleHamburgerClick();
+          }
+        }}
+        role="button"
+        tabIndex={0}
+      >
+        <span />
+        <span />
+        <span />
       </div>
-      )}
+
+      {showLeftbar && isMobile && <LeftBar />}
 
       {!done ? (
         <div
