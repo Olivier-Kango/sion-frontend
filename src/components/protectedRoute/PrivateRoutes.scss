@@ -72,20 +72,31 @@ $main-color-hover: #094a80;
     .leftbar-container {
       position: fixed;
       top: 0;
-      left: 0;
+      right: 0;
       width: 100%;
       height: 100%;
       background-color: #f8f8f8;
       box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-      transform: translateX(-100%);
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform: translateX(100%);
       z-index: 10;
-      opacity: 0;
+      animation-duration: 0.4s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(21%);
+        opacity: 1;
+      }
     }
     
     .leftbar-container.open {
-      transform: translateX(21%);
-      opacity: 1;
+      animation-name: slideIn;
     }
   }
 }
