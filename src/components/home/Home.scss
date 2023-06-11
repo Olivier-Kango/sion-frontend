@@ -122,6 +122,10 @@ $main-color-hover: #094a80;
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 100% 0;
+  }
 }
 
 .swiper-button-next,
