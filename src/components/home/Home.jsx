@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
+import { XIcon } from '@heroicons/react/solid';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
+import LeftBar from '../leftbar/Leftbar';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -50,6 +52,26 @@ const Home = () => {
         <div className="line" />
         <div className="line" />
       </div>
+
+      {showLeftbar && (
+      <div className="leftbar-container">
+        <LeftBar />
+        <div
+          className="close-button"
+          onClick={() => setShowLeftbar(false)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              setShowLeftbar(false);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+        >
+          <XIcon className="h-6 w-6" />
+        </div>
+      </div>
+      )}
+
       {!done ? (
         <div
           style={{
