@@ -13,6 +13,7 @@ import 'swiper/css/scrollbar';
 const Home = () => {
   const [, setSwiperRef] = useState(null);
   const [done, setDone] = useState(undefined);
+  const [showLeftbar, setShowLeftbar] = useState(false);
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
