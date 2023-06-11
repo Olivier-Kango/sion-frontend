@@ -69,4 +69,11 @@ $gray: #e4e6eb;
   .leftbar-footer {
     padding: 10px;
   }
+
+  @media screen and (max-width: 768px) {
+    width: 400%;
+    z-index: 99;
+    background: white;
+    border-right: none;
+  }
 }
