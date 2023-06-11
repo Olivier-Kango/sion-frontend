@@ -35,6 +35,21 @@ const Home = () => {
 
   return (
     <div className="container">
+      <div
+        className="hamburger-button"
+        onClick={() => setShowLeftbar(true)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            setShowLeftbar(true);
+          }
+        }}
+        role="button"
+        tabIndex={0}
+      >
+        <div className="line" />
+        <div className="line" />
+        <div className="line" />
+      </div>
       {!done ? (
         <div
           style={{
