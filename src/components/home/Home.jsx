@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
 import { XIcon } from '@heroicons/react/solid';
+import { useMediaQuery } from '@mui/material';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
 import LeftBar from '../leftbar/Leftbar';
 import './Home.scss';
