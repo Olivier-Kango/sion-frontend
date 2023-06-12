@@ -1,13 +1,13 @@
 $main-color: #0a66c2;
 $main-color-hover: #094a80;
-$gray: #e4e6eb;
 
 .leftbar-container {
   position: sticky;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  border-right: 1.7px solid $gray;
+  border-right: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   .leftbar-header {
     display: flex;
