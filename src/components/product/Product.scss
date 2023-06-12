@@ -97,3 +97,21 @@ $gray: #e4e6eb;
     }
   }
 }
+
+.success-actions {
+  button {
+    background:  #28a745 !important;
+    min-width: 93%;
+  }
+  
+    button:hover {
+    background:  #1e7e34 !important;
+  }
+  
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-content: center !important;
+  }
+}
