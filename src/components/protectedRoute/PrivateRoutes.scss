@@ -5,7 +5,8 @@ $main-color-hover: #094a80;
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 22% 78%;
+  background: #f8f8f8;
 
   .home {
     display: flex;
@@ -59,6 +60,7 @@ $main-color-hover: #094a80;
 
     .hamburger-button.open span:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
+      background-color: white;
     }
 
     .hamburger-button.open span:nth-child(2) {
@@ -67,6 +69,7 @@ $main-color-hover: #094a80;
 
     .hamburger-button.open span:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
+      background-color: white;
     }
 
     .leftbar-container {
@@ -81,7 +84,7 @@ $main-color-hover: #094a80;
       z-index: 10;
       animation-duration: 0.4s;
       animation-timing-function: ease;
-      animation-fill-mode: forwards;
+      animation-fill-mode: both;
     }
 
     @keyframes slideIn {
@@ -113,7 +116,7 @@ $main-color-hover: #094a80;
     }
 
     .leftbar-container.closed {
-      animation-name: slideOut;
+      animation-name: slideOut !important;
     }
   }
 }

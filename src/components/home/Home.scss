@@ -69,11 +69,13 @@ $main-color-hover: #094a80;
         overflow: hidden;
 
         img {
-          width: 200px;
-          height: 200px;
+          width: 250px;
+          height: 250px;
           border-radius: 50%;
-          border: 4px solid $main-color;
+          border: 1px solid #ddd;
+          object-fit: cover;
           transition: transform 0.5s ease;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         img:hover {
@@ -117,6 +119,27 @@ $main-color-hover: #094a80;
 
           .button:hover {
             background: $main-color-hover;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .home-cont {
+      margin-top: 1rem;
+
+      .swiper {
+        flex-direction: column !important;
+
+        .swiper-wrapper {
+          display: flex !important;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+
+          .swiper-slide {
+            height: auto !important;
           }
         }
       }

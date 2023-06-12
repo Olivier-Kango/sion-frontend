@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { useMediaQuery } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
@@ -17,6 +18,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   const user = useSelector((state) => state.user.data);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
     dispatch(getAllProducts());
@@ -53,10 +55,11 @@ const Home = () => {
 
           <Swiper
             onSwiper={setSwiperRef}
-            slidesPerView={3.2}
+            slidesPerView={isMobile ? 0 : 3.2}
             centeredSlides
-            spaceBetween={20}
-            navigation
+            spaceBetween={isMobile ? 0 : 20}
+            navigation={!isMobile}
+            direction={isMobile ? 'vertical' : 'horizontal'}
             scrollbar={{ draggable: true }}
             modules={[Pagination, Navigation]}
             style={{ display: products.length === 0 ? 'unset' : 'flex' }}

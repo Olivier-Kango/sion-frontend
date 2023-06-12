@@ -7,12 +7,15 @@ $gray: #e4e6eb;
   justify-content: space-between;
   padding: 3% 5% 0 0;
   width: 100%;
+  overflow: hidden;
+  background: #f8f8f8;
 
   h1 {
-    color: $main-color;
+    color: black;
     text-align: center;
     margin: 10px 0;
     font-size: 26px;
+    font-weight: 500;
   }
 
   .button-container {
@@ -24,27 +27,31 @@ $gray: #e4e6eb;
       display: inline-block;
       margin-top: 30px;
       font-size: 26px;
-      padding: 10px 35px;
+      padding: 5px 25px 10px 30px;
       background-color: $main-color;
       color: white;
       text-decoration: none;
       border-radius: 0 40px 40px 0;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       transition: all 0.2s ease-in-out;
     }
 
     .link-back:hover {
       background-color: $main-color-hover;
+      padding: 5px 30px 10px 35px;
       color: #fff;
     }
   }
 
   .img-details {
+    background: white;
     width: 450px;
     height: 450px;
     border-radius: 5px;
-    border: 1.5px solid $gray;
+    border: 1px solid #ddd;
     margin: 0 10% 0 10%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    object-fit: contain;
   }
 
   .product-details-body {
@@ -87,7 +94,7 @@ $gray: #e4e6eb;
       color: white;
       text-decoration: none;
       border-radius: 50px;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       transition: all 0.2s ease-in-out;
     }
 
@@ -95,5 +102,59 @@ $gray: #e4e6eb;
       background-color: $main-color-hover;
       color: #fff;
     }
+  }
+
+  @media screen and (max-width: 1100px) {
+    flex-direction: column;
+    padding: 0 0 5% 0;
+    align-items: center !important;
+
+    .product-details-img {
+      width: 100%;
+
+      .img-details {
+        border-radius: 0;
+        margin: 78px 0 0 0;
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+
+    .product-details-body {
+      background: white;
+      border-radius: 8px;
+      padding: 3% 0 8% 0;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      width: 90%;
+
+      div {
+        width: 100%;
+
+        h1 {
+          text-align: center !important;
+          margin: 10px 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.success-actions {
+  button {
+    background: #28a745 !important;
+    min-width: 93%;
+  }
+
+  button:hover {
+    background: #1e7e34 !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-content: center !important;
   }
 }
