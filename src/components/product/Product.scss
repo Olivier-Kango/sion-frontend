@@ -25,17 +25,18 @@ $gray: #e4e6eb;
       display: inline-block;
       margin-top: 30px;
       font-size: 26px;
-      padding: 10px 35px;
+      padding: 5px 25px 10px 30px;
       background-color: $main-color;
       color: white;
       text-decoration: none;
       border-radius: 0 40px 40px 0;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
       transition: all 0.2s ease-in-out;
     }
 
     .link-back:hover {
       background-color: $main-color-hover;
+      padding: 5px 30px 10px 35px;
       color: #fff;
     }
   }
@@ -91,7 +92,7 @@ $gray: #e4e6eb;
       color: white;
       text-decoration: none;
       border-radius: 50px;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
       transition: all 0.2s ease-in-out;
     }
 
@@ -99,6 +100,9 @@ $gray: #e4e6eb;
       background-color: $main-color-hover;
       color: #fff;
     }
+  }
+
+  @media screen and (max-width: 768px) {
   }
 }
 
