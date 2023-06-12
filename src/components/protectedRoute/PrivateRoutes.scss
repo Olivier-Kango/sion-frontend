@@ -81,7 +81,7 @@ $main-color-hover: #094a80;
       z-index: 10;
       animation-duration: 0.4s;
       animation-timing-function: ease;
-      animation-fill-mode: forwards;
+      animation-fill-mode: both;
     }
 
     @keyframes slideIn {
@@ -113,7 +113,7 @@ $main-color-hover: #094a80;
     }
 
     .leftbar-container.closed {
-      animation-name: slideOut;
+      animation-name: slideOut !important;
     }
   }
 }
