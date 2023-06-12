@@ -53,65 +53,117 @@ const Home = () => {
           <h1>OUR PRODUCTS</h1>
           <p className="title-bar">Please select a Product</p>
 
-          <Swiper
-            onSwiper={setSwiperRef}
-            slidesPerView={isMobile ? 0 : 3.2}
-            centeredSlides
-            spaceBetween={isMobile ? 0 : 20}
-            navigation={!isMobile}
-            direction={isMobile ? 'vertical' : 'horizontal'}
-            scrollbar={{ draggable: true }}
-            modules={[Pagination, Navigation]}
-            style={{ display: products.length === 0 ? 'unset' : 'flex' }}
-          >
-            {products.length === 0 ? (
-              <span>Add Product first!!!</span>
-            ) : (
-              products.map((product) => (
-                <SwiperSlide
-                  key={product.id * Math.random(10000) + Math.random(5000)}
-                >
-                  <Link to={`/productdetails/${product.id}`}>
-                    <img src={product.image} alt={product.name} />
-                  </Link>
-
-                  <div className="card-body">
+          {isMobile ? (
+            <div className="swiper">
+              {products.length === 0 ? (
+                <span>Add Product first!!!</span>
+              ) : (
+                products.map((product) => (
+                  <div
+                    key={product.id * Math.random(10000) + Math.random(5000)}
+                    className="swiper-slide"
+                  >
                     <Link to={`/productdetails/${product.id}`}>
-                      <h2>{product.name}</h2>
+                      <img src={product.image} alt={product.name} />
                     </Link>
-                    <div>
-                      <p>
-                        Price:&nbsp;
-                        {product.unit_price}
-                        &nbsp;$ (USD)
-                      </p>
-                      <Link to={`/addorder/${product.id}`}>
-                        <button type="button" className="button">
-                          Order
-                          {' '}
-                          {product.name}
-                        </button>
+
+                    <div className="card-body">
+                      <Link to={`/productdetails/${product.id}`}>
+                        <h2>{product.name}</h2>
                       </Link>
-                      <br />
-                      {user.role === 'admin' ? (
-                        <button
-                          type="button"
-                          className="button"
-                          onClick={() => {
-                            handleDelete(product.id);
-                          }}
-                        >
-                          Remove
-                        </button>
-                      ) : (
-                        ''
-                      )}
+                      <div>
+                        <p>
+                          Price:&nbsp;
+                          {product.unit_price}
+                          &nbsp;$ (USD)
+                        </p>
+                        <Link to={`/addorder/${product.id}`}>
+                          <button type="button" className="button">
+                            Order
+                            {' '}
+                            {product.name}
+                          </button>
+                        </Link>
+                        <br />
+                        {user.role === 'admin' ? (
+                          <button
+                            type="button"
+                            className="button"
+                            onClick={() => {
+                              handleDelete(product.id);
+                            }}
+                          >
+                            Remove
+                          </button>
+                        ) : (
+                          ''
+                        )}
+                      </div>
                     </div>
                   </div>
-                </SwiperSlide>
-              ))
-            )}
-          </Swiper>
+                ))
+              )}
+            </div>
+          ) : (
+            <Swiper
+              onSwiper={setSwiperRef}
+              slidesPerView={3.2}
+              centeredSlides
+              spaceBetween={20}
+              navigation
+              scrollbar={{ draggable: true }}
+              modules={[Pagination, Navigation]}
+              style={{ display: products.length === 0 ? 'unset' : 'flex' }}
+            >
+              {products.length === 0 ? (
+                <span>Add Product first!!!</span>
+              ) : (
+                products.map((product) => (
+                  <SwiperSlide
+                    key={product.id * Math.random(10000) + Math.random(5000)}
+                  >
+                    <Link to={`/productdetails/${product.id}`}>
+                      <img src={product.image} alt={product.name} />
+                    </Link>
+
+                    <div className="card-body">
+                      <Link to={`/productdetails/${product.id}`}>
+                        <h2>{product.name}</h2>
+                      </Link>
+                      <div>
+                        <p>
+                          Price:&nbsp;
+                          {product.unit_price}
+                          &nbsp;$ (USD)
+                        </p>
+                        <Link to={`/addorder/${product.id}`}>
+                          <button type="button" className="button">
+                            Order
+                            {' '}
+                            {product.name}
+                          </button>
+                        </Link>
+                        <br />
+                        {user.role === 'admin' ? (
+                          <button
+                            type="button"
+                            className="button"
+                            onClick={() => {
+                              handleDelete(product.id);
+                            }}
+                          >
+                            Remove
+                          </button>
+                        ) : (
+                          ''
+                        )}
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))
+              )}
+            </Swiper>
+          )}
         </div>
       )}
     </div>
