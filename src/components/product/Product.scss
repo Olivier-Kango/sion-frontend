@@ -15,7 +15,7 @@ $gray: #e4e6eb;
     text-align: center;
     margin: 10px 0;
     font-size: 26px;
-    font-weight: 00;
+    font-weight: 500;
   }
 
   .button-container {
@@ -32,7 +32,7 @@ $gray: #e4e6eb;
       color: white;
       text-decoration: none;
       border-radius: 0 40px 40px 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       transition: all 0.2s ease-in-out;
     }
 
@@ -51,7 +51,7 @@ $gray: #e4e6eb;
     border: 1px solid #ddd;
     margin: 0 10% 0 10%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    object-fit: contain; 
+    object-fit: contain;
   }
 
   .product-details-body {
@@ -94,7 +94,7 @@ $gray: #e4e6eb;
       color: white;
       text-decoration: none;
       border-radius: 50px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       transition: all 0.2s ease-in-out;
     }
 
@@ -130,7 +130,7 @@ $gray: #e4e6eb;
 
       div {
         width: 100%;
-        
+
         h1 {
           text-align: center !important;
           margin: 10px 0;
@@ -143,14 +143,14 @@ $gray: #e4e6eb;
 
 .success-actions {
   button {
-    background:  #28a745 !important;
+    background: #28a745 !important;
     min-width: 93%;
   }
-  
-    button:hover {
-    background:  #1e7e34 !important;
+
+  button:hover {
+    background: #1e7e34 !important;
   }
-  
+
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
