@@ -41,12 +41,13 @@ const ProductDetails = () => {
             <span>
               {' '}
               {product?.unit_price}
-              $ per dish
+              {' '}
+              $
             </span>
           </p>
           <p>
             <span>
-              Prepared at
+              Manufactured at
             </span>
             <span>
               {' '}
@@ -55,7 +56,7 @@ const ProductDetails = () => {
           </p>
           <p>
             <span>
-              Prepared on
+              Manufactured on
             </span>
             <span>
               {' '}
