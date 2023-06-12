@@ -104,15 +104,20 @@ $gray: #e4e6eb;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1100px) {
     flex-direction: column;
     padding: 0 0 5% 0;
     align-items: center !important;
 
-    .img-details {
-      border-radius: 0;
-      margin: 20% 0 0 0;
-      object-fit: contain; 
+    .product-details-img {
+      width: 100%;
+
+      .img-details {
+        border-radius: 0;
+        margin: 78px 0 0 0;
+        object-fit: contain;
+        width: 100%;
+      }
     }
 
     .product-details-body {
