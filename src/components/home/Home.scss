@@ -122,6 +122,26 @@ $main-color-hover: #094a80;
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .home-cont {
+      margin-top: 1rem;
+      .swiper {
+        flex-direction: column !important;
+
+        .swiper-wrapper {
+          display: flex !important;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+
+          .swiper-slide {
+            height: auto !important;
+          }
+        }
+      }
+    }
+  }
 }
 
 .swiper-button-next,
