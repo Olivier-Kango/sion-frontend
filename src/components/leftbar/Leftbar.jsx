@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import Footer from '../footer/Footer';
 import { userLogout } from '../../redux/users/users';
 import './Leftbar.scss';
 
-const LeftBar = () => {
+const LeftBar = ({ open, handleLinkClick }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data?.name);
   const username = user?.charAt(0).toUpperCase() + user?.slice(1);
@@ -17,7 +18,7 @@ const LeftBar = () => {
   };
 
   return (
-    <div className="leftbar-container">
+    <div className={`leftbar-container${open ? ' open' : ' closed'}`}>
       <div className="leftbar-header">
         <div className="logo">PSS Digital</div>
       </div>
@@ -28,17 +29,17 @@ const LeftBar = () => {
             <span className="font-semibold">{` ${username}`}</span>
             ✋🏼
           </div>
-          <Link to="/home" style={{ textDecoration: 'none' }}>
+          <Link to="/home" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/home' ? 'active' : 'item'}>
               <span>HOME</span>
             </div>
           </Link>
-          <Link to="/ordering" style={{ textDecoration: 'none' }}>
+          <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/ordering' ? 'active' : 'item'}>
               <span>MY ORDERINGS</span>
             </div>
           </Link>
-          <Link to="/addproduct" style={{ textDecoration: 'none' }}>
+          <Link to="/addproduct" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/addproduct' ? 'active' : 'item'}>
               <span>ADD PRODUCT</span>
             </div>
@@ -57,6 +58,11 @@ const LeftBar = () => {
       </div>
     </div>
   );
+};
+
+LeftBar.propTypes = {
+  open: PropTypes.bool.isRequired,
+  handleLinkClick: PropTypes.func.isRequired,
 };
 
 export default LeftBar;

@@ -1,18 +1,63 @@
+import React, { useState } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
+import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line
 import LeftBar from '../leftbar/Leftbar.jsx';
+
 import './PrivateRoutes.scss';
 
 const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const TOKEN = localStorage.getItem('JWT_TOKEN');
+  const [showLeftbar, setShowLeftbar] = useState(false);
+  const handleHamburgerClick = () => {
+    setShowLeftbar(!showLeftbar);
+  };
+
+  const handleLinkClick = () => {
+    setShowLeftbar(false);
+  };
+
+  const isMobile = useMediaQuery('(max-width: 768px)');
   if (!isAllowed || TOKEN === 'null' || !TOKEN) {
     return <Navigate to={redirectPath} replace />;
   }
   return (
     children || (
       <section className="page-container">
-        <LeftBar />
+        {isMobile ? (
+          <>
+            <div
+              className={`hamburger-button${showLeftbar ? ' open' : ''}`}
+              onClick={handleHamburgerClick}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleHamburgerClick();
+                }
+              }}
+              role="button"
+              tabIndex={0}
+            >
+              <span />
+              <span />
+              <span />
+            </div>
+            {showLeftbar
+            && (
+            <div
+              className="overlay"
+              onClick={handleLinkClick}
+              onKeyDown={handleLinkClick}
+              role="button"
+              tabIndex={0}
+              aria-label="Close"
+            />
+            )}
+            {showLeftbar && <LeftBar open={showLeftbar} handleLinkClick={handleLinkClick} />}
+          </>
+        ) : (
+          <LeftBar />
+        )}
         <div className="home">
           <Outlet />
         </div>

@@ -41,13 +41,13 @@ $main-color: #0a66c2;
     color: white;
   }
 
-  @media screen and (max-width:  768px) {
+  @media screen and (max-width: 768px) {
     background-color: transparent;
     padding: 1rem 0.5rem;
     max-width: 75% !important;
     max-height: 45% !important;
     margin-bottom: 4rem;
-  
+
     .link-button {
       flex-direction: column-reverse;
       gap: 0.5rem !important;
@@ -62,7 +62,7 @@ $main-color: #0a66c2;
     }
   }
 
-  @media screen and (max-width:  479px) {
+  @media screen and (max-width: 479px) {
     max-width: 95% !important;
     height: 100% !important;
     margin-bottom: 5.3rem;
