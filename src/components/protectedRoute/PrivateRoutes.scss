@@ -59,6 +59,7 @@ $main-color-hover: #094a80;
 
     .hamburger-button.open span:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
+      background-color: white;
     }
 
     .hamburger-button.open span:nth-child(2) {
@@ -67,6 +68,7 @@ $main-color-hover: #094a80;
 
     .hamburger-button.open span:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
+      background-color: white;
     }
 
     .leftbar-container {
