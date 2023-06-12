@@ -41,12 +41,14 @@ $gray: #e4e6eb;
   }
 
   .img-details {
+    background: white;
     width: 450px;
     height: 450px;
     border-radius: 5px;
     border: 1px solid #ddd;
     margin: 0 10% 0 10%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    object-fit: contain; 
   }
 
   .product-details-body {
