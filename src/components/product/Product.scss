@@ -9,10 +9,11 @@ $gray: #e4e6eb;
   width: 100%;
 
   h1 {
-    color: $main-color;
+    color: black;
     text-align: center;
     margin: 10px 0;
     font-size: 26px;
+    font-weight: 00;
   }
 
   .button-container {
@@ -43,8 +44,9 @@ $gray: #e4e6eb;
     width: 450px;
     height: 450px;
     border-radius: 5px;
-    border: 1.5px solid $gray;
+    border: 1px solid #ddd;
     margin: 0 10% 0 10%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .product-details-body {
