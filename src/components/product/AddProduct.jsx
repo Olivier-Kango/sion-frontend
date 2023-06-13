@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { RiAddLine } from 'react-icons/ri';
+// import { RiAddLine } from 'react-icons/ri';
+import { BiPlusCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { addProduct } from '../../redux/products/products';
 import '../ordering/Ordering.scss';
@@ -66,7 +67,10 @@ const AddProduct = () => {
                 placeholder="Enter Unit Price"
               />
             </div>
-            <button type="submit">Add Product</button>
+            <button type="submit">
+              <BiPlusCircle className="icon" />
+              Add Product
+            </button>
           </form>
         </>
       )}
