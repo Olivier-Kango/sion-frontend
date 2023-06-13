@@ -81,7 +81,7 @@ const Ordering = () => {
                   {' '}
                   {order.delivery_point}
                 </p>
-                <button type="button" className="form-control btn btn-outline-secondary mx-auto" onClick={() => handleDelete(order.id)}>
+                <button type="button" className="form-control btn btn-outline-secondary mx-auto mt-3" onClick={() => handleDelete(order.id)}>
                   Delete
                 </button>
               </div>
