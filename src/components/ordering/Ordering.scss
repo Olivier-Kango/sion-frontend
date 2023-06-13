@@ -47,8 +47,10 @@ $main-color-hover: #094a80;
 }
 
 .card-img-top {
-  height: 200px;
-  border: 1px solid #ccc;
+  height: 250px;
+  width: 250px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
 }
 
 .s {
