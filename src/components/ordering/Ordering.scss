@@ -1,66 +1,6 @@
 $main-color: #0a66c2;
 $main-color-hover: #094a80;
 
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.card {
-  margin-top: 20px;
-}
-
-.orders-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 60rem;
-  margin: 1rem auto;
-}
-
-.order-lists {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  width: 100%;
-  margin: 1rem 0;
-}
-
-.card-text {
-  border-bottom: 1px dotted;
-  font-size: 12px;
-  font-weight: lighter;
-}
-
-.card-title {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-size: 14px;
-  height: 26px;
-  padding-bottom: 5px;
-}
-
-.card-img-top {
-  height: 200px;
-  border: 1px solid #ccc;
-}
-
-.s {
-  display: block;
-  color: red;
-  width: 100%;
-  text-align: center;
-  align-self: center;
-  margin: 0 auto;
-  font-size: 20px;
-}
-
 .add-order-container {
   display: flex;
   flex-direction: column;
@@ -160,4 +100,74 @@ $main-color-hover: #094a80;
       }
     }
   }
+}
+
+.orders-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 1rem;
+
+  .order-lists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 1rem 0;
+
+    .card {
+      margin: 5px 0 !important;
+      border: 1px solid #ddd !important;
+      border-radius: 8px !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+
+      .card-img-top {
+        height: 320px;
+        width: 320px;
+        object-fit: contain;
+      }
+
+      .card-body {
+        .card-title {
+          display: flex;
+          text-align: center;
+          justify-content: center;
+          text-transform: uppercase;
+          font-size: 14px;
+          height: 26px;
+          padding-bottom: 5px;
+        }
+
+        .card-text {
+          border-bottom: 1px dotted #ccc !important;
+          font-size: 12px;
+          font-weight: lighter;
+        }
+
+        button {
+          border: 1px solid #ccc !important;
+        }
+      }
+    }
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.s {
+  display: block;
+  color: red;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+  margin: 0 auto;
+  font-size: 20px;
 }

@@ -55,7 +55,7 @@ const Ordering = () => {
         {userOrders.length === 0 ? <p className="s">Please Order a Product</p> : userOrders.map((order) => {
           const product = products.find((f) => f.id === order.product_id);
           return (
-            <div className="card  me-2" key={order.id} style={{ backgroundColor: '#fbfbfb' }}>
+            <div className="card  me-2" key={order.id} style={{ backgroundColor: '#ffffff' }}>
               <img src={product?.image} className="card-img-top" alt={order.name} />
               <div className="card-body">
                 <h5 className="card-title">{product?.name}</h5>
@@ -81,7 +81,7 @@ const Ordering = () => {
                   {' '}
                   {order.delivery_point}
                 </p>
-                <button type="button" className="form-control btn btn-outline-secondary mx-auto" onClick={() => handleDelete(order.id)}>
+                <button type="button" className="form-control btn btn-outline-secondary mx-auto mt-3" onClick={() => handleDelete(order.id)}>
                   Delete
                 </button>
               </div>
