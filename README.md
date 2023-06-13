@@ -61,7 +61,7 @@
 
 ## Preview <a name="preview"></a>
 
-![Desktop Preview](./src/assets/pss-bg.jpg)
+![Desktop Preview](./src/assets/preview.png)
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
