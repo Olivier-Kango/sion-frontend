@@ -58,7 +58,6 @@ const AddOrder = () => {
             {' '}
             {product.name}
           </h2>
-          <p className="error">Please add a Quantiy & a Delivery point</p>
           <form onSubmit={handleSubmit} className="add-order-form">
             <div className="add-order-form-group">
               <input

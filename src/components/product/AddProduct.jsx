@@ -45,7 +45,6 @@ const AddProduct = () => {
       ) : (
         <>
           <h2>Add Product</h2>
-          <p className="error">Please add name, img-src & price</p>
           <form onSubmit={handleSubmit} className="add-order-form">
             <div className="add-order-form-group">
               <input type="text" id="name" value={name} onChange={(e) => setname(e.target.value)} placeholder="Enter product's Name" />
