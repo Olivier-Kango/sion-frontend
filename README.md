@@ -1,4 +1,9 @@
-<a name="readme-top"></a>
+<a id="readme-top"></a>
+
+<div align="center">
+  <img src="./src/assets/pss-logo.png" alt="logo" width="240"  height="auto" />
+  <br/>
+</div>
 
 <!-- TABLE OF CONTENTS -->
 
