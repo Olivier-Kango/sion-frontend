@@ -123,11 +123,18 @@ $main-color-hover: #094a80;
       border: 1px solid #ddd !important;
       border-radius: 8px !important;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+      overflow: hidden;
 
       .card-img-top {
         height: 320px;
         width: 320px;
+        cursor: pointer;
         object-fit: contain;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .card-img-top:hover {
+        transform: scale(1.04) translateY(-7px);
       }
 
       .card-body {
