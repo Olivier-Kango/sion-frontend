@@ -52,11 +52,11 @@ $main-color-hover: #094a80;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 60% !important;
 
     .add-order-form-group {
       margin-bottom: 10px;
-      width: 100%;
+      width: 100% !important;
 
       input[type="number"],
       input[type="text"] {

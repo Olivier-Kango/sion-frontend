@@ -50,19 +50,17 @@ $main-color-hover: #094a80;
 
       .logout {
         text-align: left;
-        font-weight: unset;
       }
 
       .active {
-        background-color: $main-color;
-        color: white;
+        background-color: #edeef0;
         font-weight: 600;
         padding: 10px;
         margin-bottom: 10px;
       }
 
       .item:hover {
-        background-color: #002f871f;
+        background-color: #efefef9e;
       }
     }
   }

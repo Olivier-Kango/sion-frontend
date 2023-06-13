@@ -25,23 +25,22 @@ const LeftBar = ({ open, handleLinkClick }) => {
       <nav className="nav">
         <div className="links">
           <div className="user">
-            Hello
+            Jambo,
             <span className="font-semibold">{` ${username}`}</span>
-            ✋🏼
           </div>
           <Link to="/home" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/home' ? 'active' : 'item'}>
-              <span>HOME</span>
+              <span>Home</span>
             </div>
           </Link>
           <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/ordering' ? 'active' : 'item'}>
-              <span>MY ORDERINGS</span>
+              <span>My Orders</span>
             </div>
           </Link>
           <Link to="/addproduct" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/addproduct' ? 'active' : 'item'}>
-              <span>ADD PRODUCT</span>
+              <span>Add Product</span>
             </div>
           </Link>
           <button
@@ -49,7 +48,7 @@ const LeftBar = ({ open, handleLinkClick }) => {
             className="item logout"
             onClick={() => handleLogout()}
           >
-            LOGOUT
+            Logout
           </button>
         </div>
       </nav>
