@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { RiAddLine } from 'react-icons/ri';
 import { BiPlusCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { addProduct } from '../../redux/products/products';
@@ -68,8 +67,8 @@ const AddProduct = () => {
               />
             </div>
             <button type="submit">
-              <BiPlusCircle className="icon" />
-              Add Product
+              <span className="icon"><BiPlusCircle /></span>
+              <span className="text">Add Product</span>
             </button>
           </form>
         </>
