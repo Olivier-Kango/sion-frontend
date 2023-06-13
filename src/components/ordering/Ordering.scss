@@ -1,13 +1,6 @@
 $main-color: #0a66c2;
 $main-color-hover: #094a80;
 
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .orders-section {
   display: flex;
   flex-direction: column;
@@ -26,14 +19,15 @@ $main-color-hover: #094a80;
 
     .card {
       margin-top: 20px;
-      .card-body { 
-        .card-img-top {
-          height: 250px;
-          width: 250px;
-          object-fit: contain;
-          transition: transform 0.5s ease;
-        }        
 
+      .card-img-top {
+        height: 250px;
+        width: 250px;
+        object-fit: contain;
+        transition: transform 0.5s ease;
+      }
+
+      .card-body {
         .card-title {
           display: flex;
           text-align: center;
@@ -54,8 +48,12 @@ $main-color-hover: #094a80;
   }
 }
 
-
-
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 .s {
   display: block;
