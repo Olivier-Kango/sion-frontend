@@ -18,6 +18,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.9.0",
     "react-loading": "^2.0.3",
     "react-multi-carousel": "^2.8.2",
     "react-redux": "^8.0.5",

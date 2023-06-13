@@ -88,20 +88,23 @@ $main-color-hover: #094a80;
 
     button[type="submit"] {
       padding: 10px 20px;
-      background-color: $main-color;
-      color: #fff;
+      margin: 10px 0;
+      background-color: #cce0ff65;
+      color: $main-color;
       border: none;
       border-radius: 5px;
       font-size: 18px;
+      font-weight: 500;
       cursor: pointer;
+      transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: $main-color-hover;
+        background-color: #a8b3c465;
       }
     }
   }
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 768px) {
     .add-order-form {
       width: 90%;
     }
