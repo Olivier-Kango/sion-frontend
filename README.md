@@ -52,12 +52,12 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Fetch all orders from API endpoint]**
-- **[Fetch all products from API endpoint]**
-- **[Authenticate users]**
-- **[Add product]**
-- **[Delete product]**
-- **[Place orders]**
+- **Fetch all orders from API endpoint**
+- **Fetch all products from API endpoint**
+- **Authenticate users**
+- **Add product**
+- **Delete product**
+- **Place orders**
 
 ## Preview <a name="preview"></a>
 
@@ -160,9 +160,9 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Improvements on UI design]**
-- [ ] **[Mobile version]**
-- [ ] **[new_feature_3]**
+- [ ] **Improvements on UI design**
+- [ ] **Mobile version**
+- [ ] **new_features**
 
 <!-- CONTRIBUTING -->
 
@@ -170,7 +170,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Olivier-Kango/pss-digital-frontend/issues/new).
 
 <!-- SUPPORT -->
 
