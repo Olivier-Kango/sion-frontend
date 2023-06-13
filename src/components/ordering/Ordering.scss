@@ -8,50 +8,54 @@ $main-color-hover: #094a80;
   height: 100vh;
 }
 
-.card {
-  margin-top: 20px;
-}
-
 .orders-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 60rem;
   margin: 1rem auto;
+
+  .order-lists {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    margin: 1rem 0;
+
+    .card {
+      margin-top: 20px;
+      .card-body { 
+        .card-img-top {
+          height: 250px;
+          width: 250px;
+          object-fit: contain;
+          transition: transform 0.5s ease;
+        }        
+
+        .card-title {
+          display: flex;
+          text-align: center;
+          justify-content: center;
+          text-transform: uppercase;
+          font-size: 14px;
+          height: 26px;
+          padding-bottom: 5px;
+        }
+
+        .card-text {
+          border-bottom: 1px dotted;
+          font-size: 12px;
+          font-weight: lighter;
+        }
+      }
+    }
+  }
 }
 
-.order-lists {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  width: 100%;
-  margin: 1rem 0;
-}
 
-.card-text {
-  border-bottom: 1px dotted;
-  font-size: 12px;
-  font-weight: lighter;
-}
 
-.card-title {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-size: 14px;
-  height: 26px;
-  padding-bottom: 5px;
-}
-
-.card-img-top {
-  height: 250px;
-  width: 250px;
-  object-fit: contain;
-  transition: transform 0.5s ease;
-}
 
 .s {
   display: block;
