@@ -80,8 +80,6 @@ const Home = () => {
                         <Link to={`/addorder/${product.id}`}>
                           <button type="button" className="button">
                             Order
-                            {' '}
-                            {product.name}
                           </button>
                         </Link>
                         <br />

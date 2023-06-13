@@ -66,9 +66,7 @@ const ProductDetails = () => {
         </div>
         <Link to={`/addorder/${product.id}`}>
           <button type="button" className="button-order">
-            Order
-            {' '}
-            {product.name}
+            Order Product
           </button>
         </Link>
       </div>
