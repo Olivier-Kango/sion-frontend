@@ -31,7 +31,7 @@ $gray: #e4e6eb;
       background-color: white;
       color: $main-color;
       text-decoration: none;
-      border-radius: 0 40px 40px 0;
+      border-radius: 0 40px 40px 0 !important;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       transition: all 0.2s ease-in-out;
     }
@@ -136,6 +136,15 @@ $gray: #e4e6eb;
           margin: 10px 0;
           width: 100%;
         }
+      }
+    }
+
+    .button-container {
+      justify-content: right;
+
+      .link-back {
+        border-radius: 40px 0 0 40px !important;
+        margin-top: 20px;
       }
     }
   }
