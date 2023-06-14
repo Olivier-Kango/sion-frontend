@@ -39,7 +39,7 @@ const Ordering = () => {
 
   return (
     <section className="orders-section">
-      <h2 className="navbar-brand">MY ORDERS</h2>
+      <h2 className="navbar-brand">MY Orders</h2>
       <h2 className="navbar-brand">
         Total amount :
         {' '}

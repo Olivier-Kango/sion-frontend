@@ -28,8 +28,8 @@ $gray: #e4e6eb;
       margin-top: 30px;
       font-size: 26px;
       padding: 5px 25px 10px 30px;
-      background-color: $main-color;
-      color: white;
+      background-color: white;
+      color: $main-color;
       text-decoration: none;
       border-radius: 0 40px 40px 0;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -37,9 +37,9 @@ $gray: #e4e6eb;
     }
 
     .link-back:hover {
-      background-color: $main-color-hover;
+      background-color: #edeef0;;
       padding: 5px 30px 10px 35px;
-      color: #fff;
+      color: $main-color-hover;
     }
   }
 

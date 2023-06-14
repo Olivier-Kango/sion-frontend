@@ -13,7 +13,7 @@ const AddOrder = () => {
   const product = products.find((f) => f.id === parseInt(id, 10));
 
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState('');
+  const [quantity, setQuantity] = useState(1);
   const [deliveryPoint, setDeliveryPoint] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
