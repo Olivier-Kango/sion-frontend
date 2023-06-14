@@ -39,8 +39,8 @@ const Ordering = () => {
 
   return (
     <section className="orders-section">
-      <h2 className="navbar-brand">MY Orders</h2>
-      <h2 className="navbar-brand">
+      <h2 className="navbar-brand">My Orders</h2>
+      <h2 className="navbar-brand amount">
         Total amount :
         {' '}
         {userOrders.reduce((total, order) => {
@@ -81,7 +81,7 @@ const Ordering = () => {
                   {' '}
                   {order.delivery_point}
                 </p>
-                <button type="button" className="form-control btn btn-outline-secondary mx-auto mt-3" onClick={() => handleDelete(order.id)}>
+                <button type="button" onClick={() => handleDelete(order.id)}>
                   Delete
                 </button>
               </div>

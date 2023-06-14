@@ -72,7 +72,7 @@ $main-color-hover: #094a80;
 
         &:focus {
           outline: none;
-          border-bottom-color: $main-color;
+          border-bottom-color: #999;
         }
       }
 
@@ -124,6 +124,14 @@ $main-color-hover: #094a80;
 }
 
 .orders-section {
+  h2 {
+    font-weight: 500;
+  }
+
+  .amount {
+    color: gray;
+  }
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,7 +151,7 @@ $main-color-hover: #094a80;
       margin: 5px 0 !important;
       border: 1px solid #ddd !important;
       border-radius: 8px !important;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+      box-shadow: none !important;
       overflow: hidden;
 
       .card-img-top {
@@ -163,20 +171,34 @@ $main-color-hover: #094a80;
           display: flex;
           text-align: center;
           justify-content: center;
-          text-transform: uppercase;
-          font-size: 14px;
+          font-size: 16px;
           height: 26px;
           padding-bottom: 5px;
         }
 
         .card-text {
-          border-bottom: 1px dotted #ccc !important;
-          font-size: 12px;
+          border-bottom: 1px dotted #cccccc80 !important;
+          font-size: 14px;
           font-weight: lighter;
         }
 
         button {
-          border: 1px solid #ccc !important;
+          display: block;
+          cursor: pointer;
+          color: black !important;
+          background-color: #edeef0;
+          text-decoration: none;
+          width: 100px !important;
+          padding: 8px 20px;
+          border-radius: 4px;
+          margin: 1.1rem auto 0 auto !important;
+          font-size: 14px;
+          font-weight: 500;
+          transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+          background-color: #d8dae0 !important;
         }
       }
     }
