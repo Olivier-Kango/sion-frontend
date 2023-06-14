@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaShoppingCart } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { addOrder } from '../../redux/actions/OrderActions';
@@ -54,11 +55,8 @@ const AddOrder = () => {
       ) : (
         <>
           <h2>
-            Order
-            {' '}
             {product.name}
           </h2>
-          <p className="error">Please add a Quantiy & a Delivery point</p>
           <form onSubmit={handleSubmit} className="add-order-form">
             <div className="add-order-form-group">
               <input
@@ -82,7 +80,10 @@ const AddOrder = () => {
             <div className="add-order-form-group">
               <input type="hidden" id="userId" value={userId} />
             </div>
-            <button type="submit">Add Order</button>
+            <button type="submit">
+              <span className="icon"><FaShoppingCart /></span>
+              <span className="text">Order</span>
+            </button>
           </form>
         </>
       )}
