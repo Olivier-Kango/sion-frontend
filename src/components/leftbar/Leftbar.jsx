@@ -1,5 +1,12 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+// import { BiUser } from 'react-icons/bi';
+import { BsFillPersonFill } from 'react-icons/bs';
+import { FaShoppingCart } from 'react-icons/fa';
+import { RiHome3Fill } from 'react-icons/ri';
+// import { IoMdAddCircleOutline } from 'react-icons/io';
+import { AiFillPlusCircle } from 'react-icons/ai';
+import { FiLogOut } from 'react-icons/fi';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -24,23 +31,26 @@ const LeftBar = ({ open, handleLinkClick }) => {
       </div>
       <nav className="nav">
         <div className="links">
-          <div className="user">
-            Jambo,
-            <span className="font-semibold">{` ${username}`}</span>
+          <div className="user item">
+            <span className="icon"><BsFillPersonFill /></span>
+            <span className="font-semibold text">{`Jambo, ${username}`}</span>
           </div>
           <Link to="/home" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/home' ? 'active' : 'item'}>
-              <span>Home</span>
+              <span className="icon"><RiHome3Fill /></span>
+              <span className="text">Home</span>
             </div>
           </Link>
           <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/ordering' ? 'active' : 'item'}>
-              <span>My Orders</span>
+              <span className="icon"><FaShoppingCart /></span>
+              <span className="text">My Orders</span>
             </div>
           </Link>
           <Link to="/addproduct" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/addproduct' ? 'active' : 'item'}>
-              <span>Add Product</span>
+              <span className="icon"><AiFillPlusCircle /></span>
+              <span className="text">Add Product</span>
             </div>
           </Link>
           <button
@@ -48,7 +58,8 @@ const LeftBar = ({ open, handleLinkClick }) => {
             className="item logout"
             onClick={() => handleLogout()}
           >
-            Logout
+            <span className="icon"><FiLogOut /></span>
+            <span className="text">Logout</span>
           </button>
         </div>
       </nav>

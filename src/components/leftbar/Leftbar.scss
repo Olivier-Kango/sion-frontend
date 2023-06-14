@@ -39,13 +39,23 @@ $main-color-hover: #094a80;
       .user {
         padding: 10px;
         margin-bottom: 20px;
+        cursor: pointer;
       }
 
       .item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 13px;
         color: black;
         font-weight: 600;
         padding: 10px;
         margin-bottom: 10px;
+
+        .icon {
+          color: $main-color;
+          font-size: 1.3rem;
+        }
       }
 
       .logout {
@@ -53,10 +63,19 @@ $main-color-hover: #094a80;
       }
 
       .active {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 13px;
         background-color: #edeef0;
         font-weight: 600;
         padding: 10px;
         margin-bottom: 10px;
+
+        .icon {
+          color: $main-color;
+          font-size: 1.3rem;
+        }
       }
 
       .item:hover {
