@@ -78,7 +78,11 @@ const Home = () => {
                           &nbsp;$ (USD)
                         </p>
                         <Link to={`/addorder/${product.id}`}>
-                          <button type="button" className="button">
+                          <button
+                            type="button"
+                            style={{ background: '#0a66c2' }}
+                            className="button ordering"
+                          >
                             Order
                           </button>
                         </Link>
@@ -87,6 +91,7 @@ const Home = () => {
                           <button
                             type="button"
                             className="button"
+                            style={{ color: 'black' }}
                             onClick={() => {
                               handleDelete(product.id);
                             }}
