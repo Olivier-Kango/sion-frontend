@@ -18,7 +18,7 @@ const LeftBar = ({ open, handleLinkClick }) => {
   };
 
   return (
-    <div className={`leftbar-container${open ? ' open' : ' closed'}`}>
+    <div className={`leftbar-container${open ? ' open' : ''}`}>
       <div className="leftbar-header">
         <div className="logo">PSS Digital</div>
       </div>
