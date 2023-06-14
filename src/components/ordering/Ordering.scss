@@ -5,10 +5,19 @@ $main-color-hover: #094a80;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 70px !important;
+  width: 100% !important;
 
   .error {
     color: red;
+  }
+
+  h2 {
+    text-align: center;
+    padding: 0 5%;
+    font-weight: 500;
+    font-size: 32px;
+    margin-bottom: 20px;
   }
 
   .success-message {
@@ -43,24 +52,19 @@ $main-color-hover: #094a80;
     }
   }
 
-  h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-
   .add-order-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 60% !important;
 
     .add-order-form-group {
       margin-bottom: 10px;
-      width: 100%;
+      width: 100% !important;
 
       input[type="number"],
       input[type="text"] {
-        padding: 10px;
+        padding: 10px 20px;
         border: none;
         border-bottom: 2px solid #ccc;
         width: 100%;
@@ -87,17 +91,34 @@ $main-color-hover: #094a80;
     }
 
     button[type="submit"] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
       padding: 10px 20px;
-      background-color: $main-color;
-      color: #fff;
+      margin: 5px 0;
+      background-color: #cce0ff65;
+      color: $main-color;
       border: none;
       border-radius: 5px;
       font-size: 18px;
+      font-weight: 500;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      .icon {
+        font-size: 1.4rem;
+      }
 
       &:hover {
-        background-color: $main-color-hover;
+        background-color: #a8b3c465;
       }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .add-order-form {
+      width: 95% !important;
     }
   }
 }

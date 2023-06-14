@@ -50,7 +50,7 @@ const Home = () => {
         </div>
       ) : (
         <div className="home-cont">
-          <h1>OUR PRODUCTS</h1>
+          <h1>Our Products</h1>
           <p className="title-bar">Please select a Product</p>
 
           {isMobile ? (
@@ -80,8 +80,6 @@ const Home = () => {
                         <Link to={`/addorder/${product.id}`}>
                           <button type="button" className="button">
                             Order
-                            {' '}
-                            {product.name}
                           </button>
                         </Link>
                         <br />

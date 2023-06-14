@@ -108,17 +108,19 @@ $main-color-hover: #094a80;
           .button {
             display: inline-block;
             cursor: pointer;
-            color: #fff;
-            background: $main-color;
+            color: $main-color;
+            background-color: #cce0ff3b;
             text-decoration: none;
-            padding: 4px 10px;
+            padding: 8px 16px;
             border-radius: 4px;
             margin: 0.3rem 10px;
-            font-size: 13px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
           }
 
           .button:hover {
-            background: $main-color-hover;
+            background-color: #a8b3c465;
           }
         }
       }
@@ -142,7 +144,6 @@ $main-color-hover: #094a80;
 
 .swiper-button-next,
 .swiper-button-prev {
-  background: rgba(0, 0, 0, 0.216);
   backdrop-filter: blur(20px);
   width: fit-content;
   padding: 1rem 0;
@@ -151,5 +152,5 @@ $main-color-hover: #094a80;
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background: rgba(0, 0, 0, 0.18);
+  color: $main-color-hover !important;
 }

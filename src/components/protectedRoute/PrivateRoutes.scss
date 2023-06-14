@@ -11,7 +11,7 @@ $main-color-hover: #094a80;
   .home {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background: #f8f8f8;
   }
 
@@ -50,7 +50,7 @@ $main-color-hover: #094a80;
       display: block;
       width: 25px;
       height: 3px;
-      background-color: #cccccca3;
+      background-color: #ccccccb7;
       margin-bottom: 5px;
       transition: transform 0.3s ease;
     }

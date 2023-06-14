@@ -1,4 +1,9 @@
-<a name="readme-top"></a>
+<a id="readme-top"></a>
+
+<div align="center">
+  <img src="./src/assets/pss-logo.png" alt="logo" width="240"  height="auto" />
+  <br/>
+</div>
 
 <!-- TABLE OF CONTENTS -->
 
@@ -35,33 +40,41 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
+<details>
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+    <li><a href="https://sass-lang.com/">SCSS</a></li>
   </ul>
+</details>
 
+<details>
   <summary>Server</summary>
   <ul>
     <li><a href="https://api.rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
+</details>
 
+<details>
   <summary>Database</summary>
   <ul>
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
+</details>
 
 ### Key Features <a name="key-features"></a>
 
-- **[Fetch all orders from API endpoint]**
-- **[Fetch all products from API endpoint]**
-- **[Authenticate users]**
-- **[Add product]**
-- **[Delete product]**
-- **[Place orders]**
+- **Fetch all orders from API endpoint**
+- **Fetch all products from API endpoint**
+- **Authenticate users**
+- **Add product**
+- **Delete product**
+- **Place orders**
 
 ## Preview <a name="preview"></a>
 
-![Desktop Preview](./src/assets/pss-bg.jpg)
+![Desktop Preview](./src/assets/preview.png)
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -160,9 +173,9 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Improvements on UI design]**
-- [ ] **[Mobile version]**
-- [ ] **[new_feature_3]**
+- [ ] **Improvements on UI design**
+- [ ] **Mobile version**
+- [ ] **new_features**
 
 <!-- CONTRIBUTING -->
 
@@ -170,7 +183,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Olivier-Kango/pss-digital-frontend/issues/new).
 
 <!-- SUPPORT -->
 
@@ -209,4 +222,3 @@ I would like to acknowledge:
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
