@@ -80,8 +80,8 @@ const Home = () => {
                         <Link to={`/addorder/${product.id}`}>
                           <button
                             type="button"
-                            style={{ background: '#0a66c2' }}
-                            className="button ordering"
+                            style={{ background: '#cce0ff65' }}
+                            className="button"
                           >
                             Order
                           </button>

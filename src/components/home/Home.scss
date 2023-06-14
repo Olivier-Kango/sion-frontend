@@ -107,7 +107,7 @@ $main-color-hover: #094a80;
           .button {
             display: inline-block;
             cursor: pointer;
-            color: white;
+            color: $main-color;
             background-color: #edeef0;
             text-decoration: none;
             width: 100px !important;
@@ -120,11 +120,7 @@ $main-color-hover: #094a80;
           }
 
           .button:hover {
-            background-color: #d8dae0;
-          }
-
-          .ordering:hover {
-            background-color: $main-color-hover !important;
+            background-color: #d8dae0 !important;
           }
         }
       }
