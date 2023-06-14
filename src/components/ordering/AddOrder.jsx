@@ -36,10 +36,6 @@ const AddOrder = () => {
     setIsSubmitted(false);
   };
 
-  const handleGoToHome = () => {
-    // redirect to the home page
-  };
-
   return (
     <div className="add-order-container">
       {isSubmitted ? (
@@ -47,8 +43,8 @@ const AddOrder = () => {
           <p>Your order has been added successfully!</p>
           <div className="success-actions">
             <button type="button" onClick={handleContinueShopping}>Continue Shopping</button>
-            <Link to="/home">
-              <button type="button" onClick={handleGoToHome}>Go to Home</button>
+            <Link to="/ordering">
+              <button type="button">Go to My Orders</button>
             </Link>
           </div>
         </div>
