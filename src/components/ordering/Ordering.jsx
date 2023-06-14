@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { allOrders, deleteOrder } from '../../redux/actions/OrderActions';
 import styles from './Ordering.scss';
@@ -56,9 +57,13 @@ const Ordering = () => {
           const product = products.find((f) => f.id === order.product_id);
           return (
             <div className="card  me-2" key={order.id} style={{ backgroundColor: '#ffffff' }}>
-              <img src={product?.image} className="card-img-top" alt={order.name} />
+              <Link to={`/productdetails/${product.id}`}>
+                <img src={product?.image} className="card-img-top" alt={order.name} />
+              </Link>
               <div className="card-body">
-                <h5 className="card-title">{product?.name}</h5>
+                <Link to={`/productdetails/${product.id}`}>
+                  <h5 className="card-title">{product?.name}</h5>
+                </Link>
                 <p className="card-text">
                   Order date:
                   {' '}
@@ -71,6 +76,16 @@ const Ordering = () => {
                 </p>
                 <p className="card-text">
                   Order price:
+                  {' '}
+                  {order.quantity}
+                  {' '}
+                  X
+                  {' '}
+                  {product?.unit_price}
+                  {' '}
+                  $
+                  {' '}
+                  =
                   {' '}
                   {product?.unit_price * order.quantity}
                   {' '}
