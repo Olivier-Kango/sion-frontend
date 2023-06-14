@@ -27,7 +27,9 @@ const LeftBar = ({ open, handleLinkClick }) => {
   return (
     <div className={`leftbar-container${open ? ' open' : ''}`}>
       <div className="leftbar-header">
-        <div className="logo">PSS Digital</div>
+        <Link to="/home" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+          <div className="logo">PSS Digital</div>
+        </Link>
       </div>
       <nav className="nav">
         <div className="links">
