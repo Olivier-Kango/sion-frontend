@@ -25,7 +25,7 @@ $main-color-hover: #094a80;
     .title-bar {
       color: rgba(0, 0, 0, 0.306);
       font-weight: 500;
-      border-bottom: 4px dotted rgba(0, 0, 0, 0.192);
+      border-bottom: 4px dotted #ddd;
       padding-bottom: 10px;
       text-align: center;
 
@@ -85,7 +85,7 @@ $main-color-hover: #094a80;
         .card-body {
           h2 {
             color: black;
-            border-bottom: 4px dotted rgba(0, 0, 0, 0.192);
+            border-bottom: 4px dotted #ddd;
             padding-bottom: 10px;
           }
 
@@ -96,7 +96,6 @@ $main-color-hover: #094a80;
 
           h2:hover {
             color: $main-color;
-            text-decoration: underline;
           }
 
           .quantity {
@@ -108,10 +107,11 @@ $main-color-hover: #094a80;
           .button {
             display: inline-block;
             cursor: pointer;
-            color: $main-color;
-            background-color: #cce0ff3b;
+            color: white;
+            background-color: #edeef0;
             text-decoration: none;
-            padding: 8px 16px;
+            width: 100px !important;
+            padding: 8px 20px;
             border-radius: 4px;
             margin: 0.3rem 10px;
             font-size: 14px;
@@ -120,7 +120,11 @@ $main-color-hover: #094a80;
           }
 
           .button:hover {
-            background-color: #a8b3c465;
+            background-color: #d8dae0;
+          }
+
+          .ordering:hover {
+            background-color: $main-color-hover !important;
           }
         }
       }
