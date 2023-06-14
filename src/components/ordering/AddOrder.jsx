@@ -13,7 +13,7 @@ const AddOrder = () => {
   const product = products.find((f) => f.id === parseInt(id, 10));
 
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState('');
+  const [quantity, setQuantity] = useState(1);
   const [deliveryPoint, setDeliveryPoint] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -60,11 +60,13 @@ const AddOrder = () => {
                 id="quantity"
                 value={quantity}
                 onChange={(e) => {
-                  if (e.target.value > 0) {
-                    setQuantity(e.target.value);
+                  const inputValue = e.target.value;
+                  if (!Number.isNaN(inputValue) && inputValue >= 0) {
+                    setQuantity(inputValue);
                   }
                 }}
                 placeholder="Enter quantity"
+                inputMode="numeric"
               />
             </div>
             <div className="add-order-form-group">
