@@ -25,7 +25,7 @@ $main-color-hover: #094a80;
     .title-bar {
       color: rgba(0, 0, 0, 0.306);
       font-weight: 500;
-      border-bottom: 4px dotted rgba(0, 0, 0, 0.192);
+      border-bottom: 4px dotted #ddd;
       padding-bottom: 10px;
       text-align: center;
 
@@ -85,7 +85,7 @@ $main-color-hover: #094a80;
         .card-body {
           h2 {
             color: black;
-            border-bottom: 4px dotted rgba(0, 0, 0, 0.192);
+            border-bottom: 4px dotted #ddd;
             padding-bottom: 10px;
           }
 
