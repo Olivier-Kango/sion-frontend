@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { css } from '@emotion/react';
+import { RingLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from '@mui/material';
@@ -20,6 +22,11 @@ const Home = () => {
   const user = useSelector((state) => state.user.data);
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const isMobile = useMediaQuery('(max-width: 768px)');
+
+  const override = css`
+  display: block;
+  margin: 0 auto;
+`;
 
   useEffect(() => {
     dispatch(getAllProducts());
@@ -47,7 +54,8 @@ const Home = () => {
             width: '100vw',
           }}
         >
-          <p className="s">Please Add a Product</p>
+          <RingLoader color="#123abc" css={override} size={100} />
+          <p className="s">Please wait for approximately 30 seconds</p>
         </div>
       ) : (
         <div className="home-cont">
