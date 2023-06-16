@@ -21,21 +21,18 @@ import Splash from './pages/Splash';
 
 const App = () => {
   const user = useSelector((state) => state.user);
-  const isAuthenticated = user.loggedIn;
-  const isAdmin = user.data?.role === 'admin';
-
   return (
     <div className="App">
       <Routes>
-        <Route path="/login-page" element={<Splash />} />
+        <Route path="/" element={<Splash />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
         <Route
           element={
-            <PrivateRoutes isAllowed />
+            <PrivateRoutes isAllowed={!!user.loggedIn} redirectPath="/login" />
           }
         >
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/productdetails/:id" element={<ProductDetails />} />
           <Route path="/ordering" element={<Ordering />} />
           <Route path="/addorder/:id" element={<AddOrder />} />
@@ -47,8 +44,8 @@ const App = () => {
           element={
             (
               <PrivateRoutes
-                redirectPath="/"
-                isAllowed={!!isAuthenticated && isAdmin}
+                redirectPath="/home"
+                isAllowed={!!user.loggedIn && user.data.role === 'admin'}
               >
                 <section className="page-container">
                   <LeftBar />
