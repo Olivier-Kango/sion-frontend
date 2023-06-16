@@ -63,13 +63,13 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
             <LeftBar
               open={showLeftbar}
               handleLinkClick={handleLinkClick}
-              isAuthenticated
-              username
+              isAuthenticated={isAuthenticated}
+              username={username}
             />
             )}
           </>
         ) : (
-          <LeftBar isAuthenticated username />
+          <LeftBar isAuthenticated={isAuthenticated} username={username} />
         )}
         <div className="home">
           <Outlet />
