@@ -45,11 +45,7 @@ const Ordering = () => {
       >
         <RingLoader color="#123abc" css={override} size={200} />
         <p className="s">
-          Please wait for approximately
-          <br />
-          <span>
-            30 seconds
-          </span>
+          Looding...
         </p>
       </div>
     );
