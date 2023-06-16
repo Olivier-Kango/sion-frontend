@@ -23,9 +23,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
 
   const handleLogout = () => {
     dispatch(userLogout());
-    if (isAuthenticated) {
-      navigate('/login-page');
-    }
+    navigate('/login-page');
   };
 
   return (
@@ -68,6 +66,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
               <span className="text">Add Product</span>
             </div>
           </Link>
+          {isAuthenticated && (
           <button
             type="button"
             className="item logout"
@@ -76,6 +75,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
             <span className="icon"><FiLogOut /></span>
             <span className="text">Logout</span>
           </button>
+          )}
         </div>
       </nav>
       <div className="leftbar-footer">
