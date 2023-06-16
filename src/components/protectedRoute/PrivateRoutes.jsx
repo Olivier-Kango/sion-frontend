@@ -9,7 +9,7 @@ import LeftBar from '../leftbar/Leftbar.jsx';
 import './PrivateRoutes.scss';
 
 const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
-  const TOKEN = localStorage.getItem('JWT_TOKEN');
+  // const TOKEN = localStorage.getItem('JWT_TOKEN');
   const [showLeftbar, setShowLeftbar] = useState(false);
   const handleHamburgerClick = () => {
     setShowLeftbar(!showLeftbar);
@@ -23,7 +23,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const user = useSelector((state) => state.user);
   const isAuthenticated = user.loggedIn;
 
-  if (!isAllowed || TOKEN === 'null' || !TOKEN) {
+  if (!isAllowed) {
     return <Navigate to={redirectPath} replace />;
   }
   return (
