@@ -96,7 +96,6 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
                 e.preventDefault();
               }
               handleAddProductClick();
-              handleLinkClick();
             }}
           >
             <div className={pathname === '/addproduct' ? 'active' : 'item'}>
