@@ -38,7 +38,7 @@ const AddProduct = () => {
           <p>Your product has been added successfully!</p>
           <div className="success-actions">
             <button type="button" onClick={handleContinueShopping}>Continue Adding</button>
-            <Link to="/home">
+            <Link to="/">
               <button type="button">Go to Home</button>
             </Link>
           </div>

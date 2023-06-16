@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Outlet, Navigate } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
@@ -19,6 +20,9 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   };
 
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const user = useSelector((state) => state.user);
+  const isAuthenticated = user.loggedIn;
+
   if (!isAllowed || TOKEN === 'null' || !TOKEN) {
     return <Navigate to={redirectPath} replace />;
   }
@@ -53,10 +57,17 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               aria-label="Close"
             />
             )}
-            {showLeftbar && <LeftBar open={showLeftbar} handleLinkClick={handleLinkClick} />}
+            {showLeftbar
+            && (
+            <LeftBar
+              open={showLeftbar}
+              handleLinkClick={handleLinkClick}
+              isAuthenticated={isAuthenticated}
+            />
+            )}
           </>
         ) : (
-          <LeftBar />
+          <LeftBar isAuthenticated={isAuthenticated} />
         )}
         <div className="home">
           <Outlet />

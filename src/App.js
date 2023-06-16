@@ -24,15 +24,15 @@ const App = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Splash />} />
+        <Route path="/login-page" element={<Splash />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
         <Route
           element={
-            <PrivateRoutes isAllowed={!!user.loggedIn} redirectPath="/login" />
+            <PrivateRoutes isAllowed redirectPath="/login" />
           }
         >
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/productdetails/:id" element={<ProductDetails />} />
           <Route path="/ordering" element={<Ordering />} />
           <Route path="/addorder/:id" element={<AddOrder />} />

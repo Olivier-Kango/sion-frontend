@@ -25,7 +25,7 @@ const ProductDetails = () => {
       <div className="product-details-img">
         <img src={product?.image} className="img-details" alt={product?.name} />
         <div className="button-container">
-          <Link to="/home" className="link-back">&lt;</Link>
+          <Link to="/" className="link-back">&lt;</Link>
         </div>
       </div>
       <div className="product-details-body">
