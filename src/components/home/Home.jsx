@@ -18,6 +18,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   const user = useSelector((state) => state.user.data);
+  const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
@@ -77,7 +78,7 @@ const Home = () => {
                           {product.unit_price}
                           &nbsp;$ (USD)
                         </p>
-                        <Link to={`/addorder/${product.id}`}>
+                        <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
                           <button
                             type="button"
                             style={{ background: '#cce0ff65' }}
@@ -139,7 +140,7 @@ const Home = () => {
                           {product.unit_price}
                           &nbsp;$ (USD)
                         </p>
-                        <Link to={`/addorder/${product.id}`}>
+                        <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
                           <button
                             type="button"
                             style={{ background: '#cce0ff65' }}
