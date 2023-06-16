@@ -27,7 +27,7 @@ const LeftBar = ({ open, handleLinkClick }) => {
   return (
     <div className={`leftbar-container${open ? ' open' : ''}`}>
       <div className="leftbar-header">
-        <Link to="/home" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+        <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
           <div className="logo">PSS Digital</div>
         </Link>
       </div>
@@ -35,10 +35,10 @@ const LeftBar = ({ open, handleLinkClick }) => {
         <div className="links">
           <div className="user item">
             <span className="icon"><BsFillPersonFill /></span>
-            <span className="font-semibold text">{`Jambo, ${username}`}</span>
+            <span className="font-semibold text">{`Hello, ${username}`}</span>
           </div>
-          <Link to="/home" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
-            <div className={pathname === '/home' ? 'active' : 'item'}>
+          <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+            <div className={pathname === '/' ? 'active' : 'item'}>
               <span className="icon"><RiHome3Fill /></span>
               <span className="text">Home</span>
             </div>

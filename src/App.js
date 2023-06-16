@@ -44,7 +44,7 @@ const App = () => {
           element={
             (
               <PrivateRoutes
-                redirectPath="/home"
+                redirectPath="/"
                 isAllowed={!!user.loggedIn && user.data.role === 'admin'}
               >
                 <section className="page-container">
