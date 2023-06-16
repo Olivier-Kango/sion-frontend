@@ -58,10 +58,18 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               aria-label="Close"
             />
             )}
-            {showLeftbar && <LeftBar open={showLeftbar} handleLinkClick={handleLinkClick} />}
+            {showLeftbar
+            && (
+            <LeftBar
+              open={showLeftbar}
+              handleLinkClick={handleLinkClick}
+              isAuthenticated
+              username
+            />
+            )}
           </>
         ) : (
-          <LeftBar />
+          <LeftBar isAuthenticated username />
         )}
         <div className="home">
           <Outlet />
