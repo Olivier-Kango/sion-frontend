@@ -2,6 +2,15 @@ $main-color: #0a66c2;
 $main-color-hover: #094a80;
 
 .container {
+  .s {
+    margin: 2rem 0;
+
+    span {
+      align-self: flex-start;
+      text-align: unset;
+    }
+  }
+
   .home-cont {
     display: flex;
     flex-direction: column;

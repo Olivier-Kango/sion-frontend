@@ -59,11 +59,12 @@ const AddProduct = () => {
                 id="unitPrice"
                 value={unitPrice}
                 onChange={(e) => {
-                  if (e.target.value > 0) {
+                  if (e.target.value >= 0) {
                     setUnitPrice(e.target.value);
                   }
                 }}
                 placeholder="Enter Unit Price"
+                inputMode="numeric"
               />
             </div>
             <button type="submit">

@@ -48,7 +48,7 @@ const App = () => {
                 isAllowed={!!user.loggedIn && user.data.role === 'admin'}
               >
                 <section className="page-container">
-                  <LeftBar />
+                  <LeftBar isAuthenticated={!!user.loggedIn} />
                   <AddProduct />
                 </section>
               </PrivateRoutes>

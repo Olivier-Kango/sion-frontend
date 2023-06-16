@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { css } from '@emotion/react';
+import { RingLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from '@mui/material';
@@ -18,7 +20,13 @@ const Home = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   const user = useSelector((state) => state.user.data);
+  const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const isMobile = useMediaQuery('(max-width: 768px)');
+
+  const override = css`
+  display: block;
+  margin: 0 auto;
+`;
 
   useEffect(() => {
     dispatch(getAllProducts());
@@ -40,13 +48,20 @@ const Home = () => {
         <div
           style={{
             display: 'flex',
+            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             height: '100vh',
-            width: '100vw',
           }}
         >
-          <p className="s">Please Add a Product</p>
+          <RingLoader color="#123abc" css={override} size={200} />
+          <p className="s">
+            Please wait for approximately
+            <br />
+            <span>
+              30 seconds
+            </span>
+          </p>
         </div>
       ) : (
         <div className="home-cont">
@@ -77,7 +92,7 @@ const Home = () => {
                           {product.unit_price}
                           &nbsp;$ (USD)
                         </p>
-                        <Link to={`/addorder/${product.id}`}>
+                        <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
                           <button
                             type="button"
                             style={{ background: '#cce0ff65' }}
@@ -139,7 +154,7 @@ const Home = () => {
                           {product.unit_price}
                           &nbsp;$ (USD)
                         </p>
-                        <Link to={`/addorder/${product.id}`}>
+                        <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
                           <button
                             type="button"
                             style={{ background: '#cce0ff65' }}

@@ -9,6 +9,7 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   const product = products.find((f) => f.id === parseInt(id, 10));
+  const isAuthenticated = useSelector((state) => state.user.loggedIn);
 
   useEffect(() => {
     if (products.length === 0) {
@@ -64,7 +65,7 @@ const ProductDetails = () => {
             </span>
           </p>
         </div>
-        <Link to={`/addorder/${product.id}`}>
+        <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
           <button type="button" className="button-order">
             Order Product
           </button>
