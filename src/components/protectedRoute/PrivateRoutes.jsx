@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Outlet, Navigate } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
@@ -19,6 +20,10 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   };
 
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const user = useSelector((state) => state.user);
+  const isAuthenticated = user.loggedIn;
+  const username = user.data?.name;
+
   if (!isAllowed || TOKEN === 'null' || !TOKEN) {
     return <Navigate to={redirectPath} replace />;
   }
