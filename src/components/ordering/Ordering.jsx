@@ -13,6 +13,7 @@ const Ordering = () => {
   const { orders } = orderData;
   const products = useSelector((state) => state.products);
   const u_id = useSelector((state) => state.user.data?.id);
+  const isAuthenticated = useSelector((state) => state.user.loggedIn);
 
   const [localOrders, setLocalOrders] = useState([]);
 
@@ -53,56 +54,61 @@ const Ordering = () => {
         $
       </h2>
       <div className="order-lists">
-        {userOrders.length === 0 ? <p className="s">Please Order a Product</p> : userOrders.map((order) => {
-          const product = products.find((f) => f.id === order.product_id);
-          return (
-            <div className="card  me-2" key={order.id} style={{ backgroundColor: '#ffffff' }}>
-              <Link to={`/productdetails/${product.id}`}>
-                <img src={product?.image} className="card-img-top" alt={order.name} />
-              </Link>
-              <div className="card-body">
+        {userOrders.length === 0 ? (
+          <p className="s">
+            {isAuthenticated ? 'Please Order a Product' : 'Please Sign in and Order a Product'}
+          </p>
+        ) : (
+          userOrders.map((order) => {
+            const product = products.find((f) => f.id === order.product_id);
+            return (
+              <div className="card  me-2" key={order.id} style={{ backgroundColor: '#ffffff' }}>
                 <Link to={`/productdetails/${product.id}`}>
-                  <h5 className="card-title">{product?.name}</h5>
+                  <img src={product?.image} className="card-img-top" alt={order.name} />
                 </Link>
-                <p className="card-text">
-                  Order date:
-                  {' '}
-                  {order.created_at.slice(0, 10)}
-                </p>
-                <p className="card-text">
-                  Ordered on:
-                  {' '}
-                  {order.created_at.slice(11, 19)}
-                </p>
-                <p className="card-text">
-                  Order price:
-                  {' '}
-                  {order.quantity}
-                  {' '}
-                  X
-                  {' '}
-                  {product?.unit_price}
-                  {' '}
-                  $
-                  {' '}
-                  =
-                  {' '}
-                  {product?.unit_price * order.quantity}
-                  {' '}
-                  $ (USD)
-                </p>
-                <p className="card-text">
-                  Ordered at:
-                  {' '}
-                  {order.delivery_point}
-                </p>
-                <button type="button" onClick={() => handleDelete(order.id)}>
-                  Delete
-                </button>
+                <div className="card-body">
+                  <Link to={`/productdetails/${product.id}`}>
+                    <h5 className="card-title">{product?.name}</h5>
+                  </Link>
+                  <p className="card-text">
+                    Order date:
+                    {' '}
+                    {order.created_at.slice(0, 10)}
+                  </p>
+                  <p className="card-text">
+                    Ordered on:
+                    {' '}
+                    {order.created_at.slice(11, 19)}
+                  </p>
+                  <p className="card-text">
+                    Order price:
+                    {' '}
+                    {order.quantity}
+                    {' '}
+                    X
+                    {' '}
+                    {product?.unit_price}
+                    {' '}
+                    $
+                    {' '}
+                    =
+                    {' '}
+                    {product?.unit_price * order.quantity}
+                    {' '}
+                    $ (USD)
+                  </p>
+                  <p className="card-text">
+                    Ordered at:
+                    {' '}
+                    {order.delivery_point}
+                  </p>
+                  <button type="button" onClick={() => handleDelete(order.id)}>
+                    Delete
+                  </button>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          }))}
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import { BiUser } from 'react-icons/bi';
 import { BsFillPersonFill } from 'react-icons/bs';
@@ -17,9 +17,25 @@ import './Leftbar.scss';
 const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data?.name);
+  const userState = useSelector((state) => state.user);
   const username = user?.charAt(0).toUpperCase() + user?.slice(1);
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const [showAdminMessage, setShowAdminMessage] = useState(false);
+
+  useEffect(() => {
+    if (!userState.loggedIn || userState.data.role !== 'admin') {
+      setShowAdminMessage(true);
+      const timer = setTimeout(() => {
+        setShowAdminMessage(false);
+      }, 3000);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+    // If the condition is not met, return undefined
+    return undefined;
+  }, [userState]);
 
   const handleLogout = () => {
     dispatch(userLogout());
@@ -66,6 +82,13 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
               <span className="text">Add Product</span>
             </div>
           </Link>
+          {showAdminMessage && (
+            <div style={{ color: 'red', paddingLeft: '12px' }}>
+              You need to be an admin
+              <br />
+              to add a product.
+            </div>
+          )}
           {isAuthenticated && (
           <button
             type="button"
