@@ -22,7 +22,6 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const isMobile = useMediaQuery('(max-width: 768px)');
   const user = useSelector((state) => state.user);
   const isAuthenticated = user.loggedIn;
-  const username = user.data?.name;
 
   if (!isAllowed || TOKEN === 'null' || !TOKEN) {
     return <Navigate to={redirectPath} replace />;
@@ -64,12 +63,11 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               open={showLeftbar}
               handleLinkClick={handleLinkClick}
               isAuthenticated={isAuthenticated}
-              username={username}
             />
             )}
           </>
         ) : (
-          <LeftBar isAuthenticated={isAuthenticated} username={username} />
+          <LeftBar isAuthenticated={isAuthenticated} />
         )}
         <div className="home">
           <Outlet />

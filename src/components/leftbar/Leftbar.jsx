@@ -14,7 +14,7 @@ import Footer from '../footer/Footer';
 import { userLogout } from '../../redux/users/users';
 import './Leftbar.scss';
 
-const LeftBar = ({ open, handleLinkClick }) => {
+const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data?.name);
   const username = user?.charAt(0).toUpperCase() + user?.slice(1);
@@ -37,6 +37,19 @@ const LeftBar = ({ open, handleLinkClick }) => {
             <span className="icon"><BsFillPersonFill /></span>
             <span className="font-semibold text">{`Hello, ${username}`}</span>
           </div>
+          {isAuthenticated ? (
+            <div className="user item">
+              <span className="icon"><BsFillPersonFill /></span>
+              <span className="font-semibold text">{`Hello, ${username}`}</span>
+            </div>
+          ) : (
+            <Link to="/login" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+              <div className="user item">
+                <span className="icon"><BsFillPersonFill /></span>
+                <span className="font-semibold text">Hello, Sign in</span>
+              </div>
+            </Link>
+          )}
           <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/' ? 'active' : 'item'}>
               <span className="icon"><RiHome3Fill /></span>
@@ -74,6 +87,7 @@ const LeftBar = ({ open, handleLinkClick }) => {
 
 LeftBar.propTypes = {
   open: PropTypes.bool.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
   handleLinkClick: PropTypes.func.isRequired,
 };
 
