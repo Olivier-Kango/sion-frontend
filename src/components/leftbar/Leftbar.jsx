@@ -22,9 +22,11 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [showAdminMessage, setShowAdminMessage] = useState(false);
+  const [addProductClicked, setAddProductClicked] = useState(false);
+  const [messageCounter, setMessageCounter] = useState(0);
 
   useEffect(() => {
-    if (!userState.loggedIn || userState.data.role !== 'admin') {
+    if (addProductClicked && (!userState.loggedIn || userState.data.role !== 'admin')) {
       setShowAdminMessage(true);
       const timer = setTimeout(() => {
         setShowAdminMessage(false);
@@ -33,13 +35,23 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
         clearTimeout(timer);
       };
     }
+
+    if (messageCounter > 0) {
+      setShowAdminMessage(false);
+    }
+
     // If the condition is not met, return undefined
     return undefined;
-  }, [userState]);
+  }, [addProductClicked, userState, messageCounter]);
 
   const handleLogout = () => {
     dispatch(userLogout());
     navigate('/login-page');
+  };
+
+  const handleAddProductClick = () => {
+    setAddProductClicked(true);
+    setMessageCounter((prevCounter) => prevCounter + 1);
   };
 
   return (
@@ -76,7 +88,15 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
               <span className="text">My Orders</span>
             </div>
           </Link>
-          <Link to="/addproduct" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+          <Link
+            to={userState.data.role === 'admin' && '/addproduct'}
+            style={{ textDecoration: 'none' }}
+            onClick={(e) => {
+              e.preventDefault();
+              handleAddProductClick();
+              handleLinkClick();
+            }}
+          >
             <div className={pathname === '/addproduct' ? 'active' : 'item'}>
               <span className="icon"><AiFillPlusCircle /></span>
               <span className="text">Add Product</span>

@@ -48,14 +48,20 @@ const Home = () => {
         <div
           style={{
             display: 'flex',
+            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             height: '100vh',
-            width: '100vw',
           }}
         >
-          <RingLoader color="#123abc" css={override} size={100} />
-          <p className="s">Please wait for approximately 30 seconds</p>
+          <RingLoader color="#123abc" css={override} size={200} />
+          <p className="s">
+            Please wait for approximately
+            <br />
+            <span>
+              30 seconds
+            </span>
+          </p>
         </div>
       ) : (
         <div className="home-cont">

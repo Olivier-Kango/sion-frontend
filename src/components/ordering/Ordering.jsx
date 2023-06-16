@@ -1,10 +1,11 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import { RingLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { css } from '@emotion/react';
 import { allOrders, deleteOrder } from '../../redux/actions/OrderActions';
-import styles from './Ordering.scss';
 import { getAllProducts } from '../../redux/products/products';
 
 const Ordering = () => {
@@ -17,6 +18,11 @@ const Ordering = () => {
 
   const [localOrders, setLocalOrders] = useState([]);
 
+  const override = css`
+  display: block;
+  margin: 0 auto;
+`;
+
   useEffect(() => {
     dispatch(allOrders());
     dispatch(getAllProducts());
@@ -28,7 +34,24 @@ const Ordering = () => {
 
   if (!orders[0]) {
     return (
-      <h6 className={styles.loading}>Loading ...</h6>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+        }}
+      >
+        <RingLoader color="#123abc" css={override} size={200} />
+        <p className="s">
+          Please wait for approximately
+          <br />
+          <span>
+            30 seconds
+          </span>
+        </p>
+      </div>
     );
   }
 
