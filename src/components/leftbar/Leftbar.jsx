@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import { BiUser } from 'react-icons/bi';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { FaShoppingCart } from 'react-icons/fa';
@@ -14,31 +14,44 @@ import Footer from '../footer/Footer';
 import { userLogout } from '../../redux/users/users';
 import './Leftbar.scss';
 
-const LeftBar = ({ open, handleLinkClick }) => {
+const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data?.name);
   const username = user?.charAt(0).toUpperCase() + user?.slice(1);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     dispatch(userLogout());
+    if (isAuthenticated) {
+      navigate('/login-page');
+    }
   };
 
   return (
     <div className={`leftbar-container${open ? ' open' : ''}`}>
       <div className="leftbar-header">
-        <Link to="/home" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+        <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
           <div className="logo">PSS Digital</div>
         </Link>
       </div>
       <nav className="nav">
         <div className="links">
-          <div className="user item">
-            <span className="icon"><BsFillPersonFill /></span>
-            <span className="font-semibold text">{`Jambo, ${username}`}</span>
-          </div>
-          <Link to="/home" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
-            <div className={pathname === '/home' ? 'active' : 'item'}>
+          {isAuthenticated ? (
+            <div className="user item">
+              <span className="icon"><BsFillPersonFill /></span>
+              <span className="font-normal text">{`Hello, ${username}`}</span>
+            </div>
+          ) : (
+            <Link to="/login-page" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+              <div className="user item">
+                <span className="icon"><BsFillPersonFill /></span>
+                <span className="font-normal text">Hello, Sign in</span>
+              </div>
+            </Link>
+          )}
+          <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+            <div className={pathname === '/' ? 'active' : 'item'}>
               <span className="icon"><RiHome3Fill /></span>
               <span className="text">Home</span>
             </div>
@@ -74,6 +87,7 @@ const LeftBar = ({ open, handleLinkClick }) => {
 
 LeftBar.propTypes = {
   open: PropTypes.bool.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
   handleLinkClick: PropTypes.func.isRequired,
 };
 
