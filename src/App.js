@@ -17,22 +17,22 @@ import PrivateRoutes from './components/protectedRoute/PrivateRoutes';
 import LeftBar from './components/leftbar/Leftbar';
 
 // pages
-import Splash from './pages/Splash';
+// import Splash from './pages/Splash';
 
 const App = () => {
   const user = useSelector((state) => state.user);
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Splash />} />
+        {/* <Route path="/" element={<Splash />} /> */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
         <Route
           element={
-            <PrivateRoutes isAllowed={!!user.loggedIn} redirectPath="/login" />
+            <PrivateRoutes isAllowed />
           }
         >
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/productdetails/:id" element={<ProductDetails />} />
           <Route path="/ordering" element={<Ordering />} />
           <Route path="/addorder/:id" element={<AddOrder />} />
