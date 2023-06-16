@@ -92,7 +92,9 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
             to={userState.data.role === 'admin' && '/addproduct'}
             style={{ textDecoration: 'none' }}
             onClick={(e) => {
-              e.preventDefault();
+              if (!userState.loggedIn || userState.data.role !== 'admin') {
+                e.preventDefault();
+              }
               handleAddProductClick();
               handleLinkClick();
             }}
