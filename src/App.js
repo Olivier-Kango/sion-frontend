@@ -22,6 +22,7 @@ import LeftBar from './components/leftbar/Leftbar';
 const App = () => {
   const user = useSelector((state) => state.user);
   const isAuthenticated = user.loggedIn;
+  const isAdmin = user.data?.role === 'admin';
 
   return (
     <div className="App">
@@ -47,7 +48,7 @@ const App = () => {
             (
               <PrivateRoutes
                 redirectPath="/"
-                isAllowed={!!isAuthenticated && user.data.role === 'admin'}
+                isAllowed={!!isAuthenticated && isAdmin}
               >
                 <section className="page-container">
                   <LeftBar />
