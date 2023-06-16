@@ -17,7 +17,7 @@ import PrivateRoutes from './components/protectedRoute/PrivateRoutes';
 import LeftBar from './components/leftbar/Leftbar';
 
 // pages
-// import Splash from './pages/Splash';
+import Splash from './pages/Splash';
 
 const App = () => {
   const user = useSelector((state) => state.user);
@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div className="App">
       <Routes>
-        {/* <Route path="/" element={<Splash />} /> */}
+        <Route path="/login-page" element={<Splash />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
         <Route

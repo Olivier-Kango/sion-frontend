@@ -33,20 +33,16 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
       </div>
       <nav className="nav">
         <div className="links">
-          <div className="user item">
-            <span className="icon"><BsFillPersonFill /></span>
-            <span className="font-semibold text">{`Hello, ${username}`}</span>
-          </div>
           {isAuthenticated ? (
             <div className="user item">
               <span className="icon"><BsFillPersonFill /></span>
-              <span className="font-semibold text">{`Hello, ${username}`}</span>
+              <span className="font-normal text">{`Hello, ${username}`}</span>
             </div>
           ) : (
-            <Link to="/login" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+            <Link to="/login-page" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
               <div className="user item">
                 <span className="icon"><BsFillPersonFill /></span>
-                <span className="font-semibold text">Hello, Sign in</span>
+                <span className="font-normal text">Hello, Sign in</span>
               </div>
             </Link>
           )}
