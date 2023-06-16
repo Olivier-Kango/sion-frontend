@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import { BiUser } from 'react-icons/bi';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { FaShoppingCart } from 'react-icons/fa';
@@ -19,9 +19,13 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   const user = useSelector((state) => state.user.data?.name);
   const username = user?.charAt(0).toUpperCase() + user?.slice(1);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     dispatch(userLogout());
+    if (isAuthenticated) {
+      navigate('/login-page');
+    }
   };
 
   return (
