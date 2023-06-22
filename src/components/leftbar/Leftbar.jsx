@@ -78,7 +78,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
           <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/' ? 'active' : 'item'}>
               <span className="icon"><RiHome3Fill /></span>
-              <span className="text">Electronics</span>
+              <span className="text">Home</span>
             </div>
           </Link>
           <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
