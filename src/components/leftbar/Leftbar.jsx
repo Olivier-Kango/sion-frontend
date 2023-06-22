@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-// import { BiUser } from 'react-icons/bi';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { FaShoppingCart } from 'react-icons/fa';
 // import { RiHome3Fill } from 'react-icons/ri';
 import { RiComputerLine } from 'react-icons/ri';
-// import { IoMdAddCircleOutline } from 'react-icons/io';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
 import { useSelector, useDispatch } from 'react-redux';
