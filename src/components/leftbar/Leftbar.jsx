@@ -3,7 +3,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import { BiUser } from 'react-icons/bi';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { FaShoppingCart } from 'react-icons/fa';
-import { RiHome3Fill } from 'react-icons/ri';
+// import { RiHome3Fill } from 'react-icons/ri';
+import { RiComputerLine } from 'react-icons/ri';
 // import { IoMdAddCircleOutline } from 'react-icons/io';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
@@ -78,7 +79,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
           )}
           <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/' ? 'active' : 'item'}>
-              <span className="icon"><RiHome3Fill /></span>
+              <span className="icon"><RiComputerLine /></span>
               <span className="text">Electronics</span>
             </div>
           </Link>
