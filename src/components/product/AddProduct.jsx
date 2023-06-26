@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { BiPlusCircle } from 'react-icons/bi';
+import { BiPlusCircle, BiTrash } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { addProduct } from '../../redux/products/products';
@@ -53,6 +53,10 @@ const AddProduct = () => {
     }
   };
 
+  const deleteImage = () => {
+    setimage('');
+  };
+
   return (
     <div className="add-order-container">
       {isSubmitted ? (
@@ -88,6 +92,14 @@ const AddProduct = () => {
             </div>
             <div className="add-order-form-group">
               <input type="file" id="image" onChange={(e) => handleImageUpload(e)} accept="image/*" />
+              {image && (
+                <div className="image-preview">
+                  <img src={image} alt="Uploaded" />
+                  <button type="button" onClick={deleteImage} className="remove-image">
+                    <BiTrash />
+                  </button>
+                </div>
+              )}
             </div>
             <button type="submit">
               <span className="icon"><BiPlusCircle /></span>
