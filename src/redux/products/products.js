@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://pss-digital-backend.onrender.com/';
+// axios.defaults.baseURL = 'https://pss-digital-backend.onrender.com/';
+axios.defaults.baseURL = 'http://[::1]:5000/';
 
 // Actions
 export const getAllProducts = createAsyncThunk('GET_ALL_PRODUCTS', async () => {
