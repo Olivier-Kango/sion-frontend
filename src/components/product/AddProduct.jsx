@@ -73,9 +73,6 @@ const AddProduct = () => {
               <input type="text" id="name" value={name} onChange={(e) => setname(e.target.value)} placeholder="Enter product's Name" />
             </div>
             <div className="add-order-form-group">
-              <input type="file" id="image" onChange={(e) => handleImageUpload(e)} accept="image/*" />
-            </div>
-            <div className="add-order-form-group">
               <input
                 type="number"
                 id="unitPrice"
@@ -88,6 +85,9 @@ const AddProduct = () => {
                 placeholder="Enter Unit Price"
                 inputMode="numeric"
               />
+            </div>
+            <div className="add-order-form-group">
+              <input type="file" id="image" onChange={(e) => handleImageUpload(e)} accept="image/*" />
             </div>
             <button type="submit">
               <span className="icon"><BiPlusCircle /></span>
