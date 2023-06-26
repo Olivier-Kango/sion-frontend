@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { BiPlusCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { addProduct } from '../../redux/products/products';
 import '../ordering/Ordering.scss';
 
@@ -31,6 +32,27 @@ const AddProduct = () => {
     setIsSubmitted(false);
   };
 
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'ml_default');
+
+    try {
+      const response = await axios.post(
+        'https://api.cloudinary.com/v1_1/du1qvhkp2/image/upload',
+        formData,
+      );
+
+      const imageUrl = response.data.secure_url;
+      // Do something with the uploaded image URL
+      console.log(imageUrl);
+      setimage(imageUrl);
+    } catch (error) {
+      console.log('Error uploading image: ', error);
+    }
+  };
+
   return (
     <div className="add-order-container">
       {isSubmitted ? (
@@ -51,7 +73,7 @@ const AddProduct = () => {
               <input type="text" id="name" value={name} onChange={(e) => setname(e.target.value)} placeholder="Enter product's Name" />
             </div>
             <div className="add-order-form-group">
-              <input type="text" id="image" value={image} onChange={(e) => setimage(e.target.value)} placeholder="Add src (url) of the image" />
+              <input type="file" id="image" onChange={(e) => handleImageUpload(e)} accept="image/*" />
             </div>
             <div className="add-order-form-group">
               <input
