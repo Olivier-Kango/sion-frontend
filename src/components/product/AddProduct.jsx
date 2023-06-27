@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { BiPlusCircle, BiTrash } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
@@ -15,16 +15,18 @@ const AddProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await dispatch(addProduct({
+    const productData = {
       name,
-      image,
+      image: image || null, // Make sure to pass null if image is not set
       unit_price: unitPrice,
-    }));
+    };
+
+    const response = await dispatch(addProduct(productData));
     if (response.type === 'ADD_PRODUCT/fulfilled') {
       setIsSubmitted(true);
     }
     setname('');
-    setimage('');
+    setimage(null); // Reset image state to null
     setUnitPrice('');
   };
 
@@ -34,6 +36,9 @@ const AddProduct = () => {
 
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
+
+
+    
     const formData = new FormData();
     formData.append('file', file);
     formData.append('upload_preset', 'ml_default');
@@ -46,15 +51,14 @@ const AddProduct = () => {
 
       const imageUrl = response.data.secure_url;
       // Do something with the uploaded image URL
-      console.log(imageUrl);
       setimage(imageUrl);
     } catch (error) {
-      console.log('Error uploading image: ', error);
+      // console.log('Error uploading image: ', error);
     }
   };
 
   const deleteImage = () => {
-    setimage('');
+    setimage(null); // Reset image state to null
   };
 
   return (
@@ -91,7 +95,7 @@ const AddProduct = () => {
               />
             </div>
             <div className="add-order-form-group">
-              <input type="file" id="image" onChange={(e) => handleImageUpload(e)} accept="image/*" />
+              <input type="file" id="image" onChange={handleImageUpload} accept="image/*" />
               {image && (
                 <div className="image-preview">
                   <img src={image} alt="Uploaded" />
