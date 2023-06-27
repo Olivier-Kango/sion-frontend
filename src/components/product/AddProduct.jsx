@@ -1,10 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { BiPlusCircle, BiTrash } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { addProduct } from '../../redux/products/products';
 import '../ordering/Ordering.scss';
+import './Product.scss';
 
 const AddProduct = () => {
   const dispatch = useDispatch();
@@ -36,9 +37,6 @@ const AddProduct = () => {
 
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
-
-
-    
     const formData = new FormData();
     formData.append('file', file);
     formData.append('upload_preset', 'ml_default');
