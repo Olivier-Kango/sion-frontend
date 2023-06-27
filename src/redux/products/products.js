@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://pss-digital-backend.onrender.com/';
+// axios.defaults.baseURL = 'http://[::1]:5000/';
 
 // Actions
 export const getAllProducts = createAsyncThunk('GET_ALL_PRODUCTS', async () => {
@@ -20,35 +21,56 @@ export const deleteProduct = createAsyncThunk('DELETE_PRODUCT', async (id) => {
 });
 
 // Reducers
-const reducerProduct = (state = [{
-  id: 37,
-  name: 'Powerbank Veger',
-  image: 'https://m.media-amazon.com/images/I/51wyGCP1MzL._AC_SY879_.jpg',
-  unit_price: 15,
-  created_at: '2023-06-16T23:24:56.397Z',
-  updated_at: '2023-06-16T23:24:56.397Z',
-}, {
-  id: 38,
-  name: 'Techno Camon 12 Pro',
-  image: 'https://upload.wikimedia.org/wikipedia/commons/8/86/Camon_12_Air_back.jpg',
-  unit_price: 150,
-  created_at: '2023-06-16T23:25:21.005Z',
-  updated_at: '2023-06-16T23:25:21.005Z',
-}, {
-  id: 40,
-  name: 'Lenovo Thinkpad T470s',
-  image: 'https://m.media-amazon.com/images/I/61bhgF7v9WL.jpg',
-  unit_price: 400,
-  created_at: '2023-06-16T23:26:07.229Z',
-  updated_at: '2023-06-16T23:26:07.229Z',
-}, {
-  id: 41,
-  name: 'Macbook Air 2020',
-  image: 'https://cdn.vox-cdn.com/uploads/chorus_asset/file/19834492/awhite_200319_3944_6.0.jpg',
-  unit_price: 1000,
-  created_at: '2023-06-16T23:26:32.074Z',
-  updated_at: '2023-06-16T23:26:32.074Z',
-}], action) => {
+const reducerProduct = (state = [
+  {
+    id: 47,
+    name: 'Plastics Pure water 400ml (50 Pcs)',
+    image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1687906937/Water-New-Packing-Style-330ml-400ml-500ml-PE-Plastic-Water-Pouch_ugfacs.webp',
+    unit_price: 4,
+    created_at: '2023-06-27T23:02:30.258Z',
+    updated_at: '2023-06-27T23:02:30.258Z',
+  },
+  {
+    id: 48,
+    name: 'Pure water 500ml (Crt 24 Pcs)',
+    image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1687907573/spc.t1.3.dp2.bouteille-eaudetoure_jb3kp1.jpg',
+    unit_price: 4,
+    created_at: '2023-06-27T23:13:57.498Z',
+    updated_at: '2023-06-27T23:13:57.498Z',
+  },
+  {
+    id: 49,
+    name: 'Pure water 1.5L (Crt 12 Pcs)',
+    image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1687908625/evian-fr-bottle-01_rr2pgw.jpg',
+    unit_price: 7,
+    created_at: '2023-06-27T23:32:06.494Z',
+    updated_at: '2023-06-27T23:32:06.494Z',
+  },
+  {
+    id: 51,
+    name: 'Pure water 5 Litres',
+    image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1687909300/bouteille-de-plastique-remplie-d-eau-potable-pure-isole-sur-le-fond-blanc-5-litres-rk5h9n_db7aip.jpg',
+    unit_price: 2,
+    created_at: '2023-06-27T23:41:56.020Z',
+    updated_at: '2023-06-27T23:41:56.020Z',
+  },
+  {
+    id: 52,
+    name: 'Pure water 18.5 Litres',
+    image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1687910085/ezgif.com-webp-to-jpg_2_sp4xer.jpg',
+    unit_price: 10,
+    created_at: '2023-06-27T23:55:11.426Z',
+    updated_at: '2023-06-27T23:55:11.426Z',
+  },
+  {
+    id: 53,
+    name: 'Pure water 20 Litres',
+    image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1687910575/ezgif.com-webp-to-jpg_3_sxx1ce.jpg',
+    unit_price: 10,
+    created_at: '2023-06-28T00:03:10.532Z',
+    updated_at: '2023-06-28T00:03:10.532Z',
+  },
+], action) => {
   switch (action.type) {
     case 'GET_ALL_PRODUCTS/fulfilled': {
       return action.payload;

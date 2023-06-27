@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export default axios.create({
   baseURL: 'https://pss-digital-backend.onrender.com/',
+  // baseURL: 'http://[::1]:5000/',
 });
 
 export const fetchAllOrders = async () => {
