@@ -61,7 +61,7 @@ const AddOrder = () => {
                 value={quantity}
                 onChange={(e) => {
                   const inputValue = e.target.value;
-                  if (!Number.isNaN(inputValue) && inputValue >= 0) {
+                  if (!Number.isNaN(inputValue) && inputValue >= 1) {
                     setQuantity(inputValue);
                   }
                 }}
