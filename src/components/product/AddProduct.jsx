@@ -83,6 +83,7 @@ const AddProduct = () => {
                 type="number"
                 id="unitPrice"
                 value={unitPrice}
+                required
                 onChange={(e) => {
                   if (e.target.value >= 0) {
                     setUnitPrice(e.target.value);
