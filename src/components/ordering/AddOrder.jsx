@@ -20,6 +20,12 @@ const AddOrder = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (quantity < 1) {
+      setShowAlert(true);
+      return;
+    }
+
     const response = await dispatch(addOrder({
       quantity,
       delivery_point: deliveryPoint,
