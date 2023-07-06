@@ -75,7 +75,17 @@ const Ordering = () => {
       <div className="order-lists">
         {userOrders.length === 0 ? (
           <p className="s">
-            {isAuthenticated ? 'Please Order a Product' : 'Please Sign in and Order a Product'}
+            {isAuthenticated ? (
+              <span>Please Order a Product</span>
+            ) : (
+              <span>
+                Please
+                {' '}
+                <Link to="/login-page" style={{ textDecoration: 'underline' }}>Sign in</Link>
+                {' '}
+                and Order a Product
+              </span>
+            )}
           </p>
         ) : (
           userOrders.map((order) => {
