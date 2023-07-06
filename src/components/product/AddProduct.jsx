@@ -93,7 +93,7 @@ const AddProduct = () => {
               />
             </div>
             <div className="add-order-form-group">
-              <input type="file" id="image" onChange={handleImageUpload} accept="image/*" />
+              <input required type="file" id="image" onChange={handleImageUpload} accept="image/*" />
               {image && (
                 <div className="image-preview">
                   <img src={image} alt="Uploaded" />
