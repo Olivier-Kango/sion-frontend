@@ -16,15 +16,23 @@ const AddOrder = () => {
   const [quantity, setQuantity] = useState(1);
   const [deliveryPoint, setDeliveryPoint] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (quantity < 1) {
+      setShowAlert(true);
+      return;
+    }
+
     const response = await dispatch(addOrder({
       quantity,
       delivery_point: deliveryPoint,
       product_id: productId,
       user_id: userId,
     }));
+
     if (response && response.id) {
       setIsSubmitted(true);
     }
@@ -54,11 +62,17 @@ const AddOrder = () => {
             {product.name}
           </h2>
           <form onSubmit={handleSubmit} className="add-order-form">
+            {showAlert && (
+            <div style={{ color: 'red', fontSize: '16px', marginBottom: '4px' }}>
+              Quantity must be at least 1.
+            </div>
+            )}
             <div className="add-order-form-group">
               <input
                 type="number"
                 id="quantity"
                 value={quantity}
+                required
                 onChange={(e) => {
                   const inputValue = e.target.value;
                   if (!Number.isNaN(inputValue) && inputValue >= 0) {
@@ -70,7 +84,7 @@ const AddOrder = () => {
               />
             </div>
             <div className="add-order-form-group">
-              <input type="text" id="deliveryPoint" value={deliveryPoint} onChange={(e) => setDeliveryPoint(e.target.value)} placeholder="Delivery Point" />
+              <input type="text" id="deliveryPoint" required value={deliveryPoint} onChange={(e) => setDeliveryPoint(e.target.value)} placeholder="Delivery Point" />
             </div>
             <div className="add-order-form-group">
               <input type="hidden" id="productId" value={productId} />
