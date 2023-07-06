@@ -32,6 +32,7 @@ const AddOrder = () => {
       product_id: productId,
       user_id: userId,
     }));
+
     if (response && response.id) {
       setIsSubmitted(true);
     }
@@ -61,6 +62,11 @@ const AddOrder = () => {
             {product.name}
           </h2>
           <form onSubmit={handleSubmit} className="add-order-form">
+            {showAlert && (
+            <div style={{ color: 'red', fontSize: '16px', marginBottom: '4px' }}>
+              Quantity must be at least 1.
+            </div>
+            )}
             <div className="add-order-form-group">
               <input
                 type="number"
