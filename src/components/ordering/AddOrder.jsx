@@ -59,6 +59,7 @@ const AddOrder = () => {
                 type="number"
                 id="quantity"
                 value={quantity}
+                required
                 onChange={(e) => {
                   const inputValue = e.target.value;
                   if (!Number.isNaN(inputValue) && inputValue >= 1) {
@@ -70,7 +71,7 @@ const AddOrder = () => {
               />
             </div>
             <div className="add-order-form-group">
-              <input type="text" id="deliveryPoint" value={deliveryPoint} onChange={(e) => setDeliveryPoint(e.target.value)} placeholder="Delivery Point" />
+              <input type="text" id="deliveryPoint" required value={deliveryPoint} onChange={(e) => setDeliveryPoint(e.target.value)} placeholder="Delivery Point" />
             </div>
             <div className="add-order-form-group">
               <input type="hidden" id="productId" value={productId} />
