@@ -32,7 +32,7 @@ const Ordering = () => {
     setLocalOrders(orders[0] || []);
   }, [orders]);
 
-  if (!orders[0]) {
+  if (!orders[0] && isAuthenticated) {
     return (
       <div
         style={{
