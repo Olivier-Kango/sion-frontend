@@ -45,7 +45,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
 
   const handleLogout = () => {
     dispatch(userLogout());
-    navigate('/login-page');
+    navigate('/');
   };
 
   const handleAddProductClick = () => {
