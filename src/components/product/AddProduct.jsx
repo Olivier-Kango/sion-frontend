@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { BiPlusCircle, BiTrash } from 'react-icons/bi';
+import { FaSpinner } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { addProduct } from '../../redux/products/products';
@@ -13,6 +14,7 @@ const AddProduct = () => {
   const [image, setimage] = useState('');
   const [unitPrice, setUnitPrice] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,16 +44,19 @@ const AddProduct = () => {
     formData.append('upload_preset', 'ml_default');
 
     try {
+      setIsUploading(true);
+
       const response = await axios.post(
         'https://api.cloudinary.com/v1_1/du1qvhkp2/image/upload',
         formData,
       );
 
       const imageUrl = response.data.secure_url;
-      // Do something with the uploaded image URL
       setimage(imageUrl);
     } catch (error) {
       // console.log('Error uploading image: ', error);
+    } finally {
+      setIsUploading(false);
     }
   };
 
@@ -101,6 +106,11 @@ const AddProduct = () => {
                   <button type="button" onClick={deleteImage} className="remove-image">
                     <BiTrash />
                   </button>
+                </div>
+              )}
+              {isUploading && (
+                <div className="loading-spinner">
+                  <FaSpinner className="spinner-icon" />
                 </div>
               )}
             </div>
