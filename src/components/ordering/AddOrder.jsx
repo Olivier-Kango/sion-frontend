@@ -51,7 +51,7 @@ const AddOrder = () => {
           <p>Your order has been added successfully!</p>
           <div className="success-actions">
             <button type="button" onClick={handleContinueShopping}>Continue Shopping</button>
-            <Link to="/ordering">
+            <Link to="/ordering#endOfPageRef">
               <button type="button">Go to My Orders</button>
             </Link>
           </div>
