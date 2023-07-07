@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { RingLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
-import { Element } from 'react-scroll';
 import { useSelector, useDispatch } from 'react-redux';
 import { css } from '@emotion/react';
 import { allOrders, deleteOrder } from '../../redux/actions/OrderActions';
@@ -136,9 +135,6 @@ const Ordering = () => {
                     Delete
                   </button>
                 </div>
-                <Element name="endOfPageRef">
-                  {/* Contenu de la section finale de la page */}
-                </Element>
               </div>
             );
           }))}
