@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
-import { FaShoppingCart } from 'react-icons/fa';
-import { RiHome3Fill } from 'react-icons/ri';
-// import { RiComputerLine } from 'react-icons/ri';
+import {
+  FaShoppingCart,
+  FaWater,
+  FaTools,
+  FaHome,
+  FaGasPump,
+} from 'react-icons/fa';
+import { RiHome3Fill, RiDeviceFill } from 'react-icons/ri';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
 import { useSelector, useDispatch } from 'react-redux';
@@ -23,6 +28,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   const [showAdminMessage, setShowAdminMessage] = useState(false);
   const [addProductClicked, setAddProductClicked] = useState(false);
   const [messageCounter, setMessageCounter] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   useEffect(() => {
     if (addProductClicked && (!userState.loggedIn || userState.data.role !== 'admin')) {
@@ -52,6 +58,15 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
     setAddProductClicked(true);
     setMessageCounter((prevCounter) => prevCounter + 1);
   };
+
+  const categories = [
+    { name: 'Select product\'s Category', icon: null },
+    { name: 'Mineral Water', icon: <FaWater /> },
+    { name: 'Electronics', icon: <RiDeviceFill /> },
+    { name: 'Gas Energy', icon: <FaGasPump /> },
+    { name: 'House Rental', icon: <FaHome /> },
+    { name: 'Hardware Store', icon: <FaTools /> },
+  ];
 
   return (
     <div className={`leftbar-container${open ? ' open' : ''}`}>
