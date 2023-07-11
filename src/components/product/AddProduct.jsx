@@ -129,10 +129,10 @@ const AddProduct = () => {
               >
                 <option value="" className="placeholder-option">Select product&apos;s category</option>
                 <option value="Electronics">Electronics</option>
-                <option value="Mineral Water">Mineral Water</option>
-                <option value="Gas Energy">Gas Energy</option>
-                <option value="House Rental">House Rental</option>
-                <option value="Hardware Store">Hardware Store</option>
+                <option value="Mineral Water">Mineral water</option>
+                <option value="Gas Energy">Gas energy</option>
+                <option value="House Rental">House rental</option>
+                <option value="Hardware Store">Hardware store</option>
               </select>
             </div>
             <div className="add-order-form-group">
