@@ -87,7 +87,7 @@ const AddProduct = () => {
           <h2>Add Product</h2>
           <form onSubmit={handleSubmit} className="add-order-form">
             <div className="add-order-form-group">
-              <input type="text" id="name" value={name} required onChange={(e) => setname(e.target.value)} placeholder="Enter product's Name" />
+              <input type="text" id="name" value={name} required onChange={(e) => setname(e.target.value)} placeholder="Enter product's name" />
             </div>
             <div className="add-order-form-group">
               <input
@@ -105,22 +105,6 @@ const AddProduct = () => {
               />
             </div>
             <div className="add-order-form-group">
-              <select
-                id="category"
-                value={category}
-                required
-                onChange={(e) => setcategory(e.target.value)}
-                className="category-select"
-              >
-                <option value="" className="placeholder-option">Select product&apos;s Category</option>
-                <option value="Electronics">Electronics</option>
-                <option value="Mineral Water">Mineral Water</option>
-                <option value="Gas Energy">Gas Energy</option>
-                <option value="House Rental">House Rental</option>
-                <option value="Hardware Store">Hardware Store</option>
-              </select>
-            </div>
-            <div className="add-order-form-group">
               <input
                 type="number"
                 id="product-quantity"
@@ -131,9 +115,25 @@ const AddProduct = () => {
                     setquantity(e.target.value);
                   }
                 }}
-                placeholder="Enter Product quantity"
+                placeholder="Enter product quantity"
                 inputMode="numeric"
               />
+            </div>
+            <div className="add-order-form-group">
+              <select
+                id="category"
+                value={category}
+                required
+                onChange={(e) => setcategory(e.target.value)}
+                className="category-select"
+              >
+                <option value="" className="placeholder-option">Select product&apos;s category</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Mineral Water">Mineral Water</option>
+                <option value="Gas Energy">Gas Energy</option>
+                <option value="House Rental">House Rental</option>
+                <option value="Hardware Store">Hardware Store</option>
+              </select>
             </div>
             <div className="add-order-form-group">
               <input required type="file" id="image" onChange={handleImageUpload} accept="image/*" />
