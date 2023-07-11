@@ -207,7 +207,7 @@ $gray: #e4e6eb;
 
     &:focus {
       outline: none !important;
-      border: none !important;
+      border-bottom: 2px solid #ccc !important;
     }
 
     &::-ms-expand {

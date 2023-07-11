@@ -87,7 +87,7 @@ const AddProduct = () => {
           <h2>Add Product</h2>
           <form onSubmit={handleSubmit} className="add-order-form">
             <div className="add-order-form-group">
-              <input type="text" id="name" value={name} required onChange={(e) => setname(e.target.value)} placeholder="Enter product's name" />
+              <input type="text" id="name" value={name} required onChange={(e) => setname(e.target.value)} placeholder="Enter product's Name" />
             </div>
             <div className="add-order-form-group">
               <input
@@ -115,7 +115,7 @@ const AddProduct = () => {
                     setquantity(e.target.value);
                   }
                 }}
-                placeholder="Enter product quantity"
+                placeholder="Enter Quantity"
                 inputMode="numeric"
               />
             </div>
@@ -128,8 +128,8 @@ const AddProduct = () => {
                 className="category-select"
               >
                 <option value="" className="placeholder-option">Select product&apos;s Category</option>
-                <option value="Electronics">Electronics</option>
                 <option value="Mineral Water">Mineral Water</option>
+                <option value="Electronics">Electronics</option>
                 <option value="Gas Energy">Gas Energy</option>
                 <option value="House Rental">House Rental</option>
                 <option value="Hardware Store">Hardware Store</option>
