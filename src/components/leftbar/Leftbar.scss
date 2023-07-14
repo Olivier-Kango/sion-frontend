@@ -44,15 +44,14 @@ $main-color-hover: #094a80;
       .categories {
         display: flex;
         flex-direction: column;
-        margin-top: 0;
+        margin-top: -10px;
         margin-bottom: 10px;
 
         .category {
           display: flex;
           align-items: center;
           gap: 10px;
-          margin-left: 40px !important;
-          margin-bottom: 20px;
+          padding: 10px 0 10px 40px !important;
 
           .icon {
             color: $main-color;
@@ -62,6 +61,10 @@ $main-color-hover: #094a80;
           .text {
             text-align: left !important;
           }
+        }
+
+        .category:hover {
+          background-color: #efefef9e !important;
         }
       }
 

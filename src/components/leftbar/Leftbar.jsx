@@ -46,7 +46,6 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
       setShowAdminMessage(false);
     }
 
-    // If the condition is not met, return undefined
     return undefined;
   }, [addProductClicked, userState, messageCounter]);
 
