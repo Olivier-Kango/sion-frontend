@@ -105,17 +105,19 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
               </div>
             </Link>
           )}
-          <button className="item" onClick={toggleCategories} type="button">
-            <span className="icon"><AiOutlineBars /></span>
-            <span className="text categories-button">
-              Categories&nbsp;
-              {arrowDirection === 'down' ? (
-                <IoIosArrowDown className="arrow-icon" />
-              ) : (
-                <IoIosArrowUp className="arrow-icon" />
-              )}
-            </span>
-          </button>
+          <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+            <button className="item categories-item" onClick={toggleCategories} type="button">
+              <span className="icon"><AiOutlineBars /></span>
+              <span className="text categories-button">
+                Categories&nbsp;
+                {arrowDirection === 'down' ? (
+                  <IoIosArrowDown className="arrow-icon" />
+                ) : (
+                  <IoIosArrowUp className="arrow-icon" />
+                )}
+              </span>
+            </button>
+          </Link>
           {showCategories && (
             <div className="categories">
               {categories.map((category) => (
