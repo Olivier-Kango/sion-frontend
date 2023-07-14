@@ -105,7 +105,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
               </div>
             </Link>
           )}
-          <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
             <button className="item categories-item" onClick={toggleCategories} type="button">
               <span className="icon"><AiOutlineBars /></span>
               <span className="text categories-button">

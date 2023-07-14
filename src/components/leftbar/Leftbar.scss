@@ -44,13 +44,15 @@ $main-color-hover: #094a80;
       .categories {
         display: flex;
         flex-direction: column;
-        margin-top: -10px;
-        margin-bottom: 20px;
+        margin-top: 0;
+        margin-bottom: 10px;
 
         .category {
           display: flex;
           align-items: center;
           gap: 10px;
+          margin-left: 40px !important;
+          margin-bottom: 20px;
 
           .icon {
             color: $main-color;
