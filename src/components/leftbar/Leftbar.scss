@@ -62,7 +62,11 @@ $main-color-hover: #094a80;
           }
         }
       }
-      
+
+      .categories-item {
+        width: 100%;
+      }
+
       .item {
         display: flex;
         align-items: center;
@@ -109,8 +113,9 @@ $main-color-hover: #094a80;
         }
       }
 
-      .item:hover {
-        background-color: #efefef9e;
+      .item:hover,
+      .categories-item:hover {
+        background-color: #efefef9e !important;
       }
     }
   }
