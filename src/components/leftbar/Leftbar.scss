@@ -41,6 +41,28 @@ $main-color-hover: #094a80;
         cursor: pointer;
       }
 
+      .categories {
+        display: flex;
+        flex-direction: column;
+        margin-top: -10px;
+        margin-bottom: 20px;
+
+        .category {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .icon {
+            color: $main-color;
+            font-size: 1.3rem;
+          }
+
+          .text {
+            text-align: left !important;
+          }
+        }
+      }
+
       .item {
         display: flex;
         align-items: center;

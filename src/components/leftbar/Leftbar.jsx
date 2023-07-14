@@ -76,7 +76,6 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   };
 
   const categories = [
-    { name: 'Select product\'s Category', icon: null },
     { name: 'Mineral Water', icon: <FaWater /> },
     { name: 'Electronics', icon: <RiDeviceFill /> },
     { name: 'Gas Energy', icon: <FaGasPump /> },
@@ -123,7 +122,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
                 <button
                   key={category.id}
                   className={
-                    selectedCategory === category.name ? 'category active' : 'category'
+                    selectedCategory === category.name ? 'category active-two' : 'category'
                   }
                   onClick={() => handleCategoryClick(category.name)}
                   type="button"
