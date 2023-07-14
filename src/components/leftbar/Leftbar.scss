@@ -55,6 +55,10 @@ $main-color-hover: #094a80;
         .categories-button {
           display: flex;
           align-items: center;
+
+          .arrow-icon {
+            margin-top: 5px;
+          }
         }
 
         .icon {
