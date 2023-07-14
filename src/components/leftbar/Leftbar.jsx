@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { BsFillPersonFill } from 'react-icons/bs';
+import { BsFillPersonFill, BsHouse } from 'react-icons/bs';
 import {
   FaShoppingCart,
-  FaWater,
-  FaTools,
-  FaHome,
-  FaGasPump,
 } from 'react-icons/fa';
-import { RiHome3Fill, RiDeviceFill } from 'react-icons/ri';
+import { MdDevices } from 'react-icons/md';
+import { RiHome3Fill } from 'react-icons/ri';
+import { GiNails, GiFire, GiWaterDrop } from 'react-icons/gi';
 import { AiFillPlusCircle, AiOutlineBars } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
@@ -72,15 +70,15 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
 
   const toggleCategories = () => {
     setShowCategories(!showCategories);
-    setArrowDirection(arrowDirection === 'down' ? 'up' : 'down');
+    setArrowDirection(showCategories ? 'down' : 'up');
   };
 
   const categories = [
-    { name: 'Mineral Water', icon: <FaWater /> },
-    { name: 'Electronics', icon: <RiDeviceFill /> },
-    { name: 'Gas Energy', icon: <FaGasPump /> },
-    { name: 'House Rental', icon: <FaHome /> },
-    { name: 'Hardware Store', icon: <FaTools /> },
+    { name: 'Mineral Water', icon: <GiWaterDrop /> },
+    { name: 'Electronics', icon: <MdDevices /> },
+    { name: 'Gas Energy', icon: <GiFire /> },
+    { name: 'House Rental', icon: <BsHouse /> },
+    { name: 'Hardware Store', icon: <GiNails /> },
   ];
 
   return (
@@ -119,7 +117,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
             </button>
           </Link>
           {showCategories && (
-            <div className="categories">
+            <div className={`categories ${showCategories ? 'visible' : ''}`}>
               {categories.map((category) => (
                 <button
                   key={category.id}
