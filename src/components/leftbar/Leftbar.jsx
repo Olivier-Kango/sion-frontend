@@ -11,6 +11,7 @@ import {
 import { RiHome3Fill, RiDeviceFill } from 'react-icons/ri';
 import { AiFillPlusCircle, AiOutlineBars } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
+import { IoIosArrowDown } from 'react-icons/io';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -132,7 +133,10 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
           </Link>
           <button className="item" onClick={toggleCategories} type="button">
             <span className="icon"><AiOutlineBars /></span>
-            <span className="text">Categories</span>
+            <span className="text categories-button">
+              Categories&nbsp;
+              <IoIosArrowDown className="arrow-icon" />
+            </span>
           </button>
           {showCategories && (
             <div className="categories">
@@ -143,7 +147,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
                     selectedCategory === category.name ? 'category active' : 'category'
                   }
                   onClick={() => handleCategoryClick(category.name)}
-                  type="button" // Add role for accessibility
+                  type="button"
                 >
                   {category.icon && <span className="icon">{category.icon}</span>}
                   <span className="text">{category.name}</span>
