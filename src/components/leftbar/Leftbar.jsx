@@ -11,7 +11,7 @@ import {
 import { RiHome3Fill, RiDeviceFill } from 'react-icons/ri';
 import { AiFillPlusCircle, AiOutlineBars } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -31,6 +31,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   const [messageCounter, setMessageCounter] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [showCategories, setShowCategories] = useState(false);
+  const [arrowDirection, setArrowDirection] = useState('down');
 
   useEffect(() => {
     if (addProductClicked && (!userState.loggedIn || userState.data.role !== 'admin')) {
@@ -71,6 +72,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
 
   const toggleCategories = () => {
     setShowCategories(!showCategories);
+    setArrowDirection(arrowDirection === 'down' ? 'up' : 'down');
   };
 
   const categories = [
@@ -104,6 +106,34 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
               </div>
             </Link>
           )}
+          <button className="item" onClick={toggleCategories} type="button">
+            <span className="icon"><AiOutlineBars /></span>
+            <span className="text categories-button">
+              Categories&nbsp;
+              {arrowDirection === 'down' ? (
+                <IoIosArrowDown className="arrow-icon" />
+              ) : (
+                <IoIosArrowUp className="arrow-icon" />
+              )}
+            </span>
+          </button>
+          {showCategories && (
+            <div className="categories">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  className={
+                    selectedCategory === category.name ? 'category active' : 'category'
+                  }
+                  onClick={() => handleCategoryClick(category.name)}
+                  type="button"
+                >
+                  {category.icon && <span className="icon">{category.icon}</span>}
+                  <span className="text">{category.name}</span>
+                </button>
+              ))}
+            </div>
+          )}
           <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
             <div className={pathname === '/' ? 'active' : 'item'}>
               <span className="icon"><RiHome3Fill /></span>
@@ -131,30 +161,6 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
               <span className="text">Add Product</span>
             </div>
           </Link>
-          <button className="item" onClick={toggleCategories} type="button">
-            <span className="icon"><AiOutlineBars /></span>
-            <span className="text categories-button">
-              Categories&nbsp;
-              <IoIosArrowDown className="arrow-icon" />
-            </span>
-          </button>
-          {showCategories && (
-            <div className="categories">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  className={
-                    selectedCategory === category.name ? 'category active' : 'category'
-                  }
-                  onClick={() => handleCategoryClick(category.name)}
-                  type="button"
-                >
-                  {category.icon && <span className="icon">{category.icon}</span>}
-                  <span className="text">{category.name}</span>
-                </button>
-              ))}
-            </div>
-          )}
           {showAdminMessage && (
             <div style={{ color: 'red', paddingLeft: '12px' }}>
               You need to be an admin
