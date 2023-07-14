@@ -9,7 +9,7 @@ import {
   FaGasPump,
 } from 'react-icons/fa';
 import { RiHome3Fill, RiDeviceFill } from 'react-icons/ri';
-import { AiFillPlusCircle } from 'react-icons/ai';
+import { AiFillPlusCircle, AiOutlineBars } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -29,6 +29,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   const [addProductClicked, setAddProductClicked] = useState(false);
   const [messageCounter, setMessageCounter] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [showCategories, setShowCategories] = useState(false);
 
   useEffect(() => {
     if (addProductClicked && (!userState.loggedIn || userState.data.role !== 'admin')) {
@@ -57,6 +58,18 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   const handleAddProductClick = () => {
     setAddProductClicked(true);
     setMessageCounter((prevCounter) => prevCounter + 1);
+  };
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+    setShowCategories(false);
+    // Implement your filtering logic here based on the selected category
+    // You can update the state or call a function in
+    // your home page component to handle the filtering
+  };
+
+  const toggleCategories = () => {
+    setShowCategories(!showCategories);
   };
 
   const categories = [
@@ -117,6 +130,27 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
               <span className="text">Add Product</span>
             </div>
           </Link>
+          <button className="item" onClick={toggleCategories} type="button">
+            <span className="icon"><AiOutlineBars /></span>
+            <span className="text">Categories</span>
+          </button>
+          {showCategories && (
+            <div className="categories">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  className={
+                    selectedCategory === category.name ? 'category active' : 'category'
+                  }
+                  onClick={() => handleCategoryClick(category.name)}
+                  type="button" // Add role for accessibility
+                >
+                  {category.icon && <span className="icon">{category.icon}</span>}
+                  <span className="text">{category.name}</span>
+                </button>
+              ))}
+            </div>
+          )}
           {showAdminMessage && (
             <div style={{ color: 'red', paddingLeft: '12px' }}>
               You need to be an admin
