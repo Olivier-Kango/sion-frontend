@@ -17,7 +17,9 @@ import Footer from '../footer/Footer';
 import { userLogout } from '../../redux/users/users';
 import './Leftbar.scss';
 
-const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
+const LeftBar = ({
+  open, handleLinkClick, isAuthenticated, onCategoryClick,
+}) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data?.name);
   const userState = useSelector((state) => state.user);
@@ -62,9 +64,7 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
     setShowCategories(false);
-    // Implement your filtering logic here based on the selected category
-    // You can update the state or call a function in
-    // your home page component to handle the filtering
+    onCategoryClick(category);
   };
 
   const toggleCategories = () => {
@@ -199,6 +199,7 @@ LeftBar.propTypes = {
   open: PropTypes.bool.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   handleLinkClick: PropTypes.func.isRequired,
+  onCategoryClick: PropTypes.func.isRequired,
 };
 
 export default LeftBar;
