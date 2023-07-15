@@ -64,7 +64,7 @@ const LeftBar = ({
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
     setShowCategories(false);
-    onCategoryClick(category);
+    onCategoryClick(category); // appel de la fonction onCategoryClick passée en tant que prop
   };
 
   const toggleCategories = () => {
