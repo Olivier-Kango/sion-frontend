@@ -18,7 +18,7 @@ import { userLogout } from '../../redux/users/users';
 import './Leftbar.scss';
 
 const LeftBar = ({
-  open, handleLinkClick, isAuthenticated, onCategoryClick,
+  open, handleLinkClick, isAuthenticated,
 }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data?.name);
@@ -29,9 +29,9 @@ const LeftBar = ({
   const [showAdminMessage, setShowAdminMessage] = useState(false);
   const [addProductClicked, setAddProductClicked] = useState(false);
   const [messageCounter, setMessageCounter] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState('');
   const [showCategories, setShowCategories] = useState(false);
   const [arrowDirection, setArrowDirection] = useState('down');
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   useEffect(() => {
     if (addProductClicked && (!userState.loggedIn || userState.data.role !== 'admin')) {
@@ -63,8 +63,8 @@ const LeftBar = ({
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
+    dispatch(setSelectedCategory(category));
     setShowCategories(false);
-    onCategoryClick(category); // appel de la fonction onCategoryClick passée en tant que prop
   };
 
   const toggleCategories = () => {
@@ -73,11 +73,11 @@ const LeftBar = ({
   };
 
   const categories = [
-    { name: 'Mineral Water', icon: <GiWaterDrop /> },
-    { name: 'Electronics', icon: <MdDevices /> },
-    { name: 'Gas Energy', icon: <GiFire /> },
-    { name: 'House Rental', icon: <BsHouse /> },
-    { name: 'Hardware Store', icon: <GiNails /> },
+    { id: 1, name: 'Mineral Water', icon: <GiWaterDrop /> },
+    { id: 2, name: 'Electronics', icon: <MdDevices /> },
+    { id: 3, name: 'Gas Energy', icon: <GiFire /> },
+    { id: 4, name: 'House Rental', icon: <BsHouse /> },
+    { id: 5, name: 'Hardware Store', icon: <GiNails /> },
   ];
 
   return (
@@ -199,7 +199,6 @@ LeftBar.propTypes = {
   open: PropTypes.bool.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   handleLinkClick: PropTypes.func.isRequired,
-  onCategoryClick: PropTypes.func.isRequired,
 };
 
 export default LeftBar;

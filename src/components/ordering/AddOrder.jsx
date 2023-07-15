@@ -9,7 +9,7 @@ const AddOrder = () => {
   const { id } = useParams();
   const productId = parseInt(id, 10);
   const userId = useSelector((state) => state.user?.data.id);
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.products);
   const product = products.find((f) => f.id === parseInt(id, 10));
 
   const dispatch = useDispatch();

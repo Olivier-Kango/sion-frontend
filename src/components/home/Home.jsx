@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { css } from '@emotion/react';
 import { RingLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { useMediaQuery } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
-import LeftBar from '../leftbar/Leftbar';
+// import LeftBar from '../leftbar/Leftbar';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -17,13 +17,13 @@ import 'swiper/css/scrollbar';
 const Home = () => {
   const [, setSwiperRef] = useState(null);
   const [done, setDone] = useState(undefined);
-  const [selectedCategory, setSelectedCategory] = useState('');
 
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.products);
   const user = useSelector((state) => state.user.data);
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const selectedCategory = useSelector((state) => state.products.selectedCategory);
 
   const override = css`
   display: block;
@@ -48,17 +48,8 @@ const Home = () => {
     ? products.filter((product) => product.category === selectedCategory)
     : products;
 
-  const leftBarRef = useRef();
-
-  const handleCategoryClick = (category) => {
-    leftBarRef.current.setSelectedCategory(category);
-  };
-
   return (
     <div className="container">
-      <>
-        <LeftBar ref={leftBarRef} onCategoryClick={handleCategoryClick} />
-      </>
       {!done ? (
         <div
           style={{

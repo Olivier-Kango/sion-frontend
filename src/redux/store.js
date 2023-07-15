@@ -16,8 +16,11 @@ const rootReducer = combineReducers({
 
 const store = configureStore({
   reducer: rootReducer,
-  middleware: [logger, thunk],
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk, logger),
   preloadedState: loadState(),
+  devTools: {
+    serializableCheck: false,
+  },
 });
 
 store.subscribe(
