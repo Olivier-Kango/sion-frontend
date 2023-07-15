@@ -49,6 +49,20 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
     return undefined;
   }, [addProductClicked, userState, messageCounter]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.categories')) {
+        setShowCategories(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   const handleLogout = () => {
     dispatch(userLogout());
     navigate('/login-page');
@@ -116,7 +130,17 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
             </button>
           </Link>
           {showCategories && (
-            <div className={`categories ${showCategories ? 'visible' : ''}`}>
+            <div
+              className={`categories ${showCategories ? 'visible' : ''}`}
+              onClick={handleLinkClick}
+              onKeyDown={(e) => {
+                if (e.key === 'Escape') {
+                  setShowCategories(false);
+                }
+              }}
+              role="menu" // Ajoutez l'attribut role approprié ici
+              tabIndex={0} // Assurez-vous que l'élément est focusable
+            >
               {categories.map((category) => (
                 <button
                   key={category.id}
