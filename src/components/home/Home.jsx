@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { css } from '@emotion/react';
 import { RingLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,7 @@ import { useMediaQuery } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
+import LeftBar from '../leftbar/Leftbar';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -16,6 +17,7 @@ import 'swiper/css/scrollbar';
 const Home = () => {
   const [, setSwiperRef] = useState(null);
   const [done, setDone] = useState(undefined);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
@@ -42,8 +44,21 @@ const Home = () => {
     dispatch(deleteProduct(id));
   };
 
+  const filteredProducts = selectedCategory
+    ? products.filter((product) => product.category === selectedCategory)
+    : products;
+
+  const leftBarRef = useRef();
+
+  const handleCategoryClick = (category) => {
+    leftBarRef.current.setSelectedCategory(category);
+  };
+
   return (
     <div className="container">
+      <>
+        <LeftBar ref={leftBarRef} onCategoryClick={handleCategoryClick} />
+      </>
       {!done ? (
         <div
           style={{
@@ -66,10 +81,10 @@ const Home = () => {
 
           {isMobile ? (
             <div className="swiper">
-              {products.length === 0 ? (
+              {filteredProducts.length === 0 ? (
                 <span>Add Product first!!!</span>
               ) : (
-                products.map((product) => (
+                filteredProducts.map((product) => (
                   <div
                     key={product.id * Math.random(10000) + Math.random(5000)}
                     className="swiper-slide"
@@ -127,12 +142,12 @@ const Home = () => {
               navigation
               scrollbar={{ draggable: true }}
               modules={[Pagination, Navigation]}
-              style={{ display: products.length === 0 ? 'unset' : 'flex' }}
+              style={{ display: filteredProducts.length === 0 ? 'unset' : 'flex' }}
             >
-              {products.length === 0 ? (
+              {filteredProducts.length === 0 ? (
                 <span>Add Product first!!!</span>
               ) : (
-                products.map((product) => (
+                filteredProducts.map((product) => (
                   <SwiperSlide
                     key={product.id * Math.random(10000) + Math.random(5000)}
                   >
