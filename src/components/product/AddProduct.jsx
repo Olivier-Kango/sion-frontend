@@ -12,6 +12,8 @@ const AddProduct = () => {
   const dispatch = useDispatch();
   const [name, setname] = useState('');
   const [image, setimage] = useState('');
+  const [category, setcategory] = useState('');
+  const [quantity, setquantity] = useState('');
   const [unitPrice, setUnitPrice] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
@@ -20,8 +22,10 @@ const AddProduct = () => {
     e.preventDefault();
     const productData = {
       name,
-      image: image || null, // Make sure to pass null if image is not set
+      image: image || null,
       unit_price: unitPrice,
+      category,
+      quantity,
     };
 
     const response = await dispatch(addProduct(productData));
@@ -29,8 +33,10 @@ const AddProduct = () => {
       setIsSubmitted(true);
     }
     setname('');
-    setimage(null); // Reset image state to null
+    setimage(null);
     setUnitPrice('');
+    setcategory('');
+    setquantity('');
   };
 
   const handleContinueShopping = () => {
@@ -97,6 +103,37 @@ const AddProduct = () => {
                 placeholder="Enter Unit Price"
                 inputMode="numeric"
               />
+            </div>
+            <div className="add-order-form-group">
+              <input
+                type="number"
+                id="product-quantity"
+                value={quantity}
+                required
+                onChange={(e) => {
+                  if (e.target.value >= 0) {
+                    setquantity(e.target.value);
+                  }
+                }}
+                placeholder="Enter Quantity"
+                inputMode="numeric"
+              />
+            </div>
+            <div className="add-order-form-group">
+              <select
+                id="category"
+                value={category}
+                required
+                onChange={(e) => setcategory(e.target.value)}
+                className="category-select"
+              >
+                <option value="" className="placeholder-option">Select product&apos;s Category</option>
+                <option value="Mineral Water">Mineral Water</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Gas Energy">Gas Energy</option>
+                <option value="House Rental">House Rental</option>
+                <option value="Hardware Store">Hardware Store</option>
+              </select>
             </div>
             <div className="add-order-form-group">
               <input required type="file" id="image" onChange={handleImageUpload} accept="image/*" />

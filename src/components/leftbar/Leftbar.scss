@@ -9,6 +9,7 @@ $main-color-hover: #094a80;
   border-right: 1px solid #ddd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background: white !important;
+  overflow-y: auto;
 
   .leftbar-header {
     display: flex;
@@ -38,7 +39,7 @@ $main-color-hover: #094a80;
 
       .user {
         padding: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 0;
         cursor: pointer;
       }
 
@@ -52,15 +53,19 @@ $main-color-hover: #094a80;
         padding: 10px;
         margin-bottom: 10px;
 
+        .categories-button {
+          display: flex;
+          align-items: center;
+
+          .arrow-icon {
+            margin-top: 5px;
+          }
+        }
+
         .icon {
           color: $main-color;
           font-size: 1.3rem;
         }
-      }
-
-      .logout {
-        text-align: left;
-        width: 100%;
       }
 
       .active {
@@ -79,8 +84,58 @@ $main-color-hover: #094a80;
         }
       }
 
-      .item:hover {
-        background-color: #efefef9e;
+      .categories {
+        display: flex;
+        flex-direction: column;
+        margin-top: -10px;
+        margin-bottom: 10px;
+
+        .category {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 0 10px 10px !important;
+
+          .icon {
+            color: $main-color;
+            font-size: 1.3rem;
+          }
+
+          .text {
+            text-align: left !important;
+          }
+        }
+
+        .active-two {
+          font-weight: 600;
+          color: $main-color;
+        }
+
+        .category:hover {
+          background-color: #efefef9e !important;
+        }
+      }
+
+      .active-categories {
+        background-color: #edeef0;
+      }
+
+      .categories-transition {
+        max-height: 500px;
+      }
+
+      .categories-item {
+        width: 100%;
+      }
+
+      .logout {
+        text-align: left;
+        width: 100%;
+      }
+
+      .item:hover,
+      .categories-item:hover {
+        background-color: #efefef9e !important;
       }
     }
   }

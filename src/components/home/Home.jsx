@@ -7,6 +7,7 @@ import { useMediaQuery } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
+// import LeftBar from '../leftbar/Leftbar';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -18,10 +19,11 @@ const Home = () => {
   const [done, setDone] = useState(undefined);
 
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.products);
   const user = useSelector((state) => state.user.data);
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const selectedCategory = useSelector((state) => state.products.selectedCategory);
 
   const override = css`
   display: block;
@@ -42,6 +44,10 @@ const Home = () => {
     dispatch(deleteProduct(id));
   };
 
+  const filteredProducts = selectedCategory
+    ? products.filter((product) => product.category === selectedCategory)
+    : products;
+
   return (
     <div className="container">
       {!done ? (
@@ -56,11 +62,7 @@ const Home = () => {
         >
           <RingLoader color="#123abc" css={override} size={200} />
           <p className="s">
-            Please wait for approximately
-            <br />
-            <span>
-              30 seconds
-            </span>
+            Please wait...
           </p>
         </div>
       ) : (
@@ -70,10 +72,10 @@ const Home = () => {
 
           {isMobile ? (
             <div className="swiper">
-              {products.length === 0 ? (
+              {filteredProducts.length === 0 ? (
                 <span>Add Product first!!!</span>
               ) : (
-                products.map((product) => (
+                filteredProducts.map((product) => (
                   <div
                     key={product.id * Math.random(10000) + Math.random(5000)}
                     className="swiper-slide"
@@ -131,12 +133,12 @@ const Home = () => {
               navigation
               scrollbar={{ draggable: true }}
               modules={[Pagination, Navigation]}
-              style={{ display: products.length === 0 ? 'unset' : 'flex' }}
+              style={{ display: filteredProducts.length === 0 ? 'unset' : 'flex' }}
             >
-              {products.length === 0 ? (
+              {filteredProducts.length === 0 ? (
                 <span>Add Product first!!!</span>
               ) : (
-                products.map((product) => (
+                filteredProducts.map((product) => (
                   <SwiperSlide
                     key={product.id * Math.random(10000) + Math.random(5000)}
                   >

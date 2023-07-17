@@ -1,24 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { BsFillPersonFill } from 'react-icons/bs';
-import { FaShoppingCart } from 'react-icons/fa';
+import { BsFillPersonFill, BsHouse } from 'react-icons/bs';
+import {
+  FaShoppingCart,
+} from 'react-icons/fa';
+import { MdDevices } from 'react-icons/md';
 import { RiHome3Fill } from 'react-icons/ri';
-// import { RiComputerLine } from 'react-icons/ri';
-import { AiFillPlusCircle } from 'react-icons/ai';
+import { GiNails, GiFire, GiWaterDrop } from 'react-icons/gi';
+import { AiFillPlusCircle, AiOutlineBars } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Footer from '../footer/Footer';
 import { userLogout } from '../../redux/users/users';
+import { setSelectedCategory, showCategories, arrowDirection } from '../../redux/products/products';
 import './Leftbar.scss';
 
-const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
+const LeftBar = ({
+  open, handleLinkClick, isAuthenticated,
+}) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data?.name);
   const userState = useSelector((state) => state.user);
   const username = user?.charAt(0).toUpperCase() + user?.slice(1);
   const { pathname } = useLocation();
+  const selectedCategory = useSelector((state) => state.products.selectedCategory);
+  const showCategory = useSelector((state) => state.products.showCategories);
+  const arrow = useSelector((state) => state.products.arrowDirection);
   const navigate = useNavigate();
   const [showAdminMessage, setShowAdminMessage] = useState(false);
   const [addProductClicked, setAddProductClicked] = useState(false);
@@ -39,7 +49,6 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
       setShowAdminMessage(false);
     }
 
-    // If the condition is not met, return undefined
     return undefined;
   }, [addProductClicked, userState, messageCounter]);
 
@@ -51,12 +60,32 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
   const handleAddProductClick = () => {
     setAddProductClicked(true);
     setMessageCounter((prevCounter) => prevCounter + 1);
+    dispatch(setSelectedCategory(''));
+    dispatch(arrowDirection('down'));
+    dispatch(showCategories(false));
   };
+
+  const toggleCategories = () => {
+    dispatch(showCategories(!showCategory));
+    dispatch(arrowDirection(showCategory ? 'down' : 'up'));
+  };
+
+  const handleCategoryClick = (category) => {
+    dispatch(setSelectedCategory(category));
+  };
+
+  const categories = [
+    { id: 1, name: 'Mineral Water', icon: <GiWaterDrop /> },
+    { id: 2, name: 'Electronics', icon: <MdDevices /> },
+    { id: 3, name: 'Gas Energy', icon: <GiFire /> },
+    { id: 4, name: 'House Rental', icon: <BsHouse /> },
+    { id: 5, name: 'Hardware Store', icon: <GiNails /> },
+  ];
 
   return (
     <div className={`leftbar-container${open ? ' open' : ''}`}>
       <div className="leftbar-header">
-        <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+        <Link to="/" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, '')}>
           <div className="logo">PSS Digital</div>
         </Link>
       </div>
@@ -68,21 +97,60 @@ const LeftBar = ({ open, handleLinkClick, isAuthenticated }) => {
               <span className="font-normal text">{`Hello, ${username}`}</span>
             </div>
           ) : (
-            <Link to="/login-page" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+            <Link to="/login-page" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'login-page')}>
               <div className="user item">
                 <span className="icon"><BsFillPersonFill /></span>
                 <span className="font-normal text">Hello, Sign in</span>
               </div>
             </Link>
           )}
-          <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
-            <div className={pathname === '/' ? 'active' : 'item'}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <button className={`item categories-item ${selectedCategory !== '' ? 'active-categories' : ''}`} type="button" onClick={toggleCategories}>
+              <span className="icon"><AiOutlineBars /></span>
+              <span className="text categories-button">
+                Categories&nbsp;
+                {arrow === 'down' ? (
+                  <IoIosArrowDown className="arrow-icon" />
+                ) : (
+                  <IoIosArrowUp className="arrow-icon" />
+                )}
+              </span>
+            </button>
+          </Link>
+          {showCategory && (
+            <div
+              className={`categories ${showCategory ? 'visible' : ''}`}
+              onKeyDown={(e) => {
+                if (e.key === 'Escape') {
+                  dispatch(showCategories(true));
+                }
+              }}
+              role="menu"
+              tabIndex={0}
+            >
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  className={
+                    selectedCategory === category.name ? 'category active-two' : 'category'
+                  }
+                  onClick={() => handleCategoryClick(category.name)}
+                  type="button"
+                >
+                  {category.icon && <span className="icon">{category.icon}</span>}
+                  <span className="text">{category.name}</span>
+                </button>
+              ))}
+            </div>
+          )}
+          <Link to="/" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, '')}>
+            <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
               <span className="icon"><RiHome3Fill /></span>
               <span className="text">Home</span>
             </div>
           </Link>
-          <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
-            <div className={pathname === '/ordering' ? 'active' : 'item'}>
+          <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'ordering')}>
+            <div className={(pathname === '/ordering') ? 'active' : 'item'}>
               <span className="icon"><FaShoppingCart /></span>
               <span className="text">My Orders</span>
             </div>

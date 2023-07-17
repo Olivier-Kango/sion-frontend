@@ -12,7 +12,7 @@ const Ordering = () => {
   const dispatch = useDispatch();
   const orderData = useSelector((state) => state.orders);
   const { orders } = orderData;
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.products);
   const u_id = useSelector((state) => state.user.data?.id);
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
 
@@ -65,7 +65,8 @@ const Ordering = () => {
         Total amount :
         {' '}
         {userOrders.reduce((total, order) => {
-          const product = products.find((product) => product?.id === order.product_id);
+          // eslint-disable-next-line max-len
+          const product = Array.isArray(products) ? products.find((product) => product?.id === order.product_id) : null;
           const total_amount = total + (product?.unit_price * order.quantity);
           return total_amount || 0;
         }, 0)}
@@ -89,7 +90,11 @@ const Ordering = () => {
           </p>
         ) : (
           userOrders.map((order) => {
-            const product = products.find((f) => f.id === order.product_id);
+            // eslint-disable-next-line max-len
+            const product = Array.isArray(products) ? products.find((f) => f.id === order.product_id) : null;
+            if (!product) {
+              return null;
+            }
             return (
               <div className="card  me-2" key={order.id} style={{ backgroundColor: '#ffffff' }}>
                 <Link to={`/productdetails/${product.id}`}>

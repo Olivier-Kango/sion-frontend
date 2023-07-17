@@ -1,27 +1,40 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Outlet, Navigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { Outlet, Navigate, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line
 import LeftBar from '../leftbar/Leftbar.jsx';
+import { setSelectedCategory, showCategories, arrowDirection } from '../../redux/products/products';
 
 import './PrivateRoutes.scss';
 
 const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
-  // const TOKEN = localStorage.getItem('JWT_TOKEN');
   const [showLeftbar, setShowLeftbar] = useState(false);
-  const handleHamburgerClick = () => {
-    setShowLeftbar(!showLeftbar);
-  };
-
-  const handleLinkClick = () => {
-    setShowLeftbar(false);
-  };
 
   const isMobile = useMediaQuery('(max-width: 768px)');
   const user = useSelector((state) => state.user);
   const isAuthenticated = user.loggedIn;
+  const selectedCategory = useSelector((state) => state.products.selectedCategory);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleHamburgerClick = () => {
+    setShowLeftbar(!showLeftbar);
+  };
+
+  const handleLinkClick = (event, link) => {
+    event.preventDefault();
+    if (isMobile) {
+      setShowLeftbar(false);
+    }
+    if (selectedCategory !== '') {
+      dispatch(setSelectedCategory(''));
+    }
+    navigate(`/${link}`);
+    dispatch(showCategories(false));
+    dispatch(arrowDirection('down'));
+  };
 
   if (!isAllowed) {
     return <Navigate to={redirectPath} replace />;
@@ -61,13 +74,16 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
             && (
             <LeftBar
               open={showLeftbar}
-              handleLinkClick={handleLinkClick}
+              handleLinkClick={(event, link) => handleLinkClick(event, link)}
               isAuthenticated={isAuthenticated}
             />
             )}
           </>
         ) : (
-          <LeftBar isAuthenticated={isAuthenticated} />
+          <LeftBar
+            isAuthenticated={isAuthenticated}
+            handleLinkClick={(event, link) => handleLinkClick(event, link)}
+          />
         )}
         <div className="home">
           <Outlet />

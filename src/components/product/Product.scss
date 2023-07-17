@@ -187,6 +187,34 @@ $gray: #e4e6eb;
     color: #f8f8f8;
   }
 
+  .category-select {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    option {
+      padding: 10px;
+    }
+
+    option[value=""] {
+      color: #999;
+    }
+
+    &:focus {
+      outline: none !important;
+      border-bottom: 2px solid #ccc !important;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
   .image-preview {
     position: relative;
     margin-top: 8px;
@@ -254,17 +282,18 @@ $gray: #e4e6eb;
     justify-content: center;
     align-items: center;
     height: 50px;
-  
+
     .spinner-icon {
       animation: spin 1s linear infinite;
       font-size: 24px;
     }
   }
-  
+
   @keyframes spin {
     from {
       transform: rotate(0deg);
     }
+
     to {
       transform: rotate(360deg);
     }

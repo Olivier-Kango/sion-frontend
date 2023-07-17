@@ -7,8 +7,8 @@ import './Product.scss';
 const ProductDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
-  const product = products.find((f) => f.id === parseInt(id, 10));
+  const products = useSelector((state) => state.products.products);
+  const product = Array.isArray(products) ? products.find((f) => f.id === parseInt(id, 10)) : null;
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
 
   useEffect(() => {
