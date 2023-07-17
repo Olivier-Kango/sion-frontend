@@ -22,7 +22,7 @@ const AddProduct = () => {
     e.preventDefault();
     const productData = {
       name,
-      image: image || null, // Make sure to pass null if image is not set
+      image: image || null,
       unit_price: unitPrice,
       category,
       quantity,
@@ -33,7 +33,7 @@ const AddProduct = () => {
       setIsSubmitted(true);
     }
     setname('');
-    setimage(null); // Reset image state to null
+    setimage(null);
     setUnitPrice('');
     setcategory('');
     setquantity('');

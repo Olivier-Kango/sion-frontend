@@ -60,6 +60,9 @@ const LeftBar = ({
   const handleAddProductClick = () => {
     setAddProductClicked(true);
     setMessageCounter((prevCounter) => prevCounter + 1);
+    dispatch(setSelectedCategory(''));
+    dispatch(arrowDirection('down'));
+    dispatch(showCategories(false));
   };
 
   const toggleCategories = () => {
@@ -147,7 +150,7 @@ const LeftBar = ({
             </div>
           </Link>
           <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'ordering')}>
-            <div className={(pathname === '/ordering' && selectedCategory === '') ? 'active' : 'item'}>
+            <div className={(pathname === '/ordering') ? 'active' : 'item'}>
               <span className="icon"><FaShoppingCart /></span>
               <span className="text">My Orders</span>
             </div>

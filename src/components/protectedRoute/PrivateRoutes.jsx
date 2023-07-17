@@ -28,9 +28,8 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     if (isMobile) {
       setShowLeftbar(false);
     }
-    if (link === '' && selectedCategory !== '') {
+    if (selectedCategory !== '') {
       dispatch(setSelectedCategory(''));
-      navigate('/');
     }
     navigate(`/${link}`);
     dispatch(showCategories(false));
