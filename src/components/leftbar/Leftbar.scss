@@ -39,8 +39,49 @@ $main-color-hover: #094a80;
 
       .user {
         padding: 10px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         cursor: pointer;
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 13px;
+        color: black;
+        font-weight: 600;
+        padding: 10px;
+        margin-bottom: 10px;
+
+        .categories-button {
+          display: flex;
+          align-items: center;
+
+          .arrow-icon {
+            margin-top: 5px;
+          }
+        }
+
+        .icon {
+          color: $main-color;
+          font-size: 1.3rem;
+        }
+      }
+
+      .active {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 13px;
+        background-color: #edeef0;
+        font-weight: 600;
+        padding: 10px;
+        margin-bottom: 10px;
+
+        .icon {
+          color: $main-color;
+          font-size: 1.3rem;
+        }
       }
 
       .categories {
@@ -87,50 +128,9 @@ $main-color-hover: #094a80;
         width: 100%;
       }
 
-      .item {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 13px;
-        color: black;
-        font-weight: 600;
-        padding: 10px;
-        margin-bottom: 10px;
-
-        .categories-button {
-          display: flex;
-          align-items: center;
-
-          .arrow-icon {
-            margin-top: 5px;
-          }
-        }
-
-        .icon {
-          color: $main-color;
-          font-size: 1.3rem;
-        }
-      }
-
       .logout {
         text-align: left;
         width: 100%;
-      }
-
-      .active {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 13px;
-        background-color: #edeef0;
-        font-weight: 600;
-        padding: 10px;
-        margin-bottom: 10px;
-
-        .icon {
-          color: $main-color;
-          font-size: 1.3rem;
-        }
       }
 
       .item:hover,

@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Outlet, Navigate } from 'react-router-dom';
+import { Outlet, Navigate, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line
 import LeftBar from '../leftbar/Leftbar.jsx';
-import { setSelectedCategory } from '../../redux/products/products';
+import { setSelectedCategory, showCategories, arrowDirection } from '../../redux/products/products';
 
 import './PrivateRoutes.scss';
 
 const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const [showLeftbar, setShowLeftbar] = useState(false);
+
   const isMobile = useMediaQuery('(max-width: 768px)');
   const user = useSelector((state) => state.user);
   const isAuthenticated = user.loggedIn;
   const selectedCategory = useSelector((state) => state.products.selectedCategory);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleHamburgerClick = () => {
@@ -26,9 +28,13 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     if (isMobile) {
       setShowLeftbar(false);
     }
-    if (link === 'Home' && selectedCategory !== '') {
+    if (link === '' && selectedCategory !== '') {
       dispatch(setSelectedCategory(''));
+      navigate('/');
     }
+    navigate(`/${link}`);
+    dispatch(showCategories(false));
+    dispatch(arrowDirection('down'));
   };
 
   if (!isAllowed) {

@@ -28,9 +28,21 @@ export const setSelectedCategory = (category) => ({
   payload: category,
 });
 
+export const showCategories = (show) => ({
+  type: 'SHOW_CATEGORIES',
+  payload: show,
+});
+
+export const arrowDirection = (arrow) => ({
+  type: 'ARROW_DIRECTION',
+  payload: arrow,
+});
+
 // Reducers
 const initialState = {
   selectedCategory: '',
+  showCategories: false,
+  arrowDirection: 'down',
   products: [
     {
       id: 47,
@@ -113,6 +125,18 @@ const reducerProduct = (state = initialState, action) => {
       return {
         ...state,
         selectedCategory: action.payload,
+      };
+    }
+    case 'SHOW_CATEGORIES': {
+      return {
+        ...state,
+        showCategories: action.payload,
+      };
+    }
+    case 'ARROW_DIRECTION': {
+      return {
+        ...state,
+        arrowDirection: action.payload,
       };
     }
     default:

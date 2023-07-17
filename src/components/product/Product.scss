@@ -211,7 +211,7 @@ $gray: #e4e6eb;
     }
 
     &::-ms-expand {
-      display: none; 
+      display: none;
     }
   }
 
@@ -282,17 +282,18 @@ $gray: #e4e6eb;
     justify-content: center;
     align-items: center;
     height: 50px;
-  
+
     .spinner-icon {
       animation: spin 1s linear infinite;
       font-size: 24px;
     }
   }
-  
+
   @keyframes spin {
     from {
       transform: rotate(0deg);
     }
+
     to {
       transform: rotate(360deg);
     }
