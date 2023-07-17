@@ -10,6 +10,7 @@ import { GiNails, GiFire, GiWaterDrop } from 'react-icons/gi';
 import { AiFillPlusCircle, AiOutlineBars } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import { useMediaQuery } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -19,7 +20,7 @@ import { setSelectedCategory, showCategories, arrowDirection } from '../../redux
 import './Leftbar.scss';
 
 const LeftBar = ({
-  open, handleLinkClick, isAuthenticated,
+  open, handleLinkClick, isAuthenticated, handleHamburgerClick,
 }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.data?.name);
@@ -33,6 +34,7 @@ const LeftBar = ({
   const [showAdminMessage, setShowAdminMessage] = useState(false);
   const [addProductClicked, setAddProductClicked] = useState(false);
   const [messageCounter, setMessageCounter] = useState(0);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   useEffect(() => {
     if (addProductClicked && (!userState.loggedIn || userState.data.role !== 'admin')) {
@@ -72,6 +74,9 @@ const LeftBar = ({
 
   const handleCategoryClick = (category) => {
     dispatch(setSelectedCategory(category));
+    if (isMobile) {
+      handleHamburgerClick();
+    }
   };
 
   const categories = [
@@ -200,6 +205,7 @@ LeftBar.propTypes = {
   open: PropTypes.bool.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   handleLinkClick: PropTypes.func.isRequired,
+  handleHamburgerClick: PropTypes.func.isRequired,
 };
 
 export default LeftBar;
