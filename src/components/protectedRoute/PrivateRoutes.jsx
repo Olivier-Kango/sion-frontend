@@ -63,8 +63,8 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
             && (
             <div
               className="overlay"
-              onClick={handleLinkClick}
-              onKeyDown={handleLinkClick}
+              onClick={handleHamburgerClick}
+              onKeyDown={handleHamburgerClick}
               role="button"
               tabIndex={0}
               aria-label="Close"
@@ -76,6 +76,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               open={showLeftbar}
               handleLinkClick={(event, link) => handleLinkClick(event, link)}
               isAuthenticated={isAuthenticated}
+              handleHamburgerClick={handleHamburgerClick}
             />
             )}
           </>
