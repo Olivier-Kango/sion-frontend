@@ -82,7 +82,7 @@ const LeftBar = ({
   return (
     <div className={`leftbar-container${open ? ' open' : ''}`}>
       <div className="leftbar-header">
-        <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+        <Link to="/" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'Home')}>
           <div className="logo">PSS Digital</div>
         </Link>
       </div>
@@ -94,7 +94,7 @@ const LeftBar = ({
               <span className="font-normal text">{`Hello, ${username}`}</span>
             </div>
           ) : (
-            <Link to="/login-page" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
+            <Link to="/login-page" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, '')}>
               <div className="user item">
                 <span className="icon"><BsFillPersonFill /></span>
                 <span className="font-normal text">Hello, Sign in</span>
@@ -102,7 +102,7 @@ const LeftBar = ({
             </Link>
           )}
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <button className="item categories-item" onClick={toggleCategories} type="button">
+            <button className={`item categories-item ${selectedCategory !== '' ? 'active-categories' : ''}`} onClick={toggleCategories} type="button">
               <span className="icon"><AiOutlineBars /></span>
               <span className="text categories-button">
                 Categories&nbsp;
@@ -117,7 +117,7 @@ const LeftBar = ({
           {showCategories && (
             <div
               className={`categories ${showCategories ? 'visible' : ''}`}
-              onClick={handleLinkClick}
+              onClick={(event) => handleLinkClick(event, '')}
               onKeyDown={(e) => {
                 if (e.key === 'Escape') {
                   setShowCategories(false);
@@ -141,14 +141,14 @@ const LeftBar = ({
               ))}
             </div>
           )}
-          <Link to="/" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
-            <div className={pathname === '/' ? 'active' : 'item'}>
+          <Link to="/" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'Home')}>
+            <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
               <span className="icon"><RiHome3Fill /></span>
               <span className="text">Home</span>
             </div>
           </Link>
-          <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={handleLinkClick}>
-            <div className={pathname === '/ordering' ? 'active' : 'item'}>
+          <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'My Orders')}>
+            <div className={(pathname === '/ordering' && selectedCategory === '') ? 'active' : 'item'}>
               <span className="icon"><FaShoppingCart /></span>
               <span className="text">My Orders</span>
             </div>
