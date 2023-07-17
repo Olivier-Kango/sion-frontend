@@ -15,6 +15,7 @@ import PropTypes from 'prop-types';
 
 import Footer from '../footer/Footer';
 import { userLogout } from '../../redux/users/users';
+import { setSelectedCategory } from '../../redux/products/products';
 import './Leftbar.scss';
 
 const LeftBar = ({
@@ -25,13 +26,13 @@ const LeftBar = ({
   const userState = useSelector((state) => state.user);
   const username = user?.charAt(0).toUpperCase() + user?.slice(1);
   const { pathname } = useLocation();
+  const selectedCategory = useSelector((state) => state.products.selectedCategory);
   const navigate = useNavigate();
   const [showAdminMessage, setShowAdminMessage] = useState(false);
   const [addProductClicked, setAddProductClicked] = useState(false);
   const [messageCounter, setMessageCounter] = useState(0);
   const [showCategories, setShowCategories] = useState(false);
   const [arrowDirection, setArrowDirection] = useState('down');
-  const [selectedCategory, setSelectedCategory] = useState('');
 
   useEffect(() => {
     if (addProductClicked && (!userState.loggedIn || userState.data.role !== 'admin')) {
@@ -62,9 +63,9 @@ const LeftBar = ({
   };
 
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
     dispatch(setSelectedCategory(category));
     setShowCategories(false);
+    console.log(selectedCategory === category.name);
   };
 
   const toggleCategories = () => {

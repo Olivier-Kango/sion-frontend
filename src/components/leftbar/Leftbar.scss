@@ -65,6 +65,11 @@ $main-color-hover: #094a80;
           }
         }
 
+        .active-two {
+          font-weight: 600;
+          color: $main-color;
+        }
+
         .category:hover {
           background-color: #efefef9e !important;
         }
