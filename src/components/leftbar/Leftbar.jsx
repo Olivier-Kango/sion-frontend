@@ -64,8 +64,6 @@ const LeftBar = ({
 
   const handleCategoryClick = (category) => {
     dispatch(setSelectedCategory(category));
-    setShowCategories(false);
-    console.log(selectedCategory === category.name);
   };
 
   const toggleCategories = () => {
