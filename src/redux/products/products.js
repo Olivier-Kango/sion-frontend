@@ -1,13 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+// API
 axios.defaults.baseURL = 'https://pss-digital-backend.onrender.com/';
 // axios.defaults.baseURL = 'http://[::1]:5000/';
 
-// constants
-const SELECTED_CATEGORY = 'SELECTED_CATEGORY';
-
-// Actions
+// ACTIONS
 export const getAllProducts = createAsyncThunk('GET_ALL_PRODUCTS', async () => {
   const response = await axios.get('api/v1/products');
   return response.data;
@@ -24,7 +22,7 @@ export const deleteProduct = createAsyncThunk('DELETE_PRODUCT', async (id) => {
 });
 
 export const setSelectedCategory = (category) => ({
-  type: SELECTED_CATEGORY,
+  type: 'SELECTED_CATEGORY',
   payload: category,
 });
 
@@ -38,7 +36,7 @@ export const arrowDirection = (arrow) => ({
   payload: arrow,
 });
 
-// Reducers
+// INITIAL STATE
 const initialState = {
   selectedCategory: '',
   showCategories: false,
@@ -127,6 +125,7 @@ const initialState = {
   ],
 };
 
+// REDUCER
 const reducerProduct = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_ALL_PRODUCTS/fulfilled': {
@@ -147,7 +146,7 @@ const reducerProduct = (state = initialState, action) => {
         products: state.products.filter((f) => f.id !== action.payload),
       };
     }
-    case SELECTED_CATEGORY: {
+    case 'SELECTED_CATEGORY': {
       return {
         ...state,
         selectedCategory: action.payload,
