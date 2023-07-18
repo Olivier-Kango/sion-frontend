@@ -28,11 +28,13 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     if (isMobile) {
       setShowLeftbar(false);
     }
-    if (selectedCategory !== '') {
+    if (link === '' && selectedCategory !== '') {
       dispatch(setSelectedCategory(''));
     }
     navigate(`/${link}`);
-    dispatch(showCategories(false));
+    if (link === '') {
+      dispatch(showCategories(false));
+    }
     dispatch(arrowDirection('down'));
   };
 
