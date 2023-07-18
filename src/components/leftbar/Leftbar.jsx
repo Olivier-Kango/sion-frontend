@@ -77,6 +77,7 @@ const LeftBar = ({
     if (isMobile) {
       handleHamburgerClick();
     }
+    navigate('/');
   };
 
   const categories = [
