@@ -84,7 +84,7 @@ const LeftBar = ({
     { id: 1, name: 'Mineral Water', icon: <GiWaterDrop /> },
     { id: 2, name: 'Electronics', icon: <MdDevices /> },
     { id: 3, name: 'Gas Energy', icon: <GiFire /> },
-    { id: 4, name: 'House Rental', icon: <BsHouse /> },
+    { id: 4, name: 'Real Estate', icon: <BsHouse /> },
     { id: 5, name: 'Hardware Store', icon: <GiNails /> },
   ];
 
