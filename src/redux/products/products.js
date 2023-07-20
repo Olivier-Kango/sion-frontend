@@ -100,7 +100,7 @@ const initialState = {
       created_at: '2023-07-17T21:08:35.890Z',
       updated_at: '2023-07-17T21:08:35.890Z',
       quantity: 1,
-      category: 'House Rental',
+      category: 'Real Estate',
     },
     {
       id: 88,
