@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { BsFillPersonFill, BsHouse } from 'react-icons/bs';
+import { BsFillPersonFill } from 'react-icons/bs';
 import {
-  FaShoppingCart,
+  FaShoppingCart, FaHome,
 } from 'react-icons/fa';
 import { MdDevices } from 'react-icons/md';
 import { RiHome3Fill } from 'react-icons/ri';
@@ -84,7 +84,7 @@ const LeftBar = ({
     { id: 1, name: 'Mineral Water', icon: <GiWaterDrop /> },
     { id: 2, name: 'Electronics', icon: <MdDevices /> },
     { id: 3, name: 'Gas Energy', icon: <GiFire /> },
-    { id: 4, name: 'Real Estate', icon: <BsHouse /> },
+    { id: 4, name: 'Real Estate', icon: <FaHome /> },
     { id: 5, name: 'Hardware Store', icon: <GiNails /> },
   ];
 
