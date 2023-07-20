@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => (
   <div className="footer">
-    Copyright © 2023
+    © 2023 Olivier Kango
   </div>
 );
 
