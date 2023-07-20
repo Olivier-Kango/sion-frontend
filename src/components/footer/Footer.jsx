@@ -1,9 +1,18 @@
 import React from 'react';
 
-const Footer = () => (
-  <div className="footer">
-    © 2023 Olivier Kango
-  </div>
-);
+const Footer = () => {
+  // Obtenir l'année actuelle
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <div className="footer">
+      ©
+      {' '}
+      {currentYear}
+      {' '}
+      Olivier Kango
+    </div>
+  );
+};
 
 export default Footer;
