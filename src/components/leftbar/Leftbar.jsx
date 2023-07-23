@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
 import {
-  FaShoppingCart, FaHome,
+  FaShoppingCart, FaHome, FaIceCream,
 } from 'react-icons/fa';
 import { MdDevices } from 'react-icons/md';
 import { RiHome3Fill } from 'react-icons/ri';
-import { GiNails, GiFire, GiWaterDrop } from 'react-icons/gi';
+import { GiNails, GiFire, GiWaterDrop, GiProcessor,
+} from 'react-icons/gi';
 import { AiFillPlusCircle, AiOutlineBars } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
@@ -82,10 +83,12 @@ const LeftBar = ({
 
   const categories = [
     { id: 1, name: 'Mineral Water', icon: <GiWaterDrop /> },
-    { id: 2, name: 'Electronics', icon: <MdDevices /> },
-    { id: 3, name: 'Gas Energy', icon: <GiFire /> },
-    { id: 4, name: 'Real Estate', icon: <FaHome /> },
-    { id: 5, name: 'Hardware Store', icon: <GiNails /> },
+    { id: 2, name: 'Beverage Store', icon: <FaIceCream /> },
+    { id: 3, name: 'Electronics', icon: <MdDevices /> },
+    { id: 4, name: 'IT Services', icon: <GiProcessor /> },
+    { id: 5, name: 'Gas Energy', icon: <GiFire /> },
+    { id: 6, name: 'Real Estate', icon: <FaHome /> },
+    { id: 7, name: 'Hardware Store', icon: <GiNails /> },
   ];
 
   return (
