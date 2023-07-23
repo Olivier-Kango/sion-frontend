@@ -6,7 +6,8 @@ import {
 } from 'react-icons/fa';
 import { MdDevices } from 'react-icons/md';
 import { RiHome3Fill } from 'react-icons/ri';
-import { GiNails, GiFire, GiWaterDrop, GiProcessor,
+import {
+  GiNails, GiFire, GiWaterDrop, GiProcessor,
 } from 'react-icons/gi';
 import { AiFillPlusCircle, AiOutlineBars } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
