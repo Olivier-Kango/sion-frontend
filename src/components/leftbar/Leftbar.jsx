@@ -83,12 +83,12 @@ const LeftBar = ({
 
   const categories = [
     { id: 1, name: 'Mineral Water', icon: <GiWaterDrop /> },
-    { id: 6, name: 'Beverage Store', icon: <FaIceCream /> },
-    { id: 2, name: 'Electronics', icon: <MdDevices /> },
-    { id: 3, name: 'Gas Energy', icon: <GiFire /> },
-    { id: 4, name: 'Real Estate', icon: <FaHome /> },
-    { id: 5, name: 'Hardware Store', icon: <GiNails /> },
-    { id: 7, name: 'IT Services', icon: <GiProcessor /> },
+    { id: 2, name: 'Beverage Store', icon: <FaIceCream /> },
+    { id: 3, name: 'Electronics', icon: <MdDevices /> },
+    { id: 4, name: 'IT Services', icon: <GiProcessor /> },
+    { id: 5, name: 'Gas Energy', icon: <GiFire /> },
+    { id: 6, name: 'Real Estate', icon: <FaHome /> },
+    { id: 7, name: 'Hardware Store', icon: <GiNails /> },
   ];
 
   return (
