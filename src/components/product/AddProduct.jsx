@@ -67,7 +67,7 @@ const AddProduct = () => {
   };
 
   const deleteImage = () => {
-    setimage(null); // Reset image state to null
+    setimage(null);
   };
 
   return (
@@ -133,6 +133,8 @@ const AddProduct = () => {
                 <option value="Gas Energy">Gas Energy</option>
                 <option value="Real Estate">Real Estate</option>
                 <option value="Hardware Store">Hardware Store</option>
+                <option value="Hardware Store">Iced Refreshments</option>
+                <option value="Hardware Store">IT Services</option>
               </select>
             </div>
             <div className="add-order-form-group">
