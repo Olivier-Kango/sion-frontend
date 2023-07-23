@@ -6,7 +6,7 @@ import {
 } from 'react-icons/fa';
 import { MdDevices } from 'react-icons/md';
 import { RiHome3Fill } from 'react-icons/ri';
-import { GiNails, GiFire, GiWaterDrop } from 'react-icons/gi';
+import { GiNails, GiFire, GiWaterDrop, GiIceCube, GiProcessor } from 'react-icons/gi';
 import { AiFillPlusCircle, AiOutlineBars } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
@@ -86,6 +86,8 @@ const LeftBar = ({
     { id: 3, name: 'Gas Energy', icon: <GiFire /> },
     { id: 4, name: 'Real Estate', icon: <FaHome /> },
     { id: 5, name: 'Hardware Store', icon: <GiNails /> },
+    { id: 6, name: 'Iced Refreshments', icon: <GiIceCube /> },
+    { id: 7, name: 'IT Services', icon: <GiProcessor /> },
   ];
 
   return (
