@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
 import {
-  FaShoppingCart, FaHome, FaIceCream, FaCheckCircle,
+  FaShoppingCart, FaHome, FaIceCream,
 } from 'react-icons/fa';
 import { MdDevices } from 'react-icons/md';
 import { RiHome3Fill } from 'react-icons/ri';
@@ -10,7 +10,7 @@ import {
   GiNails, GiFire, GiWaterDrop, GiProcessor,
 } from 'react-icons/gi';
 import { AiFillPlusCircle, AiOutlineBars } from 'react-icons/ai';
-import { FiLogOut } from 'react-icons/fi';
+import { FiLogOut, FiFeather } from 'react-icons/fi';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { useMediaQuery } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
@@ -90,7 +90,7 @@ const LeftBar = ({
     { id: 5, name: 'Gas Energy', icon: <GiFire /> },
     { id: 6, name: 'Real Estate', icon: <FaHome /> },
     { id: 7, name: 'Hardware Store', icon: <GiNails /> },
-    { id: 8, name: 'Chickens', icon: <FaCheckCircle /> },
+    { id: 8, name: 'Chickens', icon: <FiFeather /> },
   ];
 
   return (
