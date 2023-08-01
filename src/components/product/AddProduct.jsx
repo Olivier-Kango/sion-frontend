@@ -135,6 +135,7 @@ const AddProduct = () => {
                 <option value="Gas Energy">Gas Energy</option>
                 <option value="Real Estate">Real Estate</option>
                 <option value="Hardware Store">Hardware Store</option>
+                <option value="Chickens">Chickens</option>
               </select>
             </div>
             <div className="add-order-form-group">
