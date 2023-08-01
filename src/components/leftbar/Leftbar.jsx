@@ -90,6 +90,7 @@ const LeftBar = ({
     { id: 5, name: 'Gas Energy', icon: <GiFire /> },
     { id: 6, name: 'Real Estate', icon: <FaHome /> },
     { id: 7, name: 'Hardware Store', icon: <GiNails /> },
+    { id: 8, name: 'Chickens', icon: <GiNails /> },
   ];
 
   return (
