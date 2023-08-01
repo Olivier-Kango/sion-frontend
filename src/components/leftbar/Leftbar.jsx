@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
 import {
-  FaShoppingCart, FaHome, FaIceCream,
+  FaShoppingCart, FaHome, FaIceCream, FaCheckCircle,
 } from 'react-icons/fa';
 import { MdDevices } from 'react-icons/md';
 import { RiHome3Fill } from 'react-icons/ri';
@@ -90,7 +90,7 @@ const LeftBar = ({
     { id: 5, name: 'Gas Energy', icon: <GiFire /> },
     { id: 6, name: 'Real Estate', icon: <FaHome /> },
     { id: 7, name: 'Hardware Store', icon: <GiNails /> },
-    { id: 8, name: 'Chickens', icon: <GiNails /> },
+    { id: 8, name: 'Chickens', icon: <FaCheckCircle /> },
   ];
 
   return (
