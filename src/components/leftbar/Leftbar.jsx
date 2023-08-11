@@ -166,27 +166,22 @@ const LeftBar = ({
               <span className="text">My Orders</span>
             </div>
           </Link>
-          <Link
-            to={userState.data.role === 'admin' && '/addproduct'}
-            style={{ textDecoration: 'none' }}
-            onClick={(e) => {
-              if (!userState.loggedIn || userState.data.role !== 'admin') {
-                e.preventDefault();
-              }
-              handleAddProductClick();
-            }}
-          >
-            <div className={pathname === '/addproduct' ? 'active' : 'item'}>
-              <span className="icon"><AiFillPlusCircle /></span>
-              <span className="text">Add Product</span>
-            </div>
-          </Link>
           {showAdminMessage && (
-            <div style={{ color: 'red', paddingLeft: '12px' }}>
-              You need to be an admin
-              <br />
-              to add a product.
-            </div>
+            <Link
+              to={userState.data.role === 'admin' && '/addproduct'}
+              style={{ textDecoration: 'none' }}
+              onClick={(e) => {
+                if (!userState.loggedIn || userState.data.role !== 'admin') {
+                  e.preventDefault();
+                }
+                handleAddProductClick();
+              }}
+            >
+              <div className={pathname === '/addproduct' ? 'active' : 'item'}>
+                <span className="icon"><AiFillPlusCircle /></span>
+                <span className="text">Add Product</span>
+              </div>
+            </Link>
           )}
           {isAuthenticated && (
           <button
