@@ -7,7 +7,7 @@ const Navbar = () => (
       <img src="logo.png" alt="Facebook Logo" />
     </div>
     <div className="navbar-search">
-      <input type="text" placeholder="Rechercher" />
+      <input type="text" placeholder="Search" />
     </div>
     <div className="navbar-links">
       <div className="navbar-link">
