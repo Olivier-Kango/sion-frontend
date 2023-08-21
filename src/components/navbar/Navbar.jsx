@@ -12,7 +12,7 @@ const Navbar = () => (
       <div className="search-icon">
         <FontAwesomeIcon icon={faSearch} />
       </div>
-      <input type="text" placeholder="Search" />
+      <input type="text" placeholder="Search for a product" />
     </div>
     <div className="navbar-links">
       <div className="navbar-link">
