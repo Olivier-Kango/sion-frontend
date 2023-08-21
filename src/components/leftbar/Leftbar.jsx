@@ -95,11 +95,6 @@ const LeftBar = ({
 
   return (
     <div className={`leftbar-container${open ? ' open' : ''}`}>
-      <div className="leftbar-header">
-        <Link to="/" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, '')}>
-          <div className="logo">PSS Digital</div>
-        </Link>
-      </div>
       <nav className="nav">
         <div className="links">
           {isAuthenticated ? (

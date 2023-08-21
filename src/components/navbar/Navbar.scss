@@ -11,6 +11,22 @@
   padding: 10px 20px;
   font-size: 16px;
   z-index: 99;
+  
+  .leftbar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px;
+    margin-bottom: 40px;
+
+    .logo {
+      font-size: 24px;
+      color: $main-color;
+      font-weight: 700;
+      width: 100%;
+      padding: 1rem 1.5rem 0 1.5rem;
+    }
+  }
 
   .navbar-logo img {
     width: 30px;

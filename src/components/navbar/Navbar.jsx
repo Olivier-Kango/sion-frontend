@@ -1,12 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.scss';
 
 const Navbar = () => (
   <div className="navbar">
-    <div className="navbar-logo">
-      <img src="logo.png" alt="Facebook Logo" />
+    <div className="navbar-header">
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <div className="logo">PSS Digital</div>
+      </Link>
     </div>
     <div className="navbar-search">
       <div className="search-icon">

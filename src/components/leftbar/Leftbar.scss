@@ -11,22 +11,6 @@ $main-color-hover: #094a80;
   background: white !important;
   overflow-y: auto;
 
-  .leftbar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 7px;
-    margin-bottom: 40px;
-
-    .logo {
-      font-size: 24px;
-      color: $main-color;
-      font-weight: 700;
-      width: 100%;
-      padding: 1rem 1.5rem 0 1.5rem;
-    }
-  }
-
   .nav {
     flex-grow: 1;
     padding-left: 15px;
