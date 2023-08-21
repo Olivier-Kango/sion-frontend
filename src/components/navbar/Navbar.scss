@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1877f2; // Couleur de fond de la navbar
+  padding: 10px 20px;
+  color: #fff; // Couleur du texte
+  font-size: 16px;
+  
+  .navbar-logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar-search input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .navbar-links {
+    display: flex;
+    
+    .navbar-link {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .navbar-profile {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
