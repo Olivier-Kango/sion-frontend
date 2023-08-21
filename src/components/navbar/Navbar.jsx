@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.scss';
 
 const Navbar = () => (
@@ -7,6 +9,9 @@ const Navbar = () => (
       <img src="logo.png" alt="Facebook Logo" />
     </div>
     <div className="navbar-search">
+      <div className="search-icon">
+        <FontAwesomeIcon icon={faSearch} />
+      </div>
       <input type="text" placeholder="Search" />
     </div>
     <div className="navbar-links">
