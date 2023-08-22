@@ -3,12 +3,11 @@ $main-color-hover: #094a80;
 
 .leftbar-container {
   position: sticky;
-  // margin: 70px 13px 13px 13px !important;
+  padding-top: 70px !important;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   border-right: 1px solid #ddd;
-  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background: white !important;
   overflow-y: auto;
 
