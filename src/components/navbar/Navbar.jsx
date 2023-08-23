@@ -25,15 +25,15 @@ const Navbar = () => (
     </div>
     <div className="navbar-links">
       <div className="navbar-link">
-        <FontAwesomeIcon icon={faHome} />
+        <FontAwesomeIcon icon={faHome} className="nav-icon" />
         <span className="text">Home</span>
       </div>
       <div className="navbar-link">
-        <FontAwesomeIcon icon={faShoppingCart} />
+        <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
         <span className="text">E-commerce</span>
       </div>
       <div className="navbar-link">
-        <FontAwesomeIcon icon={faBriefcase} />
+        <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
         <span className="text">Management</span>
       </div>
     </div>
