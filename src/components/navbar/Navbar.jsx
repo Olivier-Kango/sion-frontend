@@ -34,7 +34,7 @@ const Navbar = () => (
       </div>
       <div className="navbar-link">
         <FontAwesomeIcon icon={faBriefcase} />
-        <span className="text">Business Management</span>
+        <span className="text">Management</span>
       </div>
     </div>
     <div className="navbar-profile">

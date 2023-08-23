@@ -64,6 +64,7 @@ $main-color: #0a66c2;
     
     .navbar-link {
       display: flex;
+      flex-direction: column;
       align-items: center;
       margin-right: 20px;
       
