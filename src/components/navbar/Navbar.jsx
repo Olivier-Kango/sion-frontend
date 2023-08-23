@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import {
   faSearch,
-  faHome,
+  faFolderOpen,
   faShoppingCart,
   faBriefcase,
 } from '@fortawesome/free-solid-svg-icons';
@@ -25,7 +25,7 @@ const Navbar = () => (
     </div>
     <div className="navbar-links">
       <div className="navbar-link">
-        <FontAwesomeIcon icon={faHome} className="nav-icon" />
+        <FontAwesomeIcon icon={faFolderOpen} className="nav-icon" />
         <span className="text">Portfolio</span>
       </div>
       <div className="navbar-link">
@@ -34,7 +34,7 @@ const Navbar = () => (
       </div>
       <div className="navbar-link">
         <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
-        <span className="text">Management</span>
+        <span className="text">B-Management</span>
       </div>
     </div>
     <div className="navbar-profile">
