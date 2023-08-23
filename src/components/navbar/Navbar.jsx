@@ -47,7 +47,7 @@ const Navbar = () => {
         <span className="text">
           Hello,
           {' '}
-          {username}
+          {Number.isNaN(username) ? 'Sign In' : username}
         </span>
       </div>
     </div>
