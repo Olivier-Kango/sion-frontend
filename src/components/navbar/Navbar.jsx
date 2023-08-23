@@ -46,6 +46,7 @@ const Navbar = () => {
         <img src={profilePic} alt="Profile" />
         <span className="text">
           Hello,
+          {' '}
           {username}
         </span>
       </div>
