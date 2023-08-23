@@ -39,7 +39,7 @@ const Navbar = () => (
     </div>
     <div className="navbar-profile">
       <img src={profilePic} alt="Profile" />
-      <span>Nom utilisateur</span>
+      <span className="text">Nom utilisateur</span>
     </div>
   </div>
 );
