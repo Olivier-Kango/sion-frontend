@@ -7,6 +7,7 @@ import {
   faShoppingCart,
   faBriefcase,
 } from '@fortawesome/free-solid-svg-icons';
+import profilePic from '../../assets/profile-pic.jpeg';
 import './Navbar.scss';
 
 const Navbar = () => (
@@ -25,19 +26,19 @@ const Navbar = () => (
     <div className="navbar-links">
       <div className="navbar-link">
         <FontAwesomeIcon icon={faHome} />
-        Home
+        <span className="text">Home</span>
       </div>
       <div className="navbar-link">
         <FontAwesomeIcon icon={faShoppingCart} />
-        E-commerce
+        <span className="text">E-commerce</span>
       </div>
       <div className="navbar-link">
         <FontAwesomeIcon icon={faBriefcase} />
-        Business Management
+        <span className="text">Business Management</span>
       </div>
     </div>
     <div className="navbar-profile">
-      <img src="profile-pic.jpg" alt="Profile" />
+      <img src={profilePic} alt="Profile" />
       <span>Nom utilisateur</span>
     </div>
   </div>
