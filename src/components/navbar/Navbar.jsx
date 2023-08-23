@@ -26,7 +26,7 @@ const Navbar = () => (
     <div className="navbar-links">
       <div className="navbar-link">
         <FontAwesomeIcon icon={faHome} className="nav-icon" />
-        <span className="text">Home</span>
+        <span className="text">Portfolio</span>
       </div>
       <div className="navbar-link">
         <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
