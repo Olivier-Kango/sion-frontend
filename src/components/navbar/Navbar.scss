@@ -103,6 +103,35 @@ $widths: (250px, 200px, 150px, 120px, 100px);
       span {
         // font-weight: bold;
       }
+
+      .popup {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+  
+        &.active {
+          display: block;
+        }
+  
+        .item {
+          display: flex;
+          align-items: center;
+          padding: 8px 16px;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: #f5f5f5;
+          }
+  
+          .icon {
+            margin-right: 8px;
+          }
+        }
+      }
     }
   }
 }
