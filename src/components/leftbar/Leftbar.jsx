@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { BsFillPersonFill } from 'react-icons/bs';
 import {
   FaShoppingCart, FaHome, FaIceCream, FaCrow,
 } from 'react-icons/fa';
@@ -25,9 +24,7 @@ const LeftBar = ({
   open, handleLinkClick, isAuthenticated, handleHamburgerClick,
 }) => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.data?.name);
   const userState = useSelector((state) => state.user);
-  const username = user?.charAt(0).toUpperCase() + user?.slice(1);
   const { pathname } = useLocation();
   const selectedCategory = useSelector((state) => state.products.selectedCategory);
   const showCategory = useSelector((state) => state.products.showCategories);
@@ -97,19 +94,6 @@ const LeftBar = ({
     <div className={`leftbar-container${open ? ' open' : ''}`}>
       <nav className="nav">
         <div className="links">
-          {isAuthenticated ? (
-            <div className="user item">
-              <span className="icon"><BsFillPersonFill /></span>
-              <span className="font-normal text">{`Hello, ${username}`}</span>
-            </div>
-          ) : (
-            <Link to="/login-page" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'login-page')}>
-              <div className="user item">
-                <span className="icon"><BsFillPersonFill /></span>
-                <span className="font-normal text">Hello, Sign in</span>
-              </div>
-            </Link>
-          )}
           <Link to="/" style={{ textDecoration: 'none' }}>
             <button className={`item categories-item ${selectedCategory !== '' ? 'active-categories' : ''}`} type="button" onClick={toggleCategories}>
               <span className="icon"><AiOutlineBars /></span>

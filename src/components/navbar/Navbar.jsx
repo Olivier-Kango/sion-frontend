@@ -45,27 +45,19 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
           <span className="text">B-Management</span>
         </div>
-        <div className="navbar-profile navbar-link">
-          {/* <img src={profilePic} alt="Profile" />
-          <span className="text">
-            Hello,
-            {' '}
-            {Number.isNaN(username) ? 'Sign In' : username}
-          </span> */}
-          {isAuthenticated ? (
-            <div className="user item">
-              <span className="icon"><BsFillPersonFill /></span>
-              <span className="font-normal text">{`Hello, ${username}`}</span>
+        {isAuthenticated ? (
+          <div className="navbar-profile navbar-link">
+            <img src={profilePic} alt="Profile" />
+            <span className="text">{`Hello, ${username}`}</span>
+          </div>
+        ) : (
+          <Link to="/login-page" style={{ textDecoration: 'none' }}>
+            <div className="navbar-profile navbar-link">
+              <img src={profilePic} alt="Profile" />
+              <span className="text">Hello, Sign in</span>
             </div>
-          ) : (
-            <Link to="/login-page" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'login-page')}>
-              <div className="user item">
-                <span className="icon"><BsFillPersonFill /></span>
-                <span className="font-normal text">Hello, Sign in</span>
-              </div>
-            </Link>
-          )}
-        </div>
+          </Link>
+        )}
       </div>
     </div>
   );
