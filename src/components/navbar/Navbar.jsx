@@ -12,8 +12,10 @@ import profilePic from '../../assets/profile-pic.jpeg';
 import './Navbar.scss';
 
 const Navbar = () => {
-  const user = useSelector((state) => state.user.data?.name);
-  const username = user?.charAt(0).toUpperCase() + user?.slice(1);
+  const user = useSelector((state) => state.user);
+  const usern = useSelector((state) => state.user.data?.name);
+  const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
+  const isAuthenticated = user.loggedIn;
 
   return (
     <div className="navbar">
@@ -44,12 +46,25 @@ const Navbar = () => {
           <span className="text">B-Management</span>
         </div>
         <div className="navbar-profile navbar-link">
-          <img src={profilePic} alt="Profile" />
+          {/* <img src={profilePic} alt="Profile" />
           <span className="text">
             Hello,
             {' '}
             {Number.isNaN(username) ? 'Sign In' : username}
-          </span>
+          </span> */}
+          {isAuthenticated ? (
+            <div className="user item">
+              <span className="icon"><BsFillPersonFill /></span>
+              <span className="font-normal text">{`Hello, ${username}`}</span>
+            </div>
+          ) : (
+            <Link to="/login-page" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'login-page')}>
+              <div className="user item">
+                <span className="icon"><BsFillPersonFill /></span>
+                <span className="font-normal text">Hello, Sign in</span>
+              </div>
+            </Link>
+          )}
         </div>
       </div>
     </div>
