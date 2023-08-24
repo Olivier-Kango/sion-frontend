@@ -30,22 +30,20 @@ const Navbar = () => {
           <input type="text" placeholder="Search for a product" />
         </div>
       </div>
-      <div className="nav-second">
-        <div className="navbar-links">
-          <div className="navbar-link">
-            <FontAwesomeIcon icon={faFolderOpen} className="nav-icon" />
-            <span className="text">Portfolio</span>
-          </div>
-          <div className="navbar-link">
-            <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
-            <span className="text">E-commerce</span>
-          </div>
-          <div className="navbar-link">
-            <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
-            <span className="text">B-Management</span>
-          </div>
+      <div className="navbar-links">
+        <div className="navbar-link">
+          <FontAwesomeIcon icon={faFolderOpen} className="nav-icon" />
+          <span className="text">Portfolio</span>
         </div>
-        <div className="navbar-profile">
+        <div className="navbar-link">
+          <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
+          <span className="text">E-commerce</span>
+        </div>
+        <div className="navbar-link">
+          <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
+          <span className="text">B-Management</span>
+        </div>
+        <div className="navbar-profile navbar-link">
           <img src={profilePic} alt="Profile" />
           <span className="text">
             Hello,
