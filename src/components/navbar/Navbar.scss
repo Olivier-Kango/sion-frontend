@@ -1,4 +1,6 @@
 $main-color: #0a66c2;
+$breakpoints: (1000px, 950px, 900px, 850px, 800px);
+$widths: (250px, 200px, 150px, 120px, 100px);
 
 .navbar {
   position: fixed;
@@ -39,8 +41,7 @@ $main-color: #0a66c2;
       
       input[type="text"] {
         padding: 5px 5px 5px 40px;
-        width: 100%;
-        max-width: 300px !important;
+        width: 300px !important;
         border: none;
         border-radius: 5px;
         transition: box-shadow 0.3s ease-in-out;
@@ -104,10 +105,15 @@ $main-color: #0a66c2;
       }
     }
   }
+}
 
-  @media (min-width: 891px) {
-    input[type="text"] {
-        width: auto; /* Rétablir la largeur automatique */
+@for $i from 1 through length($breakpoints) {
+  $breakpoint: nth($breakpoints, $i);
+  $width: nth($widths, $i);
+  
+  @media (max-width: $breakpoint) {
+    .navbar .nav-first .navbar-search input[type="text"] {
+      width: $width !important;
     }
   }
 }
