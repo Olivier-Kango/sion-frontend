@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate } from 'react-router-dom';
@@ -19,7 +19,6 @@ const Navbar = () => {
   const usern = useSelector((state) => state.user.data?.name);
   const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
-  const [isPopupOpen, setPopupOpen] = useState(false);
 
   const handleLogout = () => {
     dispatch(userLogout());
