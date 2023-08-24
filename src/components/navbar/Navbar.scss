@@ -64,33 +64,29 @@ $main-color: #0a66c2;
     }
   }
 
-  .nav-second {
+  .navbar-links {
     display: flex;
-
-    .navbar-links {
+    
+    .navbar-link {
       display: flex;
-      
-      .navbar-link {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 auto;
-        width: 86px;
-        align-items: center;
-        margin-right: 20px;
-        color: #626262;
-  
-        .nav-icon {
-          font-size: 20px;
-        }
-  
-        .text {
-          font-size: 13px;
-          font-weight: 100;
-          padding: 0 !important;
-        }
+      flex-direction: column;
+      flex: 1 1 auto;
+      width: 86px;
+      align-items: center;
+      margin-right: 20px;
+      color: #626262;
+
+      .nav-icon {
+        font-size: 20px;
+      }
+
+      .text {
+        font-size: 13px;
+        font-weight: 100;
+        padding: 0 !important;
       }
     }
-  
+
     .navbar-profile {
       display: flex;
       align-items: center;
