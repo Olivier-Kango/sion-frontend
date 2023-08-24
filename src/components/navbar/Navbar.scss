@@ -14,7 +14,10 @@ $main-color: #0a66c2;
   font-size: 16px;
   z-index: 99;
 
-  .nav-first {    
+  .nav-first {
+    display: flex;
+    gap: 10px;
+    background: red;
     .navbar-header {
       .logo {
         font-size: 24px;
@@ -62,6 +65,8 @@ $main-color: #0a66c2;
   }
 
   .nav-second {
+    display: flex;
+    background: blue;
     .navbar-links {
       display: flex;
       
