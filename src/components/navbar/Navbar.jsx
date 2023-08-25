@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate } from 'react-router-dom';
@@ -17,6 +17,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const usern = useSelector((state) => state.user.data?.name);
+  const popupRef = useRef(null);
   const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(true);
@@ -30,9 +31,9 @@ const Navbar = () => {
     e.stopPropagation(); // Prevents click on popup from propagating to document
   };
 
-  const handleDocumentClick = () => {
-    if (!isPopupOpen) {
-      setPopupOpen(false);
+  const handleDocumentClick = (e) => {
+    if (!popupRef.current?.contains(e.target)) {
+      setPopupOpen(true);
     }
   };
 
@@ -41,7 +42,7 @@ const Navbar = () => {
     return () => {
       document.removeEventListener('click', handleDocumentClick);
     };
-  }, [isPopupOpen]);
+  }, []);
 
   return (
     <div className="navbar">
@@ -79,6 +80,7 @@ const Navbar = () => {
               className="profile-container"
               type="button"
               onClick={() => setPopupOpen(!isPopupOpen)}
+              ref={popupRef}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   setPopupOpen(!isPopupOpen);
