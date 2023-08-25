@@ -59,7 +59,9 @@ const Navbar = () => {
           <span className="text">B-Management</span>
         </div>
         {isAuthenticated ? (
-          <div className="navbar-profile navbar-link">
+          // eslint-disable-next-line max-len
+          // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+          <div className="navbar-profile navbar-link" onClick={togglePopup}>
             <img src={profilePic} alt="Profile" />
             <span className="text">{`Hello, ${username}`}</span>
             <div className="popup">
