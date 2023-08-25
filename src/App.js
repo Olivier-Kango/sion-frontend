@@ -15,7 +15,6 @@ import AddOrder from './components/ordering/AddOrder';
 import Footer from './components/footer/Footer';
 import PrivateRoutes from './components/protectedRoute/PrivateRoutes';
 import LeftBar from './components/leftbar/Leftbar';
-import Navbar from './components/navbar/Navbar';
 
 // pages
 import Splash from './pages/Splash';
@@ -24,7 +23,6 @@ const App = () => {
   const user = useSelector((state) => state.user);
   return (
     <div className="App">
-      <Navbar />
       <Routes>
         <Route path="/login-page" element={<Splash />} />
         <Route path="/login" element={<Login />} />

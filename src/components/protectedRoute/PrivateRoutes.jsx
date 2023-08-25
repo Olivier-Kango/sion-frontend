@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line
 import LeftBar from '../leftbar/Leftbar.jsx';
 import { setSelectedCategory, showCategories, arrowDirection } from '../../redux/products/products';
+import Navbar from '../navbar/Navbar';
 
 import './PrivateRoutes.scss';
 
@@ -44,6 +45,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   return (
     children || (
       <section className="page-container">
+        <Navbar />
         {isMobile ? (
           <>
             <div
