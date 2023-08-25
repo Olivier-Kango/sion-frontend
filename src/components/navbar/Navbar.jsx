@@ -19,16 +19,11 @@ const Navbar = () => {
   const usern = useSelector((state) => state.user.data?.name);
   const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
-  const [isPopupOpen, setPopupOpen] = useState(false);
+  const [isPopupOpen, setPopupOpen] = useState(true);
 
   const handleLogout = () => {
     dispatch(userLogout());
     navigate('/login-page');
-  };
-
-  const togglePopup = () => {
-    setPopupOpen(!isPopupOpen);
-    console.log('Popup Open:', !isPopupOpen);
   };
 
   const handlePopupClick = (e) => {
@@ -36,7 +31,7 @@ const Navbar = () => {
   };
 
   const handleDocumentClick = () => {
-    if (isPopupOpen) {
+    if (!isPopupOpen) {
       setPopupOpen(false);
     }
   };
@@ -83,10 +78,10 @@ const Navbar = () => {
             <button
               className="profile-container"
               type="button"
-              onClick={togglePopup}
+              onClick={() => setPopupOpen(!isPopupOpen)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
-                  togglePopup();
+                  setPopupOpen(!isPopupOpen);
                 }
               }}
             >
@@ -94,7 +89,7 @@ const Navbar = () => {
               <span className="text">{`Hello, ${username}`}</span>
             </button>
             {/* Popup */}
-            {isPopupOpen && (
+            {!isPopupOpen && (
               // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
               <div
                 className="popup"
