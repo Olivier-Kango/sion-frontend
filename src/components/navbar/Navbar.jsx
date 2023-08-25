@@ -117,7 +117,7 @@ const Navbar = () => {
             )}
           </div>
         ) : (
-          <Link to="/login-page" style={{ textDecoration: 'none' }}>
+          <Link to="/login" style={{ textDecoration: 'none' }}>
             <div className="navbar-profile navbar-link">
               <img src={profilePic} alt="Profile" />
               <span className="text">Hello, Sign in</span>
