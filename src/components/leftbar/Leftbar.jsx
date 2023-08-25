@@ -9,19 +9,17 @@ import {
   GiNails, GiFire, GiWaterDrop, GiProcessor,
 } from 'react-icons/gi';
 import { AiFillPlusCircle, AiOutlineBars } from 'react-icons/ai';
-import { FiLogOut } from 'react-icons/fi';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { useMediaQuery } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Footer from '../footer/Footer';
-import { userLogout } from '../../redux/users/users';
 import { setSelectedCategory, showCategories, arrowDirection } from '../../redux/products/products';
 import './Leftbar.scss';
 
 const LeftBar = ({
-  open, handleLinkClick, isAuthenticated, handleHamburgerClick,
+  open, handleLinkClick, handleHamburgerClick,
 }) => {
   const dispatch = useDispatch();
   const userState = useSelector((state) => state.user);
@@ -52,11 +50,6 @@ const LeftBar = ({
 
     return undefined;
   }, [addProductClicked, userState, messageCounter]);
-
-  const handleLogout = () => {
-    dispatch(userLogout());
-    navigate('/login-page');
-  };
 
   const handleAddProductClick = () => {
     setAddProductClicked(true);
@@ -167,16 +160,6 @@ const LeftBar = ({
               to add a product.
             </div>
           )}
-          {isAuthenticated && (
-          <button
-            type="button"
-            className="item logout"
-            onClick={() => handleLogout()}
-          >
-            <span className="icon"><FiLogOut /></span>
-            <span className="text">Logout</span>
-          </button>
-          )}
         </div>
       </nav>
       <div className="leftbar-footer">
@@ -188,7 +171,6 @@ const LeftBar = ({
 
 LeftBar.propTypes = {
   open: PropTypes.bool.isRequired,
-  isAuthenticated: PropTypes.bool.isRequired,
   handleLinkClick: PropTypes.func.isRequired,
   handleHamburgerClick: PropTypes.func.isRequired,
 };
