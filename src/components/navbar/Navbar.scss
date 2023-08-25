@@ -108,15 +108,16 @@ $widths: (250px, 200px, 150px, 120px, 100px);
 
       .popup {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
+        top: 200;
+        right: 0;
+        width: 200px;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1000;
+        background: blue;
       }
         
       /* Styles for the dialog box */

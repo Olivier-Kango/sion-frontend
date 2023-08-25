@@ -28,6 +28,7 @@ const Navbar = () => {
 
   const togglePopup = () => {
     setPopupOpen(!isPopupOpen);
+    console.log('Popup Open:', !isPopupOpen);
   };
 
   const handlePopupClick = (e) => {
