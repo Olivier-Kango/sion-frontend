@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useNavigate } from 'react-router-dom';
@@ -21,14 +21,31 @@ const Navbar = () => {
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(false);
 
-  const togglePopup = () => {
-    setPopupOpen(!isPopupOpen);
-  };
-
   const handleLogout = () => {
     dispatch(userLogout());
     navigate('/login-page');
   };
+
+  const togglePopup = () => {
+    setPopupOpen(!isPopupOpen);
+  };
+
+  const handlePopupClick = (e) => {
+    e.stopPropagation(); // Prevents click on popup from propagating to document
+  };
+
+  const handleDocumentClick = () => {
+    if (isPopupOpen) {
+      setPopupOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleDocumentClick);
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, [isPopupOpen]);
 
   return (
     <div className="navbar">
@@ -59,20 +76,45 @@ const Navbar = () => {
           <span className="text">B-Management</span>
         </div>
         {isAuthenticated ? (
-          // eslint-disable-next-line max-len
-          // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-          <div className="navbar-profile navbar-link" onClick={togglePopup}>
-            <img src={profilePic} alt="Profile" />
-            <span className="text">{`Hello, ${username}`}</span>
-            <div className="popup">
-              <button
-                type="button"
-                className="item logout"
-                onClick={() => handleLogout()}
+          <div
+            className={`navbar-profile navbar-link ${isPopupOpen ? 'active' : ''}`}
+          >
+            <button
+              className="profile-container"
+              type="button"
+              onClick={togglePopup}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  togglePopup();
+                }
+              }}
+            >
+              <img src={profilePic} alt="Profile" />
+              <span className="text">{`Hello, ${username}`}</span>
+            </button>
+            {/* Popup */}
+            {isPopupOpen && (
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+              <div
+                className="popup"
+                role="dialog"
+                onClick={handlePopupClick}
+                onKeyDown={(e) => e.stopPropagation()}
               >
-                <span className="text">Logout</span>
-              </button>
-            </div>
+                <button
+                  type="button"
+                  className="item logout"
+                  onClick={handleLogout}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      handleLogout();
+                    }
+                  }}
+                >
+                  <span className="text">Logout</span>
+                </button>
+              </div>
+            )}
           </div>
         ) : (
           <Link to="/login-page" style={{ textDecoration: 'none' }}>
