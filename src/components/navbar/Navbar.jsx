@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FiLogOut } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   faSearch,
@@ -109,6 +110,7 @@ const Navbar = () => {
                     }
                   }}
                 >
+                  <span className="icon"><FiLogOut /></span>
                   <span className="text">Logout</span>
                 </button>
               </div>
