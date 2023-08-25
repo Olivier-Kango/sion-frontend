@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   FaShoppingCart, FaHome, FaIceCream, FaCrow,
@@ -28,32 +28,30 @@ const LeftBar = ({
   const showCategory = useSelector((state) => state.products.showCategories);
   const arrow = useSelector((state) => state.products.arrowDirection);
   const navigate = useNavigate();
-  const [showAdminMessage, setShowAdminMessage] = useState(false);
-  const [addProductClicked, setAddProductClicked] = useState(false);
-  const [messageCounter, setMessageCounter] = useState(0);
+  // const [showAdminMessage, setShowAdminMessage] = useState(false);
+  // const [addProductClicked, setAddProductClicked] = useState(false);
+  // const [messageCounter, setMessageCounter] = useState(0);
   const isMobile = useMediaQuery('(max-width: 768px)');
 
-  useEffect(() => {
-    if (addProductClicked && (!userState.loggedIn || userState.data.role !== 'admin')) {
-      setShowAdminMessage(true);
-      const timer = setTimeout(() => {
-        setShowAdminMessage(false);
-      }, 3000);
-      return () => {
-        clearTimeout(timer);
-      };
-    }
+  // useEffect(() => {
+  //   if (addProductClicked && (!userState.loggedIn || userState.data.role !== 'admin')) {
+  //     setShowAdminMessage(true);
+  //     const timer = setTimeout(() => {
+  //       setShowAdminMessage(false);
+  //     }, 3000);
+  //     return () => {
+  //       clearTimeout(timer);
+  //     };
+  //   }
 
-    if (messageCounter > 0) {
-      setShowAdminMessage(false);
-    }
+  //   if (messageCounter > 0) {
+  //     setShowAdminMessage(false);
+  //   }
 
-    return undefined;
-  }, [addProductClicked, userState, messageCounter]);
+  //   return undefined;
+  // }, [addProductClicked, userState, messageCounter]);
 
   const handleAddProductClick = () => {
-    setAddProductClicked(true);
-    setMessageCounter((prevCounter) => prevCounter + 1);
     dispatch(setSelectedCategory(''));
     dispatch(arrowDirection('down'));
     dispatch(showCategories(false));
@@ -138,27 +136,22 @@ const LeftBar = ({
               <span className="text">My Orders</span>
             </div>
           </Link>
-          <Link
-            to={userState.data.role === 'admin' && '/addproduct'}
-            style={{ textDecoration: 'none' }}
-            onClick={(e) => {
-              if (!userState.loggedIn || userState.data.role !== 'admin') {
-                e.preventDefault();
-              }
-              handleAddProductClick();
-            }}
-          >
-            <div className={pathname === '/addproduct' ? 'active' : 'item'}>
-              <span className="icon"><AiFillPlusCircle /></span>
-              <span className="text">Add Product</span>
-            </div>
-          </Link>
-          {showAdminMessage && (
-            <div style={{ color: 'red', paddingLeft: '12px' }}>
-              You need to be an admin
-              <br />
-              to add a product.
-            </div>
+          {userState.data.role === 'admin' && (
+            <Link
+              to="/addproduct"
+              style={{ textDecoration: 'none' }}
+              onClick={(e) => {
+                if (!userState.loggedIn || userState.data.role !== 'admin') {
+                  e.preventDefault();
+                }
+                handleAddProductClick();
+              }}
+            >
+              <div className={pathname === '/addproduct' ? 'active' : 'item'}>
+                <span className="icon"><AiFillPlusCircle /></span>
+                <span className="text">Add Product</span>
+              </div>
+            </Link>
           )}
         </div>
       </nav>
