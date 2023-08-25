@@ -21,6 +21,10 @@ const Navbar = () => {
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(false);
 
+  const togglePopup = () => {
+    setPopupOpen(!isPopupOpen);
+  };
+
   const handleLogout = () => {
     dispatch(userLogout());
     navigate('/login-page');
