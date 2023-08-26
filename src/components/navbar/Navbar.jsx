@@ -49,6 +49,10 @@ const Navbar = ({ handleLinkClick }) => {
     };
   }, []);
 
+  const handlePortfolioClick = () => {
+    window.location.href = 'https://olivier-kango.netlify.app/';
+  };
+
   return (
     <div className="navbar">
       <div className="nav-first">
@@ -82,18 +86,24 @@ const Navbar = ({ handleLinkClick }) => {
         </div>
       </div>
       <div className="navbar-links">
-        <div className="navbar-link">
-          <FontAwesomeIcon icon={faFolderOpen} className="nav-icon" />
-          <span className="text">Portfolio</span>
-        </div>
-        <div className="navbar-link">
-          <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
-          <span className="text">E-commerce</span>
-        </div>
-        <div className="navbar-link">
-          <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
-          <span className="text">Management</span>
-        </div>
+        <Link to="/" onClick={handlePortfolioClick}>
+          <div className="navbar-link">
+            <FontAwesomeIcon icon={faFolderOpen} className="nav-icon" />
+            <span className="text">Portfolio</span>
+          </div>
+        </Link>
+        <Link to="/">
+          <div className="navbar-link">
+            <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
+            <span className="text">E-commerce</span>
+          </div>
+        </Link>
+        <Link to="/management">
+          <div className="navbar-link">
+            <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
+            <span className="text">Management</span>
+          </div>
+        </Link>
         {isAuthenticated ? (
           <div
             className={`navbar-profile navbar-link ${isPopupOpen ? 'active' : ''}`}

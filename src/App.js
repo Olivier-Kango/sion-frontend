@@ -18,6 +18,7 @@ import LeftBar from './components/leftbar/Leftbar';
 
 // pages
 import Splash from './pages/Splash';
+import Management from './components/management/management';
 
 const App = () => {
   const user = useSelector((state) => state.user);
@@ -55,6 +56,7 @@ const App = () => {
             )
           }
         />
+        <Route path="/management" element={<Management />} />
       </Routes>
     </div>
   );
