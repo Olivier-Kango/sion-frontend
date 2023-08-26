@@ -29,6 +29,7 @@ const LeftBar = ({
   const arrow = useSelector((state) => state.products.arrowDirection);
   const navigate = useNavigate();
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const location = useLocation();
 
   const handleAddProductClick = () => {
     dispatch(setSelectedCategory(''));
@@ -60,8 +61,11 @@ const LeftBar = ({
     { id: 8, name: 'Chickens', icon: <FaCrow /> },
   ];
 
+  const shouldShowLeftbar = location.pathname !== '/management';
+
   return (
     <div className={`leftbar-container${open ? ' open' : ''}`}>
+      {shouldShowLeftbar && (
       <nav className="nav">
         <div className="links">
           {isMobile && (
@@ -147,9 +151,12 @@ const LeftBar = ({
           )}
         </div>
       </nav>
-      <div className="leftbar-footer">
-        <Footer />
-      </div>
+      )}
+      {shouldShowLeftbar && (
+        <div className="leftbar-footer">
+          <Footer />
+        </div>
+      )}
     </div>
   );
 };
