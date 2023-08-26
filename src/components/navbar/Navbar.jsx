@@ -9,8 +9,10 @@ import {
   faShoppingCart,
   faBriefcase,
 } from '@fortawesome/free-solid-svg-icons';
+import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
+import favicon from '../../assets/favicon.jpg';
 import { userLogout } from '../../redux/users/users';
 import './Navbar.scss';
 
@@ -23,6 +25,7 @@ const Navbar = ({ handleLinkClick }) => {
   const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(true);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   const handleLogout = () => {
     dispatch(userLogout());
@@ -53,7 +56,7 @@ const Navbar = ({ handleLinkClick }) => {
           <Link
             to="/"
             style={{ textDecoration: 'none' }}
-            onClick={(event) => handleLinkClick(event, 'ordering')}
+            onClick={(event) => handleLinkClick(event, '')}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 setPopupOpen(!isPopupOpen);
@@ -61,7 +64,13 @@ const Navbar = ({ handleLinkClick }) => {
             }}
           >
             <div className="logo">
-              PSS Digital
+              {!isMobile ? (
+                <span>
+                  PSS Digital
+                </span>
+              ) : (
+                <img src={favicon} alt="Profile" />
+              )}
             </div>
           </Link>
         </div>
