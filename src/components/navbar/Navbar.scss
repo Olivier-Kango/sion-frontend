@@ -161,6 +161,11 @@ $widths: (250px, 200px, 150px, 120px, 100px);
       }
     }
   }
+
+    
+  @media screen and (max-width: 768px) {
+    
+  }
 }
 
 @for $i from 1 through length($breakpoints) {
