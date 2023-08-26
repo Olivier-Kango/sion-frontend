@@ -28,28 +28,7 @@ const LeftBar = ({
   const showCategory = useSelector((state) => state.products.showCategories);
   const arrow = useSelector((state) => state.products.arrowDirection);
   const navigate = useNavigate();
-  // const [showAdminMessage, setShowAdminMessage] = useState(false);
-  // const [addProductClicked, setAddProductClicked] = useState(false);
-  // const [messageCounter, setMessageCounter] = useState(0);
   const isMobile = useMediaQuery('(max-width: 768px)');
-
-  // useEffect(() => {
-  //   if (addProductClicked && (!userState.loggedIn || userState.data.role !== 'admin')) {
-  //     setShowAdminMessage(true);
-  //     const timer = setTimeout(() => {
-  //       setShowAdminMessage(false);
-  //     }, 3000);
-  //     return () => {
-  //       clearTimeout(timer);
-  //     };
-  //   }
-
-  //   if (messageCounter > 0) {
-  //     setShowAdminMessage(false);
-  //   }
-
-  //   return undefined;
-  // }, [addProductClicked, userState, messageCounter]);
 
   const handleAddProductClick = () => {
     dispatch(setSelectedCategory(''));

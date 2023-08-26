@@ -171,6 +171,7 @@ $widths: (250px, 200px, 150px, 120px, 100px);
       left: 0;
       width: 100%;
       background: white;
+      background: red;
       
       .navbar-link {
         // display: flex;
@@ -178,7 +179,8 @@ $widths: (250px, 200px, 150px, 120px, 100px);
         // flex: 1 1 auto;
         // width: 86px;
         // align-items: center;
-        // margin-right: 20px;
+        padding-top: 10px;
+        margin-right: 10px;
         // color: #626262;
   
         .nav-icon {
