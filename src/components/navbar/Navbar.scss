@@ -166,6 +166,10 @@ $widths: (250px, 200px, 150px, 120px, 100px);
   @media screen and (max-width: 768px) {
     .navbar-links {
       display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       
       .navbar-link {
         // display: flex;
