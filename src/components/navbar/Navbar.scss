@@ -1,6 +1,6 @@
 $main-color: #0a66c2;
-$breakpoints: (1000px, 950px, 900px, 850px, 800px, 768px);
-$widths: (250px, 200px, 150px, 120px, 100px, 252px);
+$breakpoints: (1050px, 1000px, 950px, 900px, 850px, 800px);
+$widths: (300px, 250px, 200px, 150px, 120px, 100px);
 
 .navbar {
   position: fixed;
@@ -41,7 +41,7 @@ $widths: (250px, 200px, 150px, 120px, 100px, 252px);
       
       input[type="text"] {
         padding: 5px 5px 5px 40px;
-        width: 300px !important;
+        width: 550px;
         border: none;
         border-radius: 5px;
         transition: box-shadow 0.3s ease-in-out;
@@ -190,5 +190,17 @@ $widths: (250px, 200px, 150px, 120px, 100px, 252px);
     .navbar .nav-first .navbar-search input[type="text"] {
       width: $width !important;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-first,
+  .navbar .nav-first .navbar-search,
+  .navbar .nav-first .navbar-search input[type="text"] {
+    width: 100% !important;
+  }
+
+  .navbar .nav-first .navbar-search input[type="text"] {
+    margin-right: 43px;
   }
 }
