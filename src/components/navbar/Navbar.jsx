@@ -12,7 +12,7 @@ import {
 import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
-import favicon from '../../assets/favicon.jpg';
+import favicon from '../../assets/favicon.png';
 import { userLogout } from '../../redux/users/users';
 import './Navbar.scss';
 

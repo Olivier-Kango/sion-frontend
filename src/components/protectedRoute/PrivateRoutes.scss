@@ -32,7 +32,7 @@ $main-color-hover: #094a80;
 
     .hamburger-button {
       position: fixed;
-      top: 7px;
+      top: 6px;
       right: 28px;
       z-index: 99;
       width: 40px;
@@ -50,7 +50,7 @@ $main-color-hover: #094a80;
     .hamburger-button span {
       display: block;
       width: 25px;
-      height: 3px;
+      height: 4px;
       background-color: black;
       margin-bottom: 5px;
       transition: transform 0.3s ease;
