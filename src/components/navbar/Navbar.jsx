@@ -71,7 +71,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-link">
           <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
-          <span className="text">B-Management</span>
+          <span className="text">Management</span>
         </div>
         {isAuthenticated ? (
           <div
