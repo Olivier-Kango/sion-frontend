@@ -45,7 +45,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   return (
     children || (
       <section className="page-container">
-        <Navbar />
+        <Navbar handleLinkClick={(event, link) => handleLinkClick(event, link)} />
         {isMobile ? (
           <>
             <div

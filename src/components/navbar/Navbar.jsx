@@ -9,11 +9,12 @@ import {
   faShoppingCart,
   faBriefcase,
 } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
 import { userLogout } from '../../redux/users/users';
 import './Navbar.scss';
 
-const Navbar = () => {
+const Navbar = ({ handleLinkClick }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
@@ -49,8 +50,19 @@ const Navbar = () => {
     <div className="navbar">
       <div className="nav-first">
         <div className="navbar-header">
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <div className="logo">PSS Digital</div>
+          <Link
+            to="/"
+            style={{ textDecoration: 'none' }}
+            onClick={(event) => handleLinkClick(event, 'ordering')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                setPopupOpen(!isPopupOpen);
+              }
+            }}
+          >
+            <div className="logo">
+              PSS Digital
+            </div>
           </Link>
         </div>
         <div className="navbar-search">
@@ -127,6 +139,10 @@ const Navbar = () => {
       </div>
     </div>
   );
+};
+
+Navbar.propTypes = {
+  handleLinkClick: PropTypes.func.isRequired,
 };
 
 export default Navbar;
