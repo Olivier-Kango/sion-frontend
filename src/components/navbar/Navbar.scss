@@ -1,6 +1,6 @@
 $main-color: #0a66c2;
-$breakpoints: (1000px, 950px, 900px, 850px, 800px);
-$widths: (250px, 200px, 150px, 120px, 100px);
+$breakpoints: (1000px, 950px, 900px, 850px, 800px, 768px);
+$widths: (250px, 200px, 150px, 120px, 100px, 252px);
 
 .navbar {
   position: fixed;
@@ -165,6 +165,7 @@ $widths: (250px, 200px, 150px, 120px, 100px);
     
   @media screen and (max-width: 768px) {
     padding: 8px 16px 6px 16px;
+
     .navbar-links {
       display: flex;
       position: fixed;
