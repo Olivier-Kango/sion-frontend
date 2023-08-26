@@ -27,7 +27,7 @@ $main-color-hover: #094a80;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(4px);
-      z-index: 5;
+      z-index: 999;
     }
 
     .hamburger-button {
@@ -45,6 +45,7 @@ $main-color-hover: #094a80;
       border: none;
       cursor: pointer;
       outline: none;
+      z-index: 9999;
     }
 
     .hamburger-button span {
@@ -62,7 +63,7 @@ $main-color-hover: #094a80;
 
     .hamburger-button.open span:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
-      background-color: black;
+      background-color: white;
     }
 
     .hamburger-button.open span:nth-child(2) {
@@ -71,7 +72,7 @@ $main-color-hover: #094a80;
 
     .hamburger-button.open span:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
-      background-color: black;
+      background-color: white;
     }
 
     .leftbar-container {
@@ -83,7 +84,7 @@ $main-color-hover: #094a80;
       background-color: #f8f8f8;
       box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
       transform: translateX(130%);
-      z-index: 10;
+      z-index: 1000;
       animation-duration: 0.4s;
       animation-timing-function: ease;
       animation-fill-mode: both;

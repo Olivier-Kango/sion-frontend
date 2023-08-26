@@ -64,6 +64,19 @@ const LeftBar = ({
     <div className={`leftbar-container${open ? ' open' : ''}`}>
       <nav className="nav">
         <div className="links">
+          {isMobile && (
+          <Link
+            to="/"
+            style={{ textDecoration: 'none' }}
+            onClick={(event) => handleLinkClick(event, '')}
+          >
+            <div className="logo-pop">
+              <span>
+                PSS Digital
+              </span>
+            </div>
+          </Link>
+          )}
           <Link to="/" style={{ textDecoration: 'none' }}>
             <button className={`item categories-item ${selectedCategory !== '' ? 'active-categories' : ''}`} type="button" onClick={toggleCategories}>
               <span className="icon"><AiOutlineBars /></span>
