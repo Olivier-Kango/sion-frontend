@@ -18,7 +18,7 @@ import LeftBar from './components/leftbar/Leftbar';
 
 // pages
 import Splash from './pages/Splash';
-import Management from './components/management/management';
+import Management from './components/management/Management';
 
 const App = () => {
   const user = useSelector((state) => state.user);
@@ -33,6 +33,7 @@ const App = () => {
             <PrivateRoutes isAllowed redirectPath="/login-page" />
           }
         >
+          <Route path="/management" element={<Management />} />
           <Route path="/" element={<Home />} />
           <Route path="/productdetails/:id" element={<ProductDetails />} />
           <Route path="/ordering" element={<Ordering />} />
@@ -56,7 +57,6 @@ const App = () => {
             )
           }
         />
-        <Route path="/management" element={<Management />} />
       </Routes>
     </div>
   );

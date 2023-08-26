@@ -1,4 +1,5 @@
 import React from 'react';
+import './Management.scss';
 
 const Management = () => (
   <div className="project-management">
