@@ -190,6 +190,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
   }
 }
 
+/* stylelint-disable at-rule-no-unknown */
 @for $i from 1 through length($breakpoints) {
   $breakpoint: nth($breakpoints, $i);
   $width: nth($widths, $i);
@@ -200,6 +201,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
     }
   }
 }
+/* stylelint-enable at-rule-no-unknown */
 
 @media (max-width: 768px) {
   .navbar .nav-first,
