@@ -13,7 +13,7 @@ $main-color-hover: #094a80;
     justify-content: center;
     align-items: flex-start;
     background: #f8f8f8;
-    overflow-y: auto !important;
+    padding-top: 50px !important;
   }
 
   @media screen and (max-width: 768px) {
@@ -27,14 +27,13 @@ $main-color-hover: #094a80;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(4px);
-      z-index: 5;
+      z-index: 999;
     }
 
     .hamburger-button {
       position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 99;
+      top: 6px;
+      right: 14px;
       width: 40px;
       height: 40px;
       display: flex;
@@ -45,13 +44,14 @@ $main-color-hover: #094a80;
       border: none;
       cursor: pointer;
       outline: none;
+      z-index: 9999;
     }
 
     .hamburger-button span {
       display: block;
       width: 25px;
-      height: 3px;
-      background-color: #ccc;
+      height: 4px;
+      background-color: black;
       margin-bottom: 5px;
       transition: transform 0.3s ease;
     }
@@ -83,7 +83,7 @@ $main-color-hover: #094a80;
       background-color: #f8f8f8;
       box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
       transform: translateX(130%);
-      z-index: 10;
+      z-index: 1000;
       animation-duration: 0.4s;
       animation-timing-function: ease;
       animation-fill-mode: both;

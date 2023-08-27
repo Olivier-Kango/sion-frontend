@@ -7,7 +7,6 @@ import { useMediaQuery } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
-// import LeftBar from '../leftbar/Leftbar';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';

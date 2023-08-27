@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Outlet, Navigate, useNavigate } from 'react-router-dom';
+import {
+  Outlet,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line
 import LeftBar from '../leftbar/Leftbar.jsx';
 import { setSelectedCategory, showCategories, arrowDirection } from '../../redux/products/products';
+import Navbar from '../navbar/Navbar';
 
 import './PrivateRoutes.scss';
 
@@ -17,6 +23,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const isAuthenticated = user.loggedIn;
   const selectedCategory = useSelector((state) => state.products.selectedCategory);
   const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useDispatch();
 
   const handleHamburgerClick = () => {
@@ -41,9 +48,13 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   if (!isAllowed) {
     return <Navigate to={redirectPath} replace />;
   }
+
+  const shouldShowLeftbar = location.pathname !== '/management';
+
   return (
     children || (
       <section className="page-container">
+        <Navbar handleLinkClick={(event, link) => handleLinkClick(event, link)} />
         {isMobile ? (
           <>
             <div
@@ -73,7 +84,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
             />
             )}
             {showLeftbar
-            && (
+            && shouldShowLeftbar && (
             <LeftBar
               open={showLeftbar}
               handleLinkClick={(event, link) => handleLinkClick(event, link)}

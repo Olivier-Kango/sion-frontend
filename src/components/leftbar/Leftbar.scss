@@ -3,6 +3,7 @@ $main-color-hover: #094a80;
 
 .leftbar-container {
   position: sticky;
+  padding-top: 70px !important;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -10,22 +11,6 @@ $main-color-hover: #094a80;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background: white !important;
   overflow-y: auto;
-
-  .leftbar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 7px;
-    margin-bottom: 40px;
-
-    .logo {
-      font-size: 24px;
-      color: $main-color;
-      font-weight: 700;
-      width: 100%;
-      padding: 1rem 1.5rem 0 1.5rem;
-    }
-  }
 
   .nav {
     flex-grow: 1;
@@ -143,4 +128,12 @@ $main-color-hover: #094a80;
   .leftbar-footer {
     padding: 10px 32px;
   }
+}
+
+.logo-pop {
+  font-size: 24px;
+  color: $main-color;
+  font-weight: 700;
+  width: 100%;
+  margin: -50px 0 20px 0;
 }
