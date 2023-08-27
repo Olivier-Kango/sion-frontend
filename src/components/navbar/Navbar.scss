@@ -10,7 +10,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 8px 35px 6px 35px;
   font-size: 16px;
@@ -38,7 +38,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
       position: relative;
       display: flex;
       align-items: center;
-      
+
       input[type="text"] {
         padding: 5px 5px 5px 40px;
         width: 550px;
@@ -48,27 +48,27 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
         background-color: #f0f2f5;
         position: relative;
         z-index: 0;
-        
+
         &:focus {
           outline: none;
-          box-shadow: none; 
+          box-shadow: none;
         }
       }
-      
+
       .search-icon {
         position: absolute;
         left: 15px;
         top: 50%;
         transform: translateY(-50%);
         color: #65676b;
-        z-index: 1; 
+        z-index: 1;
       }
     }
   }
 
   .navbar-links {
     display: flex;
-    
+
     .navbar-link {
       display: flex;
       flex-direction: column;
@@ -98,14 +98,14 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
       display: flex;
       align-items: center !important;
       flex-direction: column;
-  
+
       img {
         width: 20px;
         height: 20px;
         border-radius: 50%;
         margin-right: 10px;
       }
-  
+
       span {
         // font-weight: bold;
       }
@@ -134,7 +134,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
         align-items: center;
         z-index: 1000;
       }
-        
+
       /* Styles for the dialog box */
       .popup-dialog {
         background-color: white;
@@ -171,7 +171,6 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
     }
   }
 
-    
   @media screen and (max-width: 768px) {
     padding: 8px 16px 6px 16px;
 
@@ -182,7 +181,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
       left: 0;
       width: 100%;
       background: white;
-      
+
       .navbar-link {
         padding-top: 10px;
         margin-right: 10px;
@@ -194,7 +193,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
 @for $i from 1 through length($breakpoints) {
   $breakpoint: nth($breakpoints, $i);
   $width: nth($widths, $i);
-  
+
   @media (max-width: $breakpoint) {
     .navbar .nav-first .navbar-search input[type="text"] {
       width: $width !important;
@@ -220,14 +219,6 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
     top: unset !important;
     bottom: 51px !important;
     right: 0 !important;
-    // width: 150px;
-    // height: 10%;
-    // background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    // border-radius: 5px;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // z-index: 1000;
   }
 }
