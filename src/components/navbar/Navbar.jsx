@@ -20,9 +20,9 @@ const Navbar = ({ handleLinkClick }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
-  const usern = useSelector((state) => state.user.data?.name);
+  // const usern = useSelector((state) => state.user.data?.name);
   const popupRef = useRef(null);
-  const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
+  // const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(true);
   const isMobile = useMediaQuery('(max-width: 768px)');
