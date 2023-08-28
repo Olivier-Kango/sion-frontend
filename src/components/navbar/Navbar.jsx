@@ -12,7 +12,6 @@ import {
 import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
-import favicon from '../../assets/favicon.png';
 import { userLogout } from '../../redux/users/users';
 import './Navbar.scss';
 
@@ -91,7 +90,6 @@ const Navbar = ({ handleLinkClick }) => {
                         }}
                       >
                         <img src={profilePic} alt="Profile" />
-                        <span className="text">{`Hello, ${username}`}</span>
                       </button>
                       {/* Popup */}
                       {!isPopupOpen && (
@@ -102,6 +100,7 @@ const Navbar = ({ handleLinkClick }) => {
                           onClick={handlePopupClick}
                           onKeyDown={(e) => e.stopPropagation()}
                         >
+                          <span className="text">{`Hello, ${username}`}</span>
                           <button
                             type="button"
                             className="item logout"
