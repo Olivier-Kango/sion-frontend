@@ -73,7 +73,7 @@ const Navbar = ({ handleLinkClick }) => {
                   PSS Digital
                 </span>
               ) : (
-                <img src={favicon} alt="Profile" />
+                // <img src={favicon} alt="Profile" />
               )}
             </div>
           </Link>
