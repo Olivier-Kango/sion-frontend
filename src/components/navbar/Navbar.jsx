@@ -73,7 +73,60 @@ const Navbar = ({ handleLinkClick }) => {
                   PSS Digital
                 </span>
               ) : (
-                <img src={favicon} alt="Profile" />
+                // <img src={favicon} alt="Profile" />
+                <div>
+                  {isAuthenticated ? (
+                    <div
+                      className={`navbar-profile navbar-link ${isPopupOpen ? 'active' : ''}`}
+                    >
+                      <button
+                        className="profile-container"
+                        type="button"
+                        onClick={() => setPopupOpen(!isPopupOpen)}
+                        ref={popupRef}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            setPopupOpen(!isPopupOpen);
+                          }
+                        }}
+                      >
+                        <img src={profilePic} alt="Profile" />
+                        <span className="text">{`Hello, ${username}`}</span>
+                      </button>
+                      {/* Popup */}
+                      {!isPopupOpen && (
+                        // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+                        <div
+                          className="popup"
+                          role="dialog"
+                          onClick={handlePopupClick}
+                          onKeyDown={(e) => e.stopPropagation()}
+                        >
+                          <button
+                            type="button"
+                            className="item logout"
+                            onClick={handleLogout}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                handleLogout();
+                              }
+                            }}
+                          >
+                            <span className="icon"><FiLogOut /></span>
+                            <span className="text">Logout</span>
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link to="/login" style={{ textDecoration: 'none' }}>
+                      <div className="navbar-profile navbar-link">
+                        <img src={profilePic} alt="Profile" />
+                        <span className="text">Hello, Sign in</span>
+                      </div>
+                    </Link>
+                  )}
+                </div>
               )}
             </div>
           </Link>
@@ -104,57 +157,6 @@ const Navbar = ({ handleLinkClick }) => {
             <span className="text">Management</span>
           </div>
         </Link>
-        {isAuthenticated ? (
-          <div
-            className={`navbar-profile navbar-link ${isPopupOpen ? 'active' : ''}`}
-          >
-            <button
-              className="profile-container"
-              type="button"
-              onClick={() => setPopupOpen(!isPopupOpen)}
-              ref={popupRef}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  setPopupOpen(!isPopupOpen);
-                }
-              }}
-            >
-              <img src={profilePic} alt="Profile" />
-              <span className="text">{`Hello, ${username}`}</span>
-            </button>
-            {/* Popup */}
-            {!isPopupOpen && (
-              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-              <div
-                className="popup"
-                role="dialog"
-                onClick={handlePopupClick}
-                onKeyDown={(e) => e.stopPropagation()}
-              >
-                <button
-                  type="button"
-                  className="item logout"
-                  onClick={handleLogout}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      handleLogout();
-                    }
-                  }}
-                >
-                  <span className="icon"><FiLogOut /></span>
-                  <span className="text">Logout</span>
-                </button>
-              </div>
-            )}
-          </div>
-        ) : (
-          <Link to="/login" style={{ textDecoration: 'none' }}>
-            <div className="navbar-profile navbar-link">
-              <img src={profilePic} alt="Profile" />
-              <span className="text">Hello, Sign in</span>
-            </div>
-          </Link>
-        )}
       </div>
     </div>
   );
