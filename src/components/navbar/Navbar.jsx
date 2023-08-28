@@ -121,7 +121,6 @@ const Navbar = ({ handleLinkClick }) => {
                     <Link to="/login" style={{ textDecoration: 'none' }}>
                       <div className="navbar-profile navbar-link">
                         <img src={profilePic} alt="Profile" />
-                        <span className="text">Hello, Sign in</span>
                       </div>
                     </Link>
                   )}
