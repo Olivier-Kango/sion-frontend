@@ -28,10 +28,11 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
           flex-direction: column;
     
           img {
-            width: 35px;
-            height: 35px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             margin-right: 10px;
+            margin-top: 2px;
           }
     
           span {
