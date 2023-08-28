@@ -67,7 +67,7 @@ const Navbar = ({ handleLinkClick }) => {
               }
             }}
           >
-            <div className="logo">
+            <div className={!isMobile ? 'logo' : ''}>
               {!isMobile ? (
                 <span>
                   PSS Digital
