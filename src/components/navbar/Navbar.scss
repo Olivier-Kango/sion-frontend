@@ -121,8 +121,8 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
   flex-direction: column;
 
   img {
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     margin-right: 10px;
   }
@@ -151,6 +151,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -164,6 +165,11 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 80%;
+  }
+
+  .text {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
   }
 
   /* Style for the logout button */
