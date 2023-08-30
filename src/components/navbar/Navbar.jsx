@@ -181,7 +181,7 @@ const Navbar = ({ handleLinkClick }) => {
                 onClick={handlePopupClick}
                 onKeyDown={(e) => e.stopPropagation()}
               >
-                <span className="text">{`Hello, ${username}`}</span>
+                <span className="text hello">{`Hello, ${username}`}</span>
                 <button
                   type="button"
                   className="item logout"
