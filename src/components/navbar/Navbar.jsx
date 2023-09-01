@@ -101,7 +101,7 @@ const Navbar = ({ handleLinkClick }) => {
             <span className="text">Management</span>
           </div>
         </Link>
-        <div className="header-profile mobile">
+        <div className="header-profile">
           {isAuthenticated ? (
             <div
               className={`navbar-profile navbar-link ${isPopupOpen ? 'active' : ''}`}
