@@ -115,12 +115,12 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
 }
 
 // Profile
-
 .header-profile {
   .navbar-profile {
     display: flex;
     align-items: center !important;
     flex-direction: column;
+    z-index: 9999 !important;
   
     img {
       width: 35px;
@@ -233,11 +233,25 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
 }
 
 @media screen and (max-width: 768px) {
-  .navbar .navbar-links .navbar-profile .popup {
+  .navbar .navbar-links .header-profile .navbar-profile .popup {
     position: fixed;
     top: unset !important;
     bottom: 51px !important;
     right: 0 !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+// @media screen and (min-width: 768px) {
+//   .header-profile  {
+//     display: block; /* Afficher sur les écrans de bureau */
+//   }
+// }
+
+/* Styles pour les appareils mobiles */
+@media screen and (max-width: 767px) {
+  .mobile-profile  {
+    // display: none; /* Masquer sur les appareils mobiles */
   }
 }
