@@ -72,8 +72,7 @@ const Navbar = ({ handleLinkClick }) => {
                   PSS Digital
                 </span>
               ) : (
-                // <img src={favicon} alt="Profile" />
-                <div>
+                <div className="header-profile">
                   {isAuthenticated ? (
                     <div
                       className={`navbar-profile navbar-link ${isPopupOpen ? 'active' : ''}`}
