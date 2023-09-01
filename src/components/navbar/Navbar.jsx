@@ -154,56 +154,58 @@ const Navbar = ({ handleLinkClick }) => {
             <span className="text">Management</span>
           </div>
         </Link>
-        {isAuthenticated ? (
-          <div
-            className={`navbar-profile navbar-link ${isPopupOpen ? 'active' : ''}`}
-          >
-            <button
-              className="profile-container"
-              type="button"
-              onClick={() => setPopupOpen(!isPopupOpen)}
-              ref={popupRef}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  setPopupOpen(!isPopupOpen);
-                }
-              }}
+        <div className="header-profile">
+          {isAuthenticated ? (
+            <div
+              className={`navbar-profile navbar-link ${isPopupOpen ? 'active' : ''}`}
             >
-              <img src={profilePic} alt="Profile" />
-            </button>
-            {/* Popup */}
-            {!isPopupOpen && (
-              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-              <div
-                className="popup"
-                role="dialog"
-                onClick={handlePopupClick}
-                onKeyDown={(e) => e.stopPropagation()}
+              <button
+                className="profile-container"
+                type="button"
+                onClick={() => setPopupOpen(!isPopupOpen)}
+                ref={popupRef}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    setPopupOpen(!isPopupOpen);
+                  }
+                }}
               >
-                <span className="text hello">{`Hello, ${username}`}</span>
-                <button
-                  type="button"
-                  className="item logout"
-                  onClick={handleLogout}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      handleLogout();
-                    }
-                  }}
+                <img src={profilePic} alt="Profile" />
+              </button>
+              {/* Popup */}
+              {!isPopupOpen && (
+                // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+                <div
+                  className="popup"
+                  role="dialog"
+                  onClick={handlePopupClick}
+                  onKeyDown={(e) => e.stopPropagation()}
                 >
-                  <span className="icon"><FiLogOut /></span>
-                  <span className="text">Logout</span>
-                </button>
-              </div>
-            )}
-          </div>
-        ) : (
-          <Link to="/login" style={{ textDecoration: 'none' }}>
-            <div className="navbar-profile navbar-link">
-              <img src={profilePic} alt="Profile" />
+                  <span className="text hello">{`Hello, ${username}`}</span>
+                  <button
+                    type="button"
+                    className="item logout"
+                    onClick={handleLogout}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        handleLogout();
+                      }
+                    }}
+                  >
+                    <span className="icon"><FiLogOut /></span>
+                    <span className="text">Logout</span>
+                  </button>
+                </div>
+              )}
             </div>
-          </Link>
-        )}
+          ) : (
+            <Link to="/login" style={{ textDecoration: 'none' }}>
+              <div className="navbar-profile navbar-link">
+                <img src={profilePic} alt="Profile" />
+              </div>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
