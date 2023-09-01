@@ -93,80 +93,97 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
         color: black;
       }
     }
-
-    .navbar-profile {
-      display: flex;
-      align-items: center !important;
-      flex-direction: column;
-
-      img {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        margin-right: 10px;
-      }
-
-      span {
-        // font-weight: bold;
-      }
-
-      span:hover {
-        color: black;
-      }
-
-      .profile-container {
+  
+    // Profile
+    .header-profile {
+      .navbar-profile {
         display: flex;
         align-items: center !important;
         flex-direction: column;
-      }
+        z-index: 9999 !important;
 
-      .popup {
-        position: fixed;
-        top: 54px !important;
-        right: 24px;
-        width: 150px;
-        height: 10%;
-        background-color: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-      }
-
-      /* Styles for the dialog box */
-      .popup-dialog {
-        background-color: white;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        max-width: 400px;
-        width: 80%;
-      }
-
-      /* Style for the logout button */
-      .item.logout {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        color: black;
-        border: none;
-        border-radius: 4px;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-
-        .icon {
-          color: $main-color;
-          font-size: 1.3rem;
+        img {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          margin-right: 10px;
         }
-      }
 
-      .item.logout:hover {
-        background-color: #efefef9e !important;
+        span {
+          // font-weight: bold;
+        }
+
+        span:hover {
+          color: black;
+        }
+
+        .profile-container {
+          display: flex;
+          align-items: center !important;
+          flex-direction: column;
+        }
+
+        .popup {
+          position: fixed;
+          top: 54px !important;
+          right: 24px;
+          width: 150px;
+          height: 10%;
+          background-color: white;
+          color: black !important;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          border-radius: 5px;
+          padding: 55px 20px !important;
+          gap: 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+        }
+
+        /* Styles for the dialog box */
+        .popup-dialog {
+          background-color: white;
+          border-radius: 8px;
+          padding: 20px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          max-width: 400px;
+          width: 80%;
+        }
+
+        .text {
+          font-size: 1rem !important;
+          font-weight: 600 !important;
+        }
+
+        .hello {
+          font-weight: normal !important;
+        }
+
+        /* Style for the logout button */
+        .item.logout {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          color: black;
+          border: none;
+          border-radius: 4px;
+          padding: 10px 20px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+
+          .icon {
+            color: $main-color;
+            font-size: 1.3rem;
+          }
+        }
+
+        .item.logout:hover {
+          background-color: #efefef9e !important;
+        }
       }
     }
   }
@@ -176,10 +193,13 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
 
     .navbar-links {
       display: flex;
+      justify-content: space-between;
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
+      padding-left: 2%;
+      padding-right: 2%;
       background: white;
 
       .navbar-link {
@@ -216,11 +236,23 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
 }
 
 @media screen and (max-width: 768px) {
-  .navbar .navbar-links .navbar-profile .popup {
+  .navbar .navbar-links .header-profile .navbar-profile .popup {
     position: fixed;
-    top: unset !important;
-    bottom: 51px !important;
-    right: 0 !important;
+    top: 48px !important;
+    left: 0 !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Styles pour les appareils mobiles */
+@media screen and (max-width: 768px) {
+  .header-profile {
+    position: fixed !important;
+    top: -2px !important;
+    left: -3px !important;
+  }
+
+  .navbar-search {
+    margin-left: 38px;
   }
 }
