@@ -79,7 +79,7 @@ const Navbar = ({ handleLinkClick }) => {
           <div className="search-icon">
             <FontAwesomeIcon icon={faSearch} />
           </div>
-          <input type="text" placeholder="Search" onClick={(event) => handleLinkClick(event, '')} />
+          <input type="text" placeholder="Search" />
         </div>
       </div>
       <div className="navbar-links">
