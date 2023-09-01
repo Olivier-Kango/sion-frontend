@@ -121,28 +121,28 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
           align-items: center !important;
           flex-direction: column;
           z-index: 9999 !important;
-        
+
           img {
             width: 35px;
             height: 35px;
             border-radius: 50%;
             margin-right: 10px;
           }
-        
+
           span {
             // font-weight: bold;
           }
-        
+
           span:hover {
             color: black;
           }
-        
+
           .profile-container {
             display: flex;
             align-items: center !important;
             flex-direction: column;
           }
-        
+
           .popup {
             position: fixed;
             top: 54px !important;
@@ -161,7 +161,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
             align-items: center;
             z-index: 1000;
           }
-        
+
           /* Styles for the dialog box */
           .popup-dialog {
             background-color: white;
@@ -171,16 +171,16 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
             max-width: 400px;
             width: 80%;
           }
-        
+
           .text {
             font-size: 1rem !important;
             font-weight: 600 !important;
           }
-        
+
           .hello {
             font-weight: normal !important;
           }
-        
+
           /* Style for the logout button */
           .item.logout {
             display: flex;
@@ -194,17 +194,17 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s ease;
-        
+
             .icon {
               color: $main-color;
               font-size: 1.3rem;
             }
           }
-        
+
           .item.logout:hover {
             background-color: #efefef9e !important;
           }
-        }   
+        }
       }
     }
   }
@@ -246,7 +246,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
 
 /* Styles pour les appareils mobiles */
 @media screen and (max-width: 768px) {
-  .header-profile  {
+  .header-profile {
     position: fixed !important;
     top: -2px !important;
     left: -3px !important;
