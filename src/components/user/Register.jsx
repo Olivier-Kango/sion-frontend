@@ -32,6 +32,11 @@ const Register = () => {
     }
   };
 
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: 'image/*',
+    onDrop,
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
@@ -101,6 +106,20 @@ const Register = () => {
             required
             className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
           />
+
+          <div {...getRootProps()} className="dropzone">
+            <input {...getInputProps()} />
+            <p>Drag and drop some files here, or click to select files</p>
+          </div>
+          {profileImage && (
+            <div className="profile-image-preview">
+              <img
+                src={profileImage}
+                alt="Profile"
+                className="w-32 h-32 rounded-full"
+              />
+            </div>
+          )}
 
           <button
             type="submit"
