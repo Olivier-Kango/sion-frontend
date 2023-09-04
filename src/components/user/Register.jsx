@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { userSignup } from '../../redux/users/users';
 import { useDropzone } from 'react-dropzone';
+import { userSignup } from '../../redux/users/users';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -106,11 +106,12 @@ const Register = () => {
             required
             className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
           />
-
+          {/* eslint-disable react/jsx-props-no-spreading */}
           <div {...getRootProps()} className="dropzone">
             <input {...getInputProps()} />
-            <p>Drag and drop some files here, or click to select files</p>
+            <p>Click to select profile picture</p>
           </div>
+          {/* eslint-enable react/jsx-props-no-spreading */}
           {profileImage && (
             <div className="profile-image-preview">
               <img
