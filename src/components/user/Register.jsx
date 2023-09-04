@@ -1,10 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { BiTrash } from 'react-icons/bi';
-import { FaSpinner } from 'react-icons/fa';
-import React, { useRef, useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDropzone } from 'react-dropzone';
 import { userSignup } from '../../redux/users/users';
 
 const Register = () => {
@@ -13,34 +9,6 @@ const Register = () => {
   const error = user.error['signup-error'];
   const navigate = useNavigate();
   const formRef = useRef();
-  const [profileImage, setProfileImage] = useState(null);
-  const [isUploading, setIsUploading] = useState(false);
-
-  const onDrop = async (acceptedFiles) => {
-    const file = acceptedFiles[0];
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('upload_preset', 'ml_default');
-
-    try {
-      setIsUploading(true);
-
-      const response = await axios.post(
-        'https://api.cloudinary.com/v1_1/du1qvhkp2/image/upload',
-        formData,
-      );
-
-      const imageUrl = response.data.secure_url;
-      setProfileImage(imageUrl);
-    } catch (error) {
-      console.error('Erreur lors du téléchargement de la photo de profil :', error);
-    }
-  };
-
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: 'image/*',
-    onDrop,
-  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,7 +20,6 @@ const Register = () => {
         email: data.email,
         password: data.password,
         password_confirmation: data.password_confirmation,
-        profile_image: profileImage,
       },
     };
     if (data.password === data.password_confirmation) {
@@ -67,10 +34,6 @@ const Register = () => {
       navigate('/');
     }
   }, [navigate, user.loggedIn]);
-
-  const deleteImage = () => {
-    setProfileImage(null);
-  };
 
   return (
     <section className="auth-section flex justify-center items-center h-full ">
@@ -115,29 +78,6 @@ const Register = () => {
             required
             className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
           />
-          {/* eslint-disable react/jsx-props-no-spreading */}
-          <div {...getRootProps()} className="dropzone">
-            <input {...getInputProps()} />
-            <p>Click to select profile picture</p>
-          </div>
-          {/* eslint-enable react/jsx-props-no-spreading */}
-          {profileImage && (
-            <div className="profile-image-preview">
-              <img
-                src={profileImage}
-                alt="Profile"
-                className="w-32 h-32 rounded-full"
-              />
-              <button type="button" onClick={deleteImage} className="remove-image">
-                <BiTrash />
-              </button>
-            </div>
-          )}
-          {isUploading && (
-            <div className="loading-spinner">
-              <FaSpinner className="spinner-icon" />
-            </div>
-          )}
 
           <button
             type="submit"
