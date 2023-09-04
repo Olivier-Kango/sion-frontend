@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
-import { useDropzone } from 'react-dropzone';
 import { Link, useNavigate } from 'react-router-dom';
 import { userSignup } from '../../redux/users/users';
+import { useDropzone } from 'react-dropzone';
 
 const Register = () => {
   const dispatch = useDispatch();
