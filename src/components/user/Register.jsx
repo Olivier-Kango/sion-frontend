@@ -1,3 +1,4 @@
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
@@ -12,6 +13,26 @@ const Register = () => {
   const navigate = useNavigate();
   const formRef = useRef();
   const [profileImage, setProfileImage] = useState(null);
+
+  const onDrop = async (acceptedFiles) => {
+    try {
+      const file = acceptedFiles[0];
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('upload_preset', 'votre_upload_preset_cloudinary'); // Remplacez par votre upload preset
+
+      const response = await axios.post(
+        'https://api.cloudinary.com/v1_1/du1qvhkp2/image/upload',
+        formData,
+      );
+
+      // Récupérez l'URL de la photo de profil depuis la réponse de Cloudinary
+      const imageUrl = response.data.secure_url;
+      setProfileImage(imageUrl);
+    } catch (error) {
+      console.error('Erreur lors du téléchargement de la photo de profil :', error);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
