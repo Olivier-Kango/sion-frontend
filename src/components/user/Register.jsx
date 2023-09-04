@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
+import { useDropzone } from 'react-dropzone';
 import { Link, useNavigate } from 'react-router-dom';
 import { userSignup } from '../../redux/users/users';
 
@@ -10,6 +11,7 @@ const Register = () => {
   const error = user.error['signup-error'];
   const navigate = useNavigate();
   const formRef = useRef();
+  const [profileImage, setProfileImage] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ const Register = () => {
         email: data.email,
         password: data.password,
         password_confirmation: data.password_confirmation,
+        profile_image: profileImage,
       },
     };
     if (data.password === data.password_confirmation) {
