@@ -19,14 +19,13 @@ const Register = () => {
       const file = acceptedFiles[0];
       const formData = new FormData();
       formData.append('file', file);
-      formData.append('upload_preset', 'votre_upload_preset_cloudinary'); // Remplacez par votre upload preset
+      formData.append('upload_preset', 'ml_default');
 
       const response = await axios.post(
         'https://api.cloudinary.com/v1_1/du1qvhkp2/image/upload',
         formData,
       );
 
-      // Récupérez l'URL de la photo de profil depuis la réponse de Cloudinary
       const imageUrl = response.data.secure_url;
       setProfileImage(imageUrl);
     } catch (error) {
