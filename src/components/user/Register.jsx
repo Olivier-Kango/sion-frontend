@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { BiTrash } from 'react-icons/bi';
+import { FaSpinner } from 'react-icons/fa';
 import React, { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -12,13 +14,16 @@ const Register = () => {
   const navigate = useNavigate();
   const formRef = useRef();
   const [profileImage, setProfileImage] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
 
   const onDrop = async (acceptedFiles) => {
+    const file = acceptedFiles[0];
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', 'ml_default');
+
     try {
-      const file = acceptedFiles[0];
-      const formData = new FormData();
-      formData.append('file', file);
-      formData.append('upload_preset', 'ml_default');
+      setIsUploading(true);
 
       const response = await axios.post(
         'https://api.cloudinary.com/v1_1/du1qvhkp2/image/upload',
@@ -62,6 +67,10 @@ const Register = () => {
       navigate('/');
     }
   }, [navigate, user.loggedIn]);
+
+  const deleteImage = () => {
+    setProfileImage(null);
+  };
 
   return (
     <section className="auth-section flex justify-center items-center h-full ">
@@ -119,6 +128,14 @@ const Register = () => {
                 alt="Profile"
                 className="w-32 h-32 rounded-full"
               />
+              <button type="button" onClick={deleteImage} className="remove-image">
+                <BiTrash />
+              </button>
+            </div>
+          )}
+          {isUploading && (
+            <div className="loading-spinner">
+              <FaSpinner className="spinner-icon" />
             </div>
           )}
 
