@@ -51,13 +51,13 @@ const LeftBar = ({
   };
 
   const categories = [
+    { id: 7, name: 'Hardware Store', icon: <GiNails /> },
     { id: 1, name: 'Mineral Water', icon: <GiWaterDrop /> },
     { id: 2, name: 'Beverage Store', icon: <FaIceCream /> },
     { id: 3, name: 'Electronics', icon: <MdDevices /> },
     { id: 4, name: 'IT Services', icon: <GiProcessor /> },
     { id: 5, name: 'Gas Energy', icon: <GiFire /> },
     { id: 6, name: 'Real Estate', icon: <FaHome /> },
-    { id: 7, name: 'Hardware Store', icon: <GiNails /> },
     { id: 8, name: 'Chickens', icon: <FaCrow /> },
   ];
 
