@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   FaShoppingCart, FaHome, FaIceCream, FaCrow,
@@ -30,6 +30,7 @@ const LeftBar = ({
   const navigate = useNavigate();
   const isMobile = useMediaQuery('(max-width: 768px)');
   const location = useLocation();
+  const [showSubcategories, setShowSubcategories] = useState(false);
 
   const handleAddProductClick = () => {
     dispatch(setSelectedCategory(''));
