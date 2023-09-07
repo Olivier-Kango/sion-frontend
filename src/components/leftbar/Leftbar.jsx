@@ -64,9 +64,13 @@ const LeftBar = ({
 
   const shouldShowLeftbar = location.pathname !== '/management';
 
-  const toggleSubcategories = (e) => {
-    setShowSubcategories(!showSubcategories);
-    handleCategoryClick(e);
+  const toggleSubcategories = (categoryName) => {
+    if (categoryName === 'Hardware Store') {
+      setShowSubcategories(!showSubcategories);
+    } else {
+      setShowSubcategories(false);
+    }
+    handleCategoryClick(categoryName);
   };
 
   return (
@@ -112,72 +116,74 @@ const LeftBar = ({
               tabIndex={0}
             >
               {categories.map((category) => (
-                <button
-                  key={category.id}
-                  className={
-                    selectedCategory === category.name ? 'category active-two' : 'category'
-                  }
-                  onClick={() => toggleSubcategories(category.name)}
-                  type="button"
-                >
-                  {category.icon && <span className="icon">{category.icon}</span>}
-                  <span className="text">{category.name}</span>
-                </button>
+                <>
+                  <button
+                    key={category.id}
+                    className={
+                      selectedCategory === category.name ? 'category active-two' : 'category'
+                    }
+                    onClick={() => toggleSubcategories(category.name)}
+                    type="button"
+                  >
+                    {category.icon && <span className="icon">{category.icon}</span>}
+                    <span className="text">{category.name}</span>
+                  </button>
+
+                  {showSubcategories && selectedCategory === category.name && (
+                    <div className="subcategory-container">
+                      <button
+                        className="subcategory"
+                        onClick={() => handleCategoryClick('Building Materials')}
+                        type="button"
+                      >
+                        Building Materials
+                      </button>
+                      <button
+                        className="subcategory"
+                        onClick={() => handleCategoryClick('Tools')}
+                        type="button"
+                      >
+                        Tools
+                      </button>
+                      <button
+                        className="subcategory"
+                        onClick={() => handleCategoryClick('Plumbing')}
+                        type="button"
+                      >
+                        Plumbing
+                      </button>
+                      <button
+                        className="subcategory"
+                        onClick={() => handleCategoryClick('IT Services')}
+                        type="button"
+                      >
+                        IT Services
+                      </button>
+                      <button
+                        className="subcategory"
+                        onClick={() => handleCategoryClick('Paint')}
+                        type="button"
+                      >
+                        Paint
+                      </button>
+                      <button
+                        className="subcategory"
+                        onClick={() => handleCategoryClick('Electrical')}
+                        type="button"
+                      >
+                        Electrical
+                      </button>
+                      <button
+                        className="subcategory"
+                        onClick={() => handleCategoryClick('General Materials')}
+                        type="button"
+                      >
+                        General Materials
+                      </button>
+                    </div>
+                  )}
+                </>
               ))}
-            </div>
-          )}
-          {/* Afficher les sous-catégories si showSubcategories est true */}
-          {showSubcategories && (
-            <div className="subcategory-container">
-              <button
-                className="subcategory"
-                onClick={() => handleCategoryClick('Building Materials')}
-                type="button"
-              >
-                Building Materials
-              </button>
-              <button
-                className="subcategory"
-                onClick={() => handleCategoryClick('Tools')}
-                type="button"
-              >
-                Tools
-              </button>
-              <button
-                className="subcategory"
-                onClick={() => handleCategoryClick('Plumbing')}
-                type="button"
-              >
-                Plumbing
-              </button>
-              <button
-                className="subcategory"
-                onClick={() => handleCategoryClick('IT Services')}
-                type="button"
-              >
-                IT Services
-              </button>
-              <button
-                className="subcategory"
-                onClick={() => handleCategoryClick('Paint')}
-                type="button"
-              >
-                Paint
-              </button>
-              <button
-                className="subcategory"
-                onClick={() => handleCategoryClick('Electrical')}
-                type="button"
-              >
-                Electrical
-              </button>
-              <button
-                className="subcategory"
-                onClick={() => handleCategoryClick('General Materials')}
-                type="button"
-              >
-                General Materials
-              </button>
             </div>
           )}
           <Link to="/" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, '')}>
