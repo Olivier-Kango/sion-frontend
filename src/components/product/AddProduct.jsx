@@ -13,6 +13,7 @@ const AddProduct = () => {
   const [name, setname] = useState('');
   const [image, setimage] = useState('');
   const [category, setcategory] = useState('');
+  const [subcategory, setsubcategory] = useState('');
   const [quantity, setquantity] = useState('');
   const [unitPrice, setUnitPrice] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -25,6 +26,7 @@ const AddProduct = () => {
       image: image || null,
       unit_price: unitPrice,
       category,
+      subcategory,
       quantity,
     };
 
@@ -36,6 +38,7 @@ const AddProduct = () => {
     setimage(null);
     setUnitPrice('');
     setcategory('');
+    setsubcategory('');
     setquantity('');
   };
 
@@ -136,6 +139,24 @@ const AddProduct = () => {
                 <option value="Real Estate">Real Estate</option>
                 <option value="Hardware Store">Hardware Store</option>
                 <option value="Chickens">Chickens</option>
+              </select>
+            </div>
+            <div className="add-order-form-group">
+              <select
+                id="subcategory"
+                value={subcategory}
+                required
+                onChange={(e) => setsubcategory(e.target.value)}
+                className="category-select"
+              >
+                <option value="" className="placeholder-option">Select product&apos;s Subcategory</option>
+                <option value="Building Materials">Building Materials</option>
+                <option value="Tools">Tools</option>
+                <option value="Plumbing">Plumbing</option>
+                <option value="IT Services">IT Services</option>
+                <option value="Paint">Paint</option>
+                <option value="Electrical">Electrical</option>
+                <option value="General Materials">General Materials</option>
               </select>
             </div>
             <div className="add-order-form-group">
