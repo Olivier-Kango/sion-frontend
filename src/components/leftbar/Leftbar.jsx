@@ -44,8 +44,9 @@ const LeftBar = ({
     dispatch(arrowDirection(showCategory ? 'down' : 'up'));
   };
 
-  const handleCategoryClick = (category) => {
+  const handleCategoryClick = (category, subcategory = '') => {
     dispatch(setSelectedCategory(category));
+    setSelectedSubcategory(subcategory);
     if (isMobile) {
       handleHamburgerClick();
     }
@@ -134,42 +135,42 @@ const LeftBar = ({
                     <div className="subcategory-container">
                       <button
                         className="subcategory"
-                        onClick={() => handleCategoryClick('Building Materials')}
+                        onClick={() => handleCategoryClick('Hardware Store', 'Building')}
                         type="button"
                       >
                         Building
                       </button>
                       <button
                         className="subcategory"
-                        onClick={() => handleCategoryClick('Tools')}
+                        onClick={() => handleCategoryClick('Hardware Store', 'Tools')}
                         type="button"
                       >
                         Tools
                       </button>
                       <button
                         className="subcategory"
-                        onClick={() => handleCategoryClick('Plumbing')}
+                        onClick={() => handleCategoryClick('Hardware Store', 'Plumbing')}
                         type="button"
                       >
                         Plumbing
                       </button>
                       <button
                         className="subcategory"
-                        onClick={() => handleCategoryClick('Paint')}
+                        onClick={() => handleCategoryClick('Hardware Store', 'Paint')}
                         type="button"
                       >
                         Paint
                       </button>
                       <button
                         className="subcategory"
-                        onClick={() => handleCategoryClick('Electrical')}
+                        onClick={() => handleCategoryClick('Hardware Store', 'Electrical')}
                         type="button"
                       >
                         Electrical
                       </button>
                       <button
                         className="subcategory"
-                        onClick={() => handleCategoryClick('General Materials')}
+                        onClick={() => handleCategoryClick('Hardware Store', 'General')}
                         type="button"
                       >
                         General

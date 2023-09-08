@@ -150,13 +150,13 @@ const AddProduct = () => {
                 className="category-select"
               >
                 <option value="" className="placeholder-option">Select product&apos;s Subcategory</option>
-                <option value="Building Materials">Building Materials</option>
+                <option value="Building">Building</option>
                 <option value="Tools">Tools</option>
                 <option value="Plumbing">Plumbing</option>
                 <option value="IT Services">IT Services</option>
                 <option value="Paint">Paint</option>
                 <option value="Electrical">Electrical</option>
-                <option value="General Materials">General Materials</option>
+                <option value="General">General</option>
               </select>
             </div>
             <div className="add-order-form-group">
