@@ -13,6 +13,7 @@ export const getAllProducts = createAsyncThunk('GET_ALL_PRODUCTS', async () => {
 
 export const addProduct = createAsyncThunk('ADD_PRODUCT', async (product) => {
   const response = await axios.post('api/v1/products', product);
+  console.log(response.data.subcategory);
   return response.data;
 });
 

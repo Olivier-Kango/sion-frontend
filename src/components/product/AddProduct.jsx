@@ -145,7 +145,7 @@ const AddProduct = () => {
               <select
                 id="subcategory"
                 value={subcategory}
-                required
+                // required
                 onChange={(e) => setsubcategory(e.target.value)}
                 className="category-select"
               >
