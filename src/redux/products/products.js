@@ -26,6 +26,11 @@ export const setSelectedCategory = (category) => ({
   payload: category,
 });
 
+export const setSelectedSubcategory = (subcategory) => ({
+  type: 'SELECTED_SUBCATEGORY',
+  payload: subcategory,
+});
+
 export const showCategories = (show) => ({
   type: 'SHOW_CATEGORIES',
   payload: show,
@@ -39,9 +44,30 @@ export const arrowDirection = (arrow) => ({
 // INITIAL STATE
 const initialState = {
   selectedCategory: '',
+  selectedSubcategory: '',
   showCategories: false,
   arrowDirection: 'down',
   products: [
+    {
+      id: 88,
+      name: 'Screws',
+      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1689628204/61ySzLPQqOL._AC_UF1000_1000_QL80__frytig.jpg',
+      unit_price: 1,
+      created_at: '2023-07-17T21:10:19.562Z',
+      updated_at: '2023-07-17T21:10:19.562Z',
+      quantity: 100,
+      category: 'Hardware Store',
+    },
+    {
+      id: 85,
+      name: 'Cements',
+      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1689628124/Storage-of-Cement-min_cpfzko.jpg',
+      unit_price: 10,
+      created_at: '2023-07-17T21:08:57.574Z',
+      updated_at: '2023-07-17T21:08:57.574Z',
+      quantity: 200,
+      category: 'Hardware Store',
+    },
     {
       id: 68,
       name: 'Powerbank Veger',
@@ -102,26 +128,6 @@ const initialState = {
       quantity: 1,
       category: 'Real Estate',
     },
-    {
-      id: 88,
-      name: 'Screws',
-      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1689628204/61ySzLPQqOL._AC_UF1000_1000_QL80__frytig.jpg',
-      unit_price: 1,
-      created_at: '2023-07-17T21:10:19.562Z',
-      updated_at: '2023-07-17T21:10:19.562Z',
-      quantity: 100,
-      category: 'Hardware Store',
-    },
-    {
-      id: 85,
-      name: 'Cements',
-      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1689628124/Storage-of-Cement-min_cpfzko.jpg',
-      unit_price: 10,
-      created_at: '2023-07-17T21:08:57.574Z',
-      updated_at: '2023-07-17T21:08:57.574Z',
-      quantity: 200,
-      category: 'Hardware Store',
-    },
   ],
 };
 
@@ -150,6 +156,12 @@ const reducerProduct = (state = initialState, action) => {
       return {
         ...state,
         selectedCategory: action.payload,
+      };
+    }
+    case 'SELECTED_SUBCATEGORY': {
+      return {
+        ...state,
+        selectedSubcategory: action.payload,
       };
     }
     case 'SHOW_CATEGORIES': {
