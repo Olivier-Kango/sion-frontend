@@ -145,7 +145,7 @@ const AddProduct = () => {
               <select
                 id="subcategory"
                 value={subcategory}
-                // required
+                required
                 onChange={(e) => setsubcategory(e.target.value)}
                 className="category-select"
               >
@@ -156,6 +156,7 @@ const AddProduct = () => {
                 <option value="Paint">Paint</option>
                 <option value="Electrical">Electrical</option>
                 <option value="General">General</option>
+                <option value="Telephony">Telephony</option>
               </select>
             </div>
             <div className="add-order-form-group">
