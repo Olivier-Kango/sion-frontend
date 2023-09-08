@@ -26,6 +26,11 @@ export const setSelectedCategory = (category) => ({
   payload: category,
 });
 
+export const setSelectedSubcategory = (subcategory) => ({
+  type: 'SELECTED_SUBCATEGORY',
+  payload: subcategory,
+});
+
 export const showCategories = (show) => ({
   type: 'SHOW_CATEGORIES',
   payload: show,
@@ -39,6 +44,7 @@ export const arrowDirection = (arrow) => ({
 // INITIAL STATE
 const initialState = {
   selectedCategory: '',
+  selectedSubcategory: '',
   showCategories: false,
   arrowDirection: 'down',
   products: [
@@ -150,6 +156,12 @@ const reducerProduct = (state = initialState, action) => {
       return {
         ...state,
         selectedCategory: action.payload,
+      };
+    }
+    case 'SELECTED_SUBCATEGORY': {
+      return {
+        ...state,
+        selectedSubcategory: action.payload,
       };
     }
     case 'SHOW_CATEGORIES': {

@@ -15,7 +15,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Footer from '../footer/Footer';
-import { setSelectedCategory, showCategories, arrowDirection } from '../../redux/products/products';
+import {
+  setSelectedCategory,
+  setSelectedSubcategory,
+  showCategories,
+  arrowDirection,
+} from '../../redux/products/products';
 import './Leftbar.scss';
 
 const LeftBar = ({
@@ -25,16 +30,17 @@ const LeftBar = ({
   const userState = useSelector((state) => state.user);
   const { pathname } = useLocation();
   const selectedCategory = useSelector((state) => state.products.selectedCategory);
+  const selectedSubcategory = useSelector((state) => state.products.selectedSubcategory);
   const showCategory = useSelector((state) => state.products.showCategories);
   const arrow = useSelector((state) => state.products.arrowDirection);
   const navigate = useNavigate();
   const isMobile = useMediaQuery('(max-width: 768px)');
   const location = useLocation();
   const [showSubcategories, setShowSubcategories] = useState(false);
-  const [selectedSubcategory, setSelectedSubcategory] = useState('');
 
   const handleAddProductClick = () => {
     dispatch(setSelectedCategory(''));
+    dispatch(setSelectedSubcategory(''));
     dispatch(arrowDirection('down'));
     dispatch(showCategories(false));
   };
@@ -46,7 +52,8 @@ const LeftBar = ({
 
   const handleCategoryClick = (category, subcategory = '') => {
     dispatch(setSelectedCategory(category));
-    setSelectedSubcategory(subcategory);
+    dispatch(setSelectedSubcategory(subcategory));
+
     if (isMobile) {
       handleHamburgerClick();
     }
@@ -54,14 +61,23 @@ const LeftBar = ({
   };
 
   const categories = [
-    { id: 7, name: 'Hardware Store', icon: <GiNails /> },
-    { id: 1, name: 'Mineral Water', icon: <GiWaterDrop /> },
-    { id: 2, name: 'Beverage Store', icon: <FaIceCream /> },
-    { id: 3, name: 'Electronics', icon: <MdDevices /> },
-    { id: 4, name: 'IT Services', icon: <GiProcessor /> },
-    { id: 5, name: 'Gas Energy', icon: <GiFire /> },
-    { id: 6, name: 'Real Estate', icon: <FaHome /> },
+    { id: 1, name: 'Hardware Store', icon: <GiNails /> },
+    { id: 2, name: 'Mineral Water', icon: <GiWaterDrop /> },
+    { id: 3, name: 'Beverage Store', icon: <FaIceCream /> },
+    { id: 4, name: 'Electronics', icon: <MdDevices /> },
+    { id: 5, name: 'IT Services', icon: <GiProcessor /> },
+    { id: 6, name: 'Gas Energy', icon: <GiFire /> },
+    { id: 7, name: 'Real Estate', icon: <FaHome /> },
     { id: 8, name: 'Chickens', icon: <FaCrow /> },
+  ];
+
+  const subcategories = [
+    { id: 1, name: 'Building' },
+    { id: 2, name: 'Tools' },
+    { id: 3, name: 'Plumbing' },
+    { id: 4, name: 'Paint' },
+    { id: 5, name: 'Electrical' },
+    { id: 6, name: 'General' },
   ];
 
   const shouldShowLeftbar = location.pathname !== '/management';
@@ -133,48 +149,19 @@ const LeftBar = ({
 
                   {showSubcategories && selectedCategory === category.name && (
                     <div className="subcategory-container">
-                      <button
-                        className="subcategory"
-                        onClick={() => handleCategoryClick('Hardware Store', 'Building')}
-                        type="button"
-                      >
-                        Building
-                      </button>
-                      <button
-                        className="subcategory"
-                        onClick={() => handleCategoryClick('Hardware Store', 'Tools')}
-                        type="button"
-                      >
-                        Tools
-                      </button>
-                      <button
-                        className="subcategory"
-                        onClick={() => handleCategoryClick('Hardware Store', 'Plumbing')}
-                        type="button"
-                      >
-                        Plumbing
-                      </button>
-                      <button
-                        className="subcategory"
-                        onClick={() => handleCategoryClick('Hardware Store', 'Paint')}
-                        type="button"
-                      >
-                        Paint
-                      </button>
-                      <button
-                        className="subcategory"
-                        onClick={() => handleCategoryClick('Hardware Store', 'Electrical')}
-                        type="button"
-                      >
-                        Electrical
-                      </button>
-                      <button
-                        className="subcategory"
-                        onClick={() => handleCategoryClick('Hardware Store', 'General')}
-                        type="button"
-                      >
-                        General
-                      </button>
+                      {subcategories.map((subcategory) => (
+                        <button
+                          key={subcategory.id}
+                          className={
+                            selectedSubcategory === subcategory.name ? 'subcategory active-two' : 'subcategory'
+                          }
+                          onClick={() => handleCategoryClick('Hardware Store', `${subcategory.name}`)}
+                          type="button"
+                        >
+                          {subcategory.name}
+                        </button>
+                      ))}
+                      ;
                     </div>
                   )}
                 </>
