@@ -31,6 +31,7 @@ const LeftBar = ({
   const isMobile = useMediaQuery('(max-width: 768px)');
   const location = useLocation();
   const [showSubcategories, setShowSubcategories] = useState(false);
+  const [selectedSubcategory, setSelectedSubcategory] = useState('');
 
   const handleAddProductClick = () => {
     dispatch(setSelectedCategory(''));
