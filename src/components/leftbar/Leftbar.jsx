@@ -136,7 +136,7 @@ const LeftBar = ({
                         onClick={() => handleCategoryClick('Building Materials')}
                         type="button"
                       >
-                        Building Materials
+                        Building
                       </button>
                       <button
                         className="subcategory"
@@ -151,13 +151,6 @@ const LeftBar = ({
                         type="button"
                       >
                         Plumbing
-                      </button>
-                      <button
-                        className="subcategory"
-                        onClick={() => handleCategoryClick('IT Services')}
-                        type="button"
-                      >
-                        IT Services
                       </button>
                       <button
                         className="subcategory"
@@ -178,7 +171,7 @@ const LeftBar = ({
                         onClick={() => handleCategoryClick('General Materials')}
                         type="button"
                       >
-                        General Materials
+                        General
                       </button>
                     </div>
                   )}
