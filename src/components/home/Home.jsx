@@ -23,6 +23,7 @@ const Home = () => {
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const isMobile = useMediaQuery('(max-width: 768px)');
   const selectedCategory = useSelector((state) => state.products.selectedCategory);
+  const selectedSubcategory = useSelector((state) => state.products.selectedSubcategory);
 
   const override = css`
   display: block;
@@ -44,7 +45,10 @@ const Home = () => {
   };
 
   const filteredProducts = selectedCategory
-    ? products.filter((product) => product.category === selectedCategory)
+    ? products.filter(
+      (product) => product.category === selectedCategory
+        && (!selectedSubcategory || product.subcategory === selectedSubcategory),
+    )
     : products;
 
   return (
