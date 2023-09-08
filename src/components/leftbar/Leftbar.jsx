@@ -161,7 +161,6 @@ const LeftBar = ({
                           {subcategory.name}
                         </button>
                       ))}
-                      ;
                     </div>
                   )}
                 </>
