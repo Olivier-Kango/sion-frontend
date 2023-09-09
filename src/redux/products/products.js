@@ -41,12 +41,18 @@ export const arrowDirection = (arrow) => ({
   payload: arrow,
 });
 
+export const subarrowDirection = (subarrow) => ({
+  type: 'SUBARROW_DIRECTION',
+  payload: subarrow,
+});
+
 // INITIAL STATE
 const initialState = {
   selectedCategory: '',
   selectedSubcategory: '',
   showCategories: false,
   arrowDirection: 'down',
+  subarrowDirection: 'right',
   products: [
     {
       id: 88,
@@ -174,6 +180,12 @@ const reducerProduct = (state = initialState, action) => {
       return {
         ...state,
         arrowDirection: action.payload,
+      };
+    }
+    case 'SUBARROW_DIRECTION': {
+      return {
+        ...state,
+        subarrowDirection: action.payload,
       };
     }
     default:
