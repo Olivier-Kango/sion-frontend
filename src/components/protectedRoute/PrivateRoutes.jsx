@@ -10,7 +10,7 @@ import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 // eslint-disable-next-line
 import LeftBar from '../leftbar/Leftbar.jsx';
-import { setSelectedCategory, showCategories, arrowDirection } from '../../redux/products/products';
+import { setSelectedCategory, showCategories, arrowDirection, subarrowDirection } from '../../redux/products/products';
 import Navbar from '../navbar/Navbar';
 
 import './PrivateRoutes.scss';
@@ -43,6 +43,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
       dispatch(showCategories(false));
     }
     dispatch(arrowDirection('down'));
+    dispatch(subarrowDirection('right'));
   };
 
   if (!isAllowed) {

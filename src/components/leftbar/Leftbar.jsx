@@ -20,6 +20,7 @@ import {
   setSelectedSubcategory,
   showCategories,
   arrowDirection,
+  subarrowDirection,
 } from '../../redux/products/products';
 import './Leftbar.scss';
 
@@ -43,6 +44,7 @@ const LeftBar = ({
     dispatch(setSelectedCategory(''));
     dispatch(setSelectedSubcategory(''));
     dispatch(arrowDirection('down'));
+    dispatch(subarrowDirection('right'));
     dispatch(showCategories(false));
   };
 
@@ -93,6 +95,7 @@ const LeftBar = ({
       }
     }
     handleCategoryClick(categoryName);
+    dispatch(subarrowDirection(showSubcategories ? 'right' : 'up'));
   };
 
   return (
@@ -150,10 +153,12 @@ const LeftBar = ({
                     {category.icon && <span className="icon">{category.icon}</span>}
                     <span className="text">{category.name}</span>
                     {' '}
-                    {arrow === 'down' ? (
-                      <IoIosArrowDown className="arrow-icon" />
-                    ) : (
-                      <IoIosArrowUp className="arrow-icon" />
+                    {category.name === 'Hardware Store' && (
+                      subarrow === 'right' ? (
+                        <IoIosArrowDown className="arrow-icon" />
+                      ) : (
+                        <IoIosArrowUp className="arrow-icon" />
+                      )
                     )}
                   </button>
 
