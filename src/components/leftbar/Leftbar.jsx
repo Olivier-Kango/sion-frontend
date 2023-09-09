@@ -33,6 +33,7 @@ const LeftBar = ({
   const selectedSubcategory = useSelector((state) => state.products.selectedSubcategory);
   const showCategory = useSelector((state) => state.products.showCategories);
   const arrow = useSelector((state) => state.products.arrowDirection);
+  const subarrow = useSelector((state) => state.products.subarrowDirection);
   const navigate = useNavigate();
   const isMobile = useMediaQuery('(max-width: 768px)');
   const location = useLocation();
@@ -54,7 +55,7 @@ const LeftBar = ({
     dispatch(setSelectedCategory(category));
     dispatch(setSelectedSubcategory(subcategory));
 
-    if (isMobile) {
+    if (isMobile && subcategory !== '') {
       handleHamburgerClick();
     }
     navigate('/');
@@ -87,6 +88,9 @@ const LeftBar = ({
       setShowSubcategories(!showSubcategories);
     } else {
       setShowSubcategories(false);
+      if (isMobile) {
+        handleHamburgerClick();
+      }
     }
     handleCategoryClick(categoryName);
   };
@@ -145,6 +149,12 @@ const LeftBar = ({
                   >
                     {category.icon && <span className="icon">{category.icon}</span>}
                     <span className="text">{category.name}</span>
+                    {' '}
+                    {arrow === 'down' ? (
+                      <IoIosArrowDown className="arrow-icon" />
+                    ) : (
+                      <IoIosArrowUp className="arrow-icon" />
+                    )}
                   </button>
 
                   {showSubcategories && selectedCategory === category.name && (
