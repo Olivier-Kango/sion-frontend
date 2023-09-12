@@ -85,6 +85,16 @@ const initialState = {
       category: 'Mineral Water',
     },
     {
+      id: 82,
+      name: 'Crème glacée',
+      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694488762/creme_dlkpwg.jpg',
+      unit_price: 0.25,
+      created_at: '2023-07-17T21:05:43.018Z',
+      updated_at: '2023-07-17T21:05:43.018Z',
+      quantity: 1,
+      category: 'Beverage Store',
+    },
+    {
       id: 81,
       name: 'Refill gas',
       image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1689628014/Total-Gas-12kg-Refill-400x300_p9qrky.webp',
