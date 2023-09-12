@@ -55,7 +55,7 @@ const initialState = {
   subarrowDirection: 'right',
   products: [
     {
-      id: 85,
+      id: 1,
       name: 'Cements',
       image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242398/IMG_20230905_135152_676_qq2gy4.jpg',
       unit_price: 11.5,
@@ -65,7 +65,7 @@ const initialState = {
       category: 'Hardware Store',
     },
     {
-      id: 68,
+      id: 2,
       name: 'Powerbank Veger',
       image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694487483/verger_fytsty.jpg',
       unit_price: 15,
@@ -75,7 +75,7 @@ const initialState = {
       category: 'Electronics',
     },
     {
-      id: 79,
+      id: 3,
       name: 'Mineral Water Sion',
       image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694488121/profil_svjrhj.jpg',
       unit_price: 10,
@@ -85,7 +85,7 @@ const initialState = {
       category: 'Mineral Water',
     },
     {
-      id: 82,
+      id: 4,
       name: 'Crème glacée',
       image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694488762/creme_dlkpwg.jpg',
       unit_price: 0.25,
@@ -95,9 +95,19 @@ const initialState = {
       category: 'Beverage Store',
     },
     {
-      id: 81,
-      name: 'Refill gas',
-      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1689628014/Total-Gas-12kg-Refill-400x300_p9qrky.webp',
+      id: 5,
+      name: 'Build a Web Site',
+      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694489466/porfolio_olk_yuglzb.png',
+      unit_price: 2000,
+      created_at: '2023-07-17T21:05:43.018Z',
+      updated_at: '2023-07-17T21:05:43.018Z',
+      quantity: 1,
+      category: 'IT Services',
+    },
+    {
+      id: 6,
+      name: 'Gas Stove',
+      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694490075/stove_ivhhxs.jpg',
       unit_price: 12,
       created_at: '2023-07-17T21:07:09.954Z',
       updated_at: '2023-07-17T21:07:09.954Z',
