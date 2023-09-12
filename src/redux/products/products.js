@@ -55,20 +55,10 @@ const initialState = {
   subarrowDirection: 'right',
   products: [
     {
-      id: 88,
-      name: 'Screws',
-      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1689628204/61ySzLPQqOL._AC_UF1000_1000_QL80__frytig.jpg',
-      unit_price: 1,
-      created_at: '2023-07-17T21:10:19.562Z',
-      updated_at: '2023-07-17T21:10:19.562Z',
-      quantity: 100,
-      category: 'Hardware Store',
-    },
-    {
       id: 85,
       name: 'Cements',
-      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1689628124/Storage-of-Cement-min_cpfzko.jpg',
-      unit_price: 10,
+      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242398/IMG_20230905_135152_676_qq2gy4.jpg',
+      unit_price: 11.5,
       created_at: '2023-07-17T21:08:57.574Z',
       updated_at: '2023-07-17T21:08:57.574Z',
       quantity: 200,
@@ -77,7 +67,7 @@ const initialState = {
     {
       id: 68,
       name: 'Powerbank Veger',
-      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1689627548/powerbank_exerbh_vjuudd.jpg',
+      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694487483/verger_fytsty.jpg',
       unit_price: 15,
       created_at: '2023-07-17T20:59:12.646Z',
       updated_at: '2023-07-17T20:59:12.646Z',
