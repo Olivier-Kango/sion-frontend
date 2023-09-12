@@ -76,8 +76,8 @@ const initialState = {
     },
     {
       id: 79,
-      name: 'Pure water 18.5 L',
-      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1689627939/ezgif.com-webp-to-jpg_2_sp4xer_jsvs8s.jpg',
+      name: 'Mineral Water Sion',
+      image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694488121/profil_svjrhj.jpg',
       unit_price: 10,
       created_at: '2023-07-17T21:05:43.018Z',
       updated_at: '2023-07-17T21:05:43.018Z',
