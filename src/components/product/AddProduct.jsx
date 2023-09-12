@@ -161,6 +161,8 @@ const AddProduct = () => {
                 <option value="Beverage Store">Beverage Store</option>
                 <option value="IT Services">IT Services</option>
                 <option value="Gas Energy">Gas Energy</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Chickens">Chickens</option>
               </select>
             </div>
             <div className="add-order-form-group">
