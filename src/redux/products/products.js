@@ -56,13 +56,14 @@ const initialState = {
   products: [
     {
       id: 1,
-      name: 'Cements',
+      name: 'Ciment Katana',
       image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242398/IMG_20230905_135152_676_qq2gy4.jpg',
       unit_price: 11.5,
-      created_at: '2023-07-17T21:08:57.574Z',
-      updated_at: '2023-07-17T21:08:57.574Z',
-      quantity: 200,
+      created_at: '2023-09-09T06:53:33.342Z',
+      updated_at: '2023-09-09T06:53:33.342Z',
+      quantity: 22,
       category: 'Hardware Store',
+      subcategory: 'Building',
     },
     {
       id: 2,
