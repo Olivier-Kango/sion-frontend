@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useParams,
+} from 'react-router-dom';
 import {
   FaShoppingCart, FaHome, FaIceCream, FaCrow,
 } from 'react-icons/fa';
@@ -39,6 +44,7 @@ const LeftBar = ({
   const isMobile = useMediaQuery('(max-width: 768px)');
   const location = useLocation();
   const [showSubcategories, setShowSubcategories] = useState(false);
+  const { category, subcategory } = useParams();
 
   const handleAddProductClick = () => {
     dispatch(setSelectedCategory(''));
@@ -187,6 +193,9 @@ const LeftBar = ({
               <span className="icon"><RiHome3Fill /></span>
               <span className="text">Home</span>
             </div>
+          </Link>
+          <Link to={`/${category.name}/${subcategory.name}`} onClick={() => handleCategoryClick(category.name, subcategory.name)}>
+            {/* ... Contenu du lien ... */}
           </Link>
           <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'ordering')}>
             <div className={(pathname === '/ordering') ? 'active' : 'item'}>
