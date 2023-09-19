@@ -66,7 +66,11 @@ const LeftBar = ({
     if (isMobile && subcategory !== '') {
       handleHamburgerClick();
     }
-    navigate('/');
+    if (subcategory) {
+      navigate(`/${category}/${subcategory}`);
+    } else {
+      navigate(`/${category}`);
+    }
   };
 
   const categories = [
@@ -194,7 +198,7 @@ const LeftBar = ({
               <span className="text">Home</span>
             </div>
           </Link>
-          <Link to={`/${category.name}/${subcategory.name}`} onClick={() => handleCategoryClick(category.name, subcategory.name)}>
+          <Link to={`/${category}/${subcategory}`} onClick={() => handleCategoryClick(category, subcategory)}>
             {/* ... Contenu du lien ... */}
           </Link>
           <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'ordering')}>
