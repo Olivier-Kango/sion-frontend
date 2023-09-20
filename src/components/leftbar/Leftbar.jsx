@@ -67,9 +67,9 @@ const LeftBar = ({
       handleHamburgerClick();
     }
     if (subcategory) {
-      navigate(`/${category}/${subcategory}`);
+      navigate(`/${category.toLowerCase().replace(/ /g, '-')}/${subcategory.toLowerCase().replace(/ /g, '-')}`);
     } else {
-      navigate(`/${category}`);
+      navigate(`/${category.toLowerCase().replace(/ /g, '-')}`);
     }
   };
 
@@ -198,9 +198,11 @@ const LeftBar = ({
               <span className="text">Home</span>
             </div>
           </Link>
-          <Link to={`/${category}/${subcategory}`} onClick={() => handleCategoryClick(category, subcategory)}>
-            {/* ... Contenu du lien ... */}
-          </Link>
+          {subcategory || category ? (
+            <Link to={`/${category}/${subcategory}`} onClick={() => handleCategoryClick(category, subcategory)}>
+              {/* {subcategory || category} */}
+            </Link>
+          ) : null}
           <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'ordering')}>
             <div className={(pathname === '/ordering') ? 'active' : 'item'}>
               <span className="icon"><FaShoppingCart /></span>
