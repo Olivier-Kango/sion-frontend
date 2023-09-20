@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { css } from '@emotion/react';
 import { RingLoader } from 'react-spinners';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMediaQuery } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,8 +22,17 @@ const Home = () => {
   const user = useSelector((state) => state.user.data);
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const selectedCategory = useSelector((state) => state.products.selectedCategory);
-  const selectedSubcategory = useSelector((state) => state.products.selectedSubcategory);
+  const { category, subcategory } = useParams();
+
+  const selectedCategoryFromRedux = useSelector((state) => state.products.selectedCategory);
+  const selectedSubcategoryFromRedux = useSelector((state) => state.products.selectedSubcategory);
+
+  const selectedCategory = category?.split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ') || selectedCategoryFromRedux;
+  const selectedSubcategory = subcategory?.split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ') || selectedSubcategoryFromRedux;
 
   const override = css`
   display: block;

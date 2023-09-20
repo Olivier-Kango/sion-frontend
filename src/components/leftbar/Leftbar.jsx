@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useParams,
+} from 'react-router-dom';
 import {
   FaShoppingCart, FaHome, FaIceCream, FaCrow,
 } from 'react-icons/fa';
@@ -39,6 +44,7 @@ const LeftBar = ({
   const isMobile = useMediaQuery('(max-width: 768px)');
   const location = useLocation();
   const [showSubcategories, setShowSubcategories] = useState(false);
+  const { category, subcategory } = useParams();
 
   const handleAddProductClick = () => {
     dispatch(setSelectedCategory(''));
@@ -60,7 +66,11 @@ const LeftBar = ({
     if (isMobile && subcategory !== '') {
       handleHamburgerClick();
     }
-    navigate('/');
+    if (subcategory) {
+      navigate(`/${category.toLowerCase().replace(/ /g, '-')}/${subcategory.toLowerCase().replace(/ /g, '-')}`);
+    } else {
+      navigate(`/${category.toLowerCase().replace(/ /g, '-')}`);
+    }
   };
 
   const categories = [
@@ -188,6 +198,11 @@ const LeftBar = ({
               <span className="text">Home</span>
             </div>
           </Link>
+          {subcategory || category ? (
+            <Link to={`/${category}/${subcategory}`} onClick={() => handleCategoryClick(category, subcategory)}>
+              {/* {subcategory || category} */}
+            </Link>
+          ) : null}
           <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'ordering')}>
             <div className={(pathname === '/ordering') ? 'active' : 'item'}>
               <span className="icon"><FaShoppingCart /></span>
