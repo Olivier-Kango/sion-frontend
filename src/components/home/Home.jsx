@@ -22,10 +22,17 @@ const Home = () => {
   const user = useSelector((state) => state.user.data);
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const { category, sub } = useParams();
+  const { category, subcategory } = useParams();
 
-  const selectedCategory = category || useSelector((state) => state.products.selectedCategory);
-  const selectedSubcategory = sub || useSelector((state) => state.products.selectedSubcategory);
+  const selectedCategoryFromRedux = useSelector((state) => state.products.selectedCategory);
+  const selectedSubcategoryFromRedux = useSelector((state) => state.products.selectedSubcategory);
+
+  const selectedCategory = category?.split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ') || selectedCategoryFromRedux;
+  const selectedSubcategory = subcategory?.split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ') || selectedSubcategoryFromRedux;
 
   const override = css`
   display: block;
