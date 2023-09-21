@@ -13,7 +13,7 @@ import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
 import { userLogout } from '../../redux/users/users';
-import { resultName } from '../../redux/products/products';
+import { resultName, updateSearchResults } from '../../redux/products/products';
 import './Navbar.scss';
 
 const Navbar = ({ handleLinkClick }) => {
@@ -58,6 +58,7 @@ const Navbar = ({ handleLinkClick }) => {
   // Function to handle search
   const handleSearch = () => {
     setSearchResults(yourSearchFunction(searchQuery));
+    dispatch(updateSearchResults(searchResults));
   };
 
   // Effect to call handleSearch whenever searchQuery changes

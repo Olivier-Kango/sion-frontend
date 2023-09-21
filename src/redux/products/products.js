@@ -51,6 +51,11 @@ export const resultName = (resultName) => ({
   payload: resultName,
 });
 
+export const updateSearchResults = (results) => ({
+  type: 'UPDATE_SEARCH_RESULTS',
+  payload: results,
+});
+
 // INITIAL STATE
 const initialState = {
   selectedCategory: '',
@@ -59,6 +64,7 @@ const initialState = {
   arrowDirection: 'down',
   subarrowDirection: 'right',
   resultName: '',
+  results: [],
   products: [
     {
       id: 28, name: 'Ciment Katana', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242398/IMG_20230905_135152_676_qq2gy4.jpg', unit_price: '11.5', quantity: 22, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:53:33.342Z', updated_at: '2023-09-09T06:53:33.342Z', subcategory: 'Building',
@@ -283,6 +289,12 @@ const reducerProduct = (state = initialState, action) => {
       return {
         ...state,
         resultName: action.payload,
+      };
+    }
+    case 'UPDATE_SEARCH_RESULTS': {
+      return {
+        ...state,
+        results: action.payload,
       };
     }
     default:
