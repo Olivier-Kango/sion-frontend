@@ -80,6 +80,7 @@ const Navbar = ({ handleLinkClick }) => {
   const handleSearchInputChange = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
+    dispatch(resultName(''));
   };
 
   const handleResultClick = (resultNameValue) => {
