@@ -26,6 +26,7 @@ const Home = () => {
 
   const selectedCategoryFromRedux = useSelector((state) => state.products.selectedCategory);
   const selectedSubcategoryFromRedux = useSelector((state) => state.products.selectedSubcategory);
+  const resultNameValue = useSelector((state) => state.products.resultName);
 
   const selectedCategory = category?.split('-')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -53,12 +54,18 @@ const Home = () => {
     dispatch(deleteProduct(id));
   };
 
-  const filteredProducts = selectedCategory
+  let filteredProducts = selectedCategory
     ? products.filter(
       (product) => product.category === selectedCategory
         && (!selectedSubcategory || product.subcategory === selectedSubcategory),
     )
     : products;
+
+  if (resultNameValue) {
+    filteredProducts = products.filter(
+      (product) => product.name === resultNameValue,
+    );
+  }
 
   return (
     <div className="container">

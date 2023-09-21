@@ -13,6 +13,7 @@ import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
 import { userLogout } from '../../redux/users/users';
+import { resultName } from '../../redux/products/products';
 import './Navbar.scss';
 
 const Navbar = ({ handleLinkClick }) => {
@@ -80,11 +81,27 @@ const Navbar = ({ handleLinkClick }) => {
     setSearchQuery(query);
   };
 
+  const handleResultClick = (resultNameValue) => {
+    dispatch(resultName(resultNameValue));
+    setPopupOpen(true);
+  };
+
   // Render search results
   const renderSearchResults = () => (
     <div className="search-results">
       {searchResults.map((result) => (
-        <div key={result.id} className="search-result-item">
+        <div
+          key={result.id}
+          className="search-result-item"
+          onClick={() => handleResultClick(result.name)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleResultClick(result.name);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+        >
           { result.name }
         </div>
       ))}
@@ -124,7 +141,7 @@ const Navbar = ({ handleLinkClick }) => {
             value={searchQuery}
             onChange={handleSearchInputChange}
           />
-          {searchQuery && renderSearchResults()}
+          {searchQuery && renderSearchResults(handleResultClick)}
         </div>
       </div>
       <div className="navbar-links">
