@@ -71,7 +71,6 @@ const Home = () => {
     filteredProducts = filteredProducts.filter(
       (product) => product.name === resultNameValue,
     );
-    console.log(resultNameValue);
   }
 
   return (
