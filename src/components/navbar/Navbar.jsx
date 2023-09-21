@@ -13,6 +13,7 @@ import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
 import { userLogout } from '../../redux/users/users';
+import { resultName, updateSearchResults } from '../../redux/products/products';
 import './Navbar.scss';
 
 const Navbar = ({ handleLinkClick }) => {
@@ -20,11 +21,16 @@ const Navbar = ({ handleLinkClick }) => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const usern = useSelector((state) => state.user.data?.name);
+  const products = useSelector((state) => state.products.products);
   const popupRef = useRef(null);
   const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(true);
   const isMobile = useMediaQuery('(max-width: 768px)');
+
+  // State for search
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   const handleLogout = () => {
     dispatch(userLogout());
@@ -32,7 +38,7 @@ const Navbar = ({ handleLinkClick }) => {
   };
 
   const handlePopupClick = (e) => {
-    e.stopPropagation(); // Prevents click on popup from propagating to document
+    e.stopPropagation();
   };
 
   const handleDocumentClick = (e) => {
@@ -40,6 +46,25 @@ const Navbar = ({ handleLinkClick }) => {
       setPopupOpen(true);
     }
   };
+
+  const yourSearchFunction = (query) => {
+    // Filter items that match the query
+    // eslint-disable-next-line max-len
+    const filteredItems = products.filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
+
+    return filteredItems;
+  };
+
+  // Function to handle search
+  const handleSearch = () => {
+    setSearchResults(yourSearchFunction(searchQuery));
+    dispatch(updateSearchResults(searchResults));
+  };
+
+  // Effect to call handleSearch whenever searchQuery changes
+  useEffect(() => {
+    handleSearch();
+  }, [searchQuery]);
 
   useEffect(() => {
     document.addEventListener('click', handleDocumentClick);
@@ -51,6 +76,44 @@ const Navbar = ({ handleLinkClick }) => {
   const handlePortfolioClick = () => {
     window.location.href = 'https://olivier-kango.netlify.app/';
   };
+
+  const handleSearchInputChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    dispatch(resultName(''));
+    if (query === '') {
+      dispatch(resultName(''));
+      setSearchResults([]);
+    }
+  };
+
+  const handleResultClick = (resultNameValue) => {
+    setSearchQuery(resultNameValue);
+    dispatch(resultName(resultNameValue));
+    setPopupOpen(true);
+  };
+
+  // Render search results
+  const renderSearchResults = () => (
+    <div className="search-results">
+      {searchResults.map((result) => (
+        <div
+          key={result.id}
+          className="search-result-item"
+          onClick={() => handleResultClick(result.name)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleResultClick(result.name);
+            }
+          }}
+          role="button"
+          tabIndex={0}
+        >
+          { result.name }
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <div className="navbar">
@@ -79,7 +142,13 @@ const Navbar = ({ handleLinkClick }) => {
           <div className="search-icon">
             <FontAwesomeIcon icon={faSearch} />
           </div>
-          <input type="text" placeholder="Search" />
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchQuery}
+            onChange={handleSearchInputChange}
+          />
+          {searchQuery && renderSearchResults(handleResultClick)}
         </div>
       </div>
       <div className="navbar-links">
