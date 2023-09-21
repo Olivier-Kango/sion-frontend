@@ -81,9 +81,14 @@ const Navbar = ({ handleLinkClick }) => {
     const query = e.target.value;
     setSearchQuery(query);
     dispatch(resultName(''));
+    if (query === '') {
+      dispatch(resultName(''));
+      setSearchResults([]);
+    }
   };
 
   const handleResultClick = (resultNameValue) => {
+    setSearchQuery(resultNameValue);
     dispatch(resultName(resultNameValue));
     setPopupOpen(true);
   };
