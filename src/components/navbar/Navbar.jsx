@@ -26,6 +26,9 @@ const Navbar = ({ handleLinkClick }) => {
   const [isPopupOpen, setPopupOpen] = useState(true);
   const isMobile = useMediaQuery('(max-width: 768px)');
 
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+
   const handleLogout = () => {
     dispatch(userLogout());
     navigate('/login-page');
@@ -50,6 +53,11 @@ const Navbar = ({ handleLinkClick }) => {
 
   const handlePortfolioClick = () => {
     window.location.href = 'https://olivier-kango.netlify.app/';
+  };
+
+  const handleSearchInputChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
   };
 
   return (
