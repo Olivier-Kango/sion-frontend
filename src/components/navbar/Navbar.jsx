@@ -20,12 +20,14 @@ const Navbar = ({ handleLinkClick }) => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const usern = useSelector((state) => state.user.data?.name);
+  const products = useSelector((state) => state.products.products);
   const popupRef = useRef(null);
   const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(true);
   const isMobile = useMediaQuery('(max-width: 768px)');
 
+  // State for search
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
@@ -35,7 +37,7 @@ const Navbar = ({ handleLinkClick }) => {
   };
 
   const handlePopupClick = (e) => {
-    e.stopPropagation(); // Prevents click on popup from propagating to document
+    e.stopPropagation();
   };
 
   const handleDocumentClick = (e) => {
@@ -43,6 +45,24 @@ const Navbar = ({ handleLinkClick }) => {
       setPopupOpen(true);
     }
   };
+
+  const yourSearchFunction = (query) => {
+    // Filter items that match the query
+    // eslint-disable-next-line max-len
+    const filteredItems = products.filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
+
+    return filteredItems;
+  };
+
+  // Function to handle search
+  const handleSearch = () => {
+    setSearchResults(yourSearchFunction(searchQuery));
+  };
+
+  // Effect to call handleSearch whenever searchQuery changes
+  useEffect(() => {
+    handleSearch();
+  }, [searchQuery]);
 
   useEffect(() => {
     document.addEventListener('click', handleDocumentClick);
@@ -59,6 +79,17 @@ const Navbar = ({ handleLinkClick }) => {
     const query = e.target.value;
     setSearchQuery(query);
   };
+
+  // Render search results
+  const renderSearchResults = () => (
+    <div className="search-results">
+      {searchResults.map((result) => (
+        <div key={result.id} className="search-result-item">
+          { result.name }
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <div className="navbar">
@@ -87,7 +118,13 @@ const Navbar = ({ handleLinkClick }) => {
           <div className="search-icon">
             <FontAwesomeIcon icon={faSearch} />
           </div>
-          <input type="text" placeholder="Search" />
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchQuery}
+            onChange={handleSearchInputChange}
+          />
+          {searchQuery && renderSearchResults()}
         </div>
       </div>
       <div className="navbar-links">
