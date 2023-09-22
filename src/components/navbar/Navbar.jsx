@@ -44,6 +44,7 @@ const Navbar = ({ handleLinkClick }) => {
 
   const handleDocumentClick = (e) => {
     if (!popupRef.current?.contains(e.target)) {
+      setSearchResults([]);
       setPopupOpen(true);
     }
   };
@@ -90,10 +91,10 @@ const Navbar = ({ handleLinkClick }) => {
   };
 
   const handleResultClick = (resultNameValue) => {
+    setSearchResults([]);
     setSearchQuery(resultNameValue);
     dispatch(resultName(resultNameValue));
-    setPopupOpen(false);
-    setSearchResults([]);
+    setPopupOpen(true);
   };
 
   // Render search results
