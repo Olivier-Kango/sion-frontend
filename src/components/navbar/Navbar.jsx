@@ -26,7 +26,7 @@ const Navbar = ({ handleLinkClick }) => {
   const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(true);
-  const [searchPopupOpen, setSearchPopupOpen] = useState(false);
+  // const [searchPopupOpen, setSearchPopupOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   // State for search
@@ -58,8 +58,9 @@ const Navbar = ({ handleLinkClick }) => {
 
   // Function to handle search
   const handleSearch = () => {
-    setSearchResults(yourSearchFunction(searchQuery));
-    dispatch(updateSearchResults(searchResults));
+    const updatedSearchResults = yourSearchFunction(searchQuery);
+    setSearchResults(updatedSearchResults);
+    dispatch(updateSearchResults(updatedSearchResults));
   };
 
   // Effect to call handleSearch whenever searchQuery changes
@@ -91,13 +92,13 @@ const Navbar = ({ handleLinkClick }) => {
   const handleResultClick = (resultNameValue) => {
     setSearchQuery(resultNameValue);
     dispatch(resultName(resultNameValue));
-    setPopupOpen(true);
-    setSearchPopupOpen(false);
+    setPopupOpen(false);
+    setSearchResults([]);
   };
 
   // Render search results
   const renderSearchResults = () => (
-    <div className={`search-results ${searchPopupOpen ? 'active' : ''}`}>
+    <div className="search-results">
       {searchResults.map((result) => (
         <div
           key={result.id}
