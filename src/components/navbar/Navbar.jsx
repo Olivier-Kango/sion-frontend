@@ -26,6 +26,7 @@ const Navbar = ({ handleLinkClick }) => {
   const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(true);
+  const [searchPopupOpen, setSearchPopupOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   // State for search
@@ -91,11 +92,12 @@ const Navbar = ({ handleLinkClick }) => {
     setSearchQuery(resultNameValue);
     dispatch(resultName(resultNameValue));
     setPopupOpen(true);
+    setSearchPopupOpen(false);
   };
 
   // Render search results
   const renderSearchResults = () => (
-    <div className="search-results">
+    <div className={`search-results ${searchPopupOpen ? 'active' : ''}`}>
       {searchResults.map((result) => (
         <div
           key={result.id}
