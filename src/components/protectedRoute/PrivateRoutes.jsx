@@ -11,7 +11,12 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line
 import LeftBar from '../leftbar/Leftbar.jsx';
 import {
-  setSelectedCategory, showCategories, arrowDirection, subarrowDirection,
+  setSelectedCategory,
+  showCategories,
+  arrowDirection,
+  subarrowDirection,
+  resultName,
+  updateSearchResults,
 } from '../../redux/products/products';
 import Navbar from '../navbar/Navbar';
 
@@ -46,6 +51,9 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     }
     dispatch(arrowDirection('down'));
     dispatch(subarrowDirection('right'));
+
+    console.log(updateSearchResults);
+    dispatch(resultName(''));
   };
 
   if (!isAllowed) {
