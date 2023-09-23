@@ -16,6 +16,8 @@ import {
   arrowDirection,
   subarrowDirection,
   updateSearchResults,
+  setSearchQuery,
+  resultName,
 } from '../../redux/products/products';
 import Navbar from '../navbar/Navbar';
 
@@ -56,6 +58,8 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     dispatch(subarrowDirection('right'));
 
     handleSearch();
+    dispatch(setSearchQuery(''));
+    dispatch(resultName(''));
   };
 
   if (!isAllowed) {

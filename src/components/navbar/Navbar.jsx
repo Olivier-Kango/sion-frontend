@@ -13,7 +13,7 @@ import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
 import { userLogout } from '../../redux/users/users';
-import { resultName, updateSearchResults } from '../../redux/products/products';
+import { resultName, updateSearchResults, setSearchQuery } from '../../redux/products/products';
 import './Navbar.scss';
 
 const Navbar = ({ handleLinkClick }) => {
@@ -28,9 +28,9 @@ const Navbar = ({ handleLinkClick }) => {
   const [isPopupOpen, setPopupOpen] = useState(true);
   // const [searchPopupOpen, setSearchPopupOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const searchQuery = useSelector((state) => state.products.searchQuery);
 
   // State for search
-  const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
   const handleLogout = () => {
@@ -47,10 +47,6 @@ const Navbar = ({ handleLinkClick }) => {
       setSearchResults([]);
       setPopupOpen(true);
     }
-  };
-
-  const handleHomeLinkClick = () => {
-    setSearchQuery('');
   };
 
   const yourSearchFunction = (query) => {
@@ -86,7 +82,7 @@ const Navbar = ({ handleLinkClick }) => {
 
   const handleSearchInputChange = (e) => {
     const query = e.target.value;
-    setSearchQuery(query);
+    dispatch(setSearchQuery(query));
     dispatch(resultName(''));
     if (query === '') {
       dispatch(resultName(''));
@@ -96,7 +92,7 @@ const Navbar = ({ handleLinkClick }) => {
 
   const handleResultClick = (resultNameValue) => {
     setSearchResults([]);
-    setSearchQuery(resultNameValue);
+    dispatch(setSearchQuery(resultNameValue));
     dispatch(resultName(resultNameValue));
     setPopupOpen(true);
   };
@@ -132,7 +128,6 @@ const Navbar = ({ handleLinkClick }) => {
             style={{ textDecoration: 'none' }}
             onClick={(event) => {
               handleLinkClick(event, '');
-              handleHomeLinkClick();
             }}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
