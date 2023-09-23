@@ -49,6 +49,10 @@ const Navbar = ({ handleLinkClick }) => {
     }
   };
 
+  const handleHomeLinkClick = () => {
+    setSearchQuery('');
+  };
+
   const yourSearchFunction = (query) => {
     // Filter items that match the query
     // eslint-disable-next-line max-len
@@ -126,7 +130,10 @@ const Navbar = ({ handleLinkClick }) => {
           <Link
             to="/"
             style={{ textDecoration: 'none' }}
-            onClick={(event) => handleLinkClick(event, '')}
+            onClick={(event) => {
+              handleLinkClick(event, '');
+              handleHomeLinkClick();
+            }}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 setPopupOpen(!isPopupOpen);
