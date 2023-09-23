@@ -15,6 +15,7 @@ import {
   showCategories,
   arrowDirection,
   subarrowDirection,
+  updateSearchResults,
 } from '../../redux/products/products';
 import Navbar from '../navbar/Navbar';
 
@@ -35,6 +36,10 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     setShowLeftbar(!showLeftbar);
   };
 
+  const handleSearch = () => {
+    dispatch(updateSearchResults([]));
+  };
+
   const handleLinkClick = (event, link) => {
     event.preventDefault();
     if (isMobile) {
@@ -49,6 +54,8 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     }
     dispatch(arrowDirection('down'));
     dispatch(subarrowDirection('right'));
+
+    handleSearch();
   };
 
   if (!isAllowed) {
