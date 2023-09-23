@@ -13,7 +13,7 @@ import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
 import { userLogout } from '../../redux/users/users';
-import { resultName, updateSearchResults } from '../../redux/products/products';
+import { resultName, updateSearchResults, setSearchQuery } from '../../redux/products/products';
 import './Navbar.scss';
 
 const Navbar = ({ handleLinkClick }) => {
@@ -26,10 +26,11 @@ const Navbar = ({ handleLinkClick }) => {
   const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(true);
+  // const [searchPopupOpen, setSearchPopupOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const searchQuery = useSelector((state) => state.products.searchQuery);
 
   // State for search
-  const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
   const handleLogout = () => {
@@ -43,6 +44,7 @@ const Navbar = ({ handleLinkClick }) => {
 
   const handleDocumentClick = (e) => {
     if (!popupRef.current?.contains(e.target)) {
+      setSearchResults([]);
       setPopupOpen(true);
     }
   };
@@ -57,8 +59,9 @@ const Navbar = ({ handleLinkClick }) => {
 
   // Function to handle search
   const handleSearch = () => {
-    setSearchResults(yourSearchFunction(searchQuery));
-    dispatch(updateSearchResults(searchResults));
+    const updatedSearchResults = yourSearchFunction(searchQuery);
+    setSearchResults(updatedSearchResults);
+    dispatch(updateSearchResults(updatedSearchResults));
   };
 
   // Effect to call handleSearch whenever searchQuery changes
@@ -79,7 +82,7 @@ const Navbar = ({ handleLinkClick }) => {
 
   const handleSearchInputChange = (e) => {
     const query = e.target.value;
-    setSearchQuery(query);
+    dispatch(setSearchQuery(query));
     dispatch(resultName(''));
     if (query === '') {
       dispatch(resultName(''));
@@ -88,7 +91,8 @@ const Navbar = ({ handleLinkClick }) => {
   };
 
   const handleResultClick = (resultNameValue) => {
-    setSearchQuery(resultNameValue);
+    setSearchResults([]);
+    dispatch(setSearchQuery(resultNameValue));
     dispatch(resultName(resultNameValue));
     setPopupOpen(true);
   };
@@ -122,7 +126,9 @@ const Navbar = ({ handleLinkClick }) => {
           <Link
             to="/"
             style={{ textDecoration: 'none' }}
-            onClick={(event) => handleLinkClick(event, '')}
+            onClick={(event) => {
+              handleLinkClick(event, '');
+            }}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 setPopupOpen(!isPopupOpen);
