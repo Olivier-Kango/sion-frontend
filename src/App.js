@@ -40,7 +40,6 @@ const App = () => {
           <Route path="/productdetails/:id" element={<ProductDetails />} />
           <Route path="/ordering" element={<Ordering />} />
           <Route path="/addorder/:id" element={<AddOrder />} />
-          <Route path="/modify-product/:id" element={<ModifyProduct />} />
           <Route path="/footer" element={<Footer />} />
         </Route>
 
@@ -55,6 +54,23 @@ const App = () => {
                 <section className="page-container">
                   <LeftBar isAuthenticated={!!user.loggedIn} />
                   <AddProduct />
+                </section>
+              </PrivateRoutes>
+            )
+          }
+        />
+
+        <Route
+          path="/modify-product/:id"
+          element={
+            (
+              <PrivateRoutes
+                redirectPath="/"
+                isAllowed={!!user.loggedIn && user.data.role === 'admin'}
+              >
+                <section className="page-container">
+                  <LeftBar isAuthenticated={!!user.loggedIn} />
+                  <ModifyProduct />
                 </section>
               </PrivateRoutes>
             )
