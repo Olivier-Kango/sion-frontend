@@ -73,7 +73,12 @@ const Home = () => {
     );
   }
 
-  filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+  filteredProducts.sort((a, b) => {
+    if (a && a.name && b && b.name) {
+      return a.name.localeCompare(b.name);
+    }
+    return 0;
+  });
 
   return (
     <div className="container">

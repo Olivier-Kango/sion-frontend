@@ -73,13 +73,16 @@ const initialState = {
   searchQuery: '',
   products: [
     {
-      id: 28, name: 'Ciment Katana', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242398/IMG_20230905_135152_676_qq2gy4.jpg', unit_price: '11.5', quantity: 22, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:53:33.342Z', updated_at: '2023-09-09T06:53:33.342Z', subcategory: 'Building',
+      id: 28, name: 'Ciment Katana', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242398/IMG_20230905_135152_676_qq2gy4.jpg', unit_price: '11', quantity: 22, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:53:33.342Z', updated_at: '2023-09-09T06:53:33.342Z', subcategory: 'Building',
     }, {
-      id: 29, name: 'Ciment Hima', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242437/t%C3%A9l%C3%A9chargement_4_sf4gcy.jpg', unit_price: '12.0', quantity: 12, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:54:01.164Z', updated_at: '2023-09-09T06:54:01.164Z', subcategory: 'Building',
+      id: 29, name: 'Ciment Hima', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242437/t%C3%A9l%C3%A9chargement_4_sf4gcy.jpg', unit_price: '11.5', quantity: 12, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:54:01.164Z', updated_at: '2023-09-09T06:54:01.164Z', subcategory: 'Building',
     }, {
-      id: 30, name: '1Kg clous 3 or 4 or 5mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242574/images_36_phecgx.jpg', unit_price: '2.5', quantity: 50, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:56:18.574Z', updated_at: '2023-09-09T06:56:18.574Z', subcategory: 'Building',
+      id: 30, name: 'Clous 3, 4 ou 5mm (1Kg)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242574/images_36_phecgx.jpg', unit_price: '2.5', quantity: 50, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:56:18.574Z', updated_at: '2023-09-09T06:56:18.574Z', subcategory: 'Building',
     }, {
-      id: 31, name: '1Kg clous 6 or 10 or 12mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242636/images_35_yh8dbx.jpg', unit_price: '2.0', quantity: 50, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:57:20.422Z', updated_at: '2023-09-09T06:57:20.422Z', subcategory: 'Building',
+      id: 31, name: 'Clous 6, 8, 10 ou 12mm (1Kg)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242636/images_35_yh8dbx.jpg', unit_price: '2.0', quantity: 50, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:57:20.422Z', updated_at: '2023-09-09T06:57:20.422Z', subcategory: 'Building',
+    }, {
+    }, {
+      id: 31, name: 'Clous 6, 8, 10 ou 12mm (1Kg)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242636/images_35_yh8dbx.jpg', unit_price: '2.0', quantity: 50, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:57:20.422Z', updated_at: '2023-09-09T06:57:20.422Z', subcategory: 'Building',
     }, {
       id: 32, name: 'Tôle Dumuzas', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242679/images_37_pskosf.jpg', unit_price: '8.0', quantity: 40, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:58:03.023Z', updated_at: '2023-09-09T06:58:03.023Z', subcategory: 'Building',
     }, {
@@ -109,9 +112,12 @@ const initialState = {
     }, {
       id: 45, name: 'Bêche ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245246/pelle-beche-ideal-taille-1-noir-manche-en-frene_jvbexg.jpg', unit_price: '3.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T07:40:49.786Z', updated_at: '2023-09-09T07:40:49.786Z', subcategory: 'Tools',
     }, {
-      id: 47, name: '1m Papier émeri ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245313/images_47_w3by7h.jpg', unit_price: '1.0', quantity: 50, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T07:41:57.584Z', updated_at: '2023-09-09T07:41:57.584Z', subcategory: 'Tools',
+      id: 47, name: 'Papier émeri (1m)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245313/images_47_w3by7h.jpg', unit_price: '1.0', quantity: 50, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T07:41:57.584Z', updated_at: '2023-09-09T07:41:57.584Z', subcategory: 'Tools',
     }, {
       id: 48, name: 'Mètre (3m)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245371/t%C3%A9l%C3%A9chargement_2_yiep2n.webp', unit_price: '1.5', quantity: 12, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T07:42:54.453Z', updated_at: '2023-09-09T07:42:54.453Z', subcategory: 'Tools',
+    }, {
+    }, {
+      id: 48, name: 'Mètre (5m)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695803551/5m%C3%A8tres_mkl1jr.jpg', unit_price: '3', quantity: 12, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T07:42:54.453Z', updated_at: '2023-09-09T07:42:54.453Z', subcategory: 'Tools',
     }, {
       id: 49, name: 'Lame de scie ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245498/t%C3%A9l%C3%A9chargement_ygcdcg.png', unit_price: '1.5', quantity: 20, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T07:45:25.358Z', updated_at: '2023-09-09T07:45:25.358Z', subcategory: 'Tools',
     }, {
