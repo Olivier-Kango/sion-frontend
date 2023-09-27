@@ -19,6 +19,7 @@ import LeftBar from './components/leftbar/Leftbar';
 // pages
 import Splash from './pages/Splash';
 import Management from './components/management/Management';
+import ModifyProduct from './components/product/ModifyProduct';
 
 const App = () => {
   const user = useSelector((state) => state.user);
@@ -53,6 +54,23 @@ const App = () => {
                 <section className="page-container">
                   <LeftBar isAuthenticated={!!user.loggedIn} />
                   <AddProduct />
+                </section>
+              </PrivateRoutes>
+            )
+          }
+        />
+
+        <Route
+          path="/modify-product/:id"
+          element={
+            (
+              <PrivateRoutes
+                redirectPath="/"
+                isAllowed={!!user.loggedIn && user.data.role === 'admin'}
+              >
+                <section className="page-container">
+                  <LeftBar isAuthenticated={!!user.loggedIn} />
+                  <ModifyProduct />
                 </section>
               </PrivateRoutes>
             )

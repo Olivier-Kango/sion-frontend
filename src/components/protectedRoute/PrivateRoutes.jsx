@@ -18,6 +18,7 @@ import {
   updateSearchResults,
   setSearchQuery,
   resultName,
+  getAllProducts,
 } from '../../redux/products/products';
 import Navbar from '../navbar/Navbar';
 
@@ -60,6 +61,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     handleSearch();
     dispatch(setSearchQuery(''));
     dispatch(resultName(''));
+    dispatch(getAllProducts());
   };
 
   if (!isAllowed) {

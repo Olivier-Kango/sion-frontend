@@ -60,9 +60,12 @@ const Navbar = ({ handleLinkClick }) => {
   };
 
   const yourSearchFunction = (query) => {
-    // Filter items that match the query
-    // eslint-disable-next-line max-len
-    const filteredItems = products.filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
+    const filteredItems = products.filter((product) => {
+      if (product && product.name) {
+        return product.name.toLowerCase().includes(query.toLowerCase());
+      }
+      return false;
+    });
 
     return filteredItems;
   };
