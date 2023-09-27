@@ -19,6 +19,7 @@ import LeftBar from './components/leftbar/Leftbar';
 // pages
 import Splash from './pages/Splash';
 import Management from './components/management/Management';
+import ModifyProduct from './components/product/ModifyProduct';
 
 const App = () => {
   const user = useSelector((state) => state.user);
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/productdetails/:id" element={<ProductDetails />} />
           <Route path="/ordering" element={<Ordering />} />
           <Route path="/addorder/:id" element={<AddOrder />} />
+          <Route path="/modify-product/:id" element={<ModifyProduct />} />
           <Route path="/footer" element={<Footer />} />
         </Route>
 

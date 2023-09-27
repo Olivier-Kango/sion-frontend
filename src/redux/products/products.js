@@ -21,6 +21,12 @@ export const deleteProduct = createAsyncThunk('DELETE_PRODUCT', async (id) => {
   return id;
 });
 
+export const modifyProduct = createAsyncThunk('MODIFY_PRODUCT', async ({ id, updatedProductData }) => {
+  const response = await axios.put(`api/v1/products/${id}`, updatedProductData);
+  const modifiedProduct = response.data;
+  return modifiedProduct;
+});
+
 export const setSelectedCategory = (category) => ({
   type: 'SELECTED_CATEGORY',
   payload: category,

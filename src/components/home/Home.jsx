@@ -137,6 +137,20 @@ const Home = () => {
                         </Link>
                         <br />
                         {user.role === 'admin' ? (
+                          <Link to={`/modify-product/${product.id}`}>
+                            <button
+                              type="button"
+                              className="button"
+                              style={{ color: 'black' }}
+                            >
+                              Modify
+                            </button>
+                          </Link>
+                        ) : (
+                          ''
+                        )}
+                        <br />
+                        {user.role === 'admin' ? (
                           <button
                             type="button"
                             className="button"
@@ -197,6 +211,20 @@ const Home = () => {
                             Order
                           </button>
                         </Link>
+                        <br />
+                        {user.role === 'admin' ? (
+                          <Link to={`/modify-product/${product.id}`}>
+                            <button
+                              type="button"
+                              className="button"
+                              style={{ color: 'black' }}
+                            >
+                              Modify
+                            </button>
+                          </Link>
+                        ) : (
+                          ''
+                        )}
                         <br />
                         {user.role === 'admin' ? (
                           <button
