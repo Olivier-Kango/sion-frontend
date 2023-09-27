@@ -55,14 +55,14 @@ const Home = () => {
     dispatch(deleteProduct(id));
   };
 
-  let filteredProducts = selectedCategory
-    ? products.filter(
+  let filteredProducts = products;
+
+  if (selectedCategory) {
+    filteredProducts = products.filter(
       (product) => product.category === selectedCategory
         && (!selectedSubcategory || product.subcategory === selectedSubcategory),
-    )
-    : products;
-
-  if (results.length > 0) {
+    );
+  } else if (results.length > 0) {
     const resultNames = results.map((result) => result.name);
     filteredProducts = products.filter((product) => resultNames.includes(product.name));
   }
@@ -72,6 +72,8 @@ const Home = () => {
       (product) => product.name === resultNameValue,
     );
   }
+
+  filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <div className="container">
