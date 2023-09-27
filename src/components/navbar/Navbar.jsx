@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FiLogOut } from 'react-icons/fi';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import {
   faSearch,
   faFolderOpen,
@@ -29,9 +29,19 @@ const Navbar = ({ handleLinkClick }) => {
   // const [searchPopupOpen, setSearchPopupOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
   const searchQuery = useSelector((state) => state.products.searchQuery);
+  const { category, subcategory } = useParams();
+  const selectedCategoryFromRedux = useSelector((state) => state.products.selectedCategory);
+  const selectedSubcategoryFromRedux = useSelector((state) => state.products.selectedSubcategory);
 
   // State for search
   const [searchResults, setSearchResults] = useState([]);
+
+  const selectedCategory = category?.split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ') || selectedCategoryFromRedux;
+  const selectedSubcategory = subcategory?.split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ') || selectedSubcategoryFromRedux;
 
   const handleLogout = () => {
     dispatch(userLogout());
@@ -60,8 +70,18 @@ const Navbar = ({ handleLinkClick }) => {
   // Function to handle search
   const handleSearch = () => {
     const updatedSearchResults = yourSearchFunction(searchQuery);
-    setSearchResults(updatedSearchResults);
-    dispatch(updateSearchResults(updatedSearchResults));
+
+    let filteredSearchResults = updatedSearchResults;
+
+    if (selectedCategory) {
+      filteredSearchResults = updatedSearchResults.filter(
+        (result) => result.category === selectedCategory
+          && (!selectedSubcategory || result.subcategory === selectedSubcategory),
+      );
+    }
+
+    setSearchResults(filteredSearchResults);
+    dispatch(updateSearchResults(filteredSearchResults));
   };
 
   // Effect to call handleSearch whenever searchQuery changes
