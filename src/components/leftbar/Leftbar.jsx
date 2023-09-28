@@ -30,7 +30,7 @@ import {
 import './Leftbar.scss';
 
 const LeftBar = ({
-  open, handleLinkClick, handleHamburgerClick,
+  open, handleLinkClick, handleHamburgerClick, onTouchStart, onTouchEnd,
 }) => {
   const dispatch = useDispatch();
   const userState = useSelector((state) => state.user);
@@ -90,7 +90,8 @@ const LeftBar = ({
     { id: 3, name: 'Plumbing' },
     { id: 4, name: 'Paint' },
     { id: 5, name: 'Electrical' },
-    { id: 6, name: 'General' },
+    { id: 6, name: 'Cleaning' },
+    { id: 7, name: 'General' },
   ];
 
   const shouldShowLeftbar = location.pathname !== '/management';
@@ -108,11 +109,33 @@ const LeftBar = ({
     dispatch(subarrowDirection(showSubcategories ? 'right' : 'up'));
   };
 
+  const handleTouchStart = (e) => {
+    // Appeler onTouchStart lorsque l'événement onTouchStart se produit
+    if (onTouchStart) {
+      onTouchStart(e);
+    }
+    // Autres logiques de gestion de l'événement onTouchStart
+    // ...
+  };
+
+  const handleTouchEnd = (e) => {
+    // Appeler onTouchEnd lorsque l'événement onTouchEnd se produit
+    if (onTouchEnd) {
+      onTouchEnd(e);
+    }
+    // Autres logiques de gestion de l'événement onTouchEnd
+    // ...
+  };
+
   return (
     <div className={`leftbar-container${open ? ' open' : ''}`}>
       {shouldShowLeftbar && (
       <nav className="nav">
-        <div className="links">
+        <div
+          className="links"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           {isMobile && (
           <Link
             to="/"
@@ -242,6 +265,8 @@ LeftBar.propTypes = {
   open: PropTypes.bool.isRequired,
   handleLinkClick: PropTypes.func.isRequired,
   handleHamburgerClick: PropTypes.func.isRequired,
+  onTouchStart: PropTypes.func.isRequired,
+  onTouchEnd: PropTypes.func.isRequired,
 };
 
 export default LeftBar;

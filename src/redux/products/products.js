@@ -67,6 +67,11 @@ export const setSearchQuery = (query) => ({
   payload: query,
 });
 
+export const setShowLeftBar = (showLeftbar) => ({
+  type: 'SET_SHOW_LEFTBAR',
+  payload: showLeftbar,
+});
+
 // INITIAL STATE
 const initialState = {
   selectedCategory: '',
@@ -77,6 +82,7 @@ const initialState = {
   resultName: '',
   results: [],
   searchQuery: '',
+  showLeftBar: false,
   products: [
     {
       id: 28,
@@ -1312,6 +1318,11 @@ const reducerProduct = (state = initialState, action) => {
       return {
         ...state,
         searchQuery: action.payload,
+      };
+    case 'SET_SHOW_LEFTBAR':
+      return {
+        ...state,
+        showLeftBar: action.payload,
       };
     default:
       return state;

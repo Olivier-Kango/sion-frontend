@@ -205,13 +205,13 @@ const Navbar = ({ handleLinkClick }) => {
             }
           }}
         >
-          <div className={`navbar-link ${isManagement ? '' : 'active'}`}>
+          <div className={`navbar-link ${isManagement ? '' : 'actived'}`}>
             <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
             <span className="text">E-commerce</span>
           </div>
         </Link>
         <Link to="/management">
-          <div className={`navbar-link ${isManagement ? 'active' : ''}`}>
+          <div className={`navbar-link ${isManagement ? 'actived' : ''}`}>
             <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
             <span className="text">Management</span>
           </div>
@@ -219,7 +219,7 @@ const Navbar = ({ handleLinkClick }) => {
         <div className="header-profile">
           {isAuthenticated ? (
             <div
-              className="navbar-link"
+              className={`navbar-profile navbar-link ${isPopupOpen ? 'active' : ''}`}
             >
               <button
                 className="profile-container"

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { BiPlusCircle, BiTrash } from 'react-icons/bi';
 import { FaSpinner } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { addProduct } from '../../redux/products/products';
+import { addProduct, setShowLeftBar } from '../../redux/products/products';
 import '../ordering/Ordering.scss';
 import './Product.scss';
 
@@ -18,6 +18,11 @@ const AddProduct = () => {
   const [unitPrice, setUnitPrice] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
+  const showLeftbar = useSelector((state) => state.products.showLeftBar);
+
+  useEffect(() => {
+    setShowLeftBar(showLeftbar);
+  }, [showLeftbar]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -80,7 +85,7 @@ const AddProduct = () => {
           <p>Your product has been added successfully!</p>
           <div className="success-actions">
             <button type="button" onClick={handleContinueShopping}>Continue Adding</button>
-            <Link to="/">
+            <Link to="/" onClick={dispatch(setShowLeftBar(false))}>
               <button type="button">Go to Home</button>
             </Link>
           </div>
@@ -155,6 +160,7 @@ const AddProduct = () => {
                 <option value="Plumbing">Plumbing</option>
                 <option value="Paint">Paint</option>
                 <option value="Electrical">Electrical</option>
+                <option value="Cleaning">Cleaning</option>
                 <option value="General">General</option>
                 <option value="Telephony">Telephony</option>
                 <option value="Mineral Water">Mineral Water</option>

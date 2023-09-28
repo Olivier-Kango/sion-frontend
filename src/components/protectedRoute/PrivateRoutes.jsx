@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Outlet,
@@ -19,24 +19,28 @@ import {
   setSearchQuery,
   resultName,
   getAllProducts,
+  setShowLeftBar,
 } from '../../redux/products/products';
 import Navbar from '../navbar/Navbar';
 
 import './PrivateRoutes.scss';
 
 const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
-  const [showLeftbar, setShowLeftbar] = useState(false);
-
   const isMobile = useMediaQuery('(max-width: 768px)');
   const user = useSelector((state) => state.user);
   const isAuthenticated = user.loggedIn;
   const selectedCategory = useSelector((state) => state.products.selectedCategory);
+  const showLeftbar = useSelector((state) => state.products.showLeftBar);
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    setShowLeftBar(showLeftbar);
+  }, [showLeftbar]);
+
   const handleHamburgerClick = () => {
-    setShowLeftbar(!showLeftbar);
+    dispatch(setShowLeftBar(!showLeftbar));
   };
 
   const handleSearch = () => {
@@ -46,7 +50,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const handleLinkClick = (event, link) => {
     event.preventDefault();
     if (isMobile) {
-      setShowLeftbar(false);
+      dispatch(setShowLeftBar(false));
     }
     if (link === '' && selectedCategory !== '') {
       dispatch(setSelectedCategory(''));
@@ -62,6 +66,26 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     dispatch(setSearchQuery(''));
     dispatch(resultName(''));
     dispatch(getAllProducts());
+  };
+
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleSwipe = () => {
+    const minSwipeDistance = 50;
+
+    if (touchEndX - touchStartX > minSwipeDistance) {
+      dispatch(setShowLeftBar(false));
+    }
+  };
+
+  const handleTouchEnd = (e) => {
+    setTouchEndX(e.changedTouches[0].clientX);
+    handleSwipe();
   };
 
   if (!isAllowed) {
@@ -109,6 +133,8 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               handleLinkClick={(event, link) => handleLinkClick(event, link)}
               isAuthenticated={isAuthenticated}
               handleHamburgerClick={handleHamburgerClick}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
             />
             )}
           </>
