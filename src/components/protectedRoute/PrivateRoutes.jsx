@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Outlet,
@@ -68,26 +68,6 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     dispatch(getAllProducts());
   };
 
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchEndX, setTouchEndX] = useState(0);
-
-  const handleTouchStart = (e) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleSwipe = () => {
-    const minSwipeDistance = 50;
-
-    if (touchEndX - touchStartX > minSwipeDistance) {
-      dispatch(setShowLeftBar(false));
-    }
-  };
-
-  const handleTouchEnd = (e) => {
-    setTouchEndX(e.changedTouches[0].clientX);
-    handleSwipe();
-  };
-
   if (!isAllowed) {
     return <Navigate to={redirectPath} replace />;
   }
@@ -133,8 +113,6 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               handleLinkClick={(event, link) => handleLinkClick(event, link)}
               isAuthenticated={isAuthenticated}
               handleHamburgerClick={handleHamburgerClick}
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
             />
             )}
           </>
