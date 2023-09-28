@@ -2,7 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FiLogOut } from 'react-icons/fi';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import {
+  Link,
+  useNavigate,
+  useParams,
+  useLocation,
+} from 'react-router-dom';
 import {
   faSearch,
   faFolderOpen,
@@ -26,12 +31,13 @@ const Navbar = ({ handleLinkClick }) => {
   const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(true);
-  // const [searchPopupOpen, setSearchPopupOpen] = useState(false);
+  const [isEcommerceActive, setEcommerceActive] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
   const searchQuery = useSelector((state) => state.products.searchQuery);
   const { category, subcategory } = useParams();
   const selectedCategoryFromRedux = useSelector((state) => state.products.selectedCategory);
   const selectedSubcategoryFromRedux = useSelector((state) => state.products.selectedSubcategory);
+  const location = useLocation();
 
   // State for search
   const [searchResults, setSearchResults] = useState([]);
@@ -142,6 +148,8 @@ const Navbar = ({ handleLinkClick }) => {
     </div>
   );
 
+  const isManagement = location.pathname === '/management';
+
   return (
     <div className="navbar">
       <div className="nav-first">
@@ -191,14 +199,16 @@ const Navbar = ({ handleLinkClick }) => {
           to="/"
           onClick={(event) => {
             handleLinkClick(event, '');
+            setEcommerceActive(true);
           }}
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               setPopupOpen(!isPopupOpen);
+              setEcommerceActive(true);
             }
           }}
         >
-          <div className="navbar-link">
+          <div className={`navbar-link ${isEcommerceActive ? 'active' : ''}`}>
             <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
             <span className="text">E-commerce</span>
           </div>
@@ -212,7 +222,7 @@ const Navbar = ({ handleLinkClick }) => {
         <div className="header-profile">
           {isAuthenticated ? (
             <div
-              className={`navbar-profile navbar-link ${isPopupOpen ? 'active' : ''}`}
+              className={`navbar-link ${isManagement ? 'active' : ''}`}
             >
               <button
                 className="profile-container"
