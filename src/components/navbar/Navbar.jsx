@@ -187,7 +187,17 @@ const Navbar = ({ handleLinkClick }) => {
             <span className="text">Portfolio</span>
           </div>
         </Link>
-        <Link to="/">
+        <Link
+          to="/"
+          onClick={(event) => {
+            handleLinkClick(event, '');
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              setPopupOpen(!isPopupOpen);
+            }
+          }}
+        >
           <div className="navbar-link">
             <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
             <span className="text">E-commerce</span>
