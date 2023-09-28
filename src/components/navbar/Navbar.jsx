@@ -31,7 +31,6 @@ const Navbar = ({ handleLinkClick }) => {
   const username = usern?.charAt(0).toUpperCase() + usern?.slice(1);
   const isAuthenticated = user.loggedIn;
   const [isPopupOpen, setPopupOpen] = useState(true);
-  const [isEcommerceActive, setEcommerceActive] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
   const searchQuery = useSelector((state) => state.products.searchQuery);
   const { category, subcategory } = useParams();
@@ -199,22 +198,20 @@ const Navbar = ({ handleLinkClick }) => {
           to="/"
           onClick={(event) => {
             handleLinkClick(event, '');
-            setEcommerceActive(true);
           }}
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               setPopupOpen(!isPopupOpen);
-              setEcommerceActive(true);
             }
           }}
         >
-          <div className={`navbar-link ${isEcommerceActive ? 'active' : ''}`}>
+          <div className={`navbar-link ${isManagement ? '' : 'active'}`}>
             <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
             <span className="text">E-commerce</span>
           </div>
         </Link>
         <Link to="/management">
-          <div className="navbar-link">
+          <div className={`navbar-link ${isManagement ? 'active' : ''}`}>
             <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
             <span className="text">Management</span>
           </div>
@@ -222,7 +219,7 @@ const Navbar = ({ handleLinkClick }) => {
         <div className="header-profile">
           {isAuthenticated ? (
             <div
-              className={`navbar-link ${isManagement ? 'active' : ''}`}
+              className="navbar-link"
             >
               <button
                 className="profile-container"
