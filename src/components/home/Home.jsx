@@ -136,7 +136,7 @@ const Home = () => {
                                 className="button pencil"
                                 style={{ color: 'black' }}
                               >
-                                <BiPencil />
+                                <BiPencil className="bi-icon" />
                               </button>
                             </Link>
                             <br />
@@ -148,7 +148,7 @@ const Home = () => {
                                 handleDelete(product.id);
                               }}
                             >
-                              <BiTrash />
+                              <BiTrash className="bi-icon" />
                             </button>
                           </div>
                         ) : (
@@ -210,7 +210,7 @@ const Home = () => {
                                 className="button pencil"
                                 style={{ color: 'black' }}
                               >
-                                <BiPencil />
+                                <BiPencil className="bi-icon" />
                               </button>
                             </Link>
                             <br />
@@ -222,7 +222,7 @@ const Home = () => {
                                 handleDelete(product.id);
                               }}
                             >
-                              <BiTrash />
+                              <BiTrash className="bi-icon" />
                             </button>
                           </div>
                         ) : (
