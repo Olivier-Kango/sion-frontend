@@ -91,7 +91,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const handleTouchMove = (e) => {
     if (startX !== null) {
       const deltaX = startX - e.touches[0].clientX;
-      if (deltaX > 50) {
+      if (deltaX > 5) {
         setIsSwiping(true);
       }
     }
@@ -109,7 +109,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const handleMouseMove = (e) => {
     if (startX !== null) {
       const deltaX = startX - e.clientX;
-      if (deltaX > 50 / 4) {
+      if (deltaX > 5) {
         setIsSwiping(true);
       }
     }
