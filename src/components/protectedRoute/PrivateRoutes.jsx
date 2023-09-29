@@ -40,7 +40,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
 
   useEffect(() => {
     if (isSwiping) {
-      dispatch(setShowLeftBar(false));
+      setShowLeftBar(false);
     }
   }, [isSwiping, dispatch]);
 
@@ -93,6 +93,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
       const deltaX = startX - e.touches[0].clientX;
       if (deltaX > 5) {
         setIsSwiping(true);
+        dispatch(setShowLeftBar(false));
       }
     }
   };
@@ -111,6 +112,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
       const deltaX = startX - e.clientX;
       if (deltaX > 5) {
         setIsSwiping(true);
+        dispatch(setShowLeftBar(false));
       }
     }
   };

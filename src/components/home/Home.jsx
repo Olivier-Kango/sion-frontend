@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import { RingLoader } from 'react-spinners';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { BiPencil, BiTrash } from 'react-icons/bi';
 import { useMediaQuery } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
@@ -126,6 +127,33 @@ const Home = () => {
                           {product.unit_price}
                           &nbsp;$ (USD)
                         </p>
+                        <br />
+                        {user.role === 'admin' ? (
+                          <div className="pencil-trash">
+                            <Link to={`/modify-product/${product.id}`}>
+                              <button
+                                type="button"
+                                className="button pencil"
+                                style={{ color: 'black' }}
+                              >
+                                <BiPencil />
+                              </button>
+                            </Link>
+                            <br />
+                            <button
+                              type="button"
+                              className="button trash"
+                              style={{ color: 'black' }}
+                              onClick={() => {
+                                handleDelete(product.id);
+                              }}
+                            >
+                              <BiTrash />
+                            </button>
+                          </div>
+                        ) : (
+                          ''
+                        )}
                         <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
                           <button
                             type="button"
@@ -135,35 +163,6 @@ const Home = () => {
                             Order
                           </button>
                         </Link>
-                        <br />
-                        {user.role === 'admin' ? (
-                          <Link to={`/modify-product/${product.id}`}>
-                            <button
-                              type="button"
-                              className="button"
-                              style={{ color: 'black' }}
-                            >
-                              Modify
-                            </button>
-                          </Link>
-                        ) : (
-                          ''
-                        )}
-                        <br />
-                        {user.role === 'admin' ? (
-                          <button
-                            type="button"
-                            className="button"
-                            style={{ color: 'black' }}
-                            onClick={() => {
-                              handleDelete(product.id);
-                            }}
-                          >
-                            Remove
-                          </button>
-                        ) : (
-                          ''
-                        )}
                       </div>
                     </div>
                   </div>
@@ -202,6 +201,33 @@ const Home = () => {
                           {product.unit_price}
                           &nbsp;$ (USD)
                         </p>
+                        <br />
+                        {user.role === 'admin' ? (
+                          <div className="pencil-trash">
+                            <Link to={`/modify-product/${product.id}`}>
+                              <button
+                                type="button"
+                                className="button pencil"
+                                style={{ color: 'black' }}
+                              >
+                                <BiPencil />
+                              </button>
+                            </Link>
+                            <br />
+                            <button
+                              type="button"
+                              className="button trash"
+                              style={{ color: 'black' }}
+                              onClick={() => {
+                                handleDelete(product.id);
+                              }}
+                            >
+                              <BiTrash />
+                            </button>
+                          </div>
+                        ) : (
+                          ''
+                        )}
                         <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
                           <button
                             type="button"
@@ -211,35 +237,6 @@ const Home = () => {
                             Order
                           </button>
                         </Link>
-                        <br />
-                        {user.role === 'admin' ? (
-                          <Link to={`/modify-product/${product.id}`}>
-                            <button
-                              type="button"
-                              className="button"
-                              style={{ color: 'black' }}
-                            >
-                              Modify
-                            </button>
-                          </Link>
-                        ) : (
-                          ''
-                        )}
-                        <br />
-                        {user.role === 'admin' ? (
-                          <button
-                            type="button"
-                            className="button"
-                            style={{ color: 'black' }}
-                            onClick={() => {
-                              handleDelete(product.id);
-                            }}
-                          >
-                            Remove
-                          </button>
-                        ) : (
-                          ''
-                        )}
                       </div>
                     </div>
                   </SwiperSlide>
