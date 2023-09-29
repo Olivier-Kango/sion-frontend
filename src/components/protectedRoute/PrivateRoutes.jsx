@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   Outlet,
@@ -34,6 +34,15 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
+
+  const [isSwiping, setIsSwiping] = useState(false);
+  const [startX, setStartX] = useState(null);
+
+  useEffect(() => {
+    if (isSwiping) {
+      dispatch(setShowLeftBar(false));
+    }
+  }, [isSwiping, dispatch]);
 
   useEffect(() => {
     setShowLeftBar(showLeftbar);
@@ -74,9 +83,59 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
 
   const shouldShowLeftbar = location.pathname !== '/management';
 
+  const handleTouchStart = (e) => {
+    const { clientX } = e.touches[0];
+    setStartX(clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (startX !== null) {
+      const deltaX = startX - e.touches[0].clientX;
+      if (deltaX > 50) {
+        setIsSwiping(true);
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setStartX(null);
+    setIsSwiping(false);
+  };
+
+  const handleMouseDown = (e) => {
+    setStartX(e.clientX);
+  };
+
+  const handleMouseMove = (e) => {
+    if (startX !== null) {
+      const deltaX = startX - e.clientX;
+      if (deltaX > 50) {
+        setIsSwiping(true);
+      }
+    }
+  };
+
+  const handleMouseUp = () => {
+    setStartX(null);
+    setIsSwiping(false);
+  };
+
   return (
     children || (
-      <section className="page-container">
+      <section
+        className="page-container"
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...(isMobile && showLeftbar && {
+          role: 'button',
+          tabIndex: 0,
+          onTouchStart: handleTouchStart,
+          onTouchMove: handleTouchMove,
+          onTouchEnd: handleTouchEnd,
+          onMouseDown: handleMouseDown,
+          onMouseMove: handleMouseMove,
+          onMouseUp: handleMouseUp,
+        })}
+      >
         <Navbar handleLinkClick={(event, link) => handleLinkClick(event, link)} />
         {isMobile ? (
           <>
