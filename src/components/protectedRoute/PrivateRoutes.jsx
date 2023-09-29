@@ -109,7 +109,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const handleMouseMove = (e) => {
     if (startX !== null) {
       const deltaX = startX - e.clientX;
-      if (deltaX > 50) {
+      if (deltaX > 50 / 4) {
         setIsSwiping(true);
       }
     }
