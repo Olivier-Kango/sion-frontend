@@ -103,6 +103,8 @@ const initialState = {
     }, {
       id: 154, name: 'Cadenas 50mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696344036/t%C3%A9l%C3%A9chargement_6_bkdhwg.jpg', unit_price: '1.4', quantity: 4, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-03T14:41:08.336Z', updated_at: '2023-10-03T14:41:08.336Z', subcategory: 'General',
     }, {
+      id: 156, name: 'Cadenas 32mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696427983/images_77_yruclb.jpg', unit_price: '0.8', quantity: 12, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-04T13:59:48.745Z', updated_at: '2023-10-04T13:59:48.745Z', subcategory: 'General',
+    }, {
       id: 33, name: 'Triplex ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242712/images_38_ovxu3j.jpg', unit_price: '4.0', quantity: 50, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T06:58:36.220Z', updated_at: '2023-09-09T06:58:36.220Z', subcategory: 'Building',
     }, {
       id: 38, name: 'Fer à béton bar de 6 gdf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242968/images_42_g3dzax.jpg', unit_price: '3.0', quantity: 30, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T07:02:52.476Z', updated_at: '2023-09-09T07:02:52.476Z', subcategory: 'Building',
@@ -118,6 +120,8 @@ const initialState = {
       id: 41, name: 'Roofing', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694243117/images_43_a5b4pg.jpg', unit_price: '1.0', quantity: 120, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T07:05:23.644Z', updated_at: '2023-09-29T09:21:44.917Z', subcategory: 'Building',
     }, {
       id: 113, name: 'Cadenas 70mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694834858/614N6MbRU7L_asvkxd.jpg', unit_price: '4.5', quantity: 6, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-16T03:27:59.968Z', updated_at: '2023-10-03T14:42:32.258Z', subcategory: 'General',
+    }, {
+      id: 157, name: 'Cadenas 63mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696428005/images_78_ilbidr.jpg', unit_price: '3.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-04T14:10:20.498Z', updated_at: '2023-10-04T14:10:20.498Z', subcategory: 'General',
     }, {
       id: 44, name: 'Pioche', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245203/PIOCHE-ROUGE_zlsuk6.jpg', unit_price: '6.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-09T07:40:08.839Z', updated_at: '2023-09-09T07:40:08.839Z', subcategory: 'Tools',
     }, {
