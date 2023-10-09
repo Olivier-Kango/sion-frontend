@@ -16,6 +16,7 @@ const AddProduct = () => {
   const [subcategory, setsubcategory] = useState('');
   const [quantity, setquantity] = useState('');
   const [unitPrice, setUnitPrice] = useState('');
+  const [unitPurchasePrice, setUnitPurchasePrice] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const showLeftbar = useSelector((state) => state.products.showLeftBar);
@@ -30,6 +31,7 @@ const AddProduct = () => {
       name,
       image: image || null,
       unit_price: unitPrice,
+      unit_purchase_price: unitPurchasePrice,
       category,
       subcategory,
       quantity,
@@ -42,6 +44,7 @@ const AddProduct = () => {
     setname('');
     setimage(null);
     setUnitPrice('');
+    setUnitPurchasePrice('');
     setcategory('');
     setsubcategory('');
     setquantity('');
@@ -96,6 +99,21 @@ const AddProduct = () => {
           <form onSubmit={handleSubmit} className="add-order-form">
             <div className="add-order-form-group">
               <input type="text" id="name" value={name} required onChange={(e) => setname(e.target.value)} placeholder="Enter product's Name" />
+            </div>
+            <div className="add-order-form-group">
+              <input
+                type="number"
+                id="unitPurchasePrice"
+                value={unitPurchasePrice}
+                required
+                onChange={(e) => {
+                  if (e.target.value >= 0) {
+                    setUnitPurchasePrice(e.target.value);
+                  }
+                }}
+                placeholder="Enter Unit Purchase Price"
+                inputMode="numeric"
+              />
             </div>
             <div className="add-order-form-group">
               <input
