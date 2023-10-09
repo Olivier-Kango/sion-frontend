@@ -104,19 +104,19 @@ $main-color-hover: #094a80;
           div {
             p {
               color: rgba(0, 0, 0, 0.443);
-              padding-bottom: 0px !important;
+              padding-bottom: 0 !important;
             }
-  
+
             h2:hover {
               color: $main-color;
             }
-  
+
             .quantity {
               display: flex;
               justify-content: center;
               align-items: center;
             }
-  
+
             .button {
               display: inline-block;
               cursor: pointer;
@@ -131,17 +131,17 @@ $main-color-hover: #094a80;
               font-weight: 500;
               transition: background-color 0.3s ease;
             }
-  
+
             .button:hover {
               background-color: #d8dae0 !important;
             }
-  
+
             .pencil-trash {
               display: flex !important;
               justify-content: space-between;
               margin-bottom: 5px;
               padding: 0;
-  
+
               .trash,
               .pencil {
                 width: 24px !important;
