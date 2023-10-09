@@ -19,10 +19,14 @@ const Management = () => {
             Accessing Management Details
           </h1>
           <p>
-            To access management details, you need to be an admin. Please
+            To access management details, you need to be an admin.
+            <br />
+            Please
+            {' '}
             <Link to={isAuthenticated && '/login-page'} className="login-manager">
               click here
             </Link>
+            {' '}
             to log in
           </p>
         </>
