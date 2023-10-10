@@ -12,7 +12,7 @@ const Management = () => {
     <div className="project-management">
       {user.role === 'admin' ? (
         <div className="management">
-          <br />
+          <h2 className="table-title">Products Information</h2>
           <table className="styled-table">
             <thead>
               <tr>
