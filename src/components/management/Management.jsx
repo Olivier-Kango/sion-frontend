@@ -32,7 +32,7 @@ const Management = () => {
                 <th className="td-img">Img</th>
                 <th className="prix">P.A.</th>
                 <th className="prix">P.V.</th>
-                <th className="prix">B</th>
+                <th className="prix gain">Gn</th>
                 <th className="quantity">Qté</th>
                 <th className="cat">Category</th>
                 <th className="cat">Subcategory</th>
@@ -46,7 +46,7 @@ const Management = () => {
                   <td className="td-img"><img src={product.image} alt={product.name} /></td>
                   <td className="prix">{product.unit_purchase_price}</td>
                   <td className="prix">{product.unit_price}</td>
-                  <td className="prix">{(product.unit_price - product.unit_purchase_price).toFixed(2)}</td>
+                  <td className="prix gain">{(product.unit_price - product.unit_purchase_price).toFixed(2)}</td>
                   <td className="quantity">{product.quantity}</td>
                   <td className="cat">{product.category}</td>
                   <td className="cat">{product.subcategory}</td>

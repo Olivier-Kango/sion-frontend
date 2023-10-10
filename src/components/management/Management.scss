@@ -1,3 +1,5 @@
+$main-color: #0a66c2;
+
 .project-management {
   h1 {
     font-size: 2rem;
@@ -34,7 +36,9 @@
       border-bottom: 1px solid #ddd;
     }
 
-    td-img
+    .gain {
+      color: $main-color !important;
+    }
 
     .styled-table thead th {
       background-color: #f2f2f2;
