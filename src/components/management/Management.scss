@@ -15,6 +15,7 @@ $main-color: #0a66c2;
   .management {
     font-family: Arial, sans-serif;
     margin: 20px;
+    padding-bottom: 45px;
 
     .table-title {
       font-size: 24px;
@@ -93,7 +94,7 @@ $main-color: #0a66c2;
 
       .styled-table .prix,
       .styled-table .quantity {
-        max-width: 35px !important;
+        max-width: 40px !important;
       }
 
       .name {
