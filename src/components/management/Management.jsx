@@ -19,10 +19,10 @@ const Management = () => {
                 <th>N°</th>
                 <th>Name</th>
                 <th>Image</th>
-                <th>Unit Price</th>
+                <th>P.A.</th>
+                <th>P.V.</th>
                 <th>Quantity</th>
                 <th>Category</th>
-                <th>Unit Purchase Price</th>
                 <th>Created At</th>
                 <th>Updated At</th>
                 <th>Subcategory</th>
@@ -34,10 +34,10 @@ const Management = () => {
                   <td>{index + 1}</td>
                   <td>{product.name}</td>
                   <td><img src={product.image} alt={product.name} /></td>
+                  <td>{product.unit_purchase_price}</td>
                   <td>{product.unit_price}</td>
                   <td>{product.quantity}</td>
                   <td>{product.category}</td>
-                  <td>{product.unit_purchase_price}</td>
                   <td>{product.created_at}</td>
                   <td>{product.updated_at}</td>
                   <td>{product.subcategory}</td>
