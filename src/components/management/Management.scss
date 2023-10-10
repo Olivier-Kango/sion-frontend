@@ -1,12 +1,6 @@
-.project-management {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
-  padding: 20px;
+$main-color: #0a66c2;
 
+.project-management {
   h1 {
     font-size: 2rem;
     color: #333;
@@ -15,6 +9,105 @@
   p {
     font-size: 1.2rem;
     color: #666;
-    margin: 10px 0;
+    margin: 10px;
+  }
+
+  .management {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding-bottom: 45px;
+
+    .table-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .styled-table th,
+    .styled-table td {
+      padding: 0 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .gain {
+      color: $main-color !important;
+    }
+
+    .styled-table thead th {
+      background-color: #f2f2f2;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .styled-table tbody tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    .styled-table img {
+      max-width: 100px;
+      height: auto;
+    }
+  }
+
+  .warning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+  }
+
+  .login-manager:hover {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .project-management {
+    .management {
+      margin: 10px !important;
+
+      .table-title {
+        font-size: 20px;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+
+      .styled-table {
+        font-size: 14px;
+      }
+
+      .styled-table th,
+      .styled-table td {
+        padding: 5px;
+      }
+
+      .styled-table .prix,
+      .styled-table .quantity {
+        max-width: 40px !important;
+      }
+
+      .name {
+        max-width: 100px !important;
+      }
+
+      .styled-table img {
+        max-width: 60px;
+      }
+
+      .cat {
+        display: none;
+      }
+    }
   }
 }
