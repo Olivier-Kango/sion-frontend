@@ -66,3 +66,43 @@
     text-decoration: underline;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .project-management {
+    .management {
+      margin: 10px !important;
+
+      .table-title {
+        font-size: 20px;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+
+      .styled-table {
+        font-size: 14px;
+      }
+
+      .styled-table th,
+      .styled-table td {
+        padding: 5px;
+      }
+
+      .styled-table .prix,
+      .styled-table .quantity {
+        max-width: 35px !important;
+      }
+
+      .name {
+        max-width: 100px !important;
+      }
+
+      .styled-table img {
+        max-width: 60px;
+      }
+
+      .cat {
+        display: none;
+      }
+    }
+  }
+}
