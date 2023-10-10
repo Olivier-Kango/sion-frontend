@@ -12,9 +12,8 @@ const Management = () => {
     <div className="project-management">
       {user.role === 'admin' ? (
         <div className="management">
-          {products.length}
           <br />
-          <table>
+          <table className="styled-table">
             <thead>
               <tr>
                 <th>ID</th>
@@ -48,7 +47,7 @@ const Management = () => {
           </table>
         </div>
       ) : (
-        <>
+        <div className="warning">
           <h1>
             Accessing Management Details
           </h1>
@@ -63,7 +62,7 @@ const Management = () => {
             {' '}
             to log in
           </p>
-        </>
+        </div>
       )}
     </div>
   );
