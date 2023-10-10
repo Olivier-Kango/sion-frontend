@@ -12,11 +12,11 @@ const Management = () => {
     <div className="project-management">
       {user.role === 'admin' ? (
         <div className="management">
-          <h2 className="table-title">Products Information</h2>
+          <h2 className="table-title">Product Information</h2>
           <table className="styled-table">
             <thead>
               <tr>
-                <th>ID</th>
+                <th>N°</th>
                 <th>Name</th>
                 <th>Image</th>
                 <th>Unit Price</th>
@@ -29,9 +29,9 @@ const Management = () => {
               </tr>
             </thead>
             <tbody>
-              {products.map((product) => (
+              {products.map((product, index) => (
                 <tr key={product.id}>
-                  <td>{product.id}</td>
+                  <td>{index + 1}</td>
                   <td>{product.name}</td>
                   <td><img src={product.image} alt={product.name} /></td>
                   <td>{product.unit_price}</td>
