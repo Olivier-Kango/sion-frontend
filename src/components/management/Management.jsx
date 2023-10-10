@@ -8,6 +8,17 @@ const Management = () => {
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const products = useSelector((state) => state.products.products);
 
+  const sortedProducts = [...products].sort((a, b) => {
+    if (a.category === 'Hardware Store' && b.category !== 'Hardware Store') {
+      return -1; // "Hardware Store" comes before other categories
+    } if (a.category !== 'Hardware Store' && b.category === 'Hardware Store') {
+      return 1; // "Hardware Store" comes after other categories
+    } if (a.category === b.category) {
+      return a.subcategory.localeCompare(b.subcategory);
+    }
+    return a.category.localeCompare(b.category);
+  });
+
   return (
     <div className="project-management">
       {user.role === 'admin' ? (
@@ -23,13 +34,11 @@ const Management = () => {
                 <th>P.V.</th>
                 <th>Quantity</th>
                 <th>Category</th>
-                <th>Created At</th>
-                <th>Updated At</th>
                 <th>Subcategory</th>
               </tr>
             </thead>
             <tbody>
-              {products.map((product, index) => (
+              {sortedProducts.map((product, index) => (
                 <tr key={product.id}>
                   <td>{index + 1}</td>
                   <td>{product.name}</td>
@@ -38,8 +47,6 @@ const Management = () => {
                   <td>{product.unit_price}</td>
                   <td>{product.quantity}</td>
                   <td>{product.category}</td>
-                  <td>{product.created_at}</td>
-                  <td>{product.updated_at}</td>
                   <td>{product.subcategory}</td>
                 </tr>
               ))}
