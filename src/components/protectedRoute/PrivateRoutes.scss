@@ -106,3 +106,7 @@ $main-color-hover: #094a80;
     }
   }
 }
+
+.grid-remove {
+  grid-template-columns: 0% 100% !important;
+}
