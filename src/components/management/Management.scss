@@ -1,6 +1,8 @@
 $main-color: #0a66c2;
 
 .project-management {
+  overflow-x: hidden !important;
+
   h1 {
     font-size: 2rem;
     color: #333;
@@ -55,7 +57,7 @@ $main-color: #0a66c2;
       max-width: 100px;
       height: 100px;
       padding: 0 5px;
-      object-fit: 100% 100%;
+      object-fit: cover;
     }
   }
 
@@ -106,7 +108,7 @@ $main-color: #0a66c2;
       .styled-table img {
         max-width: 60px;
         height: 60px !important;
-        object-fit: 100% 100% !important;
+        object-fit: cover !important;
       }
 
       .cat {
