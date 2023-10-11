@@ -78,7 +78,7 @@ $main-color: #0a66c2;
 @media screen and (max-width: 768px) {
   .project-management {
     .management {
-      margin: 10px !important;
+      margin: 5px !important;
 
       .table-title {
         font-size: 20px;
@@ -92,7 +92,7 @@ $main-color: #0a66c2;
 
       .styled-table th,
       .styled-table td {
-        padding: 0 5px;
+        padding: 0;
       }
 
       .styled-table .prix,
@@ -100,13 +100,17 @@ $main-color: #0a66c2;
         max-width: 40px !important;
       }
 
+      .num {
+        max-width: 25px !important;
+      }
+
       .name {
         max-width: 110px !important;
       }
 
       .styled-table img {
-        max-width: 60px;
-        height: 60px !important;
+        max-width: 50px;
+        height: 50px !important;
         object-fit: cover !important;
       }
 
