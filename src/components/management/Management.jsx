@@ -26,7 +26,7 @@ const Management = () => {
           <table className="styled-table">
             <thead>
               <tr>
-                <th>N°</th>
+                <th className="num">N°</th>
                 <th className="name">Name</th>
                 <th className="td-img">Img</th>
                 <th className="prix">P.A.</th>
@@ -40,7 +40,7 @@ const Management = () => {
             <tbody>
               {sortedProducts.map((product, index) => (
                 <tr key={product.id}>
-                  <td>{index + 1}</td>
+                  <td className="num">{index + 1}</td>
                   <td className="name">{product.name}</td>
                   <td className="td-img"><img src={product.image} alt={product.name} /></td>
                   <td className="prix">{product.unit_purchase_price}</td>
