@@ -57,12 +57,12 @@ const Management = () => {
       ) : (
         <div className="warning">
           <h1>
-            Accessing Management Details
+            Accessing Management
           </h1>
           <p>
             To access management details, you need to be an admin.
             <br />
-            Please
+            Please, log out and then,
             {' '}
             <Link to="/login-page" className="login-manager">
               click here

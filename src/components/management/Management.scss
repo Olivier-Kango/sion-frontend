@@ -91,7 +91,7 @@ $main-color: #0a66c2;
 
       .styled-table th,
       .styled-table td {
-        padding: 5px;
+        padding: 0 5px;
       }
 
       .styled-table .prix,
@@ -100,11 +100,13 @@ $main-color: #0a66c2;
       }
 
       .name {
-        max-width: 90px !important;
+        max-width: 100px !important;
       }
 
       .styled-table img {
         max-width: 60px;
+        height: 60px !important;
+        object-fit: 100% 100% !important;
       }
 
       .cat {
