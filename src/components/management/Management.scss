@@ -35,7 +35,7 @@ $main-color: #0a66c2;
 
     .styled-table th,
     .styled-table td {
-      padding: 0 15px;
+      padding: 0 15px !important;
       border-bottom: 1px solid #ddd;
     }
 
@@ -56,8 +56,8 @@ $main-color: #0a66c2;
     .styled-table img {
       max-width: 100px;
       height: 100px;
-      padding: 0 5px;
-      object-fit: contain;
+      padding: 0 5px !important;
+      // object-fit: contain;
     }
   }
 
@@ -108,7 +108,7 @@ $main-color: #0a66c2;
       .styled-table img {
         max-width: 60px;
         height: 60px !important;
-        object-fit: cover !important;
+        // object-fit: cover !important;
       }
 
       .cat {
