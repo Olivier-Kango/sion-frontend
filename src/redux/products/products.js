@@ -87,8 +87,6 @@ const initialState = {
     {
       id: 36, name: 'Fer à béton bar de 12', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242850/images_40_karc3v.jpg', unit_price: '6.5', quantity: 30, category: 'Hardware Store', unit_purchase_price: '6.37', created_at: '2023-09-09T07:01:04.588Z', updated_at: '2023-10-09T13:52:14.790Z', subcategory: 'Building',
     }, {
-      id: 38, name: 'Fer à béton bar de 6 gdf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242968/images_42_g3dzax.jpg', unit_price: '3.0', quantity: 30, category: 'Hardware Store', unit_purchase_price: '2.2', created_at: '2023-09-09T07:02:52.476Z', updated_at: '2023-10-09T13:52:31.830Z', subcategory: 'Building',
-    }, {
       id: 39, name: 'Fer à béton bar de 6 ptf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694243012/images_42_dx9xtt.jpg', unit_price: '2.0', quantity: 30, category: 'Hardware Store', unit_purchase_price: '1.3', created_at: '2023-09-09T07:03:36.161Z', updated_at: '2023-10-09T13:52:44.972Z', subcategory: 'Building',
     }, {
       id: 171, name: 'Lampe 40W', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696861116/images_99_aufmlw.jpg', unit_price: '3.5', quantity: 2, category: 'Hardware Store', unit_purchase_price: '3.0', created_at: '2023-10-09T14:19:26.979Z', updated_at: '2023-10-09T14:20:46.271Z', subcategory: 'Electrical',
@@ -98,8 +96,6 @@ const initialState = {
       id: 160, name: 'Machette ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646085/images_85_tsyg0o.jpg', unit_price: '3.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-07T02:35:03.563Z', updated_at: '2023-10-07T02:35:03.563Z', subcategory: 'Tools',
     }, {
       id: 156, name: 'Cadenas Sky Yan 32mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696427983/images_77_yruclb.jpg', unit_price: '0.8', quantity: 12, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-04T13:59:48.745Z', updated_at: '2023-10-07T02:41:56.731Z', subcategory: 'General',
-    }, {
-      id: 34, name: 'Bâche 4MX5M', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242751/71phb8j7NaL._AC_UF1000_1000_QL80__vzfyiz.jpg', unit_price: '4.0', quantity: 5, category: 'Hardware Store', unit_purchase_price: '3.0', created_at: '2023-09-09T06:59:15.859Z', updated_at: '2023-10-09T13:41:11.326Z', subcategory: 'Building',
     }, {
       id: 28, name: 'Ciment Katana', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242398/IMG_20230905_135152_676_qq2gy4.jpg', unit_price: '11.0', quantity: 22, category: 'Hardware Store', unit_purchase_price: '10.5', created_at: '2023-09-09T06:53:33.342Z', updated_at: '2023-10-09T13:44:25.427Z', subcategory: 'Building',
     }, {
@@ -118,6 +114,10 @@ const initialState = {
       id: 165, name: 'Balais gf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696680213/t%C3%A9l%C3%A9chargement_7_o3c2im.jpg', unit_price: '3.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.25', created_at: '2023-10-07T12:04:05.862Z', updated_at: '2023-10-09T14:47:13.675Z', subcategory: 'Cleaning',
     }, {
       id: 169, name: 'Balais mf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696681213/images_91_vqczex.jpg', unit_price: '2.7', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-10-07T12:20:18.275Z', updated_at: '2023-10-09T14:48:15.674Z', subcategory: 'Cleaning',
+    }, {
+      id: 38, name: 'Fer à béton bar de 6 gdf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242968/images_42_g3dzax.jpg', unit_price: '2.5', quantity: 30, category: 'Hardware Store', unit_purchase_price: '2.2', created_at: '2023-09-09T07:02:52.476Z', updated_at: '2023-10-12T11:44:43.001Z', subcategory: 'Building',
+    }, {
+      id: 34, name: 'Bache 4MX5M', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242751/71phb8j7NaL._AC_UF1000_1000_QL80__vzfyiz.jpg', unit_price: '4.0', quantity: 5, category: 'Hardware Store', unit_purchase_price: '3.0', created_at: '2023-09-09T06:59:15.859Z', updated_at: '2023-10-12T11:50:01.318Z', subcategory: 'Building',
     }, {
       id: 161, name: 'Houe', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646140/images_87_gqtn5d.jpg', unit_price: '4.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-07T02:35:43.877Z', updated_at: '2023-10-07T02:35:43.877Z', subcategory: 'Tools',
     }, {
@@ -189,8 +189,6 @@ const initialState = {
     }, {
       id: 42, name: 'Poignet ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694243159/images_44_ztmjdt.jpg', unit_price: '3.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '0.83', created_at: '2023-09-09T07:06:04.162Z', updated_at: '2023-10-09T13:54:39.769Z', subcategory: 'Building',
     }, {
-      id: 45, name: 'Bêche ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245246/pelle-beche-ideal-taille-1-noir-manche-en-frene_jvbexg.jpg', unit_price: '3.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-09T07:40:49.786Z', updated_at: '2023-10-09T13:55:45.850Z', subcategory: 'Tools',
-    }, {
       id: 49, name: 'Lame de scie ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245498/t%C3%A9l%C3%A9chargement_ygcdcg.png', unit_price: '1.5', quantity: 20, category: 'Hardware Store', unit_purchase_price: '1.0', created_at: '2023-09-09T07:45:25.358Z', updated_at: '2023-10-09T13:55:58.777Z', subcategory: 'Tools',
     }, {
       id: 48, name: 'Mètre (3m)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245371/t%C3%A9l%C3%A9chargement_2_yiep2n.webp', unit_price: '1.5', quantity: 12, category: 'Hardware Store', unit_purchase_price: '0.66', created_at: '2023-09-09T07:42:54.453Z', updated_at: '2023-10-09T13:56:48.431Z', subcategory: 'Tools',
@@ -217,19 +215,19 @@ const initialState = {
     }, {
       id: 147, name: 'Cylindre armoire ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695900881/camel_drawer_locks_gyld1j.png', unit_price: '1.5', quantity: 12, category: 'Hardware Store', unit_purchase_price: '0.63', created_at: '2023-09-28T11:35:02.559Z', updated_at: '2023-10-09T14:37:20.587Z', subcategory: 'General',
     }, {
+      id: 45, name: 'Beche ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245246/pelle-beche-ideal-taille-1-noir-manche-en-frene_jvbexg.jpg', unit_price: '3.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-09T07:40:49.786Z', updated_at: '2023-10-12T11:50:27.945Z', subcategory: 'Tools',
+    }, {
       id: 130, name: 'Clous de 5, 6, 8, 10 ou 12cm (1Kg)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695785038/clous_lixk5z.jpg', unit_price: '2.0', quantity: 25, category: 'Hardware Store', unit_purchase_price: '1.4', created_at: '2023-09-27T03:24:46.278Z', updated_at: '2023-10-09T13:45:53.559Z', subcategory: 'Building',
     }, {
       id: 129, name: 'Clous de 3 ou 5cm (1Kg)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695785002/pt_clous_newhpj.jpg', unit_price: '2.5', quantity: 24, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-27T03:23:33.475Z', updated_at: '2023-10-09T13:45:37.315Z', subcategory: 'Building',
     }, {
       id: 134, name: 'Pinceau 2.5"', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695801122/pinceau_2.5_kj2jic.png', unit_price: '0.8', quantity: 10, category: 'Hardware Store', unit_purchase_price: '0.5', created_at: '2023-09-27T07:52:08.383Z', updated_at: '2023-10-09T14:04:44.777Z', subcategory: 'Paint',
     }, {
-      id: 92, name: 'Sachet Attaches 18 mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615377/attahce_gd_qnoris.jpg', unit_price: '2.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-13T14:29:42.818Z', updated_at: '2023-10-09T14:08:47.621Z', subcategory: 'Electrical',
+      id: 93, name: 'Boîtes Attaches 22mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615422/attahce_gd_gfbngh.jpg', unit_price: '3.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '3.0', created_at: '2023-09-13T14:30:29.254Z', updated_at: '2023-10-12T11:59:03.642Z', subcategory: 'Electrical',
     }, {
       id: 127, name: 'Fiche mal Yaki', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695028441/fiche_ztbdwb.jpg', unit_price: '1.0', quantity: 10, category: 'Hardware Store', unit_purchase_price: '0.5', created_at: '2023-09-18T09:25:06.763Z', updated_at: '2023-10-09T14:26:29.779Z', subcategory: 'Electrical',
     }, {
       id: 91, name: 'Interrupteur Yaki', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615314/interr_pz8hll.jpg', unit_price: '1.5', quantity: 10, category: 'Hardware Store', unit_purchase_price: '1.2', created_at: '2023-09-13T14:28:38.327Z', updated_at: '2023-10-09T14:08:18.406Z', subcategory: 'Electrical',
-    }, {
-      id: 93, name: 'Sachet Attaches 22mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615422/attahce_gd_gfbngh.jpg', unit_price: '3.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '3.0', created_at: '2023-09-13T14:30:29.254Z', updated_at: '2023-10-09T14:09:03.090Z', subcategory: 'Electrical',
     }, {
       id: 125, name: 'Interrupteur Songrui', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695023204/images_5_jbokcp.jpg', unit_price: '0.8', quantity: 10, category: 'Hardware Store', unit_purchase_price: '0.45', created_at: '2023-09-18T07:46:48.837Z', updated_at: '2023-10-09T14:22:00.233Z', subcategory: 'Electrical',
     }, {
@@ -243,19 +241,21 @@ const initialState = {
     }, {
       id: 109, name: "Boîte d'encastrement", image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694616858/images_3_hwmzvg.jpg', unit_price: '0.6', quantity: 20, category: 'Hardware Store', unit_purchase_price: '0.3', created_at: '2023-09-13T14:54:23.683Z', updated_at: '2023-10-09T14:30:54.132Z', subcategory: 'Electrical',
     }, {
+      id: 117, name: 'Brosse toilette', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695021397/brosse_toilette_ihwt2w.webp', unit_price: '2.5', quantity: 2, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-18T07:19:47.074Z', updated_at: '2023-10-10T19:01:36.146Z', subcategory: 'Cleaning',
+    }, {
       id: 123, name: 'Jeux 7 Tournevis', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695022670/jeux_tournevis_lmfeih.webp', unit_price: '7.0', quantity: 2, category: 'Hardware Store', unit_purchase_price: '5.5', created_at: '2023-09-18T07:38:14.868Z', updated_at: '2023-10-09T14:31:53.932Z', subcategory: 'Electrical',
     }, {
       id: 152, name: 'Cadenas 32mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646609/IMG_20231003_155800_461_phgsrf.jpg', unit_price: '1.0', quantity: 4, category: 'Hardware Store', unit_purchase_price: '0.5', created_at: '2023-10-03T14:39:23.447Z', updated_at: '2023-10-09T14:45:55.855Z', subcategory: 'General',
     }, {
-      id: 117, name: 'Brosse toilette', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695021397/brosse_toilette_ihwt2w.webp', unit_price: '2.5', quantity: 2, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-18T07:19:47.074Z', updated_at: '2023-09-28T16:19:04.032Z', subcategory: 'Cleaning',
+      id: 148, name: 'BavChlore (5L)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695917341/Bav_j0ol4q.jpg', unit_price: '3.2', quantity: 2, category: 'Hardware Store', unit_purchase_price: '1.6', created_at: '2023-09-28T16:09:47.818Z', updated_at: '2023-10-10T19:02:15.293Z', subcategory: 'Cleaning',
     }, {
-      id: 148, name: 'BavChlore (5L)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695917341/Bav_j0ol4q.jpg', unit_price: '2.0', quantity: 2, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-28T16:09:47.818Z', updated_at: '2023-09-30T12:48:30.977Z', subcategory: 'Cleaning',
+      id: 128, name: 'Fer à béton bar de 10', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695612908/images_41_vt22wb.jpg', unit_price: '5.0', quantity: 30, category: 'Hardware Store', unit_purchase_price: '4.57', created_at: '2023-09-25T03:35:30.134Z', updated_at: '2023-10-12T11:44:11.299Z', subcategory: 'Building',
     }, {
       id: 133, name: 'Pinceau 2"', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695800892/pinceau_2_wszp9z.jpg', unit_price: '0.6', quantity: 6, category: 'Hardware Store', unit_purchase_price: '0.5', created_at: '2023-09-27T07:48:36.505Z', updated_at: '2023-10-09T14:05:06.308Z', subcategory: 'Paint',
     }, {
-      id: 128, name: 'Fer à béton bar de 10', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695612908/images_41_vt22wb.jpg', unit_price: '5.5', quantity: 30, category: 'Hardware Store', unit_purchase_price: '4.57', created_at: '2023-09-25T03:35:30.134Z', updated_at: '2023-10-09T13:51:53.016Z', subcategory: 'Building',
+      id: 132, name: 'Traillis (1m)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695785261/traillis_mcohqc.jpg', unit_price: '2.0', quantity: 40, category: 'Hardware Store', unit_purchase_price: '1.5', created_at: '2023-09-27T03:27:51.108Z', updated_at: '2023-10-12T11:46:59.842Z', subcategory: 'Building',
     }, {
-      id: 132, name: 'Rouleau traillis (1m)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695785261/traillis_mcohqc.jpg', unit_price: '2.0', quantity: 40, category: 'Hardware Store', unit_purchase_price: '1.5', created_at: '2023-09-27T03:27:51.108Z', updated_at: '2023-10-09T13:53:15.577Z', subcategory: 'Building',
+      id: 92, name: 'Boîtes Attaches 18 mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615377/attahce_gd_qnoris.jpg', unit_price: '2.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-13T14:29:42.818Z', updated_at: '2023-10-12T11:58:47.242Z', subcategory: 'Electrical',
     }, {
       id: 131, name: 'Papier émeri P60, 80, 120 (1m)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695785149/emeri_tqgmfi.jpg', unit_price: '1.0', quantity: 25, category: 'Hardware Store', unit_purchase_price: '0.8', created_at: '2023-09-27T03:25:55.145Z', updated_at: '2023-10-09T13:56:26.153Z', subcategory: 'Tools',
     }, {
