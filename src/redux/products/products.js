@@ -223,7 +223,7 @@ const initialState = {
     }, {
       id: 134, name: 'Pinceau 2.5"', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695801122/pinceau_2.5_kj2jic.png', unit_price: '0.8', quantity: 10, category: 'Hardware Store', unit_purchase_price: '0.5', created_at: '2023-09-27T07:52:08.383Z', updated_at: '2023-10-09T14:04:44.777Z', subcategory: 'Paint',
     }, {
-      id: 93, name: 'Boîtes Attaches 22mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615422/attahce_gd_gfbngh.jpg', unit_price: '3.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '3.0', created_at: '2023-09-13T14:30:29.254Z', updated_at: '2023-10-12T11:59:03.642Z', subcategory: 'Electrical',
+      id: 92, name: 'Boîte attaches 18 mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615377/attahce_gd_qnoris.jpg', unit_price: '2.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-13T14:29:42.818Z', updated_at: '2023-10-12T12:10:51.390Z', subcategory: 'Electrical',
     }, {
       id: 127, name: 'Fiche mal Yaki', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695028441/fiche_ztbdwb.jpg', unit_price: '1.0', quantity: 10, category: 'Hardware Store', unit_purchase_price: '0.5', created_at: '2023-09-18T09:25:06.763Z', updated_at: '2023-10-09T14:26:29.779Z', subcategory: 'Electrical',
     }, {
@@ -255,7 +255,7 @@ const initialState = {
     }, {
       id: 132, name: 'Traillis (1m)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695785261/traillis_mcohqc.jpg', unit_price: '2.0', quantity: 40, category: 'Hardware Store', unit_purchase_price: '1.5', created_at: '2023-09-27T03:27:51.108Z', updated_at: '2023-10-12T11:46:59.842Z', subcategory: 'Building',
     }, {
-      id: 92, name: 'Boîtes Attaches 18 mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615377/attahce_gd_qnoris.jpg', unit_price: '2.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-13T14:29:42.818Z', updated_at: '2023-10-12T11:58:47.242Z', subcategory: 'Electrical',
+      id: 93, name: 'Boîte attaches 22mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615422/attahce_gd_gfbngh.jpg', unit_price: '3.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '3.0', created_at: '2023-09-13T14:30:29.254Z', updated_at: '2023-10-12T12:10:35.137Z', subcategory: 'Electrical',
     }, {
       id: 131, name: 'Papier émeri P60, 80, 120 (1m)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695785149/emeri_tqgmfi.jpg', unit_price: '1.0', quantity: 25, category: 'Hardware Store', unit_purchase_price: '0.8', created_at: '2023-09-27T03:25:55.145Z', updated_at: '2023-10-09T13:56:26.153Z', subcategory: 'Tools',
     }, {
