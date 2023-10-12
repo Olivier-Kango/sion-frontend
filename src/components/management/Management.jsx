@@ -8,14 +8,13 @@ const Management = () => {
   const products = useSelector((state) => state.products.products);
 
   const sortedProducts = [...products].sort((a, b) => {
-    if (a.category === 'Hardware Store' && b.category !== 'Hardware Store') {
-      return -1; // "Hardware Store" comes before other categories
-    } if (a.category !== 'Hardware Store' && b.category === 'Hardware Store') {
-      return 1; // "Hardware Store" comes after other categories
-    } if (a.category === b.category) {
-      return a.subcategory.localeCompare(b.subcategory);
+    if (a.name < b.name) {
+      return -1;
     }
-    return a.category.localeCompare(b.category);
+    if (a.name > b.name) {
+      return 1;
+    }
+    return 0;
   });
 
   return (
