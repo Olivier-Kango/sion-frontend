@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   Outlet,
   Navigate,
-  useLocation,
+  // useLocation,
   useNavigate,
 } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
@@ -32,13 +32,13 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const selectedCategory = useSelector((state) => state.products.selectedCategory);
   const showLeftbar = useSelector((state) => state.products.showLeftBar);
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
   const dispatch = useDispatch();
 
   const [isSwiping, setIsSwiping] = useState(false);
   const [startX, setStartX] = useState(null);
 
-  const isManagement = location.pathname === '/management';
+  // const isManagement = location.pathname === '/management';
 
   useEffect(() => {
     if (isSwiping) {
@@ -79,11 +79,24 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     dispatch(getAllProducts());
   };
 
+  const handleLinkManag = (event) => {
+    event.preventDefault();
+    if (isMobile) {
+      dispatch(setShowLeftBar(false));
+    }
+    navigate('/management');
+
+    handleSearch();
+    dispatch(setSearchQuery(''));
+    dispatch(resultName(''));
+    dispatch(getAllProducts());
+  };
+
   if (!isAllowed) {
     return <Navigate to={redirectPath} replace />;
   }
 
-  const shouldShowLeftbar = location.pathname !== '/management';
+  // const shouldShowLeftbar = location.pathname !== '/management';
 
   const handleTouchStart = (e) => {
     const { clientX } = e.touches[0];
@@ -127,7 +140,8 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   return (
     children || (
       <section
-        className={`page-container ${(isManagement && !isMobile) ? 'grid-remove' : ''}`}
+        // className={`page-container ${(isManagement && !isMobile) ? 'grid-remove' : ''}`}
+        className="page-container"
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...(isMobile && showLeftbar && {
           role: 'button',
@@ -169,13 +183,13 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               aria-label="Close"
             />
             )}
-            {showLeftbar
-            && shouldShowLeftbar && (
+            {showLeftbar && (
             <LeftBar
               open={showLeftbar}
               handleLinkClick={(event, link) => handleLinkClick(event, link)}
               isAuthenticated={isAuthenticated}
               handleHamburgerClick={handleHamburgerClick}
+              handleLinkManag={(event) => handleLinkManag(event)}
             />
             )}
           </>
