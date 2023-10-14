@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   Outlet,
   Navigate,
-  useLocation,
+  // useLocation,
   useNavigate,
 } from 'react-router-dom';
 import { useMediaQuery } from '@mui/material';
@@ -32,7 +32,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const selectedCategory = useSelector((state) => state.products.selectedCategory);
   const showLeftbar = useSelector((state) => state.products.showLeftBar);
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
   const dispatch = useDispatch();
 
   const [isSwiping, setIsSwiping] = useState(false);
@@ -72,6 +72,19 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     }
     dispatch(arrowDirection('down'));
     dispatch(subarrowDirection('right'));
+
+    handleSearch();
+    dispatch(setSearchQuery(''));
+    dispatch(resultName(''));
+    dispatch(getAllProducts());
+  };
+
+  const handleLinkManag = (event) => {
+    event.preventDefault();
+    if (isMobile) {
+      dispatch(setShowLeftBar(false));
+    }
+    navigate('/management');
 
     handleSearch();
     dispatch(setSearchQuery(''));
@@ -176,6 +189,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               handleLinkClick={(event, link) => handleLinkClick(event, link)}
               isAuthenticated={isAuthenticated}
               handleHamburgerClick={handleHamburgerClick}
+              handleLinkManag={(event) => handleLinkManag(event)}
             />
             )}
           </>

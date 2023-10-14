@@ -6,7 +6,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import {
-  FaShoppingCart, FaHome, FaIceCream, FaCrow,
+  FaShoppingCart, FaHome, FaIceCream, FaCrow, FaProductHunt,
 } from 'react-icons/fa';
 import { MdDevices } from 'react-icons/md';
 import { RiHome3Fill } from 'react-icons/ri';
@@ -30,7 +30,7 @@ import {
 import './Leftbar.scss';
 
 const LeftBar = ({
-  open, handleLinkClick, handleHamburgerClick,
+  open, handleLinkClick, handleLinkManag, handleHamburgerClick,
 }) => {
   const dispatch = useDispatch();
   const userState = useSelector((state) => state.user);
@@ -249,10 +249,10 @@ const LeftBar = ({
               </div>
             </Link>
             )}
-            <Link to="/" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, '')}>
+            <Link to="/management" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkManag(event, '')}>
               <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
-                <span className="icon"><RiHome3Fill /></span>
-                <span className="text">Home</span>
+                <span className="icon"><FaProductHunt /></span>
+                <span className="text">Product Information</span>
               </div>
             </Link>
           </div>
@@ -270,6 +270,7 @@ const LeftBar = ({
 LeftBar.propTypes = {
   open: PropTypes.bool.isRequired,
   handleLinkClick: PropTypes.func.isRequired,
+  handleLinkManag: PropTypes.func.isRequired,
   handleHamburgerClick: PropTypes.func.isRequired,
 };
 
