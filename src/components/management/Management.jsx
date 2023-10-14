@@ -61,7 +61,8 @@ const Management = () => {
           <p>
             To access management details, you need to be an admin.
             <br />
-            Please, log out and then,
+            <br />
+            Please,
             {' '}
             <Link to="/login-page" className="login-manager">
               click here
