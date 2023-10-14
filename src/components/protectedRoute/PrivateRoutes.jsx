@@ -38,7 +38,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const [isSwiping, setIsSwiping] = useState(false);
   const [startX, setStartX] = useState(null);
 
-  const isManagement = location.pathname === '/management';
+  // const isManagement = location.pathname === '/management';
 
   useEffect(() => {
     if (isSwiping) {
@@ -127,7 +127,8 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   return (
     children || (
       <section
-        className={`page-container ${(isManagement && !isMobile) ? 'grid-remove' : ''}`}
+        // className={`page-container ${(isManagement && !isMobile) ? 'grid-remove' : ''}`}
+        className="page-container"
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...(isMobile && showLeftbar && {
           role: 'button',
