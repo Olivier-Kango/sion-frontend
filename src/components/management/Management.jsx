@@ -1,9 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { userLogout } from '../../redux/users/users';
 import './Management.scss';
 
 const Management = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user.data);
   const products = useSelector((state) => state.products.products);
 
@@ -16,6 +19,11 @@ const Management = () => {
     }
     return 0;
   });
+
+  const handleLogout = () => {
+    dispatch(userLogout());
+    navigate('/login-page');
+  };
 
   return (
     <div className="project-management">
@@ -64,9 +72,19 @@ const Management = () => {
             <br />
             Please,
             {' '}
-            <Link to="/login-page" className="login-manager">
+            <span
+              role="button"
+              tabIndex={0}
+              className="login-manager"
+              onClick={handleLogout}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleLogout();
+                }
+              }}
+            >
               click here
-            </Link>
+            </span>
             {' '}
             to log in
           </p>
