@@ -93,10 +93,6 @@ const initialState = {
     }, {
       id: 145, name: 'Pince universelle ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695874163/images_67_sqlrl4.jpg', unit_price: '4.5', quantity: 2, category: 'Hardware Store', unit_purchase_price: '3.5', created_at: '2023-09-28T04:09:45.799Z', updated_at: '2023-10-09T14:32:59.881Z', subcategory: 'Electrical',
     }, {
-      id: 160, name: 'Machette ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646085/images_85_tsyg0o.jpg', unit_price: '3.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-07T02:35:03.563Z', updated_at: '2023-10-07T02:35:03.563Z', subcategory: 'Tools',
-    }, {
-      id: 156, name: 'Cadenas Sky Yan 32mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696427983/images_77_yruclb.jpg', unit_price: '0.8', quantity: 12, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-04T13:59:48.745Z', updated_at: '2023-10-07T02:41:56.731Z', subcategory: 'General',
-    }, {
       id: 28, name: 'Ciment Katana', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242398/IMG_20230905_135152_676_qq2gy4.jpg', unit_price: '11.0', quantity: 22, category: 'Hardware Store', unit_purchase_price: '10.5', created_at: '2023-09-09T06:53:33.342Z', updated_at: '2023-10-09T13:44:25.427Z', subcategory: 'Building',
     }, {
       id: 29, name: 'Ciment Hima', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242437/t%C3%A9l%C3%A9chargement_4_sf4gcy.jpg', unit_price: '11.5', quantity: 12, category: 'Hardware Store', unit_purchase_price: '11.0', created_at: '2023-09-09T06:54:01.164Z', updated_at: '2023-10-09T13:44:50.295Z', subcategory: 'Building',
@@ -119,9 +115,9 @@ const initialState = {
     }, {
       id: 34, name: 'Bache 4MX5M', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242751/71phb8j7NaL._AC_UF1000_1000_QL80__vzfyiz.jpg', unit_price: '4.0', quantity: 5, category: 'Hardware Store', unit_purchase_price: '3.0', created_at: '2023-09-09T06:59:15.859Z', updated_at: '2023-10-12T11:50:01.318Z', subcategory: 'Building',
     }, {
-      id: 161, name: 'Houe', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646140/images_87_gqtn5d.jpg', unit_price: '4.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-07T02:35:43.877Z', updated_at: '2023-10-07T02:35:43.877Z', subcategory: 'Tools',
+      id: 156, name: 'Cadenas Sky Yan 32mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696427983/images_77_yruclb.jpg', unit_price: '0.8', quantity: 12, category: 'Hardware Store', unit_purchase_price: '0.4', created_at: '2023-10-04T13:59:48.745Z', updated_at: '2023-10-12T12:27:17.050Z', subcategory: 'General',
     }, {
-      id: 164, name: 'Charnière n°2', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646363/images_88_dajde7.jpg', unit_price: '0.2', quantity: 48, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-07T02:39:26.815Z', updated_at: '2023-10-07T02:39:26.815Z', subcategory: 'General',
+      id: 160, name: 'Machette ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646085/images_85_tsyg0o.jpg', unit_price: '3.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '1.5', created_at: '2023-10-07T02:35:03.563Z', updated_at: '2023-10-12T12:45:36.200Z', subcategory: 'Tools',
     }, {
       id: 151, name: 'Ficelle /60', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696343858/images_75__1_ch8abb.jpg', unit_price: '2.5', quantity: 6, category: 'Hardware Store', unit_purchase_price: '1.8', created_at: '2023-10-03T14:38:01.569Z', updated_at: '2023-10-09T13:50:19.500Z', subcategory: 'Building',
     }, {
@@ -139,6 +135,12 @@ const initialState = {
     }, {
       id: 167, name: "Brosse toile d'araignée ", image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696680615/61dt3GnhFAL._AC_UL600_SR600_600__jrceha.jpg', unit_price: '2.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '1.8', created_at: '2023-10-07T12:10:36.076Z', updated_at: '2023-10-09T14:47:37.622Z', subcategory: 'Cleaning',
     }, {
+      id: 164, name: 'Charnière n°2', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646363/images_88_dajde7.jpg', unit_price: '0.2', quantity: 48, category: 'Hardware Store', unit_purchase_price: '0.06', created_at: '2023-10-07T02:39:26.815Z', updated_at: '2023-10-12T12:39:15.157Z', subcategory: 'General',
+    }, {
+      id: 161, name: 'Houe', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646140/images_87_gqtn5d.jpg', unit_price: '4.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '2.83', created_at: '2023-10-07T02:35:43.877Z', updated_at: '2023-10-12T12:46:40.074Z', subcategory: 'Tools',
+    }, {
+      id: 172, name: 'Ciseaux de tôle ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1697250385/0244116_L_ar7zcg.jpg', unit_price: '3.0', quantity: 2, category: 'Hardware Store', unit_purchase_price: '1.8', created_at: '2023-10-14T02:27:19.203Z', updated_at: '2023-10-14T02:27:19.203Z', subcategory: 'Tools',
+    }, {
       id: 44, name: 'Pioche', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245203/PIOCHE-ROUGE_zlsuk6.jpg', unit_price: '6.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '4.5', created_at: '2023-09-09T07:40:08.839Z', updated_at: '2023-10-09T13:55:21.101Z', subcategory: 'Tools',
     }, {
       id: 52, name: 'Tuyau PVC 90', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694254822/tuyau_90_rvn0o7.jpg', unit_price: '9.0', quantity: 5, category: 'Hardware Store', unit_purchase_price: '7.0', created_at: '2023-09-09T10:20:30.187Z', updated_at: '2023-10-09T13:57:44.787Z', subcategory: 'Plumbing',
@@ -153,17 +155,11 @@ const initialState = {
     }, {
       id: 58, name: 'Coude PVC 90', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694255505/coude_90_sc1fsu.jpg', unit_price: '2.0', quantity: 5, category: 'Hardware Store', unit_purchase_price: '1.2', created_at: '2023-09-09T10:31:49.375Z', updated_at: '2023-10-09T13:59:42.782Z', subcategory: 'Plumbing',
     }, {
-      id: 78, name: 'Powerbank Veger', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694487483/verger_fytsty.jpg', unit_price: '15.0', quantity: 2, category: 'Electronics', unit_purchase_price: null, created_at: '2023-09-12T02:58:31.671Z', updated_at: '2023-09-12T02:58:31.671Z', subcategory: 'Telephony',
-    }, {
       id: 73, name: 'Rouleau peinture', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694257300/rlx_gd_dxpgt8.webp', unit_price: '2.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '1.3', created_at: '2023-09-09T12:09:51.485Z', updated_at: '2023-10-09T14:05:22.306Z', subcategory: 'Paint',
-    }, {
-      id: 80, name: 'Mineral Water Sion', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694488121/profil_svjrhj.jpg', unit_price: '4.0', quantity: 1, category: 'Mineral Water', unit_purchase_price: null, created_at: '2023-09-12T03:09:03.712Z', updated_at: '2023-09-12T03:09:03.712Z', subcategory: 'Mineral Water',
     }, {
       id: 61, name: 'Té PVC 110', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694256098/t_110_nfapip.jpg', unit_price: '2.5', quantity: 5, category: 'Hardware Store', unit_purchase_price: '1.5', created_at: '2023-09-09T10:41:41.963Z', updated_at: '2023-10-09T14:00:39.401Z', subcategory: 'Plumbing',
     }, {
       id: 82, name: 'Crème glacée', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694488762/creme_dlkpwg.jpg', unit_price: '0.25', quantity: 1, category: 'Beverage Store', unit_purchase_price: null, created_at: '2023-09-12T03:19:26.023Z', updated_at: '2023-09-12T03:19:26.023Z', subcategory: 'Beverage Store',
-    }, {
-      id: 83, name: 'Build a Web Site', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694489466/porfolio_olk_yuglzb.png', unit_price: '2000.0', quantity: 1, category: 'IT Services', unit_purchase_price: null, created_at: '2023-09-12T03:31:12.124Z', updated_at: '2023-09-12T03:31:12.124Z', subcategory: 'IT Services',
     }, {
       id: 84, name: 'Gas Stove', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694490075/stove_ivhhxs.jpg', unit_price: '50.0', quantity: 1, category: 'Gas Energy', unit_purchase_price: null, created_at: '2023-09-12T03:41:51.204Z', updated_at: '2023-09-12T03:41:51.204Z', subcategory: 'Gas Energy',
     }, {
@@ -175,19 +171,17 @@ const initialState = {
     }, {
       id: 67, name: 'Té PPR 3/4', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694256702/TE-PPR_yrabyf.jpg', unit_price: '0.8', quantity: 20, category: 'Hardware Store', unit_purchase_price: '0.4', created_at: '2023-09-09T10:51:47.034Z', updated_at: '2023-10-09T14:02:15.106Z', subcategory: 'Plumbing',
     }, {
-      id: 141, name: 'Vernis clair ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695872079/images_64_w6kiqb.jpg', unit_price: '2.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-09-28T03:35:04.683Z', updated_at: '2023-09-28T03:35:04.683Z', subcategory: 'Paint',
-    }, {
       id: 88, name: 'Boîte de connexion 100 X 100', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694614041/boite_de_connexion_x5ruz5.jpg', unit_price: '1.5', quantity: 12, category: 'Hardware Store', unit_purchase_price: '0.66', created_at: '2023-09-13T14:07:26.455Z', updated_at: '2023-10-09T14:07:29.650Z', subcategory: 'Electrical',
     }, {
       id: 89, name: 'Socket en porcelaine ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694614115/socket_ayfrg6.jpg', unit_price: '0.4', quantity: 12, category: 'Hardware Store', unit_purchase_price: '0.2', created_at: '2023-09-13T14:08:40.646Z', updated_at: '2023-10-09T14:07:47.322Z', subcategory: 'Electrical',
     }, {
       id: 75, name: 'Scotch peintre', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694262075/scotch_peintre_buzd4m.jpg', unit_price: '1.0', quantity: 9, category: 'Hardware Store', unit_purchase_price: '0.55', created_at: '2023-09-09T12:21:23.142Z', updated_at: '2023-10-09T14:06:29.903Z', subcategory: 'Paint',
     }, {
-      id: 162, name: 'Charnière n°3', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646253/images_89_ggwlxn.jpg', unit_price: '0.6', quantity: 24, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-07T02:37:58.076Z', updated_at: '2023-10-07T02:37:58.076Z', subcategory: 'General',
-    }, {
       id: 158, name: 'Ficelle /90', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696620684/images_83_stmfju.jpg', unit_price: '2.5', quantity: 5, category: 'Hardware Store', unit_purchase_price: '1.8', created_at: '2023-10-06T19:32:31.682Z', updated_at: '2023-10-09T13:51:04.784Z', subcategory: 'Building',
     }, {
       id: 42, name: 'Poignet ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694243159/images_44_ztmjdt.jpg', unit_price: '3.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '0.83', created_at: '2023-09-09T07:06:04.162Z', updated_at: '2023-10-09T13:54:39.769Z', subcategory: 'Building',
+    }, {
+      id: 78, name: 'Powerbank Veger', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694487483/verger_fytsty.jpg', unit_price: '15.0', quantity: 2, category: 'Electronics', unit_purchase_price: '12.5', created_at: '2023-09-12T02:58:31.671Z', updated_at: '2023-10-12T12:35:07.021Z', subcategory: 'Telephony',
     }, {
       id: 49, name: 'Lame de scie ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245498/t%C3%A9l%C3%A9chargement_ygcdcg.png', unit_price: '1.5', quantity: 20, category: 'Hardware Store', unit_purchase_price: '1.0', created_at: '2023-09-09T07:45:25.358Z', updated_at: '2023-10-09T13:55:58.777Z', subcategory: 'Tools',
     }, {
@@ -217,6 +211,14 @@ const initialState = {
     }, {
       id: 45, name: 'Beche ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245246/pelle-beche-ideal-taille-1-noir-manche-en-frene_jvbexg.jpg', unit_price: '3.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-09T07:40:49.786Z', updated_at: '2023-10-12T11:50:27.945Z', subcategory: 'Tools',
     }, {
+      id: 162, name: 'Charnière n°3', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646253/images_89_ggwlxn.jpg', unit_price: '0.6', quantity: 24, category: 'Hardware Store', unit_purchase_price: '0.13', created_at: '2023-10-07T02:37:58.076Z', updated_at: '2023-10-12T12:40:29.125Z', subcategory: 'General',
+    }, {
+      id: 80, name: 'Mineral Water Sion', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694488121/profil_svjrhj.jpg', unit_price: '1.2', quantity: 1, category: 'Mineral Water', unit_purchase_price: '1.0', created_at: '2023-09-12T03:09:03.712Z', updated_at: '2023-10-12T12:52:09.137Z', subcategory: 'Mineral Water',
+    }, {
+      id: 141, name: 'Vernis clair ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695872079/images_64_w6kiqb.jpg', unit_price: '2.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-28T03:35:04.683Z', updated_at: '2023-10-12T12:42:17.978Z', subcategory: 'Paint',
+    }, {
+      id: 83, name: 'Build a Web Site', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694489466/porfolio_olk_yuglzb.png', unit_price: '200.0', quantity: 1, category: 'IT Services', unit_purchase_price: '200.0', created_at: '2023-09-12T03:31:12.124Z', updated_at: '2023-10-12T12:42:59.266Z', subcategory: 'IT Services',
+    }, {
       id: 130, name: 'Clous de 5, 6, 8, 10 ou 12cm (1Kg)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695785038/clous_lixk5z.jpg', unit_price: '2.0', quantity: 25, category: 'Hardware Store', unit_purchase_price: '1.4', created_at: '2023-09-27T03:24:46.278Z', updated_at: '2023-10-09T13:45:53.559Z', subcategory: 'Building',
     }, {
       id: 129, name: 'Clous de 3 ou 5cm (1Kg)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695785002/pt_clous_newhpj.jpg', unit_price: '2.5', quantity: 24, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-27T03:23:33.475Z', updated_at: '2023-10-09T13:45:37.315Z', subcategory: 'Building',
@@ -228,6 +230,8 @@ const initialState = {
       id: 127, name: 'Fiche mal Yaki', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695028441/fiche_ztbdwb.jpg', unit_price: '1.0', quantity: 10, category: 'Hardware Store', unit_purchase_price: '0.5', created_at: '2023-09-18T09:25:06.763Z', updated_at: '2023-10-09T14:26:29.779Z', subcategory: 'Electrical',
     }, {
       id: 91, name: 'Interrupteur Yaki', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615314/interr_pz8hll.jpg', unit_price: '1.5', quantity: 10, category: 'Hardware Store', unit_purchase_price: '1.2', created_at: '2023-09-13T14:28:38.327Z', updated_at: '2023-10-09T14:08:18.406Z', subcategory: 'Electrical',
+    }, {
+      id: 110, name: 'Flexible', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695873915/images_66_subyqi.jpg', unit_price: '11.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '9.0', created_at: '2023-09-13T14:55:55.092Z', updated_at: '2023-10-12T12:22:43.578Z', subcategory: 'Electrical',
     }, {
       id: 125, name: 'Interrupteur Songrui', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695023204/images_5_jbokcp.jpg', unit_price: '0.8', quantity: 10, category: 'Hardware Store', unit_purchase_price: '0.45', created_at: '2023-09-18T07:46:48.837Z', updated_at: '2023-10-09T14:22:00.233Z', subcategory: 'Electrical',
     }, {
@@ -281,7 +285,7 @@ const initialState = {
     }, {
       id: 107, name: 'Lampe rotative multicolore ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695823522/ampoule_40w_sgpggd.jpg', unit_price: '4.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '3.5', created_at: '2023-09-13T14:51:35.413Z', updated_at: '2023-10-09T14:29:54.345Z', subcategory: 'Electrical',
     }, {
-      id: 110, name: 'Rouleau Flexible', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695873915/images_66_subyqi.jpg', unit_price: '11.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '9.0', created_at: '2023-09-13T14:55:55.092Z', updated_at: '2023-10-09T14:31:28.365Z', subcategory: 'Electrical',
+      id: 112, name: 'Cylindre Kale', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694834807/cylindre_kale_grzf7n.jpg', unit_price: '4.0', quantity: 4, category: 'Hardware Store', unit_purchase_price: '2.5', created_at: '2023-09-16T03:26:55.837Z', updated_at: '2023-10-12T12:31:02.101Z', subcategory: 'General',
     }, {
       id: 142, name: 'Boîte de connexion 130 X 130', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695872343/images_65_j4n2fd.jpg', unit_price: '2.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '1.0', created_at: '2023-09-28T03:39:27.973Z', updated_at: '2023-10-09T14:32:30.169Z', subcategory: 'Electrical',
     }, {
@@ -289,11 +293,7 @@ const initialState = {
     }, {
       id: 122, name: 'Cadenas Solix', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695022474/cadenas_uosdmm.jpg', unit_price: '4.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '2.5', created_at: '2023-09-18T07:34:55.752Z', updated_at: '2023-10-09T14:34:03.630Z', subcategory: 'General',
     }, {
-      id: 112, name: 'Kitofu Kale', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694834807/cylindre_kale_grzf7n.jpg', unit_price: '4.0', quantity: 4, category: 'Hardware Store', unit_purchase_price: '2.5', created_at: '2023-09-16T03:26:55.837Z', updated_at: '2023-10-09T14:34:43.164Z', subcategory: 'General',
-    }, {
       id: 115, name: 'Raclette', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694835015/raclette_mi2jbe.jpg', unit_price: '2.0', quantity: 2, category: 'Hardware Store', unit_purchase_price: '1.5', created_at: '2023-09-16T03:30:21.053Z', updated_at: '2023-10-09T14:35:49.206Z', subcategory: 'Cleaning',
-    }, {
-      id: 163, name: 'Charnière n°2.5', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646327/51tyiFv86XL._AC_UF1000_1000_QL80__nyvfuc.jpg', unit_price: '0.4', quantity: 48, category: 'Hardware Store', unit_purchase_price: null, created_at: '2023-10-07T02:38:50.931Z', updated_at: '2023-10-07T02:38:50.931Z', subcategory: 'General',
     }, {
       id: 159, name: 'Ficelle /18', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696620837/images_84_xcwpl9.jpg', unit_price: '1.5', quantity: 5, category: 'Hardware Store', unit_purchase_price: '0.6', created_at: '2023-10-07T02:24:15.775Z', updated_at: '2023-10-09T13:49:47.614Z', subcategory: 'Building',
     }, {
@@ -316,6 +316,8 @@ const initialState = {
       id: 153, name: 'Cadenas 38mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646636/IMG_20231003_155800_461_wuvev6.jpg', unit_price: '1.2', quantity: 4, category: 'Hardware Store', unit_purchase_price: '0.58', created_at: '2023-10-03T14:40:24.645Z', updated_at: '2023-10-09T14:46:05.538Z', subcategory: 'General',
     }, {
       id: 168, name: 'Raclette en bois ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696680881/images_90_dxshqp.jpg', unit_price: '2.0', quantity: 2, category: 'Hardware Store', unit_purchase_price: '1.25', created_at: '2023-10-07T12:15:05.760Z', updated_at: '2023-10-09T14:48:05.406Z', subcategory: 'Cleaning',
+    }, {
+      id: 163, name: 'Charnière n°2.5', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646327/51tyiFv86XL._AC_UF1000_1000_QL80__nyvfuc.jpg', unit_price: '0.4', quantity: 48, category: 'Hardware Store', unit_purchase_price: '0.08', created_at: '2023-10-07T02:38:50.931Z', updated_at: '2023-10-12T12:39:55.600Z', subcategory: 'General',
     },
   ],
 };
