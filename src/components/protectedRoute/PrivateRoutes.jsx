@@ -83,7 +83,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     return <Navigate to={redirectPath} replace />;
   }
 
-  const shouldShowLeftbar = location.pathname !== '/management';
+  // const shouldShowLeftbar = location.pathname !== '/management';
 
   const handleTouchStart = (e) => {
     const { clientX } = e.touches[0];
@@ -170,8 +170,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               aria-label="Close"
             />
             )}
-            {showLeftbar
-            && shouldShowLeftbar && (
+            {showLeftbar && (
             <LeftBar
               open={showLeftbar}
               handleLinkClick={(event, link) => handleLinkClick(event, link)}

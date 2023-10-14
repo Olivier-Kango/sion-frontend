@@ -111,38 +111,38 @@ const LeftBar = ({
 
   return (
     <div className={`leftbar-container${open ? ' open' : ''}`}>
-      {shouldShowLeftbar && (
-      <nav className="nav">
-        <div
-          className="links"
-        >
-          {isMobile && (
-          <Link
-            to="/"
-            style={{ textDecoration: 'none' }}
-            onClick={(event) => handleLinkClick(event, '')}
+      {shouldShowLeftbar ? (
+        <nav className="nav">
+          <div
+            className="links"
           >
-            <div className="logo-pop">
-              <span>
-                PSS Digital
-              </span>
-            </div>
-          </Link>
-          )}
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <button className={`item categories-item ${selectedCategory !== '' ? 'active-categories' : ''}`} type="button" onClick={toggleCategories}>
-              <span className="icon"><AiOutlineBars /></span>
-              <span className="text categories-button">
-                Categories&nbsp;
-                {arrow === 'down' ? (
-                  <IoIosArrowDown className="arrow-icon" />
-                ) : (
-                  <IoIosArrowUp className="arrow-icon" />
-                )}
-              </span>
-            </button>
-          </Link>
-          {showCategory && (
+            {isMobile && (
+            <Link
+              to="/"
+              style={{ textDecoration: 'none' }}
+              onClick={(event) => handleLinkClick(event, '')}
+            >
+              <div className="logo-pop">
+                <span>
+                  PSS Digital
+                </span>
+              </div>
+            </Link>
+            )}
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              <button className={`item categories-item ${selectedCategory !== '' ? 'active-categories' : ''}`} type="button" onClick={toggleCategories}>
+                <span className="icon"><AiOutlineBars /></span>
+                <span className="text categories-button">
+                  Categories&nbsp;
+                  {arrow === 'down' ? (
+                    <IoIosArrowDown className="arrow-icon" />
+                  ) : (
+                    <IoIosArrowUp className="arrow-icon" />
+                  )}
+                </span>
+              </button>
+            </Link>
+            {showCategory && (
             <div
               className={`categories ${showCategory ? 'visible' : ''}`}
               onKeyDown={(e) => {
@@ -194,25 +194,25 @@ const LeftBar = ({
                 </>
               ))}
             </div>
-          )}
-          <Link to="/" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, '')}>
-            <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
-              <span className="icon"><RiHome3Fill /></span>
-              <span className="text">Home</span>
-            </div>
-          </Link>
-          {subcategory || category ? (
-            <Link to={`/${category}/${subcategory}`} onClick={() => handleCategoryClick(category, subcategory)}>
-              {/* {subcategory || category} */}
+            )}
+            <Link to="/" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, '')}>
+              <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
+                <span className="icon"><RiHome3Fill /></span>
+                <span className="text">Home</span>
+              </div>
             </Link>
-          ) : null}
-          <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'ordering')}>
-            <div className={(pathname === '/ordering') ? 'active' : 'item'}>
-              <span className="icon"><FaShoppingCart /></span>
-              <span className="text">My Orders</span>
-            </div>
-          </Link>
-          {userState.data.role === 'admin' && (
+            {subcategory || category ? (
+              <Link to={`/${category}/${subcategory}`} onClick={() => handleCategoryClick(category, subcategory)}>
+                {/* {subcategory || category} */}
+              </Link>
+            ) : null}
+            <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'ordering')}>
+              <div className={(pathname === '/ordering') ? 'active' : 'item'}>
+                <span className="icon"><FaShoppingCart /></span>
+                <span className="text">My Orders</span>
+              </div>
+            </Link>
+            {userState.data.role === 'admin' && (
             <Link
               to="/addproduct"
               style={{ textDecoration: 'none' }}
@@ -228,9 +228,35 @@ const LeftBar = ({
                 <span className="text">Add Product</span>
               </div>
             </Link>
-          )}
-        </div>
-      </nav>
+            )}
+          </div>
+        </nav>
+      ) : (
+        <nav className="nav">
+          <div
+            className="links"
+          >
+            {isMobile && (
+            <Link
+              to="/"
+              style={{ textDecoration: 'none' }}
+              onClick={(event) => handleLinkClick(event, '')}
+            >
+              <div className="logo-pop">
+                <span>
+                  PSS Digital
+                </span>
+              </div>
+            </Link>
+            )}
+            <Link to="/" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, '')}>
+              <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
+                <span className="icon"><RiHome3Fill /></span>
+                <span className="text">Home</span>
+              </div>
+            </Link>
+          </div>
+        </nav>
       )}
       {shouldShowLeftbar && (
         <div className="leftbar-footer">
