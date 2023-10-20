@@ -255,14 +255,18 @@ const LeftBar = ({
                 <span className="text">Product Information</span>
               </div>
             </Link>
+            <Link to="/stock_movements" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkStockMovements(event)}>
+              <div className={pathname === '/stock_movements' ? 'active' : 'item'}>
+                <span className="icon"><FaProductHunt /></span>
+                <span className="text">Stock Movements</span>
+              </div>
+            </Link>
           </div>
         </nav>
       )}
-      {shouldShowLeftbar && (
-        <div className="leftbar-footer">
-          <Footer />
-        </div>
-      )}
+      <div className="leftbar-footer">
+        <Footer />
+      </div>
     </div>
   );
 };
