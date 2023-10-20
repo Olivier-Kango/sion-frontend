@@ -258,11 +258,9 @@ const LeftBar = ({
           </div>
         </nav>
       )}
-      {shouldShowLeftbar && (
-        <div className="leftbar-footer">
-          <Footer />
-        </div>
-      )}
+      <div className="leftbar-footer">
+        <Footer />
+      </div>
     </div>
   );
 };
