@@ -1,26 +1,25 @@
-import React from 'react';
-// import React, { useState } from 'react';
+import React, { useState } from 'react';
 
 function StockMovements() {
-  // const [quantity, setQuantity] = useState(0);
-  // const [movementType, setMovementType] = useState('Entry');
-  // const [reason, setReason] = useState('');
+  const [quantity, setQuantity] = useState(0);
+  const [movementType, setMovementType] = useState('Entry');
+  const [reason, setReason] = useState('');
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Envoyez les données au backend (via une requête HTTP) pour enregistrement
-  //   const data = { quantity, movementType, reason };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Envoyez les données au backend (via une requête HTTP) pour enregistrement
+    // const data = { quantity, movementType, reason };
 
-  //   // Réinitialisez le formulaire après l'enregistrement
-  //   setQuantity(0);
-  //   setMovementType('Entry');
-  //   setReason('');
-  // };
+    // Réinitialisez le formulaire après l'enregistrement
+    setQuantity(0);
+    setMovementType('Entry');
+    setReason('');
+  };
 
   return (
     <div>
       <h2>Stock Movements</h2>
-      {/* <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="quantity">
             Quantity:
@@ -56,7 +55,7 @@ function StockMovements() {
           </label>
         </div>
         <button type="submit">Add Movement</button>
-      </form> */}
+      </form>
     </div>
   );
 }
