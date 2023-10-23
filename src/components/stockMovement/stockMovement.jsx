@@ -77,6 +77,7 @@ const StockMovements = () => {
       </div>
     );
   }
+
   return (
     <div className="add-order-container">
       <h2>Stock Movements</h2>
