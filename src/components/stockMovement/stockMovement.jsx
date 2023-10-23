@@ -22,8 +22,8 @@ const StockMovements = () => {
     }
 
     // Réinitialisez le formulaire après l'enregistrement
-    setQuantity(0);
-    setMovementType('Entry');
+    setQuantity('');
+    setMovementType('');
     setReason('');
   };
 
