@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addProduct } from '../../redux/products/products';
 
-function StockMovements() {
+const StockMovements = () => {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(0);
   const [movementType, setMovementType] = useState('Entry');
@@ -80,6 +80,6 @@ function StockMovements() {
       )}
     </div>
   );
-}
+};
 
 export default StockMovements;

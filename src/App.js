@@ -19,6 +19,7 @@ import LeftBar from './components/leftbar/Leftbar';
 // pages
 import Splash from './pages/Splash';
 import Management from './components/management/Management';
+import StockMovement from './components/stockMovement/stockMovement';
 import ModifyProduct from './components/product/ModifyProduct';
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
           }
         >
           <Route path="/management" element={<Management />} />
+          <Route path="/stock-movement" element={<StockMovement />} />
           <Route path="/" element={<Home />} />
           <Route path="/:category/:subcategory?" element={<Home />} />
           <Route path="/productdetails/:id" element={<ProductDetails />} />
