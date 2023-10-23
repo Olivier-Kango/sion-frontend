@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addProduct } from '../../redux/products/products';
+import { addStockMovement } from '../../redux/stockMovement/stockMovement';
+import '../ordering/Ordering.scss';
 
 const StockMovements = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const StockMovements = () => {
     e.preventDefault();
     const data = { quantity, movementType, reason };
 
-    const response = await dispatch(addProduct(data));
+    const response = await dispatch(addStockMovement(data));
     if (response.type === 'ADD_STOCK_MOVEMENT/fulfilled') {
       setIsSubmitted(true);
     }
@@ -26,7 +27,7 @@ const StockMovements = () => {
   };
 
   return (
-    <div>
+    <div className="add-order-container">
       {isSubmitted ? (
         <div className="success-message">
           <p>Stock has been added successfully!</p>
@@ -39,40 +40,43 @@ const StockMovements = () => {
       ) : (
         <>
           <h2>Stock Movements</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="quantity">
-                Quantity:
-                <input
-                  type="number"
-                  value={quantity}
-                  onChange={(e) => setQuantity(e.target.value)}
-                />
-              </label>
+          <form onSubmit={handleSubmit} className="add-order-form">
+            <div className="add-order-form-group">
+              <input
+                type="number"
+                id="quantity"
+                value={quantity}
+                required
+                onChange={(e) => {
+                  const inputValue = e.target.value;
+                  if (!Number.isNaN(inputValue) && inputValue >= 0) {
+                    setQuantity(inputValue);
+                  }
+                }}
+                placeholder="Enter quantity"
+                inputMode="numeric"
+              />
             </div>
-            <div>
-              <label htmlFor="movement_type">
-                Movement Type:
-                <select
-                  value={movementType}
-                  onChange={(e) => setMovementType(e.target.value)}
-                >
-                  <option value="Entry">Entry</option>
-                  <option value="Sale">Sale</option>
-                  <option value="Loss">Loss</option>
-                  <option value="Gift">Gift</option>
-                </select>
-              </label>
+            <div className="add-order-form-group">
+              <select
+                value={movementType}
+                onChange={(e) => setMovementType(e.target.value)}
+                className="category-select"
+              >
+                <option value="" className="placeholder-option">Select stock&apos;s Movement</option>
+                <option value="Entry">Entry</option>
+                <option value="Sale">Sale</option>
+                <option value="Loss">Loss</option>
+                <option value="Gift">Gift</option>
+              </select>
             </div>
-            <div>
-              <label htmlFor="reason">
-                Reason:
-                <input
-                  type="text"
-                  value={reason}
-                  onChange={(e) => setReason(e.target.value)}
-                />
-              </label>
+            <div className="add-order-form-group">
+              <input
+                type="text"
+                id="reason"
+                value={reason}
+                onChange={(e) => setReason(e.target.value)}
+              />
             </div>
             <button type="submit">Add Movement</button>
           </form>
