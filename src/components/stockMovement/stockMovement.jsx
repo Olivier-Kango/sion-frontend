@@ -38,9 +38,9 @@ const StockMovements = () => {
   if (user.role !== 'admin') {
     return (
       <div className="warning">
-        <h1>Accessing Management</h1>
+        <h1>Accessing Stock Movement</h1>
         <p>
-          To accedivss management details, you need to be an admin.
+          To access stock Movement, you need to be an admin.
           <br />
           <br />
           Please,

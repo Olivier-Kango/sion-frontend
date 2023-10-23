@@ -1,0 +1,30 @@
+$main-color: #0a66c2;
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 10px;
+}
+
+.warning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.login-manager {
+  text-decoration: underline;
+}
+
+.login-manager:hover {
+  color: $main-color;
+}
