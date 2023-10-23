@@ -40,7 +40,7 @@ const StockMovements = () => {
       <div className="warning">
         <h1>Accessing Stock Movement</h1>
         <p>
-          To access stock Movement, you need to be an admin.
+          To Access Stock Movement, you need to be an admin.
           <br />
           <br />
           Please,
