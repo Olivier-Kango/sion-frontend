@@ -7,8 +7,8 @@ import './stockMovement.scss';
 
 const StockMovements = () => {
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(0);
-  const [movementType, setMovementType] = useState('Entry');
+  const [quantity, setQuantity] = useState('');
+  const [movementType, setMovementType] = useState('');
   const [reason, setReason] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -77,6 +77,7 @@ const StockMovements = () => {
                 id="reason"
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
+                placeholder="Enter Reason"
               />
             </div>
             <button type="submit">Add Movement</button>
