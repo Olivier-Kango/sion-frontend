@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addStockMovement } from '../../redux/stockMovement/stockMovement';
 import '../ordering/Ordering.scss';
+import './stockMovement/stockMovement.scss';
 
 const StockMovements = () => {
   const dispatch = useDispatch();
