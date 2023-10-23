@@ -30,7 +30,7 @@ import {
 import './Leftbar.scss';
 
 const LeftBar = ({
-  open, handleLinkClick, handleLinkManag, handleLinkStock, handleHamburgerClick,
+  open, handleLinkClick, handleLinkManag, handleHamburgerClick,
 }) => {
   const dispatch = useDispatch();
   const userState = useSelector((state) => state.user);
@@ -275,7 +275,6 @@ LeftBar.propTypes = {
   open: PropTypes.bool.isRequired,
   handleLinkClick: PropTypes.func.isRequired,
   handleLinkManag: PropTypes.func.isRequired,
-  handleLinkStock: PropTypes.func.isRequired,
   handleHamburgerClick: PropTypes.func.isRequired,
 };
 
