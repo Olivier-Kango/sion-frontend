@@ -147,7 +147,7 @@ const Navbar = ({ handleLinkClick }) => {
     </div>
   );
 
-  const isManagement = location.pathname === '/management';
+  const isManagement = location.pathname === '/management' || location.pathname === '/stock-movement';
 
   return (
     <div className="navbar">
