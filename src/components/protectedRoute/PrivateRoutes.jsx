@@ -84,7 +84,6 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     if (isMobile) {
       dispatch(setShowLeftBar(false));
     }
-
     handleSearch();
     dispatch(setSearchQuery(''));
     dispatch(resultName(''));
