@@ -33,13 +33,13 @@ const Management = () => {
           <table className="styled-table">
             <thead>
               <tr>
-                <th className="num">N°</th>
+                <th className="num">No.</th>
                 <th className="name">Name</th>
                 <th className="td-img">Img</th>
-                <th className="prix">P.A.</th>
-                <th className="prix vente">P.V.</th>
-                <th className="prix gain">Gn</th>
-                <th className="quantity">Qté</th>
+                <th className="prix">P.P.</th>
+                <th className="prix vente">S.P.</th>
+                <th className="prix gain">Pft</th>
+                <th className="quantity">Qty</th>
                 <th className="cat">Category</th>
                 <th className="cat">Subcategory</th>
               </tr>
