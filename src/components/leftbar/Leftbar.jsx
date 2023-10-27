@@ -255,13 +255,6 @@ const LeftBar = ({
                 <span className="text">Product Information</span>
               </div>
             </Link>
-
-            {/* <Link to="/stock-movement" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkManag(event, '')}>
-              <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
-                <span className="icon"><FaCubes /></span>
-                <span className="text">Stock Movement</span>
-              </div>
-            </Link> */}
           </div>
         </nav>
       )}
