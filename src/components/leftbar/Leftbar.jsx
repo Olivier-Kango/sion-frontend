@@ -6,7 +6,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import {
-  FaShoppingCart, FaHome, FaIceCream, FaCrow, FaProductHunt, FaCubes,
+  FaShoppingCart, FaHome, FaIceCream, FaCrow, FaProductHunt,
 } from 'react-icons/fa';
 import { MdDevices } from 'react-icons/md';
 import { RiHome3Fill } from 'react-icons/ri';
@@ -253,13 +253,6 @@ const LeftBar = ({
               <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
                 <span className="icon"><FaProductHunt /></span>
                 <span className="text">Product Information</span>
-              </div>
-            </Link>
-
-            <Link to="/stock-movement" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkManag(event, '')}>
-              <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
-                <span className="icon"><FaCubes /></span>
-                <span className="text">Stock Movement</span>
               </div>
             </Link>
           </div>
