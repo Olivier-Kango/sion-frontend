@@ -14,16 +14,42 @@ $main-color: #0a66c2;
     margin: 10px;
   }
 
+  th {
+    button {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
   .management {
     font-family: Arial, sans-serif;
     margin: 20px;
     padding-bottom: 45px;
+
+    .filter-input {
+      input {
+        padding: 4px 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 40%;
+        font-size: 16px;
+        transition: border 0.3s, padding 0.3s;
+      }
+
+      input:focus,
+      input:hover {
+        border: 1px solid #ccc;
+        outline: none;
+      }
+    }
 
     .table-title {
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: center;
+      position: sticky;
     }
 
     .styled-table {
@@ -87,6 +113,12 @@ $main-color: #0a66c2;
   .project-management {
     .management {
       margin: 5px !important;
+
+      .filter-input {
+        input {
+          width: 100%;
+        }
+      }
 
       .table-title {
         font-size: 20px;
