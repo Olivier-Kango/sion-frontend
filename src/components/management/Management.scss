@@ -41,6 +41,12 @@ $main-color: #0a66c2;
 
     .gain {
       color: $main-color !important;
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
     }
 
     .styled-table thead th {
