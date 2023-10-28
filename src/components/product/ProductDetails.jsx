@@ -57,11 +57,20 @@ const ProductDetails = () => {
           </p>
           <p>
             <span>
-              Manufactured on
+              Category
             </span>
             <span>
               {' '}
-              {product?.created_at.slice(11, 16)}
+              {product?.category}
+            </span>
+          </p>
+          <p>
+            <span>
+              Subcategory
+            </span>
+            <span>
+              {' '}
+              {product?.subcategory}
             </span>
           </p>
         </div>
