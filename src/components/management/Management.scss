@@ -14,10 +14,18 @@ $main-color: #0a66c2;
     margin: 10px;
   }
 
+  th {
+    button {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
   .management {
     font-family: Arial, sans-serif;
     margin: 20px;
-    padding-bottom:  45px;
+    padding-bottom: 45px;
 
     .filter-input {
       input {
@@ -26,7 +34,7 @@ $main-color: #0a66c2;
         border-radius: 4px;
         width: 40%;
         font-size: 16px;
-        transition: border 0.3s, padding 0.3s; 
+        transition: border 0.3s, padding 0.3s;
       }
 
       input:focus,
@@ -59,14 +67,6 @@ $main-color: #0a66c2;
 
     .gain {
       color: $main-color !important;
-    }
-
-    th {
-      button {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
     }
 
     .styled-table thead th {
