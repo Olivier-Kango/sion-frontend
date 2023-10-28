@@ -11,6 +11,8 @@ const Management = () => {
   const user = useSelector((state) => state.user.data);
   const products = useSelector((state) => state.products.products);
   const [sortOrder, setSortOrder] = useState('asc');
+  const [sortName, setSortName] = useState('desc');
+  const [filterName, setFilterName] = useState('');
 
   const sortedProductsByName = [...products].sort((a, b) => {
     if (a.name < b.name) {
@@ -27,6 +29,10 @@ const Management = () => {
     setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
   };
 
+  const toggleSortName = () => {
+    setSortName(sortName === 'desc' ? 'asc' : 'desc');
+  };
+
   const handleProfitHeaderClick = () => {
     toggleSortOrder();
     const sorted = [...sortedProducts].sort((a, b) => {
@@ -38,6 +44,33 @@ const Management = () => {
       return profitB - profitA;
     });
     setSortedProducts(sorted);
+  };
+
+  const handleNameHeaderClick = () => {
+    toggleSortName();
+    const sorted = [...sortedProducts].sort((a, b) => {
+      if (sortName === 'asc') {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      }
+      if (b.name < a.name) {
+        return -1;
+      }
+      if (b.name > a.name) {
+        return 1;
+      }
+      return 0;
+    });
+    setSortedProducts(sorted);
+  };
+
+  const handleFilterNameChange = (event) => {
+    setFilterName(event.target.value);
   };
 
   useEffect(() => {
@@ -55,11 +88,28 @@ const Management = () => {
       {user.role === 'admin' ? (
         <div className="management">
           <h2 className="table-title">Product Information</h2>
+          <div className="filter-input">
+            <input
+              type="text"
+              placeholder="Filter by Name"
+              value={filterName}
+              onChange={handleFilterNameChange}
+            />
+          </div>
           <table className="styled-table">
             <thead>
               <tr>
                 <th className="num">No.</th>
-                <th className="name">Name</th>
+                <th className="name" onClick={handleNameHeaderClick}>
+                  <button type="button">
+                    Name
+                    {sortName === 'asc' ? (
+                      <FaCaretUp />
+                    ) : (
+                      <FaCaretDown />
+                    )}
+                  </button>
+                </th>
                 <th className="td-img">Img</th>
                 <th className="prix">P.P.</th>
                 <th className="prix vente">S.P.</th>
@@ -79,23 +129,25 @@ const Management = () => {
               </tr>
             </thead>
             <tbody>
-              {sortedProducts.map((product, index) => (
-                <tr key={product.id}>
-                  <td className="num">{index + 1}</td>
-                  <td className="name">{product.name}</td>
-                  <td className="td-img">
-                    <img src={product.image} alt={product.name} />
-                  </td>
-                  <td className="prix">{product.unit_purchase_price}</td>
-                  <td className="prix vente">{product.unit_price}</td>
-                  <td className="prix gain">
-                    {(product.unit_price - product.unit_purchase_price).toFixed(2)}
-                  </td>
-                  <td className="quantity">{product.quantity}</td>
-                  <td className="cat">{product.category}</td>
-                  <td className="cat">{product.subcategory}</td>
-                </tr>
-              ))}
+              {sortedProducts
+                .filter((product) => product.name.toLowerCase().includes(filterName.toLowerCase()))
+                .map((product, index) => (
+                  <tr key={product.id}>
+                    <td className="num">{index + 1}</td>
+                    <td className="name">{product.name}</td>
+                    <td className="td-img">
+                      <img src={product.image} alt={product.name} />
+                    </td>
+                    <td className="prix">{product.unit_purchase_price}</td>
+                    <td className="prix vente">{product.unit_price}</td>
+                    <td className="prix gain">
+                      {(product.unit_price - product.unit_purchase_price).toFixed(2)}
+                    </td>
+                    <td className="quantity">{product.quantity}</td>
+                    <td className="cat">{product.category}</td>
+                    <td className="cat">{product.subcategory}</td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>
