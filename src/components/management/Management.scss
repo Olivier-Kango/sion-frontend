@@ -21,7 +21,7 @@ $main-color: #0a66c2;
 
     .filter-input {
       input {
-        padding: 8px;
+        padding: 4px 8px;
         border: 1px solid #ccc;
         border-radius: 4px;
         width: 40%;
@@ -41,6 +41,7 @@ $main-color: #0a66c2;
       font-weight: bold;
       margin-bottom: 10px;
       text-align: center;
+      position: sticky;
     }
 
     .styled-table {
@@ -113,7 +114,7 @@ $main-color: #0a66c2;
     .management {
       margin: 5px !important;
 
-      filter-input {
+      .filter-input {
         input {
           width: 100%;
         }
