@@ -30,7 +30,8 @@ $main-color: #0a66c2;
     .filter-input {
       input {
         padding: 4px 8px;
-        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        border: none;
         border-radius: 4px;
         width: 40%;
         font-size: 16px;
@@ -39,7 +40,7 @@ $main-color: #0a66c2;
 
       input:focus,
       input:hover {
-        border: 1px solid #ccc;
+        border: none;
         outline: none;
       }
     }
