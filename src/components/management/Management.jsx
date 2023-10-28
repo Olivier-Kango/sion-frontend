@@ -117,9 +117,9 @@ const Management = () => {
                   <button type="button">
                     Pft
                     {sortOrder === 'asc' ? (
-                      <FaCaretUp />
-                    ) : (
                       <FaCaretDown />
+                    ) : (
+                      <FaCaretUp />
                     )}
                   </button>
                 </th>
