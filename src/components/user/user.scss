@@ -22,6 +22,29 @@ section {
       background: #EFF0F6;
     }
 
+    
+  .divPassword {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: fit-content;
+  }
+  
+  .divPassword > div {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .inputEmail,
+  .divPassword {
+    width: 70%; /* Match the desired width */
+  }
+
     button {
       background: $main-color !important;
     }
@@ -73,7 +96,8 @@ section {
       form {
         padding-bottom: 0 !important;
 
-        input {
+        .inputEmail,
+        .divPassword {
           width: 100%;
           min-width: 260px;
         }
@@ -109,28 +133,6 @@ section {
       }
     }
   }
-}
-
-.divPassword {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  height: fit-content;
-}
-
-.divPassword > div {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  right: 20px;
-  height: 100%;
-  cursor: pointer;
-}
-
-.inputEmail,
-.divPassword {
-  width: 70%; /* Match the desired width */
 }
 
 // Styling for autofilled input fields
