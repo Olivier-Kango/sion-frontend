@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useRef, useEffect } from 'react';
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
+import { useRef, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { userLogin } from '../../redux/users/users';
@@ -28,6 +29,13 @@ const Login = () => {
     }
   }, [navigate, user.loggedIn]);
 
+  // Password handling with eyes
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+
   return (
     <section className="auth-section flex justify-center items-center h-full ">
       <div className="auth-left-section w-1/2 bg-white text-white flex justify-center items-center" />
@@ -43,16 +51,33 @@ const Login = () => {
             name="email"
             placeholder="Email"
             required
-            className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
+            className="inputEmail appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
           />
 
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            required
-            className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
-          />
+          <div
+            className="divPassword appearance-none block text-gray-700 border text-center border-red-500 rounded leading-tight focus:outline-none focus:bg-white p-0 mb-2"
+            style={{ background: '#EFF0F6' }}
+          >
+            <input
+              name="password"
+              type={passwordShown ? 'text' : 'password'}
+              placeholder="Password"
+              required
+              className="inputPassword appearance-none block text-gray-700 text-center p-3 leading-tight focus:outline-none"
+            />
+            <div
+              onClick={togglePassword}
+              onKeyPress={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  togglePassword();
+                }
+              }}
+              role="button"
+              tabIndex={0}
+            >
+              {passwordShown ? <AiFillEyeInvisible size={24} style={{ background: 'transparent' }} /> : <AiFillEye size={24} style={{ background: 'transparent' }} />}
+            </div>
+          </div>
           <button
             type="submit"
             className="group relative flex w-1/3 justify-center mt-3 rounded-md py-2 px-3 text-xl font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
