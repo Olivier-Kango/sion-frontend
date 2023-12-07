@@ -54,13 +54,17 @@ const Login = () => {
             className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
           />
 
-          <div>
+          <div
+            className="appearance-none block text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
+            style={{ background: '#EFF0F6' }}
+          >
             <input
               name="password"
               type={passwordShown ? 'text' : 'password'}
               placeholder="Password"
               required
-              className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
+              className="appearance-none block text-gray-700 text-center p-3 mb-2 leading-tight focus:outline-none"
+              style={{ background: '#EFF0F6' }}
             />
             <div
               onClick={togglePassword}

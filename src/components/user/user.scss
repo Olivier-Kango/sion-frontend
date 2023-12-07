@@ -20,6 +20,7 @@ section {
 
     input {
       width: 70%;
+      background: #EFF0F6;
     }
 
     button {
@@ -109,4 +110,14 @@ section {
       }
     }
   }
+}
+
+// Styling for autofilled input fields
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+
+  // Applying an inset box shadow to indicate autofilled fields
+    -webkit-box-shadow: 0 0 0 30px #EFF0F6 inset !important;
 }
