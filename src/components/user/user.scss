@@ -19,7 +19,6 @@ section {
     width: 100%;
 
     input {
-      width: 70%;
       background: #EFF0F6;
     }
 
@@ -116,6 +115,22 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  height: fit-content;
+}
+
+.divPassword > div {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.inputEmail,
+.divPassword {
+  width: 70%; /* Match the desired width */
 }
 
 // Styling for autofilled input fields

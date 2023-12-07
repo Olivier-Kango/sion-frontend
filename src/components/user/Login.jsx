@@ -51,11 +51,11 @@ const Login = () => {
             name="email"
             placeholder="Email"
             required
-            className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
+            className="inputEmail appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
           />
 
           <div
-            className="divPassword appearance-none block text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
+            className="divPassword appearance-none block text-gray-700 border text-center border-red-500 rounded leading-tight focus:outline-none focus:bg-white p-0 mb-2"
             style={{ background: '#EFF0F6' }}
           >
             <input
@@ -63,8 +63,7 @@ const Login = () => {
               type={passwordShown ? 'text' : 'password'}
               placeholder="Password"
               required
-              className="appearance-none block text-gray-700 text-center p-3 mb-2 leading-tight focus:outline-none"
-              style={{ background: '#EFF0F6' }}
+              className="inputPassword appearance-none block text-gray-700 text-center p-3 leading-tight focus:outline-none"
             />
             <div
               onClick={togglePassword}
