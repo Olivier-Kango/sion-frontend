@@ -19,31 +19,39 @@ section {
     width: 100%;
 
     input {
-      background: #EFF0F6;
+      background: #eff0f6;
     }
 
-    
-  .divPassword {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: fit-content;
-  }
-  
-  .divPassword > div {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 20px;
-    height: 100%;
-    cursor: pointer;
-  }
-  
-  .inputEmail,
-  .divPassword {
-    width: 70%; /* Match the desired width */
-  }
+    .divPassword {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .divPassword > div {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 20px;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .inputEmail,
+    .divPassword {
+      width: 70%; /* Match the desired width */
+    }
+
+    // Styling for autofilled input fields
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+
+      // Applying an inset box shadow to indicate autofilled fields
+      -webkit-box-shadow: 0 0 0 30px #eff0f6 inset !important;
+    }
 
     button {
       background: $main-color !important;
@@ -133,14 +141,4 @@ section {
       }
     }
   }
-}
-
-// Styling for autofilled input fields
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-
-  // Applying an inset box shadow to indicate autofilled fields
-    -webkit-box-shadow: 0 0 0 30px #EFF0F6 inset !important;
 }
