@@ -55,7 +55,7 @@ const Login = () => {
           />
 
           <div
-            className="appearance-none block text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
+            className="divPassword appearance-none block text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
             style={{ background: '#EFF0F6' }}
           >
             <input

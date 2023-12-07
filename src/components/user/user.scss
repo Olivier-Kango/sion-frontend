@@ -112,6 +112,12 @@ section {
   }
 }
 
+.divPassword {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // Styling for autofilled input fields
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
