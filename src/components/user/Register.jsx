@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
 import { userSignup } from '../../redux/users/users';
 
@@ -29,6 +30,18 @@ const Register = () => {
     }
   };
 
+  // Password handling with eyes
+  const [passwordShown, setPasswordShown] = useState(false);
+  const [passwordShownConfirm, setPasswordShownConfirm] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+
+  const togglePasswordConfirm = () => {
+    setPasswordShownConfirm(!passwordShownConfirm);
+  };
+
   useEffect(() => {
     if (user.loggedIn) {
       navigate('/');
@@ -47,12 +60,13 @@ const Register = () => {
           action="post"
           className="auth-form flex flex-col justify-center items-center p-8"
         >
+
           <input
             type="text"
             name="name"
             placeholder="Name"
             required
-            className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
+            className="inputEmail appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none"
           />
 
           <input
@@ -60,24 +74,58 @@ const Register = () => {
             name="email"
             placeholder="Email"
             required
-            className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
+            className="inputEmail appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none"
           />
 
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            required
-            className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
-          />
+          <div
+            className="divPassword appearance-none block text-gray-700 border text-center border-red-500 rounded leading-tight focus:outline-none focus:bg-white p-0 mb-2"
+            style={{ background: '#EFF0F6' }}
+          >
+            <input
+              name="password"
+              type={passwordShown ? 'text' : 'password'}
+              placeholder="Password"
+              required
+              className="inputPassword appearance-none block text-gray-700 text-center p-3 leading-tight focus:outline-none"
+            />
+            <div
+              onClick={togglePassword}
+              onKeyPress={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  togglePassword();
+                }
+              }}
+              role="button"
+              tabIndex={0}
+            >
+              {passwordShown ? <AiFillEyeInvisible size={24} style={{ background: 'transparent' }} /> : <AiFillEye size={24} style={{ background: 'transparent' }} />}
+            </div>
+          </div>
 
-          <input
-            name="password_confirmation"
-            type="password"
-            placeholder="Confirm Password"
-            required
-            className="appearance-none block bg-gray-200 text-gray-700 border text-center border-red-500 rounded p-3 mb-2 leading-tight focus:outline-none focus:bg-white"
-          />
+          <div
+            className="divPassword appearance-none block text-gray-700 border text-center border-red-500 rounded leading-tight focus:outline-none focus:bg-white p-0 mb-2"
+            style={{ background: '#EFF0F6' }}
+          >
+            <input
+              name="password_confirmation"
+              type={passwordShownConfirm ? 'text' : 'password'}
+              placeholder="Confirm Password"
+              required
+              className="inputPassword appearance-none block text-gray-700 text-center p-3 leading-tight focus:outline-none"
+            />
+            <div
+              onClick={togglePasswordConfirm}
+              onKeyPress={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  togglePasswordConfirm();
+                }
+              }}
+              role="button"
+              tabIndex={0}
+            >
+              {passwordShownConfirm ? <AiFillEyeInvisible size={24} style={{ background: 'transparent' }} /> : <AiFillEye size={24} style={{ background: 'transparent' }} />}
+            </div>
+          </div>
 
           <button
             type="submit"
