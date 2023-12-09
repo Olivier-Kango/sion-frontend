@@ -21,7 +21,7 @@ $main-color-hover: #094a80;
   padding: 18px 32px;
   border-radius: 40px;
   font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  // transition: background-color 0.3s ease, color 0.3s ease;
 
   &.secondary {
     background-color: $white2;
@@ -177,9 +177,10 @@ $main-color-hover: #094a80;
       }
 
       &.loading {
-        background-color: $main-color;
+        background-color: transparent;
         .icon {
           animation: spin 1s linear infinite;
+          transition: background-color 0.3s ease, color 0.3s ease;
         }
       }
   
