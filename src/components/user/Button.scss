@@ -1,0 +1,467 @@
+$black: #252525;
+$white: #f8f8f8;
+$white2: #F9F9FB;
+$main-color: #0a66c2;
+$main-color-hover: #094a80;
+
+.button {
+  display: inline-flex;
+  background-color: $main-color;
+  color:#F7F7FC;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.75px;
+  width: 200px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  padding: 18px 32px;
+  border-radius: 40px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.secondary {
+    background-color: $white2;
+    color: $main-color;
+    border: 2px solid $main-color;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background-color: $white2;
+      color: $main-color-hover;
+      border: 2px solid $main-color-hover;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+      .iconForward path {
+        stroke: $main-color-hover;
+        transition: stroke 0.3s ease, transform 0.3s ease; 
+      }
+    }
+
+    &:focus {
+      background-color: $white2;
+      border: 2px solid #14142B;
+      color: #14142B;
+
+      .iconForward path {
+        stroke: #14142B;
+        transition: stroke 0.3s ease, transform 0.3s ease; 
+      }
+    }
+
+    &:active {
+      outline: none;
+      background-color: $white2;
+      width: 200px;
+      height: 56px !important;
+      box-shadow: 0 0 0 10px #EFF0F6;
+      border: 2px solid $main-color; 
+      color: $main-color;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease;
+    }
+
+    &.disabled {
+      background-color: $white2;
+      color: $main-color;
+      border: 2px solid $main-color;
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 50%;
+    }
+
+    .iconForward {
+      path {
+        stroke: $main-color;
+      }
+    }
+
+    
+    &.iconSize {
+      font-size: 14px;
+      height: 56px;
+      width: 56px;
+      border-radius: 80px;
+      padding: 0;
+      
+      &:active {
+        width: 56px;
+        height: 56px;
+        box-shadow: 0 0 0 10px #E4DAFF; 
+        border: 2px solid $main-color; 
+
+        .iconForward path {
+          stroke: $main-color;
+        }
+      }
+    }
+
+    &.smallSize {
+      &:active {
+        height: 40px !important;
+        width: 120px;
+      }
+    }
+  }
+
+  &.subtle {
+    background-color: $white2;
+    color: $main-color;
+    border: 2px solid #D9DBE9;
+
+    &:hover {
+      background-color: $white2;
+      color: $main-color-hover;
+    }
+
+    &:focus {
+      background-color: $white2;
+      color: #14142B;
+    }
+
+    &:active {
+      outline: none;
+      background-color: $white2;
+      height: 56px;
+      box-shadow: 0 0 0 10px #EFF0F6; 
+      border: 2px solid #D9DBE9; 
+      color: $main-color;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease;
+    }
+
+    &.disabled {
+      background-color: $white2;
+      color: $main-color;
+      border: 2px solid #D9DBE9;
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 50%;
+    }
+
+    &.smallSize {
+      &:active {
+        height: 40px !important;
+        width: 120px;
+      }
+    }
+
+    // ici
+    &.iconSize {
+      background-color: $main-color;
+      border: none;
+      // &:active {
+      //   height: 40px !important;
+      //   width: 120px;
+      // }
+      font-size: 14px;
+      height: 56px;
+      width: 56px;
+      border-radius: 80px;
+      padding: 0;
+
+      &:hover {
+        background-color: $main-color-hover;
+      }
+  
+      &:focus {
+        background-color: #14142B;
+      }
+  
+      &:active {
+        background-color: $main-color-hover;
+        box-shadow: 0 0 0 10px #E4DAFF; 
+        width: 56px;
+        height: 56px;
+      }
+
+      &.loading {
+        background-color: $main-color;
+        .icon {
+          animation: spin 1s linear infinite;
+        }
+      }
+  
+      &.disabled {
+        background-color: $main-color;
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 50%;
+  
+        .iconForward {
+          path {
+            stroke: white;
+          }
+        }
+      }
+    }
+  }
+
+  &.text {
+    background-color: $white2;
+    color: $main-color;
+    border: none;
+
+    &:hover {
+      background-color: $white2;
+      color: $main-color-hover;
+
+      
+      .buttonPlus {
+        path {
+          fill: $main-color-hover;
+        }
+        rect {
+          stroke: $main-color-hover;
+        }
+      }
+    }
+
+    &:focus {
+      background-color: $white2;
+      color: #14142B;
+
+      .buttonPlus {
+        path {
+          fill: #14142B;
+        }
+        rect {
+          stroke: #14142B;
+        }
+      }
+    }
+
+    &:active {
+      outline: none;
+      background-color: $white2;
+      height: 64px;
+      box-shadow: 0 0 0 10px #EFF0F6; 
+      border: none; 
+      color: $main-color;
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease;
+    }
+
+    &.disabled {
+      background-color: $white2;
+      color: $main-color;
+      border: none;
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 50%;
+    }
+
+    .buttonPlus {
+      path {
+        fill: $main-color;
+      }
+      rect {
+        stroke: $main-color;
+      }
+    }
+
+    // here
+    &.iconSize {
+      font-size: 14px;
+      height: 56px;
+      width: 56px;
+      border-radius: 80px;
+      padding: 0;
+      background-color: $white2;
+      color: $main-color;
+      border: 2px solid $main-color;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+      .iconForward {
+        path {
+          stroke: $main-color;
+        }
+      }
+      
+      &:hover {
+        background-color: $white2;
+        color: $main-color-hover;
+        border: 2px solid $main-color-hover;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+        .iconForward path {
+          stroke: $main-color-hover;
+          transition: background-color 0.3s ease, color 0.3s ease, stroke 0.3s ease;
+        }
+      }
+
+      &:focus {
+        background-color: $white2;
+        border: 2px solid #14142B;
+  
+        .iconForward path {
+          stroke: #14142B;
+          transition: stroke 0.3s ease, transform 0.3s ease; 
+        }
+      }
+
+      &:active {
+        width: 56px;
+        height: 56px;
+        box-shadow: 0 0 0 10px #E4DAFF; 
+        border: 2px solid $main-color; 
+
+        .iconForward path {
+          stroke: $main-color;
+        }
+      }
+
+      &.loading {
+        background-color: $white2;
+        border: 2px solid $main-color;
+        .iconG {
+          animation: spin 1s linear infinite;
+          background: $white2;
+        }
+      }
+
+      &.disabled {
+        background-color: $white2;
+        color: $main-color;
+        border: 2px solid $main-color;
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 50%;
+      }
+    }
+
+    &.smallSize {
+      &:active {
+        box-sizing: none;
+        background: #EFF0F6;
+        height: 40px !important;
+        width: 120px;
+      }
+    }
+  }
+
+  &.disabled {
+    background-color:$main-color;
+    color: #F7F7FC;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 50%;
+  }
+
+  &.loading {
+    background-color: $main-color;
+    color: transparent;
+    pointer-events: none;
+
+    .icon {
+      animation: spin 1s linear infinite;
+    }
+
+    &.secondary,
+    &.subtle {
+      background-color: $white2;
+      border: 2px solid $main-color;
+      .iconG {
+        animation: spin 1s linear infinite;
+        background: $white2;
+      }
+    }
+
+    &.text {
+      background-color: $white2;
+      color: $main-color;
+      border: none;
+    }
+  }
+
+  &.largeSize {
+    height: 64px;
+
+    &:active {
+      height: 80px;
+    }
+  }
+
+  &.smallSize {
+    font-size: 14px;
+    height: 40px;
+    width: 120px;
+
+    &:active {
+      height: 56px;
+    }
+  }
+
+  &.iconSize {
+    font-size: 14px;
+    height: 56px;
+    width: 56px;
+    border-radius: 80px;
+    padding: 0;
+
+    &:active {
+      width: 72px;
+      height: 72px;
+    }
+
+    &.disabled {
+      background-color: $white2;
+      color: $main-color;
+      border: 2px solid $main-color;
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 50%;
+
+      .iconForward {
+        path {
+          stroke: white;
+        }
+      }
+    }
+  }
+
+  .icon {
+    background-color: $main-color;
+  }
+
+  .iconForward {
+    background-color: transparent;
+    margin-left: 3px;
+
+    path {
+      stroke: white;
+    }
+  }
+
+  .text {
+    // margin-left: 5px;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// it’s important to define these styles in the order
+.button:hover {
+  background: $main-color-hover;
+  transition: background-color 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.button:focus {
+  background: #14142B;
+}
+
+.button:active {
+  outline: none;
+  background-color: $main-color;
+  height: 72px;
+  border: 8px solid #E4DAFF; 
+  width: 216px;
+  transition: background-color 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease;
+}
