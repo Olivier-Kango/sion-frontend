@@ -1,13 +1,14 @@
 $black: #252525;
 $white: #f8f8f8;
-$white2: #F9F9FB;
+$white2: #f9f9fb;
 $main-color: #0a66c2;
 $main-color-hover: #094a80;
 
+/* stylelint-disable no-descending-specificity */
 .button {
   display: inline-flex;
   background-color: $main-color;
-  color:#F7F7FC;
+  color: #f7f7fc;
   font-family: Poppins, sans-serif;
   font-size: 16px;
   line-height: 28px;
@@ -37,18 +38,18 @@ $main-color-hover: #094a80;
 
       .iconForward path {
         stroke: $main-color-hover;
-        transition: stroke 0.3s ease, transform 0.3s ease; 
+        transition: stroke 0.3s ease, transform 0.3s ease;
       }
     }
 
     &:focus {
       background-color: $white2;
-      border: 2px solid #14142B;
-      color: #14142B;
+      border: 2px solid #14142b;
+      color: #14142b;
 
       .iconForward path {
-        stroke: #14142B;
-        transition: stroke 0.3s ease, transform 0.3s ease; 
+        stroke: #14142b;
+        transition: stroke 0.3s ease, transform 0.3s ease;
       }
     }
 
@@ -57,8 +58,8 @@ $main-color-hover: #094a80;
       background-color: $white2;
       width: 200px;
       height: 56px !important;
-      box-shadow: 0 0 0 10px #EFF0F6;
-      border: 2px solid $main-color; 
+      box-shadow: 0 0 0 10px #eff0f6;
+      border: 2px solid $main-color;
       color: $main-color;
       transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease;
     }
@@ -78,19 +79,18 @@ $main-color-hover: #094a80;
       }
     }
 
-    
     &.iconSize {
       font-size: 14px;
       height: 56px;
       width: 56px;
       border-radius: 80px;
       padding: 0;
-      
+
       &:active {
         width: 56px;
         height: 56px;
-        box-shadow: 0 0 0 10px #E4DAFF; 
-        border: 2px solid $main-color; 
+        box-shadow: 0 0 0 10px #e4daff;
+        border: 2px solid $main-color;
 
         .iconForward path {
           stroke: $main-color;
@@ -109,7 +109,7 @@ $main-color-hover: #094a80;
   &.subtle {
     background-color: $white2;
     color: $main-color;
-    border: 2px solid #D9DBE9;
+    border: 2px solid #d9dbe9;
 
     &:hover {
       background-color: $white2;
@@ -118,15 +118,15 @@ $main-color-hover: #094a80;
 
     &:focus {
       background-color: $white2;
-      color: #14142B;
+      color: #14142b;
     }
 
     &:active {
       outline: none;
       background-color: $white2;
       height: 56px;
-      box-shadow: 0 0 0 10px #EFF0F6; 
-      border: 2px solid #D9DBE9; 
+      box-shadow: 0 0 0 10px #eff0f6;
+      border: 2px solid #d9dbe9;
       color: $main-color;
       transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease;
     }
@@ -134,7 +134,7 @@ $main-color-hover: #094a80;
     &.disabled {
       background-color: $white2;
       color: $main-color;
-      border: 2px solid #D9DBE9;
+      border: 2px solid #d9dbe9;
       cursor: not-allowed;
       pointer-events: none;
       opacity: 50%;
@@ -164,32 +164,33 @@ $main-color-hover: #094a80;
       &:hover {
         background-color: $main-color-hover;
       }
-  
+
       &:focus {
-        background-color: #14142B;
+        background-color: #14142b;
       }
-  
+
       &:active {
         background-color: $main-color-hover;
-        box-shadow: 0 0 0 10px #E4DAFF; 
+        box-shadow: 0 0 0 10px #e4daff;
         width: 56px;
         height: 56px;
       }
 
       &.loading {
         background-color: transparent;
+
         .icon {
           animation: spin 1s linear infinite;
           transition: background-color 0.3s ease, color 0.3s ease;
         }
       }
-  
+
       &.disabled {
         background-color: $main-color;
         cursor: not-allowed;
         pointer-events: none;
         opacity: 50%;
-  
+
         .iconForward {
           path {
             stroke: white;
@@ -208,11 +209,11 @@ $main-color-hover: #094a80;
       background-color: $white2;
       color: $main-color-hover;
 
-      
       .buttonPlus {
         path {
           fill: $main-color-hover;
         }
+
         rect {
           stroke: $main-color-hover;
         }
@@ -221,14 +222,15 @@ $main-color-hover: #094a80;
 
     &:focus {
       background-color: $white2;
-      color: #14142B;
+      color: #14142b;
 
       .buttonPlus {
         path {
-          fill: #14142B;
+          fill: #14142b;
         }
+
         rect {
-          stroke: #14142B;
+          stroke: #14142b;
         }
       }
     }
@@ -237,8 +239,8 @@ $main-color-hover: #094a80;
       outline: none;
       background-color: $white2;
       height: 64px;
-      box-shadow: 0 0 0 10px #EFF0F6; 
-      border: none; 
+      box-shadow: 0 0 0 10px #eff0f6;
+      border: none;
       color: $main-color;
       transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease;
     }
@@ -256,6 +258,7 @@ $main-color-hover: #094a80;
       path {
         fill: $main-color;
       }
+
       rect {
         stroke: $main-color;
       }
@@ -278,7 +281,7 @@ $main-color-hover: #094a80;
           stroke: $main-color;
         }
       }
-      
+
       &:hover {
         background-color: $white2;
         color: $main-color-hover;
@@ -293,19 +296,19 @@ $main-color-hover: #094a80;
 
       &:focus {
         background-color: $white2;
-        border: 2px solid #14142B;
-  
+        border: 2px solid #14142b;
+
         .iconForward path {
-          stroke: #14142B;
-          transition: stroke 0.3s ease, transform 0.3s ease; 
+          stroke: #14142b;
+          transition: stroke 0.3s ease, transform 0.3s ease;
         }
       }
 
       &:active {
         width: 56px;
         height: 56px;
-        box-shadow: 0 0 0 10px #E4DAFF; 
-        border: 2px solid $main-color; 
+        box-shadow: 0 0 0 10px #e4daff;
+        border: 2px solid $main-color;
 
         .iconForward path {
           stroke: $main-color;
@@ -315,6 +318,7 @@ $main-color-hover: #094a80;
       &.loading {
         background-color: $white2;
         border: 2px solid $main-color;
+
         .iconG {
           animation: spin 1s linear infinite;
           background: $white2;
@@ -333,8 +337,7 @@ $main-color-hover: #094a80;
 
     &.smallSize {
       &:active {
-        box-sizing: none;
-        background: #EFF0F6;
+        background: #eff0f6;
         height: 40px !important;
         width: 120px;
       }
@@ -342,8 +345,8 @@ $main-color-hover: #094a80;
   }
 
   &.disabled {
-    background-color:$main-color;
-    color: #F7F7FC;
+    background-color: $main-color;
+    color: #f7f7fc;
     cursor: not-allowed;
     pointer-events: none;
     opacity: 50%;
@@ -362,6 +365,7 @@ $main-color-hover: #094a80;
     &.subtle {
       background-color: $white2;
       border: 2px solid $main-color;
+
       .iconG {
         animation: spin 1s linear infinite;
         background: $white2;
@@ -442,6 +446,7 @@ $main-color-hover: #094a80;
     0% {
       transform: rotate(0deg);
     }
+
     100% {
       transform: rotate(360deg);
     }
@@ -455,14 +460,14 @@ $main-color-hover: #094a80;
 }
 
 .button:focus {
-  background: #14142B;
+  background: #14142b;
 }
 
 .button:active {
   outline: none;
   background-color: $main-color;
   height: 72px;
-  border: 8px solid #E4DAFF; 
+  border: 8px solid #e4daff;
   width: 216px;
   transition: background-color 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease;
 }
