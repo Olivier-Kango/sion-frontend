@@ -11,9 +11,10 @@ const Login = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const error = user.error['login-error'];
+  const [loginError, setLoginError] = useState('');
   const navigate = useNavigate();
   const formRef = useRef();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const state = loading ? 'loading' : 'default';
   let dynamicShowIcon = false;
@@ -33,13 +34,13 @@ const Login = () => {
       user: { email: data.email, password: data.password },
     };
 
-    // dispatch(userLogin(userData));
     try {
       await dispatch(userLogin(userData)); // Sending data to the API
       // Once the response is received successfully, loading is finished
       setLoading(false);
     } catch (error) {
       setLoading(false); // In case of an error, loading is still stopped
+      setLoginError('Failed to log in. Please check your credentials.');
     }
   };
 
@@ -110,7 +111,9 @@ const Login = () => {
         </form>
 
         {user.error ? (
-          <h3 className="text-red-500 text-lg error">{error}</h3>
+          <h3 className="text-red-500 text-lg error">
+            {loginError || error}
+          </h3>
         ) : (
           ''
         )}
