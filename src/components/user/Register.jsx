@@ -3,6 +3,7 @@ import { useRef, useEffect, useState } from 'react';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
 import { userSignup } from '../../redux/users/users';
+import './Button.scss';
 
 const Register = () => {
   const dispatch = useDispatch();
