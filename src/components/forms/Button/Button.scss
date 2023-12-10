@@ -24,7 +24,6 @@ $main-color-hover: #094a80;
   font-weight: 600;
   // transition: background-color 0.3s ease, color 0.3s ease;
 
-  // Secondary
   &.secondary {
     background-color: $white2;
     color: $main-color;
@@ -107,7 +106,6 @@ $main-color-hover: #094a80;
     }
   }
 
-  // Subtle
   &.subtle {
     background-color: $white2;
     color: $main-color;
@@ -202,7 +200,6 @@ $main-color-hover: #094a80;
     }
   }
 
-  // Text
   &.text {
     background-color: $white2;
     color: $main-color;
@@ -356,9 +353,6 @@ $main-color-hover: #094a80;
   }
 
   &.loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: $main-color;
     color: transparent;
     pointer-events: none;

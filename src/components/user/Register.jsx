@@ -3,6 +3,8 @@ import { useRef, useEffect, useState } from 'react';
 import { AiFillEyeInvisible, AiFillEye } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom';
 import { userSignup } from '../../redux/users/users';
+import Button from '../forms/Button/Button';
+import './Button.scss';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -10,9 +12,20 @@ const Register = () => {
   const error = user.error['signup-error'];
   const navigate = useNavigate();
   const formRef = useRef();
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const state = loading ? 'loading' : 'default';
+  let dynamicShowIcon = false;
+  let dynamicShowText = true;
+
+  if (state === 'loading') {
+    dynamicShowIcon = true;
+    dynamicShowText = !dynamicShowIcon;
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const formData = new FormData(formRef.current);
     const data = Object.fromEntries(formData);
     const userData = {
@@ -23,10 +36,21 @@ const Register = () => {
         password_confirmation: data.password_confirmation,
       },
     };
-    if (data.password === data.password_confirmation) {
-      dispatch(userSignup(userData));
-    } else {
-      document.querySelector('.error').innerText = 'Passwords do not match';
+
+    try {
+      if (data.password === data.password_confirmation) {
+        await dispatch(userSignup(userData));
+      } else {
+        throw new Error('Passwords do not match');
+      }
+    } catch (error) {
+      if (error.response && error.response.data) {
+        document.querySelector('.error').innerText = error.response.data.message;
+      } else {
+        document.querySelector('.error').innerText = error.message;
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -126,16 +150,19 @@ const Register = () => {
               {passwordShownConfirm ? <AiFillEyeInvisible size={24} style={{ background: 'transparent' }} /> : <AiFillEye size={24} style={{ background: 'transparent' }} />}
             </div>
           </div>
-
-          <button
-            type="submit"
-            className="group relative flex w-1/3 justify-center mt-3 rounded-md py-2 px-3 text-xl font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Register
-          </button>
+          <Button
+            state={state}
+            text="Register"
+            showIcon={dynamicShowIcon}
+            showText={dynamicShowText}
+            size="medium" // medium | large | small | icon
+            variant="primary" // 'primary' | 'secondary' | 'subtle' | text
+          />
         </form>
 
-        <h3 className="text-red-500 text-lg mx-auto error">{error}</h3>
+        <h3 className="text-red-500 text-lg mx-auto error">
+          {error}
+        </h3>
 
         <div className="options-container">
           <span>Already have an account?</span>
