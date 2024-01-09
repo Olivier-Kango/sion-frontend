@@ -41,7 +41,7 @@ const Button = ({
   return (
     <button
       type="submit"
-      className={`button ${dynamicState} ${dynamicSize} ${dynamicVariant} ${showIcon ? 'disableInteractions' : ''}`}
+      className={`buttonDynamic ${dynamicState} ${dynamicSize} ${dynamicVariant} ${showIcon ? 'disableInteractions' : ''}`}
       disabled={state === 'disabled' || state === 'loading'}
       // onClick={handleClick}
       // onBlur={handleBlur}

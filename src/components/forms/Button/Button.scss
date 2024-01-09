@@ -5,7 +5,7 @@ $main-color: #0a66c2;
 $main-color-hover: #094a80;
 
 /* stylelint-disable no-descending-specificity */
-.button {
+.buttonDynamic {
   display: inline-flex;
   background-color: $main-color;
   color: #f7f7fc;
