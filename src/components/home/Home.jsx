@@ -8,6 +8,7 @@ import { useMediaQuery } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
+import Button from '../forms/Button/Button';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -229,13 +230,23 @@ const Home = () => {
                           ''
                         )}
                         <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
-                          <button
+                          {/* <button
                             type="button"
                             style={{ background: '#cce0ff65' }}
                             className="button"
                           >
                             Order
-                          </button>
+                          </button> */}
+
+                          <Button
+                            state="default"
+                            text="Order"
+                            showIcon={false}
+                            showText
+                            size="medium" // medium | large | small | icon
+                            variant="primary" // 'primary' | 'secondary' | 'subtle' | text
+                            className="button"
+                          />
                         </Link>
                       </div>
                     </div>

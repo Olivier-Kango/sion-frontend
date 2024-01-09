@@ -41,10 +41,8 @@ const Button = ({
   return (
     <button
       type="submit"
-      className={`buttonDynamic ${dynamicState} ${dynamicSize} ${dynamicVariant} ${showIcon ? 'disableInteractions' : ''}`}
+      className={`button ${dynamicState} ${dynamicSize} ${dynamicVariant} ${showIcon ? 'disableInteractions' : ''}`}
       disabled={state === 'disabled' || state === 'loading'}
-      // onClick={handleClick}
-      // onBlur={handleBlur}
     >
       {showIcon && ((variant === 'primary') || (variant === 'subtle' && size === 'icon')) && (
         <svg
