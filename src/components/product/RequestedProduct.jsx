@@ -1,14 +1,19 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllRequestedProducts } from '../../redux/products/requested_products';
 
 const Home = () => {
   const requestedProducts = useSelector((state) => state.requestedProducts.requestedProducts);
 
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllRequestedProducts());
+  }, [dispatch]);
+
   return (
     <div className="container">
       {requestedProducts.map((product) => (
-        // eslint-disable-next-line react/jsx-key
-        <h1>{product}</h1>
+        <h1 key={product.id}>{product.name}</h1>
       ))}
     </div>
   );
