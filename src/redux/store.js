@@ -6,6 +6,7 @@ import throttle from 'lodash.throttle';
 import { saveState, loadState } from '../local_storage/local_storage';
 import reducerProduct from './products/products';
 import stockMovementReducer from './stockMovement/stockMovement';
+import requestedProductsReducer from './products/requested_products';
 import orderReducer from './reducer/OrderReducer';
 import userReducer from './users/users';
 
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   orders: orderReducer,
   products: reducerProduct,
   stockMovements: stockMovementReducer,
+  requestedProducts: requestedProductsReducer,
   user: userReducer,
 });
 

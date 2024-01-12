@@ -15,6 +15,7 @@ import AddOrder from './components/ordering/AddOrder';
 import Footer from './components/footer/Footer';
 import PrivateRoutes from './components/protectedRoute/PrivateRoutes';
 import LeftBar from './components/leftbar/Leftbar';
+import RequestedProduct from './components/product/RequestedProduct';
 
 // pages
 import Splash from './pages/Splash';
@@ -37,6 +38,7 @@ const App = () => {
         >
           <Route path="/management" element={<Management />} />
           <Route path="/stock-movement" element={<StockMovement />} />
+          <Route path="/requested-products" element={<RequestedProduct />} />
           <Route path="/" element={<Home />} />
           <Route path="/:category/:subcategory?" element={<Home />} />
           <Route path="/productdetails/:id" element={<ProductDetails />} />
