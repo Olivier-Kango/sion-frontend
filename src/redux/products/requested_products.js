@@ -6,9 +6,25 @@ import axios from 'axios';
 axios.defaults.baseURL = 'http://[::1]:5000/';
 
 // ACTION
+export const getAllRequestedProducts = createAsyncThunk('GET_ALL_REQUESTED_PRODUCTS', async () => {
+  const response = await axios.get('api/v1/requested_products');
+  return response.data;
+});
+
 export const addRequestedProducts = createAsyncThunk('ADD_REQUESTED_PRODUCTS', async (data) => {
   const response = await axios.post('/api/v1/requested_products', data);
   return response.data;
+});
+
+export const deleteRequestedProduct = createAsyncThunk('DELETE_REQUESTED_PRODUCT', async (id) => {
+  await axios.delete(`api/v1/requested_products/${id}`);
+  return id;
+});
+
+export const modifyProduct = createAsyncThunk('MODIFY_REQUESTED_PRODUCT', async ({ id, updatedRequestedProductData }) => {
+  const response = await axios.put(`api/v1/requested_products/${id}`, updatedRequestedProductData);
+  const modifiedRequestedProduct = response.data;
+  return modifiedRequestedProduct;
 });
 
 // REDUCER
@@ -18,10 +34,22 @@ const initialState = {
 
 const requestedProductsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_REQUESTED_PRODUCTS/fulfilled': {
+    case 'GET_ALL_REQUESTED_PRODUCTS/fulfilled': {
+      return {
+        ...state,
+        requestedProducts: action.payload,
+      };
+    }
+    case 'ADD_REQUESTED_PRODUCT/fulfilled': {
       return {
         ...state,
         requestedProducts: [...state.requestedProducts, action.payload],
+      };
+    }
+    case 'DELETE_REQUESTED_PRODUCT/fulfilled': {
+      return {
+        ...state,
+        requestedProducts: state.requestedProducts.filter((f) => f.id !== action.payload),
       };
     }
     default:
