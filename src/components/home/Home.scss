@@ -117,7 +117,7 @@ $main-color-hover: #094a80;
               align-items: center;
             }
 
-            .button {
+            .homeButton {
               display: inline-block;
               cursor: pointer;
               color: $main-color;
@@ -132,7 +132,7 @@ $main-color-hover: #094a80;
               transition: background-color 0.3s ease;
             }
 
-            .button:hover {
+            .homeButton:hover {
               background-color: #d8dae0 !important;
             }
 
