@@ -27,8 +27,8 @@ export const modifyProduct = createAsyncThunk('MODIFY_REQUESTED_PRODUCT', async 
   return modifiedRequestedProduct;
 });
 
-export const incrementRequestCount = createAsyncThunk('INCREMENT_REQUEST_COUNT', async () => {
-  const response = await axios.put('api/v1/requested_products/');
+export const incrementRequestCount = createAsyncThunk('INCREMENT_REQUEST_COUNT', async ({ id, updatedRequestedProductData }) => {
+  const response = await axios.patch(`api/v1/requested_products/${id}`, updatedRequestedProductData);
   return response.data;
 });
 
@@ -60,7 +60,8 @@ const requestedProductsReducer = (state = initialState, action) => {
     case 'INCREMENT_REQUEST_COUNT/fulfilled': {
       return {
         ...state,
-        requestedProducts: state.requestedProducts.map((product) => (product.id === action.payload
+        // eslint-disable-next-line max-len
+        requestedProducts: state.requestedProducts.map((product) => (product.id === action.payload.id
           ? { ...product, request_count: product.request_count + 1 }
           : product)),
       };

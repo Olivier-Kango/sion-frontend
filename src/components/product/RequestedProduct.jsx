@@ -11,7 +11,10 @@ const Home = () => {
   }, [dispatch]);
 
   const handleIncrementRequest = (productId) => {
-    dispatch(incrementRequestCount(productId));
+    const updatedRequestedProductData = {
+      request_count: 1,
+    };
+    dispatch(incrementRequestCount({ id: productId, updatedRequestedProductData }));
   };
 
   return (
