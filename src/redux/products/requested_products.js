@@ -29,6 +29,7 @@ export const modifyProduct = createAsyncThunk('MODIFY_REQUESTED_PRODUCT', async 
 
 export const incrementRequestCount = createAsyncThunk('INCREMENT_REQUEST_COUNT', async ({ id, updatedRequestedProductData }) => {
   const response = await axios.patch(`api/v1/requested_products/${id}`, updatedRequestedProductData);
+  console.log('olk :', response.data);
   return response.data;
 });
 

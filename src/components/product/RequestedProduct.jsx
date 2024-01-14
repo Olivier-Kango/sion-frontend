@@ -10,27 +10,30 @@ const Home = () => {
     dispatch(getAllRequestedProducts());
   }, [dispatch]);
 
-  const handleIncrementRequest = (productId) => {
+  const handleIncrementRequest = (productId, currentRequestCount) => {
     const updatedRequestedProductData = {
-      request_count: 1,
+      request_count: currentRequestCount + 1,
     };
+
     dispatch(incrementRequestCount({ id: productId, updatedRequestedProductData }));
   };
 
   return (
     <div className="container">
-      {requestedProducts.map((product) => (
-        <h1 key={product.id}>
-          <span>{product.name}</span>
-          {' '}
-          <button
-            type="button"
-            onClick={() => handleIncrementRequest(product.id)}
-          >
-            {product.request_count}
-          </button>
-        </h1>
-      ))}
+      {requestedProducts
+        .sort((a, b) => b.request_count - a.request_count)
+        .map((product) => (
+          <h1 key={product.id}>
+            <span>{product.name}</span>
+            {' '}
+            <button
+              type="button"
+              onClick={() => handleIncrementRequest(product.id, product.request_count)}
+            >
+              {product.request_count}
+            </button>
+          </h1>
+        ))}
     </div>
   );
 };
