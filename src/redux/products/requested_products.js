@@ -2,8 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // API
-// axios.defaults.baseURL = 'https://pss-digital-backend.onrender.com/';
-axios.defaults.baseURL = 'http://[::1]:5000/';
+axios.defaults.baseURL = 'https://pss-digital-backend.onrender.com/';
+// axios.defaults.baseURL = 'http://[::1]:5000/';
 
 // ACTION
 export const getAllRequestedProducts = createAsyncThunk('GET_ALL_REQUESTED_PRODUCTS', async () => {
@@ -29,7 +29,11 @@ export const modifyProduct = createAsyncThunk('MODIFY_REQUESTED_PRODUCT', async 
 
 export const incrementRequestCount = createAsyncThunk('INCREMENT_REQUEST_COUNT', async ({ id, updatedRequestedProductData }) => {
   const response = await axios.patch(`api/v1/requested_products/${id}`, updatedRequestedProductData);
-  console.log('olk :', response.data);
+  return response.data;
+});
+
+export const resetRequestCount = createAsyncThunk('RESET_REQUEST_COUNT', async ({ id, updatedRequestedProductData }) => {
+  const response = await axios.patch(`api/v1/requested_products/${id}`, updatedRequestedProductData);
   return response.data;
 });
 
@@ -59,12 +63,23 @@ const requestedProductsReducer = (state = initialState, action) => {
       };
     }
     case 'INCREMENT_REQUEST_COUNT/fulfilled': {
+      const { id } = action.payload;
+      // eslint-disable-next-line max-len
+      const updatedProducts = state.requestedProducts.map((product) => (product.id === id ? { ...product, request_count: product.request_count + 1 } : product));
+
       return {
         ...state,
-        // eslint-disable-next-line max-len
-        requestedProducts: state.requestedProducts.map((product) => (product.id === action.payload.id
-          ? { ...product, request_count: product.request_count + 1 }
-          : product)),
+        requestedProducts: updatedProducts,
+      };
+    }
+    case 'RESET_REQUEST_COUNT/fulfilled': {
+      const { id } = action.payload;
+      // eslint-disable-next-line max-len
+      const updatedProducts = state.requestedProducts.map((product) => (product.id === id ? { ...product, request_count: 0 } : product));
+
+      return {
+        ...state,
+        requestedProducts: updatedProducts,
       };
     }
     default:
