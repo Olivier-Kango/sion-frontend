@@ -2,8 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // API
-axios.defaults.baseURL = 'https://pss-digital-backend.onrender.com/';
-// axios.defaults.baseURL = 'http://[::1]:5000/';
+// axios.defaults.baseURL = 'https://pss-digital-backend.onrender.com/';
+axios.defaults.baseURL = 'http://[::1]:5000/';
 
 // ACTION
 export const addStockMovement = createAsyncThunk('ADD_STOCK_MOVEMENT', async (data) => {
