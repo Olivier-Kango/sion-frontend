@@ -6,6 +6,7 @@ import {
   incrementRequestCount,
   resetRequestCount,
   addRequestedProducts,
+  deleteRequestedProduct,
 } from '../../redux/products/requested_products';
 
 const RequestedProduct = () => {
@@ -32,6 +33,10 @@ const RequestedProduct = () => {
     dispatch(resetRequestCount({ id: productId, updatedRequestedProductData }));
   };
 
+  const handleDeleteRequestedProduct = (productId) => {
+    dispatch(deleteRequestedProduct(productId));
+  };
+
   const [name, setname] = useState('');
   const [requestCount] = useState(1);
 
@@ -45,7 +50,12 @@ const RequestedProduct = () => {
     console.log('Olk :', productData);
 
     dispatch(addRequestedProducts(productData))
-      .then(() => dispatch(getAllRequestedProducts()));
+      .then((action) => {
+        dispatch({
+          type: 'ADD_REQUESTED_PRODUCT/fulfilled',
+          payload: action.payload,
+        });
+      });
     setname('');
   };
 
@@ -95,6 +105,12 @@ const RequestedProduct = () => {
               onClick={() => handleIncrementRequest(product.id, product.request_count)}
             >
               Increment
+            </button>
+            <button
+              type="button"
+              onClick={() => handleDeleteRequestedProduct(product.id)}
+            >
+              DELETE
             </button>
             {' '}
             {product.request_count}
