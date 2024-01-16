@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { LuSendHorizonal } from 'react-icons/lu';
 import {
@@ -11,6 +11,7 @@ import {
 import './RequestedProduct.scss';
 
 const RequestedProduct = () => {
+  const requestedProductsRef = useRef();
   const requestedProducts = useSelector((state) => state.requestedProducts.requestedProducts);
 
   const dispatch = useDispatch();
@@ -55,6 +56,12 @@ const RequestedProduct = () => {
           type: 'ADD_REQUESTED_PRODUCT/fulfilled',
           payload: action.payload,
         });
+
+        requestedProductsRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end',
+          inline: 'nearest',
+        });
       });
     setname('');
   };
@@ -65,7 +72,10 @@ const RequestedProduct = () => {
 
   return (
     <div className="container">
-      <div className="container-products">
+      <div
+        className="container-products"
+        ref={requestedProductsRef}
+      >
         {requestedProducts && requestedProducts
           .sort((a, b) => b.request_count - a.request_count)
           .map((product) => (
