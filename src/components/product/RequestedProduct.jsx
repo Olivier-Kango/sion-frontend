@@ -62,56 +62,54 @@ const RequestedProduct = () => {
 
   return (
     <div className="container">
-      {requestedProducts && requestedProducts
-        .sort((a, b) => b.request_count - a.request_count)
-        .map((product) => (
-          <h1 key={product.id}>
-            <span>{product.name}</span>
-            {' '}
-            <button
-              type="button"
-              onClick={() => handleResetRequest(product.id)}
-            >
-              reset
-            </button>
-            {' '}
-            <button
-              type="button"
-              onClick={() => handleIncrementRequest(product.id, product.request_count)}
-            >
-              Increment
-            </button>
-            <button
-              type="button"
-              onClick={() => handleDeleteRequestedProduct(product.id)}
-            >
-              DELETE
-            </button>
-            {' '}
-            {product.request_count}
-          </h1>
-        ))}
-      <form onSubmit={handleSubmit} className="add-order-form">
-        <div className="add-order-form-group">
-          <input
-            type="text"
-            id="name"
-            value={name}
-            required
-            onChange={(e) => setname(e.target.value)}
-            placeholder="Enter Requestedproduct's Name"
-          />
-        </div>
-        <div className="add-order-form-group">
-          <input
-            type="number"
-            id="unitPurchasePrice"
-            value={requestCount}
-            required
-            inputMode="numeric"
-            hidden
-          />
-        </div>
+      <div className="container-products">
+        {requestedProducts && requestedProducts
+          .sort((a, b) => b.request_count - a.request_count)
+          .map((product) => (
+            <h1 key={product.id}>
+              <span>{product.name}</span>
+              {' '}
+              <button
+                type="button"
+                onClick={() => handleResetRequest(product.id)}
+              >
+                reset
+              </button>
+              {' '}
+              <button
+                type="button"
+                onClick={() => handleIncrementRequest(product.id, product.request_count)}
+              >
+                Increment
+              </button>
+              <button
+                type="button"
+                onClick={() => handleDeleteRequestedProduct(product.id)}
+              >
+                DELETE
+              </button>
+              {' '}
+              {product.request_count}
+            </h1>
+          ))}
+      </div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          id="name"
+          value={name}
+          required
+          onChange={(e) => setname(e.target.value)}
+          placeholder="Enter Requestedproduct's Name"
+        />
+        <input
+          type="number"
+          id="unitPurchasePrice"
+          value={requestCount}
+          required
+          inputMode="numeric"
+          hidden
+        />
         <button type="submit">
           <LuSendHorizonal />
         </button>

@@ -1,3 +1,25 @@
 .container {
-  padding-bottom: 3.5rem;
+  margin-bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+
+  .container-products {
+
+  }
+
+  form {
+    display: flex;
+    padding: 9px;
+    background: rgba(17, 0, 255, 0.724);
+    border-radius: 22px;
+    position: fixed;
+    bottom: 3.5rem;
+    left: 1rem;
+    right: 1rem;
+
+    
+    #name {
+      // width: 100%;
+    }
+  }
 }
