@@ -101,7 +101,7 @@ const RequestedProduct = () => {
             value={name}
             required
             onChange={(e) => setname(e.target.value)}
-            placeholder="Enter Requestedproduct's Name"
+            placeholder="Ajouter le produit demandé..."
           />
           <input
             type="number"

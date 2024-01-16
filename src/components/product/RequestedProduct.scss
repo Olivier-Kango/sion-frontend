@@ -22,14 +22,14 @@ $main-color-hover: #094a80;
 
     div {
       display: flex;
-      justify-content: space-between;
+      gap: 10px;
       padding: 9px 12px;
       background-color: #f0f2f5;
       border-radius: 22px;
       
       #name {
-        padding-right: 7.6rem;
-        background-color: #f0f2f5;
+        width: 100%;
+        background-color: white;
       }
 
       #name:focus {
