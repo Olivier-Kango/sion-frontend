@@ -4,19 +4,26 @@
   flex-direction: column;
 
   .container-products {
-
+    overflow: auto;
+    // height: 80vh;
   }
 
   form {
-    display: flex;
-    padding: 9px;
-    background: rgba(17, 0, 255, 0.724);
-    border-radius: 22px;
     position: fixed;
-    bottom: 3.5rem;
-    left: 1rem;
-    right: 1rem;
+    background: white;
+    bottom: 3rem;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 
+    div {
+      display: flex;
+      padding: 9px;
+      background: rgba(17, 0, 255, 0.724);
+      border-radius: 22px;
+      
+    }
     
     #name {
       // width: 100%;

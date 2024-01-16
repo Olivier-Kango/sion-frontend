@@ -94,25 +94,27 @@ const RequestedProduct = () => {
           ))}
       </div>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          required
-          onChange={(e) => setname(e.target.value)}
-          placeholder="Enter Requestedproduct's Name"
-        />
-        <input
-          type="number"
-          id="unitPurchasePrice"
-          value={requestCount}
-          required
-          inputMode="numeric"
-          hidden
-        />
-        <button type="submit">
-          <LuSendHorizonal />
-        </button>
+        <div>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            required
+            onChange={(e) => setname(e.target.value)}
+            placeholder="Enter Requestedproduct's Name"
+          />
+          <input
+            type="number"
+            id="unitPurchasePrice"
+            value={requestCount}
+            required
+            inputMode="numeric"
+            hidden
+          />
+          <button type="submit">
+            <LuSendHorizonal />
+          </button>
+        </div>
       </form>
     </div>
   );
