@@ -40,6 +40,7 @@ const RequestedProduct = () => {
 
   const [name, setname] = useState('');
   const [requestCount] = useState(1);
+  const [showButton, setShowButton] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,8 +48,6 @@ const RequestedProduct = () => {
       name,
       request_count: requestCount,
     };
-
-    console.log('Olk :', productData);
 
     dispatch(addRequestedProducts(productData))
       .then((action) => {
@@ -59,6 +58,10 @@ const RequestedProduct = () => {
       });
     setname('');
   };
+
+  useEffect(() => {
+    setShowButton(name.length > 0);
+  }, [name]);
 
   return (
     <div className="container">
@@ -101,7 +104,7 @@ const RequestedProduct = () => {
             value={name}
             required
             onChange={(e) => setname(e.target.value)}
-            placeholder="Ajouter le produit demandé..."
+            placeholder="Add the requested product... "
           />
           <input
             type="number"
@@ -111,9 +114,12 @@ const RequestedProduct = () => {
             inputMode="numeric"
             hidden
           />
-          <button type="submit">
-            <LuSendHorizonal className="icon" />
-          </button>
+          {showButton
+            && (
+            <button type="submit">
+              <LuSendHorizonal className="icon" />
+            </button>
+            )}
         </div>
       </form>
     </div>

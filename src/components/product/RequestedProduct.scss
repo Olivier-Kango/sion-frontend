@@ -29,7 +29,7 @@ $main-color-hover: #094a80;
       
       #name {
         width: 100%;
-        background-color: white;
+        background-color: #f0f2f5;
       }
 
       #name:focus {
@@ -50,5 +50,9 @@ $main-color-hover: #094a80;
         }
       }
     }
+  }
+
+  button:focus {
+    outline: none;
   }
 }
