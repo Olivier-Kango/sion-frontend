@@ -71,11 +71,8 @@ const RequestedProduct = () => {
   }, [name]);
 
   return (
-    <div className="container">
-      <div
-        className="container-products"
-        ref={requestedProductsRef}
-      >
+    <div className="container" ref={requestedProductsRef}>
+      <div className="container-products">
         {requestedProducts && requestedProducts
           .sort((a, b) => b.request_count - a.request_count)
           .map((product) => (

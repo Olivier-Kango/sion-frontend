@@ -25,16 +25,12 @@ $main-color-hover: #094a80;
       padding: 9px 12px;
       background-color: #f0f2f5;
       border-radius: 22px;
-      
+
       #name {
         width: 100%;
         background-color: #f0f2f5;
       }
 
-      #name:focus {
-        outline: none;
-      }
-      
       button {
         z-index: 999;
         color: $main-color;
@@ -48,10 +44,12 @@ $main-color-hover: #094a80;
           color: $main-color-hover;
         }
       }
-    }
-  }
 
-  button:focus {
-    outline: none;
+
+      #name:focus,
+      button:focus {
+        outline: none;
+      }
+    }
   }
 }
