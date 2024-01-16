@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { BiPlusCircle } from 'react-icons/bi';
+import { LuSendHorizonal } from 'react-icons/lu';
 import {
   getAllRequestedProducts,
   incrementRequestCount,
@@ -8,8 +8,10 @@ import {
   addRequestedProducts,
   deleteRequestedProduct,
 } from '../../redux/products/requested_products';
+import './RequestedProduct.scss';
 
 const RequestedProduct = () => {
+  const requestedProductsRef = useRef();
   const requestedProducts = useSelector((state) => state.requestedProducts.requestedProducts);
 
   const dispatch = useDispatch();
@@ -39,6 +41,7 @@ const RequestedProduct = () => {
 
   const [name, setname] = useState('');
   const [requestCount] = useState(1);
+  const [showButton, setShowButton] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,32 +50,69 @@ const RequestedProduct = () => {
       request_count: requestCount,
     };
 
-    console.log('Olk :', productData);
-
     dispatch(addRequestedProducts(productData))
       .then((action) => {
         dispatch({
           type: 'ADD_REQUESTED_PRODUCT/fulfilled',
           payload: action.payload,
         });
+
+        requestedProductsRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'end',
+          inline: 'nearest',
+        });
       });
     setname('');
   };
 
+  useEffect(() => {
+    setShowButton(name.length > 0);
+  }, [name]);
+
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit} className="add-order-form">
-        <div className="add-order-form-group">
+    <div className="container" ref={requestedProductsRef}>
+      <div className="container-products">
+        {requestedProducts && requestedProducts
+          .sort((a, b) => b.request_count - a.request_count)
+          .map((product) => (
+            <h1 key={product.id}>
+              <span>{product.name}</span>
+              {' '}
+              <button
+                type="button"
+                onClick={() => handleResetRequest(product.id)}
+              >
+                reset
+              </button>
+              {' '}
+              <button
+                type="button"
+                onClick={() => handleIncrementRequest(product.id, product.request_count)}
+              >
+                Increment
+              </button>
+              <button
+                type="button"
+                onClick={() => handleDeleteRequestedProduct(product.id)}
+              >
+                DELETE
+              </button>
+              {' '}
+              {product.request_count}
+            </h1>
+          ))}
+      </div>
+      <form onSubmit={handleSubmit}>
+        <div>
           <input
             type="text"
             id="name"
             value={name}
             required
             onChange={(e) => setname(e.target.value)}
-            placeholder="Enter Requestedproduct's Name"
+            placeholder="Add the requested product... "
           />
-        </div>
-        <div className="add-order-form-group">
           <input
             type="number"
             id="unitPurchasePrice"
@@ -81,41 +121,14 @@ const RequestedProduct = () => {
             inputMode="numeric"
             hidden
           />
+          {showButton
+            && (
+            <button type="submit">
+              <LuSendHorizonal className="icon" />
+            </button>
+            )}
         </div>
-        <button type="submit">
-          <span className="icon"><BiPlusCircle /></span>
-          <span className="text">Add RequestedProduct</span>
-        </button>
       </form>
-      {requestedProducts && requestedProducts
-        .sort((a, b) => b.request_count - a.request_count)
-        .map((product) => (
-          <h1 key={product.id}>
-            <span>{product.name}</span>
-            {' '}
-            <button
-              type="button"
-              onClick={() => handleResetRequest(product.id)}
-            >
-              reset
-            </button>
-            {' '}
-            <button
-              type="button"
-              onClick={() => handleIncrementRequest(product.id, product.request_count)}
-            >
-              Increment
-            </button>
-            <button
-              type="button"
-              onClick={() => handleDeleteRequestedProduct(product.id)}
-            >
-              DELETE
-            </button>
-            {' '}
-            {product.request_count}
-          </h1>
-        ))}
     </div>
   );
 };

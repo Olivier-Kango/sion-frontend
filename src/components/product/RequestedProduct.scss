@@ -1,0 +1,55 @@
+$main-color: #0a66c2;
+$main-color-hover: #094a80;
+
+.container {
+  margin-bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+
+  .container-products {
+    // height: 80vh;
+  }
+
+  form {
+    position: fixed;
+    background: white;
+    bottom: 2.6rem;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+
+    div {
+      display: flex;
+      gap: 10px;
+      padding: 9px 12px;
+      background-color: #f0f2f5;
+      border-radius: 22px;
+
+      #name {
+        width: 100%;
+        background-color: #f0f2f5;
+      }
+
+      button {
+        z-index: 999;
+        color: $main-color;
+
+        .icon {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        &:hover {
+          color: $main-color-hover;
+        }
+      }
+
+
+      #name:focus,
+      button:focus {
+        outline: none;
+      }
+    }
+  }
+}
