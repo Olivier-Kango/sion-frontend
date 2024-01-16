@@ -56,10 +56,10 @@ const RequestedProduct = () => {
           type: 'ADD_REQUESTED_PRODUCT/fulfilled',
           payload: action.payload,
         });
-
-        requestedProductsRef.current.scrollIntoView({
+        console.log(requestedProductsRef.current);
+        requestedProductsRef.current?.scrollIntoView({
           behavior: 'smooth',
-          block: 'end',
+          block: 'start',
           inline: 'nearest',
         });
       });
@@ -71,7 +71,7 @@ const RequestedProduct = () => {
   }, [name]);
 
   return (
-    <div className="container" ref={requestedProductsRef}>
+    <div className="container">
       <div className="container-products">
         {requestedProducts && requestedProducts
           .sort((a, b) => b.request_count - a.request_count)
@@ -129,6 +129,7 @@ const RequestedProduct = () => {
             )}
         </div>
       </form>
+      <div id="to-bottom" ref={requestedProductsRef} />
     </div>
   );
 };
