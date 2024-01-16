@@ -112,7 +112,7 @@ const RequestedProduct = () => {
             hidden
           />
           <button type="submit">
-            <LuSendHorizonal />
+            <LuSendHorizonal className="icon" />
           </button>
         </div>
       </form>

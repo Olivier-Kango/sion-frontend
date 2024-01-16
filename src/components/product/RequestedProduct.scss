@@ -1,3 +1,6 @@
+$main-color: #0a66c2;
+$main-color-hover: #094a80;
+
 .container {
   margin-bottom: 7rem;
   display: flex;
@@ -11,7 +14,7 @@
   form {
     position: fixed;
     background: white;
-    bottom: 3rem;
+    bottom: 2.6rem;
     padding: 0.4rem 1rem 0.4rem 1rem;
     left: 0;
     right: 0;
@@ -19,17 +22,33 @@
 
     div {
       display: flex;
-      padding: 9px;
+      justify-content: space-between;
+      padding: 9px 12px;
       background-color: #f0f2f5;
       border-radius: 22px;
       
+      #name {
+        padding-right: 7.6rem;
+        background-color: #f0f2f5;
+      }
+
+      #name:focus {
+        outline: none;
+      }
+      
       button {
         z-index: 999;
+        color: $main-color;
+
+        .icon {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        &:hover {
+          color: $main-color-hover;
+        }
       }
-    }
-    
-    #name {
-      // width: 100%;
     }
   }
 }
