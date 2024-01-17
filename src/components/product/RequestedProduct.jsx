@@ -45,7 +45,15 @@ const RequestedProduct = () => {
   const sortedAndMappedProducts = useMemo(() => (requestedProducts
     ? requestedProducts
       .slice() // create a copy to avoid mutating the original array
-      .sort((a, b) => b.request_count - a.request_count)
+      .sort((a, b) => {
+        // Sort by request_count first
+        if (b.request_count !== a.request_count) {
+          return b.request_count - a.request_count;
+        }
+
+        // If request_count is the same, sort by name
+        return a.name.localeCompare(b.name);
+      })
       .map((product) => ({
         id: product.id,
         name: product.name,
@@ -214,20 +222,23 @@ const RequestedProduct = () => {
             </div>
 
             {/* 3 dots icon for reset and delete actions */}
-            <MdMoreVert
-              onClick={() => handleTogglePopup(product.id)}
-              className="ellipsis"
-            />
 
-            {/* Button for incrementing request count */}
-            <button
-              type="button"
-              onClick={() => handleIncrementRequest(product.id, product.request_count)}
-              className="button-like"
-            >
-              <img className="icon" src="https://scontent.fkgl4-1.fna.fbcdn.net/m1/v/t6/An_Hu2MGghXfWhrGQLADBvMqHBUxBoVMkVyPd6nn5lnsrwR-vi4BbkvRAbUlxUY9vGSt_yQiOgk2XFidRDZtah01ve6N3Ln9ICuzKj0ZRWl7nKjEJUNFh5EMkRfQa4lMXQ.png?ccb=10-5&amp;oh=00_AfA29E8TGGwFzpSbPtpaDfTXHa_V0tMYVQ_HiZmf1QaAOA&amp;oe=65CE93EC&amp;_nc_sid=7da55a" alt="" style={{ height: '20px', width: '20px' }} />
-              <span>{localRequestCount[product.id] || product.request_count}</span>
-            </button>
+            <div className="like">
+              <MdMoreVert
+                onClick={() => handleTogglePopup(product.id)}
+                className="ellipsis"
+              />
+
+              {/* Button for incrementing request count */}
+              <button
+                type="button"
+                onClick={() => handleIncrementRequest(product.id, product.request_count)}
+                className="button-like"
+              >
+                <img className="icon" src="https://scontent.fkgl4-1.fna.fbcdn.net/m1/v/t6/An_Hu2MGghXfWhrGQLADBvMqHBUxBoVMkVyPd6nn5lnsrwR-vi4BbkvRAbUlxUY9vGSt_yQiOgk2XFidRDZtah01ve6N3Ln9ICuzKj0ZRWl7nKjEJUNFh5EMkRfQa4lMXQ.png?ccb=10-5&amp;oh=00_AfA29E8TGGwFzpSbPtpaDfTXHa_V0tMYVQ_HiZmf1QaAOA&amp;oe=65CE93EC&amp;_nc_sid=7da55a" alt="" style={{ height: '20px', width: '20px' }} />
+                <span>{localRequestCount[product.id] || product.request_count}</span>
+              </button>
+            </div>
           </li>
         ))}
       </ul>
@@ -258,7 +269,7 @@ const RequestedProduct = () => {
           {showButton
             && (
             <button type="submit">
-              <LuSendHorizonal className="icon" />
+              <LuSendHorizonal className="icon" style={{ color: '#0a66c2' }} />
             </button>
             )}
         </div>
