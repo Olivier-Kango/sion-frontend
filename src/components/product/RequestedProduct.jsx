@@ -11,8 +11,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // imports icons for react-icons library
 import { LuSendHorizonal } from 'react-icons/lu';
-import { FaUndo, FaTrash, FaReact } from 'react-icons/fa';
+import { FaUndo, FaTrash } from 'react-icons/fa';
 import { MdMoreVert } from 'react-icons/md';
+import GridLoader from 'react-spinners/GridLoader';
 
 // import actoins for requested products
 import {
@@ -176,7 +177,7 @@ const RequestedProduct = () => {
 
       {loading && (
         <div className="loading-container">
-          <FaReact className="loading-icon" />
+          <GridLoader color="#0a66c2" className="loading-icon" />
           <p className="loading-message slide-in-out">Loading...</p>
         </div>
       )}
