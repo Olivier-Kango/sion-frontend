@@ -159,12 +159,54 @@ $accent-color: #e44d26;
   }
 
   @media (min-width: 768px) {
+    position: relative;
+
     .product-list {
-      gap: 1.5rem; // Increased gap for desktop
+      gap: 1.5rem;
     }
 
     form {
-      padding: 1rem 2rem; // Adjusted padding for desktop
+      position: sticky;
+      bottom: 0;
+      margin-top: 0.5rem;
+      padding: 1rem 2rem;
+      background: transparent;
+      box-shadow: none;
+      width: 55%;
+  
+      div {
+        border-radius: 25px;
+        border: 1px solid #ddd;
+        background: #f0f2f5;
+
+        #name {
+         padding: 0.3rem 0.5rem;
+         background: #f0f2f5;
+         border-radius: 18px;
+     
+          &:hover {
+            background-color: #f0f2f5;
+          }
+        }
+
+        #name:focus {
+          outline: none;
+        }
+        
+        &:hover {
+          background-color: #f0f2f5;
+        }
+
+        // Styling for autofilled input fields
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+
+          // Applying an inset box shadow to indicate autofilled fields
+          -webkit-box-shadow: 0 0 0 30px #f0f2f5 inset !important;
+        }
+      }
     }
   }
 }

@@ -261,7 +261,7 @@ const RequestedProduct = () => {
           {showButton
             && (
             <button type="submit">
-              <LuSendHorizonal className="icon" />
+              <LuSendHorizonal className="icon" style={{ color: '#0a66c2' }} />
             </button>
             )}
         </div>
