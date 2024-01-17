@@ -1,9 +1,20 @@
-// imports
-import React, { useEffect, useState, useRef } from 'react';
+// imports from React
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  useMemo,
+} from 'react';
+
+// imports dependancies from Redux
 import { useDispatch, useSelector } from 'react-redux';
+
+// imports icons for react-icons library
 import { LuSendHorizonal } from 'react-icons/lu';
 import { FaUndo, FaTrash } from 'react-icons/fa';
 import { MdMoreVert } from 'react-icons/md';
+
+// import actoins for requested products
 import {
   getAllRequestedProducts,
   incrementRequestCount,
@@ -11,6 +22,8 @@ import {
   addRequestedProducts,
   deleteRequestedProduct,
 } from '../../redux/products/requested_products';
+
+// importation of the styling from Requested Products
 import './RequestedProduct.scss';
 
 // Functional component for managing requested products
