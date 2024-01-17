@@ -45,7 +45,15 @@ const RequestedProduct = () => {
   const sortedAndMappedProducts = useMemo(() => (requestedProducts
     ? requestedProducts
       .slice() // create a copy to avoid mutating the original array
-      .sort((a, b) => b.request_count - a.request_count)
+      .sort((a, b) => {
+        // Sort by request_count first
+        if (b.request_count !== a.request_count) {
+          return b.request_count - a.request_count;
+        }
+
+        // If request_count is the same, sort by name
+        return a.name.localeCompare(b.name);
+      })
       .map((product) => ({
         id: product.id,
         name: product.name,
