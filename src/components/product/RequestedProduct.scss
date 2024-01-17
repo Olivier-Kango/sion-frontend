@@ -9,9 +9,10 @@ $accent-color: #e44d26;
   align-items: center; 
 
   .title {
-    font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: $main-color;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 26px;
   }
 
   .product-list {
