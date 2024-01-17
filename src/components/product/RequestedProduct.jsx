@@ -100,7 +100,7 @@ const RequestedProduct = () => {
   // Reset the request count for a specific product
   const handleResetRequest = (productId) => {
     const updatedRequestedProductData = {
-      request_count: 0,
+      request_count: 1,
     };
 
     dispatch(resetRequestCount({ id: productId, updatedRequestedProductData }));
