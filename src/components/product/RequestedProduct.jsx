@@ -183,10 +183,10 @@ const RequestedProduct = () => {
       )}
       {/* Product list */}
       <ul className="product-list">
-        {sortedAndMappedProducts.map((product) => (
+        {sortedAndMappedProducts.map((product, index) => (
           <li
             key={product.id}
-            className={`product-entry ${highlightedProductId === product.id ? 'highlighted' : ''}`}
+            className={`product-entry ${highlightedProductId === product.id && (index > 0 && sortedAndMappedProducts[index - 1].request_count === product.request_count) ? 'highlighted' : ''}`}
           >
             <span>{product.name}</span>
 

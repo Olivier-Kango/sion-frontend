@@ -6,7 +6,7 @@ $accent-color: #e44d26;
   margin-bottom: 7rem;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 
   .title {
     margin-bottom: 1rem;
@@ -21,18 +21,18 @@ $accent-color: #e44d26;
     align-items: center;
     justify-content: center;
     height: 80vh;
-    
+
     .loading-message {
       font-size: 1.2rem;
       color: #33333382;
       text-align: center;
       margin: 20px 0;
     }
-    
   }
-  
+
   @keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
+    0%,
+    100% { opacity: 0; }
     50% { opacity: 1; }
   }
 
@@ -51,9 +51,11 @@ $accent-color: #e44d26;
       padding: 0 1rem;
       border-radius: 20px;
       margin-bottom: 8px;
+      transition: transform 0.2s ease-out;
 
       &.highlighted {
-        background-color: #ffc9aa2b; 
+        box-shadow: 0 -1px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-4px);
       }
 
       span {
@@ -79,12 +81,11 @@ $accent-color: #e44d26;
           border: none;
           z-index: 9;
         }
-    
+
         .delete-reset {
           display: flex;
           gap: 8px;
           background: white;
-          // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           box-shadow: 0 -1px 16px rgba(0, 0, 0, 0.2);
           border-radius: 6px;
 
@@ -92,10 +93,14 @@ $accent-color: #e44d26;
             cursor: pointer;
             border: none;
             padding: 10px;
-    
+
             .icon {
               color: #65676b;
             }
+          }
+
+          button:focus {
+            outline: none;
           }
         }
       }
@@ -141,22 +146,7 @@ $accent-color: #e44d26;
         border: none;
       }
 
-      button {
-        z-index: 999;
-        color: $main-color;
-
-        .icon {
-          width: 1.5rem;
-          height: 1.5rem;
-        }
-
-        &:hover {
-          color: $main-color-hover;
-        }
-      }
-
-      #name:focus,
-      button:focus {
+      #name:focus {
         outline: none;
       }
     }
@@ -165,18 +155,6 @@ $accent-color: #e44d26;
   #to-bottom {
     margin-bottom: 2rem;
   }
-
-  // @keyframes bounce {
-  //   0%, 20%, 50%, 80%, 100% {
-  //     transform: translateY(0);
-  //   }
-  //   40% {
-  //     transform: translateY(-20px);
-  //   }
-  //   60% {
-  //     transform: translateY(-10px);
-  //   }
-  // }
 
   @media (min-width: 768px) {
     .product-list {
@@ -188,4 +166,3 @@ $accent-color: #e44d26;
     }
   }
 }
-
