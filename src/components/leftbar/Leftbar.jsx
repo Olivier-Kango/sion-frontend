@@ -6,7 +6,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import {
-  FaShoppingCart, FaHome, FaIceCream, FaCrow, FaProductHunt,
+  FaShoppingCart, FaHome, FaIceCream, FaCrow, FaProductHunt, FaRegListAlt,
 } from 'react-icons/fa';
 import { MdDevices } from 'react-icons/md';
 import { RiHome3Fill } from 'react-icons/ri';
@@ -94,7 +94,7 @@ const LeftBar = ({
     { id: 7, name: 'General' },
   ];
 
-  const shouldShowLeftbar = location.pathname !== '/management' && location.pathname !== '/stock-movement';
+  const shouldShowLeftbar = location.pathname !== '/management' && location.pathname !== '/requested_products';
 
   const toggleSubcategories = (categoryName) => {
     if (categoryName === 'Hardware Store') {
@@ -253,6 +253,12 @@ const LeftBar = ({
               <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
                 <span className="icon"><FaProductHunt /></span>
                 <span className="text">Product Information</span>
+              </div>
+            </Link>
+            <Link to="/requested_products" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkManag(event, '')}>
+              <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
+                <span className="icon"><FaRegListAlt /></span>
+                <span className="text">Requested Products</span>
               </div>
             </Link>
           </div>
