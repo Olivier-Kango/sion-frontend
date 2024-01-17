@@ -100,24 +100,25 @@ $accent-color: #e44d26;
         z-index: 2;
         width: 80px;
         gap: -20px;
-      
+
         .ellipsis {
           color: #65676bb7;
           cursor: pointer;
         }
-     
+
         .button-like {
           display: flex;
           gap: 8px;
           z-index: 2;
           padding: 1rem 0 1rem 1rem;
-          margin-right: 0;  
-        
+          margin-right: 0;
+
           span {
             color: #65676b;
           }
         }
       }
+
       .button-like:active {
         transform: scale(1.2);
         transition: transform 0.3s ease;
@@ -163,7 +164,7 @@ $accent-color: #e44d26;
 
     .product-list {
       gap: 1.5rem;
-      width: 75%;
+      width: 70%;
 
       .product-entry {
         margin-bottom: 15px;
@@ -180,17 +181,17 @@ $accent-color: #e44d26;
       background: transparent;
       box-shadow: none;
       width: 55%;
-  
+
       div {
         border-radius: 25px;
         border: 1px solid #ddd;
         background: #f0f2f5;
 
         #name {
-         padding: 0.3rem 0.5rem;
-         background: #f0f2f5;
-         border-radius: 18px;
-     
+          padding: 0.3rem 0.5rem;
+          background: #f0f2f5;
+          border-radius: 18px;
+
           &:hover {
             background-color: #f0f2f5;
           }
@@ -199,7 +200,7 @@ $accent-color: #e44d26;
         #name:focus {
           outline: none;
         }
-        
+
         &:hover {
           background-color: #f0f2f5;
         }
