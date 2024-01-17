@@ -21,6 +21,12 @@ const RequestedProduct = () => {
     dispatch(getAllRequestedProducts());
   }, [dispatch]);
 
+  const [openPopupId, setOpenPopupId] = useState(null);
+
+  const handleTogglePopup = (productId) => {
+    setOpenPopupId((prevId) => (prevId === productId ? null : productId));
+  };
+
   const handleIncrementRequest = (productId, currentRequestCount) => {
     const updatedRequestedProductData = {
       request_count: currentRequestCount + 1,
@@ -44,7 +50,6 @@ const RequestedProduct = () => {
   const [name, setname] = useState('');
   const [requestCount] = useState(1);
   const [showButton, setShowButton] = useState(false);
-  // const [showPopup, setShowPopup] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,9 +77,19 @@ const RequestedProduct = () => {
     setShowButton(name.length > 0);
   }, [name]);
 
-  // const togglePopup = (productId) => {
-  //   setShowPopup((prev) => (prev === productId ? null : productId));
-  // };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.ellipsis')) {
+        setOpenPopupId(null);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="container">
@@ -85,8 +100,8 @@ const RequestedProduct = () => {
           .map((product) => (
             <li key={product.id} className="product-entry">
               <span>{product.name}</span>
-              <div className="popup">
-                <svg aria-hidden="true" height="12" viewBox="0 0 25 12" width="25" className="x10l6tqk xng853d xu8u0ou" fill="white" style={{ transform: 'scale(1, -1) translate(0px, 0px)' }}>
+              <div className="popup" style={{ visibility: openPopupId === product.id ? 'visible' : 'hidden' }}>
+                <svg aria-hidden="true" height="12" viewBox="0 0 25 12" width="25" className="x10l6tqk xng853d xu8u0ou" fill="white" style={{ transform: 'scale(1, -1) translate(0px, 0px) rotateY(180deg)' }}>
                   <path d="M24.553.103c-2.791.32-5.922 1.53-7.78 3.455l-9.62 7.023c-2.45 2.54-5.78 1.645-5.78-2.487V2.085C1.373 1.191.846.422.1.102h24.453z" />
                 </svg>
                 <div className="delete-reset">
@@ -94,24 +109,21 @@ const RequestedProduct = () => {
                     type="button"
                     onClick={() => handleResetRequest(product.id)}
                   >
-                    <span>
-                      Reset
-                    </span>
                     <FaUndo className="icon" />
                   </button>
                   <button
                     type="button"
                     onClick={() => handleDeleteRequestedProduct(product.id)}
                   >
-                    <span>
-                      Delete
-                    </span>
                     <FaTrash className="icon" />
                   </button>
                 </div>
               </div>
               {/* <FaEllipsisH onClick={() => togglePopup(product.id)} className="ellipsis" /> */}
-              <MdMoreVert className="ellipsis" />
+              <MdMoreVert
+                onClick={() => handleTogglePopup(product.id)}
+                className="ellipsis"
+              />
               <button
                 type="button"
                 onClick={() => handleIncrementRequest(product.id, product.request_count)}
