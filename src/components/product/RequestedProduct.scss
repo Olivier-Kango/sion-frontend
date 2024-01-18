@@ -30,6 +30,54 @@ $accent-color: #e44d26;
     }
   }
 
+  form {
+    position: fixed;
+    background: white;
+    bottom: 2.6rem;
+    padding: 0.4rem 1rem 1rem 1rem;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+
+    div {
+      display: flex;
+      gap: 10px;
+      padding: 9px 15px;
+      background-color: #f0f2f5;
+      border-radius: 22px;
+
+      button {
+        padding-left: 1rem;
+
+        .icon {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+
+      #name {
+        width: 100%;
+        background-color: #f0f2f5;
+        border: none;
+      }
+
+      #name:focus {
+        outline: none;
+      }
+
+      // Styling for autofilled input fields
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+
+        // Applying an inset box shadow to indicate autofilled fields
+        -webkit-box-shadow: 0 0 0 30px #f0f2f5 inset !important;
+      }
+    }
+  }
+
   .product-list {
     list-style-type: none;
     padding: 0;
@@ -62,13 +110,14 @@ $accent-color: #e44d26;
         align-items: center;
         position: absolute;
         top: 37px;
-        right: 22px;
+        right: 35px;
         transform: translateX(-50%);
         z-index: 3;
 
         svg {
           border: none;
-          z-index: 9;
+          color: white;
+          margin-bottom: -2px;
         }
 
         .delete-reset {
@@ -98,19 +147,20 @@ $accent-color: #e44d26;
         display: flex;
         align-items: center;
         z-index: 2;
-        width: 80px;
-        gap: -20px;
+        width: 100px;
+        gap: 20px;
 
         .ellipsis {
           color: #65676bb7;
           cursor: pointer;
+          padding: 1rem 0.2rem;
         }
 
         .button-like {
           display: flex;
           gap: 8px;
           z-index: 2;
-          padding: 1rem 0 1rem 1rem;
+          padding: 1rem 0.5rem 1rem 0.5rem;
           margin-right: 0;
 
           span {
@@ -126,37 +176,27 @@ $accent-color: #e44d26;
     }
   }
 
-  form {
-    position: fixed;
-    background: white;
-    bottom: 2.6rem;
-    padding: 0.4rem 1rem 0.4rem 1rem;
-    left: 0;
-    right: 0;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 99;
-
-    div {
-      display: flex;
-      gap: 10px;
-      padding: 9px 12px;
-      background-color: #f0f2f5;
-      border-radius: 22px;
-
-      #name {
-        width: 100%;
-        background-color: #f0f2f5;
-        border: none;
-      }
-
-      #name:focus {
-        outline: none;
-      }
-    }
-  }
-
   #to-bottom {
     margin-bottom: 3rem;
+  }
+
+  .warning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin-bottom: -7rem;
+  }
+
+  .login-manager {
+    text-decoration: underline;
+  }
+
+  .login-manager:hover {
+    color: $main-color;
   }
 
   @media (min-width: 768px) {
@@ -170,6 +210,10 @@ $accent-color: #e44d26;
         margin-bottom: 15px;
         border-radius: 28px;
         padding: 0 1.5rem;
+
+        .popup {
+          right: 43px;
+        }
       }
     }
 
@@ -203,16 +247,6 @@ $accent-color: #e44d26;
 
         &:hover {
           background-color: #f0f2f5;
-        }
-
-        // Styling for autofilled input fields
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
-        input:-webkit-autofill:active {
-
-          // Applying an inset box shadow to indicate autofilled fields
-          -webkit-box-shadow: 0 0 0 30px #f0f2f5 inset !important;
         }
       }
     }
