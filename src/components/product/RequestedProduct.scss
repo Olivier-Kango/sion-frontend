@@ -62,7 +62,7 @@ $accent-color: #e44d26;
         align-items: center;
         position: absolute;
         top: 37px;
-        right: 42px;
+        right: 35px;
         transform: translateX(-50%);
         z-index: 3;
 
@@ -180,6 +180,26 @@ $accent-color: #e44d26;
     margin-bottom: 3rem;
   }
 
+  
+  .warning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin-bottom: -7rem;
+  }
+
+  .login-manager {
+    text-decoration: underline;
+  }
+
+  .login-manager:hover {
+    color: $main-color;
+  }
+
   @media (min-width: 768px) {
     position: relative;
 
@@ -191,6 +211,10 @@ $accent-color: #e44d26;
         margin-bottom: 15px;
         border-radius: 28px;
         padding: 0 1.5rem;
+
+        .popup {
+          right: 43px;
+        }
       }
     }
 

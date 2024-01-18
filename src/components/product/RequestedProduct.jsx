@@ -5,6 +5,7 @@ import React, {
   useRef,
   useMemo,
 } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // imports dependancies from Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -24,6 +25,8 @@ import {
   deleteRequestedProduct,
 } from '../../redux/products/requested_products';
 
+import { userLogout } from '../../redux/users/users';
+
 // importation of the styling from Requested Products
 import './RequestedProduct.scss';
 
@@ -32,8 +35,9 @@ const RequestedProduct = () => {
   // Ref for scrolling to bottom after adding requested product
   const requestedProductsRef = useRef();
 
-  // Redux state for requested products
+  // Redux state for requested products and user
   const requestedProducts = useSelector((state) => state.requestedProducts.requestedProducts);
+  const user = useSelector((state) => state.user.data);
 
   // local states
   const [openPopupId, setOpenPopupId] = useState(null);
@@ -54,6 +58,7 @@ const RequestedProduct = () => {
     : []), [requestedProducts]);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // Fetch all requested products on component mount
   useEffect(() => {
@@ -166,108 +171,142 @@ const RequestedProduct = () => {
     };
   }, []);
 
+  const handleLogout = () => {
+    dispatch(userLogout());
+    navigate('/login-page');
+  };
+
   // Render the component
   return (
     <div className="container">
+      {user.role === 'admin' ? (
+        <>
+          {/* Title */}
+          <h1 className="title">Requested Products</h1>
 
-      {/* Title */}
-      <h1 className="title">Requested Products</h1>
+          {loading && (
+            <div className="loading-container">
+              <GridLoader color="#0a66c2" className="loading-icon" />
+              <p className="loading-message slide-in-out">Loading...</p>
+            </div>
+          )}
+          {/* Product list */}
+          <ul className="product-list">
+            {sortedAndMappedProducts.map((product, index) => (
+              <li
+                key={product.id}
+                className={`product-entry ${highlightedProductId === product.id && (index > 0 && sortedAndMappedProducts[index - 1].request_count === product.request_count) ? 'highlighted' : ''}`}
+              >
+                <span>{product.name}</span>
 
-      {loading && (
-        <div className="loading-container">
-          <GridLoader color="#0a66c2" className="loading-icon" />
-          <p className="loading-message slide-in-out">Loading...</p>
+                {/* Popup for reset and delete options */}
+                <div className="popup" style={{ visibility: openPopupId === product.id ? 'visible' : 'hidden' }}>
+                  <svg aria-hidden="true" height="12" viewBox="0 0 25 12" width="25" className="x10l6tqk xng853d xu8u0ou" fill="white" style={{ transform: 'scale(1, -1) translate(0px, 0px) rotateY(180deg)' }}>
+                    <path d="M24.553.103c-2.791.32-5.922 1.53-7.78 3.455l-9.62 7.023c-2.45 2.54-5.78 1.645-5.78-2.487V2.085C1.373 1.191.846.422.1.102h24.453z" />
+                  </svg>
+
+                  {/* Buttons for reset and delete actions */}
+                  <div className="delete-reset">
+                    <button
+                      type="button"
+                      onClick={() => handleResetRequest(product.id)}
+                    >
+                      <FaUndo className="icon" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleDeleteRequestedProduct(product.id)}
+                    >
+                      <FaTrash className="icon" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* 3 dots icon for reset and delete actions */}
+
+                <div className="like">
+                  <button
+                    type="button"
+                    onClick={() => handleTogglePopup(product.id)}
+                    className="ellipsis"
+                  >
+                    <MdMoreVert />
+                  </button>
+
+                  {/* Button for incrementing request count */}
+                  <button
+                    type="button"
+                    onClick={() => handleIncrementRequest(product.id, product.request_count)}
+                    className="button-like"
+                  >
+                    <img className="icon" src="https://scontent.fkgl4-1.fna.fbcdn.net/m1/v/t6/An_Hu2MGghXfWhrGQLADBvMqHBUxBoVMkVyPd6nn5lnsrwR-vi4BbkvRAbUlxUY9vGSt_yQiOgk2XFidRDZtah01ve6N3Ln9ICuzKj0ZRWl7nKjEJUNFh5EMkRfQa4lMXQ.png?ccb=10-5&amp;oh=00_AfA29E8TGGwFzpSbPtpaDfTXHa_V0tMYVQ_HiZmf1QaAOA&amp;oe=65CE93EC&amp;_nc_sid=7da55a" alt="" style={{ height: '20px', width: '20px' }} />
+                    <span>{localRequestCount[product.id] || product.request_count}</span>
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          {/* Form for adding requested products */}
+          <form onSubmit={handleSubmit}>
+            <div>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                required
+                onChange={(e) => setname(e.target.value)}
+                placeholder="Add the requested product... "
+              />
+
+              {/* Hidden input for request count */}
+              <input
+                type="number"
+                id="unitPurchasePrice"
+                value={requestCount}
+                required
+                inputMode="numeric"
+                hidden
+              />
+
+              {/* Submit button for adding requested product */}
+              {showButton && !loading
+                && (
+                <button type="submit">
+                  <LuSendHorizonal className="icon" style={{ color: '#0a66c2' }} />
+                </button>
+                )}
+            </div>
+          </form>
+          <div id="to-bottom" ref={requestedProductsRef} />
+        </>
+      ) : (
+        <div className="warning">
+          <h1>Accessing Requested Products</h1>
+          <p>
+            To access the requested products information, you need to be an admin.
+            <br />
+            <br />
+            Please,
+            {' '}
+            <span
+              role="button"
+              tabIndex={0}
+              className="login-manager"
+              onClick={handleLogout}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  handleLogout();
+                }
+              }}
+            >
+              click here
+            </span>
+            {' '}
+            to log in.
+          </p>
         </div>
       )}
-      {/* Product list */}
-      <ul className="product-list">
-        {sortedAndMappedProducts.map((product, index) => (
-          <li
-            key={product.id}
-            className={`product-entry ${highlightedProductId === product.id && (index > 0 && sortedAndMappedProducts[index - 1].request_count === product.request_count) ? 'highlighted' : ''}`}
-          >
-            <span>{product.name}</span>
-
-            {/* Popup for reset and delete options */}
-            <div className="popup" style={{ visibility: openPopupId === product.id ? 'visible' : 'hidden' }}>
-              <svg aria-hidden="true" height="12" viewBox="0 0 25 12" width="25" className="x10l6tqk xng853d xu8u0ou" fill="white" style={{ transform: 'scale(1, -1) translate(0px, 0px) rotateY(180deg)' }}>
-                <path d="M24.553.103c-2.791.32-5.922 1.53-7.78 3.455l-9.62 7.023c-2.45 2.54-5.78 1.645-5.78-2.487V2.085C1.373 1.191.846.422.1.102h24.453z" />
-              </svg>
-
-              {/* Buttons for reset and delete actions */}
-              <div className="delete-reset">
-                <button
-                  type="button"
-                  onClick={() => handleResetRequest(product.id)}
-                >
-                  <FaUndo className="icon" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleDeleteRequestedProduct(product.id)}
-                >
-                  <FaTrash className="icon" />
-                </button>
-              </div>
-            </div>
-
-            {/* 3 dots icon for reset and delete actions */}
-
-            <div className="like">
-              <button
-                type="button"
-                onClick={() => handleTogglePopup(product.id)}
-                className="ellipsis"
-              >
-                <MdMoreVert />
-              </button>
-
-              {/* Button for incrementing request count */}
-              <button
-                type="button"
-                onClick={() => handleIncrementRequest(product.id, product.request_count)}
-                className="button-like"
-              >
-                <img className="icon" src="https://scontent.fkgl4-1.fna.fbcdn.net/m1/v/t6/An_Hu2MGghXfWhrGQLADBvMqHBUxBoVMkVyPd6nn5lnsrwR-vi4BbkvRAbUlxUY9vGSt_yQiOgk2XFidRDZtah01ve6N3Ln9ICuzKj0ZRWl7nKjEJUNFh5EMkRfQa4lMXQ.png?ccb=10-5&amp;oh=00_AfA29E8TGGwFzpSbPtpaDfTXHa_V0tMYVQ_HiZmf1QaAOA&amp;oe=65CE93EC&amp;_nc_sid=7da55a" alt="" style={{ height: '20px', width: '20px' }} />
-                <span>{localRequestCount[product.id] || product.request_count}</span>
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
-
-      {/* Form for adding requested products */}
-      <form onSubmit={handleSubmit}>
-        <div>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            required
-            onChange={(e) => setname(e.target.value)}
-            placeholder="Add the requested product... "
-          />
-
-          {/* Hidden input for request count */}
-          <input
-            type="number"
-            id="unitPurchasePrice"
-            value={requestCount}
-            required
-            inputMode="numeric"
-            hidden
-          />
-
-          {/* Submit button for adding requested product */}
-          {showButton && !loading
-            && (
-            <button type="submit">
-              <LuSendHorizonal className="icon" style={{ color: '#0a66c2' }} />
-            </button>
-            )}
-        </div>
-      </form>
-      <div id="to-bottom" ref={requestedProductsRef} />
     </div>
   );
 };
