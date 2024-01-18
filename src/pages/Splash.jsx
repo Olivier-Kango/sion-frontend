@@ -7,7 +7,7 @@ const Splash = () => (
       <div className="splash-card max-w-[50%] w-full max-h-[55%] sm:mb-20 px-2">
         <div className="sm:px-3 text-center">
           <h1 className="font-bold text-white text-4xl sm:text-6xl ">
-            PSS Digital
+            Sion
           </h1>
           <p className="text-xl text-slate-50 mt-2">
             Order your favorite products from your favorite site.
