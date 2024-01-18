@@ -148,9 +148,19 @@ $accent-color: #e44d26;
         background-color: #f0f2f5;
         border: none;
       }
-
+      
       #name:focus {
         outline: none;
+      }
+    
+      // Styling for autofilled input fields
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+
+        // Applying an inset box shadow to indicate autofilled fields
+        -webkit-box-shadow: 0 0 0 30px #f0f2f5 inset !important;
       }
     }
   }
@@ -203,16 +213,6 @@ $accent-color: #e44d26;
 
         &:hover {
           background-color: #f0f2f5;
-        }
-
-        // Styling for autofilled input fields
-        input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
-        input:-webkit-autofill:active {
-
-          // Applying an inset box shadow to indicate autofilled fields
-          -webkit-box-shadow: 0 0 0 30px #f0f2f5 inset !important;
         }
       }
     }
