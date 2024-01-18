@@ -30,6 +30,54 @@ $accent-color: #e44d26;
     }
   }
 
+  form {
+    position: fixed;
+    background: white;
+    bottom: 2.6rem;
+    padding: 0.4rem 1rem 1rem 1rem;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+
+    div {
+      display: flex;
+      gap: 10px;
+      padding: 9px 15px;
+      background-color: #f0f2f5;
+      border-radius: 22px;
+
+      button {
+        padding-left: 1rem;
+
+        .icon {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+
+      #name {
+        width: 100%;
+        background-color: #f0f2f5;
+        border: none;
+      }
+
+      #name:focus {
+        outline: none;
+      }
+
+      // Styling for autofilled input fields
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+
+        // Applying an inset box shadow to indicate autofilled fields
+        -webkit-box-shadow: 0 0 0 30px #f0f2f5 inset !important;
+      }
+    }
+  }
+
   .product-list {
     list-style-type: none;
     padding: 0;
@@ -128,59 +176,10 @@ $accent-color: #e44d26;
     }
   }
 
-  form {
-    position: fixed;
-    background: white;
-    bottom: 2.6rem;
-    padding: 0.4rem 1rem 1rem 1rem;
-    left: 0;
-    right: 0;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 99;
-
-    div {
-      display: flex;
-      gap: 10px;
-      padding: 9px 15px;
-      background-color: #f0f2f5;
-      border-radius: 22px;
-
-      button {
-        padding-left: 1rem;
-
-        .icon {
-          width: 1.5rem;
-          height: 1.5rem;
-        }
-      }
-
-      #name {
-        width: 100%;
-        background-color: #f0f2f5;
-        border: none;
-      }
-      
-      #name:focus {
-        outline: none;
-      }
-    
-      // Styling for autofilled input fields
-      input:-webkit-autofill,
-      input:-webkit-autofill:hover,
-      input:-webkit-autofill:focus,
-      input:-webkit-autofill:active {
-
-        // Applying an inset box shadow to indicate autofilled fields
-        -webkit-box-shadow: 0 0 0 30px #f0f2f5 inset !important;
-      }
-    }
-  }
-
   #to-bottom {
     margin-bottom: 3rem;
   }
 
-  
   .warning {
     display: flex;
     flex-direction: column;
