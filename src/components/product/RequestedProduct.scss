@@ -62,13 +62,14 @@ $accent-color: #e44d26;
         align-items: center;
         position: absolute;
         top: 37px;
-        right: 22px;
+        right: 42px;
         transform: translateX(-50%);
         z-index: 3;
 
         svg {
           border: none;
-          z-index: 9;
+          color: white;
+          margin-bottom: -2px;
         }
 
         .delete-reset {
