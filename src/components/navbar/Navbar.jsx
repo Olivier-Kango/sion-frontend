@@ -95,6 +95,7 @@ const Navbar = ({ handleLinkClick }) => {
   // Effect to call handleSearch whenever searchQuery changes
   useEffect(() => {
     handleSearch();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
   useEffect(() => {

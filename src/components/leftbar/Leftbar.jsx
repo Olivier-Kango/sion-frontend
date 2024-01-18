@@ -29,9 +29,7 @@ import {
 } from '../../redux/products/products';
 import './Leftbar.scss';
 
-const LeftBar = ({
-  open, handleLinkClick, handleLinkManag, handleHamburgerClick,
-}) => {
+const LeftBar = (props) => {
   const dispatch = useDispatch();
   const userState = useSelector((state) => state.user);
   const { pathname } = useLocation();
@@ -45,6 +43,12 @@ const LeftBar = ({
   const location = useLocation();
   const [showSubcategories, setShowSubcategories] = useState(false);
   const { category, subcategory } = useParams();
+  const {
+    open,
+    handleLinkClick,
+    handleHamburgerClick,
+    handleLinkManag,
+  } = props;
 
   const handleAddProductClick = () => {
     dispatch(setSelectedCategory(''));
@@ -249,13 +253,13 @@ const LeftBar = ({
               </div>
             </Link>
             )}
-            <Link to="/management" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkManag(event, '')}>
+            <Link to="/management" style={{ textDecoration: 'none' }} onClick={handleLinkManag}>
               <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
                 <span className="icon"><FaProductHunt /></span>
                 <span className="text">Product Information</span>
               </div>
             </Link>
-            <Link to="/requested_products" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkManag(event, '')}>
+            <Link to="/requested_products" style={{ textDecoration: 'none' }} onClick={handleLinkManag}>
               <div className={(pathname === '/' && selectedCategory === '') ? 'active' : 'item'}>
                 <span className="icon"><FaRegListAlt /></span>
                 <span className="text">Requested Products</span>

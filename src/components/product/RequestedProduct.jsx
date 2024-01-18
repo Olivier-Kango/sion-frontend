@@ -74,9 +74,7 @@ const RequestedProduct = () => {
           setLoading(false);
         }
       })
-      .catch((error) => {
-        // La requête a échoué, donc on met loading à true
-        console.error('Error loading data:', error);
+      .catch(() => {
         setLoading(true);
       });
   }, [dispatch]);
@@ -266,7 +264,7 @@ const RequestedProduct = () => {
           />
 
           {/* Submit button for adding requested product */}
-          {showButton
+          {showButton && !loading
             && (
             <button type="submit">
               <LuSendHorizonal className="icon" style={{ color: '#0a66c2' }} />
