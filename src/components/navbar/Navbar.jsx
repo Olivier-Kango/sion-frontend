@@ -169,7 +169,7 @@ const Navbar = ({ handleLinkClick }) => {
             <div className={!isMobile ? 'logo' : ''}>
               {!isMobile && (
                 <span>
-                  PSS Digital
+                  Sion
                 </span>
               )}
             </div>

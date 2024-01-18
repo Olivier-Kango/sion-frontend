@@ -128,7 +128,7 @@ const LeftBar = (props) => {
             >
               <div className="logo-pop">
                 <span>
-                  PSS Digital
+                  Sion
                 </span>
               </div>
             </Link>
@@ -248,7 +248,7 @@ const LeftBar = (props) => {
             >
               <div className="logo-pop">
                 <span>
-                  PSS Digital
+                  Sion
                 </span>
               </div>
             </Link>

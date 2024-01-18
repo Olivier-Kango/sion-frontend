@@ -282,7 +282,7 @@ const RequestedProduct = () => {
         </>
       ) : (
         <div className="warning">
-          <h1>Accessing Requested Products</h1>
+          <h1>Requested Products</h1>
           <p>
             To access the requested products information, you need to be an admin.
             <br />

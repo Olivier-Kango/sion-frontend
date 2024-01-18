@@ -153,7 +153,7 @@ const Management = () => {
         </div>
       ) : (
         <div className="warning">
-          <h1>Accessing Product Information</h1>
+          <h1>Product Information</h1>
           <p>
             To access product information, you need to be an admin.
             <br />
