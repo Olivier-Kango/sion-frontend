@@ -214,10 +214,13 @@ const RequestedProduct = () => {
             {/* 3 dots icon for reset and delete actions */}
 
             <div className="like">
-              <MdMoreVert
+              <button
+                type="button"
                 onClick={() => handleTogglePopup(product.id)}
                 className="ellipsis"
-              />
+              >
+                <MdMoreVert />
+              </button>
 
               {/* Button for incrementing request count */}
               <button

@@ -98,19 +98,20 @@ $accent-color: #e44d26;
         display: flex;
         align-items: center;
         z-index: 2;
-        width: 80px;
-        gap: -20px;
+        width: 100px;
+        gap: 20px;
 
         .ellipsis {
           color: #65676bb7;
           cursor: pointer;
+          padding: 1rem 0.2rem;
         }
 
         .button-like {
           display: flex;
           gap: 8px;
           z-index: 2;
-          padding: 1rem 0 1rem 1rem;
+          padding: 1rem 0.5rem 1rem 0.5rem;
           margin-right: 0;
 
           span {
