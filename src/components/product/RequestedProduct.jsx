@@ -100,7 +100,7 @@ const RequestedProduct = () => {
 
     setTimeout(() => {
       setHighlightedProductId(null);
-    }, 1000);
+    }, 1500);
   };
 
   // Reset the request count for a specific product
