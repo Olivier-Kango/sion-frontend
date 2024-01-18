@@ -30,14 +30,6 @@ const Button = ({
 
   const dynamicVariant = variant;
 
-  // let dynamicShowIcon = showIcon;
-  // let dynamicShowText = showText;
-
-  // if (state === 'loading') {
-  //   dynamicShowIcon = true;
-  //   dynamicShowText = !showIcon;
-  // }
-
   return (
     <button
       type="submit"

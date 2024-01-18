@@ -79,8 +79,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
     dispatch(getAllProducts());
   };
 
-  const handleLinkManag = (event) => {
-    event.preventDefault();
+  const handleLinkManag = () => {
     if (isMobile) {
       dispatch(setShowLeftBar(false));
     }
@@ -187,7 +186,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               handleLinkClick={(event, link) => handleLinkClick(event, link)}
               isAuthenticated={isAuthenticated}
               handleHamburgerClick={handleHamburgerClick}
-              handleLinkManag={(event) => handleLinkManag(event)}
+              handleLinkManag={handleLinkManag}
             />
             )}
           </>

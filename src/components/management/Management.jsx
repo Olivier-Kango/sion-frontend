@@ -74,8 +74,8 @@ const Management = () => {
   };
 
   useEffect(() => {
-    // Vous devez mettre à jour sortedProducts lorsque products change
     setSortedProducts(sortedProductsByName);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [products]);
 
   const handleLogout = () => {

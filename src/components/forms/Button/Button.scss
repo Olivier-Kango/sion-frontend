@@ -359,6 +359,13 @@ $main-color-hover: #094a80;
 
     .icon {
       animation: spin 1s linear infinite;
+
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $main-color-hover;
+      }
     }
 
     &.secondary,
