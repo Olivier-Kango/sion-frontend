@@ -42,7 +42,6 @@ const RequestedProduct = () => {
   // local states
   const [openPopupId, setOpenPopupId] = useState(null);
   const [localRequestCount, setLocalRequestCount] = useState(0);
-  const [newProducts, setNewProducts] = useState([]);
   const [localDeletedProducts, setLocalDeletedProducts] = useState([]);
   const [highlightedProductId, setHighlightedProductId] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -139,12 +138,9 @@ const RequestedProduct = () => {
       request_count: requestCount,
     };
 
-    setNewProducts((prevProducts) => [...prevProducts, productData]);
-
     // Dispatch the action to add requested products and handle the scroll to the bottom
     dispatch(addRequestedProducts(productData))
       .then((action) => {
-        setNewProducts([]);
         dispatch({
           type: 'ADD_REQUESTED_PRODUCT/fulfilled',
           payload: action.payload,
@@ -203,7 +199,7 @@ const RequestedProduct = () => {
           )}
           {/* Product list */}
           <ul className="product-list">
-            {[...sortedAndMappedProducts, ...newProducts]
+            {sortedAndMappedProducts
               .filter((product) => !localDeletedProducts.includes(product.id))
               .map((product, index) => (
                 <li
