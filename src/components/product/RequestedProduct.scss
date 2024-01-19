@@ -169,14 +169,14 @@ $accent-color: #e44d26;
         }
       }
 
-      .button-like:active {
+      .button-like:active img {
         transform: scale(1.2);
         transition: transform 0.3s ease;
       }
-      
-      .button-like:hover {
+
+      .button-like:hover img {
         transform: scale(1.2);
-        transition: transform 0.7s ease;
+        transition: transform 0.5s ease;
       }
     }
   }
