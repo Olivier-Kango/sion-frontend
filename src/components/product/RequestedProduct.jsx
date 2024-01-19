@@ -42,9 +42,7 @@ const RequestedProduct = () => {
   // local states
   const [openPopupId, setOpenPopupId] = useState(null);
   const [localRequestCount, setLocalRequestCount] = useState(0);
-  const [newProducts, setNewProducts] = useState([]);
   const [localDeletedProducts, setLocalDeletedProducts] = useState([]);
-  const [highlightedProductId, setHighlightedProductId] = useState(null);
   const [loading, setLoading] = useState(true);
 
   // Memoize the sorted and mapped requested products
@@ -92,13 +90,6 @@ const RequestedProduct = () => {
     };
 
     dispatch(incrementRequestCount({ id: productId, updatedRequestedProductData }));
-
-    // update class for smooth sorting
-    setHighlightedProductId(productId);
-
-    setTimeout(() => {
-      setHighlightedProductId(null);
-    }, 1500);
   };
 
   // Reset the request count for a specific product
@@ -139,23 +130,20 @@ const RequestedProduct = () => {
       request_count: requestCount,
     };
 
-    setNewProducts((prevProducts) => [...prevProducts, productData]);
-
     // Dispatch the action to add requested products and handle the scroll to the bottom
     dispatch(addRequestedProducts(productData))
       .then((action) => {
-        setNewProducts([]);
         dispatch({
           type: 'ADD_REQUESTED_PRODUCT/fulfilled',
           payload: action.payload,
         });
-      });
 
-    requestedProductsRef.current?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest',
-    });
+        requestedProductsRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest',
+        });
+      });
 
     // Clear the input field after submission
     setname('');
@@ -203,12 +191,12 @@ const RequestedProduct = () => {
           )}
           {/* Product list */}
           <ul className="product-list">
-            {[...sortedAndMappedProducts, ...newProducts]
+            {sortedAndMappedProducts
               .filter((product) => !localDeletedProducts.includes(product.id))
-              .map((product, index) => (
+              .map((product) => (
                 <li
                   key={product.id}
-                  className={`product-entry ${highlightedProductId === product.id && (index > 0 && sortedAndMappedProducts[index - 1].request_count === product.request_count) ? 'highlighted' : ''}`}
+                  className="product-entry"
                 >
                   <span>{product.name}</span>
 
