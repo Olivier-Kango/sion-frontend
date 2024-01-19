@@ -145,13 +145,13 @@ const RequestedProduct = () => {
           type: 'ADD_REQUESTED_PRODUCT/fulfilled',
           payload: action.payload,
         });
-      });
 
-    requestedProductsRef.current?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest',
-    });
+        requestedProductsRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest',
+        });
+      });
 
     // Clear the input field after submission
     setname('');
