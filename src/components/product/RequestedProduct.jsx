@@ -203,9 +203,8 @@ const RequestedProduct = () => {
           )}
           {/* Product list */}
           <ul className="product-list">
-            {sortedAndMappedProducts
+            {[...sortedAndMappedProducts, ...newProducts]
               .filter((product) => !localDeletedProducts.includes(product.id))
-              .concat(newProducts)
               .map((product, index) => (
                 <li
                   key={product.id}
