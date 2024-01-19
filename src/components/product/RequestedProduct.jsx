@@ -43,7 +43,6 @@ const RequestedProduct = () => {
   const [openPopupId, setOpenPopupId] = useState(null);
   const [localRequestCount, setLocalRequestCount] = useState(0);
   const [localDeletedProducts, setLocalDeletedProducts] = useState([]);
-  const [highlightedProductId, setHighlightedProductId] = useState(null);
   const [loading, setLoading] = useState(true);
 
   // Memoize the sorted and mapped requested products
@@ -91,13 +90,6 @@ const RequestedProduct = () => {
     };
 
     dispatch(incrementRequestCount({ id: productId, updatedRequestedProductData }));
-
-    // update class for smooth sorting
-    setHighlightedProductId(productId);
-
-    setTimeout(() => {
-      setHighlightedProductId(null);
-    }, 1500);
   };
 
   // Reset the request count for a specific product
@@ -201,10 +193,10 @@ const RequestedProduct = () => {
           <ul className="product-list">
             {sortedAndMappedProducts
               .filter((product) => !localDeletedProducts.includes(product.id))
-              .map((product, index) => (
+              .map((product) => (
                 <li
                   key={product.id}
-                  className={`product-entry ${highlightedProductId === product.id && (index > 0 && sortedAndMappedProducts[index - 1].request_count === product.request_count) ? 'highlighted' : ''}`}
+                  className="product-entry"
                 >
                   <span>{product.name}</span>
 
