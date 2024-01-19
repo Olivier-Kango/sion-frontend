@@ -42,6 +42,7 @@ const RequestedProduct = () => {
   // local states
   const [openPopupId, setOpenPopupId] = useState(null);
   const [localRequestCount, setLocalRequestCount] = useState(0);
+  const [newProducts, setNewProducts] = useState([]);
   const [localDeletedProducts, setLocalDeletedProducts] = useState([]);
   const [highlightedProductId, setHighlightedProductId] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -63,12 +64,11 @@ const RequestedProduct = () => {
 
   // Fetch all requested products on component mount
   useEffect(() => {
-    setLoading(true); // Commence en état de chargement
+    setLoading(true);
 
     dispatch(getAllRequestedProducts())
       .then((action) => {
         if (action.type === 'GET_ALL_REQUESTED_PRODUCTS/fulfilled') {
-          // La requête a réussi, donc on met loading à false
           setLoading(false);
         }
       })
@@ -139,6 +139,8 @@ const RequestedProduct = () => {
       request_count: requestCount,
     };
 
+    setNewProducts((prevProducts) => [...prevProducts, productData]);
+
     // Dispatch the action to add requested products and handle the scroll to the bottom
     dispatch(addRequestedProducts(productData))
       .then((action) => {
@@ -146,6 +148,7 @@ const RequestedProduct = () => {
           type: 'ADD_REQUESTED_PRODUCT/fulfilled',
           payload: action.payload,
         });
+        setNewProducts([]);
       });
 
     requestedProductsRef.current?.scrollIntoView({
@@ -202,6 +205,7 @@ const RequestedProduct = () => {
           <ul className="product-list">
             {sortedAndMappedProducts
               .filter((product) => !localDeletedProducts.includes(product.id))
+              .concat(newProducts)
               .map((product, index) => (
                 <li
                   key={product.id}
