@@ -144,11 +144,11 @@ const RequestedProduct = () => {
     // Dispatch the action to add requested products and handle the scroll to the bottom
     dispatch(addRequestedProducts(productData))
       .then((action) => {
+        setNewProducts([]);
         dispatch({
           type: 'ADD_REQUESTED_PRODUCT/fulfilled',
           payload: action.payload,
         });
-        setNewProducts([]);
       });
 
     requestedProductsRef.current?.scrollIntoView({
