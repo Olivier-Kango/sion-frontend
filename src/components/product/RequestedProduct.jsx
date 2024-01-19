@@ -42,6 +42,7 @@ const RequestedProduct = () => {
   // local states
   const [openPopupId, setOpenPopupId] = useState(null);
   const [localRequestCount, setLocalRequestCount] = useState(0);
+  const [localAddedProducts, setLocalAddedProducts] = useState([]);
   const [localDeletedProducts, setLocalDeletedProducts] = useState([]);
   const [highlightedProductId, setHighlightedProductId] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -139,13 +140,16 @@ const RequestedProduct = () => {
       request_count: requestCount,
     };
 
+    setLocalAddedProducts((prevProducts) => [...prevProducts, productData]);
+
     // Dispatch the action to add requested products and handle the scroll to the bottom
     dispatch(addRequestedProducts(productData))
       .then((action) => {
-        dispatch({
-          type: 'ADD_REQUESTED_PRODUCT/fulfilled',
-          payload: action.payload,
-        });
+        if (action.type === 'ADD_REQUESTED_PRODUCT/fulfilled') {
+          // Update local state only if the server response is successful
+          setLocalAddedProducts([]);
+        }
+
         requestedProductsRef.current?.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
@@ -201,6 +205,11 @@ const RequestedProduct = () => {
           <ul className="product-list">
             {sortedAndMappedProducts
               .filter((product) => !localDeletedProducts.includes(product.id))
+              .concat(localAddedProducts.map((product) => ({
+                ...product,
+
+                isLocal: true,
+              })))
               .map((product, index) => (
                 <li
                   key={product.id}
