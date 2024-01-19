@@ -42,6 +42,8 @@ const RequestedProduct = () => {
   // local states
   const [openPopupId, setOpenPopupId] = useState(null);
   const [localRequestCount, setLocalRequestCount] = useState(0);
+  const [newProducts, setNewProducts] = useState([]);
+  const [localDeletedProducts, setLocalDeletedProducts] = useState([]);
   const [highlightedProductId, setHighlightedProductId] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -62,12 +64,11 @@ const RequestedProduct = () => {
 
   // Fetch all requested products on component mount
   useEffect(() => {
-    setLoading(true); // Commence en état de chargement
+    setLoading(true);
 
     dispatch(getAllRequestedProducts())
       .then((action) => {
         if (action.type === 'GET_ALL_REQUESTED_PRODUCTS/fulfilled') {
-          // La requête a réussi, donc on met loading à false
           setLoading(false);
         }
       })
@@ -106,6 +107,9 @@ const RequestedProduct = () => {
       request_count: 0,
     };
 
+    // Update the local count immediately for a smooth user experience
+    setLocalRequestCount((prevCounts) => ({ ...prevCounts, [productId]: 0 }));
+
     dispatch(resetRequestCount({ id: productId, updatedRequestedProductData }));
     requestedProductsRef.current?.scrollIntoView({
       behavior: 'smooth',
@@ -117,6 +121,9 @@ const RequestedProduct = () => {
   // Delete a requested product
   const handleDeleteRequestedProduct = (productId) => {
     dispatch(deleteRequestedProduct(productId));
+
+    // Update the local state immediately for a smooth user experience
+    setLocalDeletedProducts((prevDeletedProducts) => [...prevDeletedProducts, productId]);
   };
 
   // State for input fields
@@ -132,19 +139,23 @@ const RequestedProduct = () => {
       request_count: requestCount,
     };
 
+    setNewProducts((prevProducts) => [...prevProducts, productData]);
+
     // Dispatch the action to add requested products and handle the scroll to the bottom
     dispatch(addRequestedProducts(productData))
       .then((action) => {
+        setNewProducts([]);
         dispatch({
           type: 'ADD_REQUESTED_PRODUCT/fulfilled',
           payload: action.payload,
         });
-        requestedProductsRef.current?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest',
-        });
       });
+
+    requestedProductsRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
 
     // Clear the input field after submission
     setname('');
@@ -192,59 +203,61 @@ const RequestedProduct = () => {
           )}
           {/* Product list */}
           <ul className="product-list">
-            {sortedAndMappedProducts.map((product, index) => (
-              <li
-                key={product.id}
-                className={`product-entry ${highlightedProductId === product.id && (index > 0 && sortedAndMappedProducts[index - 1].request_count === product.request_count) ? 'highlighted' : ''}`}
-              >
-                <span>{product.name}</span>
+            {[...sortedAndMappedProducts, ...newProducts]
+              .filter((product) => !localDeletedProducts.includes(product.id))
+              .map((product, index) => (
+                <li
+                  key={product.id}
+                  className={`product-entry ${highlightedProductId === product.id && (index > 0 && sortedAndMappedProducts[index - 1].request_count === product.request_count) ? 'highlighted' : ''}`}
+                >
+                  <span>{product.name}</span>
 
-                {/* Popup for reset and delete options */}
-                <div className="popup" style={{ visibility: openPopupId === product.id ? 'visible' : 'hidden' }}>
-                  <svg aria-hidden="true" height="12" viewBox="0 0 25 12" width="25" className="x10l6tqk xng853d xu8u0ou" fill="white" style={{ transform: 'scale(1, -1) translate(0px, 0px) rotateY(180deg)' }}>
-                    <path d="M24.553.103c-2.791.32-5.922 1.53-7.78 3.455l-9.62 7.023c-2.45 2.54-5.78 1.645-5.78-2.487V2.085C1.373 1.191.846.422.1.102h24.453z" />
-                  </svg>
+                  {/* Popup for reset and delete options */}
+                  <div className="popup" style={{ visibility: openPopupId === product.id ? 'visible' : 'hidden' }}>
+                    <svg aria-hidden="true" height="12" viewBox="0 0 25 12" width="25" className="x10l6tqk xng853d xu8u0ou" fill="white" style={{ transform: 'scale(1, -1) translate(0px, 0px) rotateY(180deg)' }}>
+                      <path d="M24.553.103c-2.791.32-5.922 1.53-7.78 3.455l-9.62 7.023c-2.45 2.54-5.78 1.645-5.78-2.487V2.085C1.373 1.191.846.422.1.102h24.453z" />
+                    </svg>
 
-                  {/* Buttons for reset and delete actions */}
-                  <div className="delete-reset">
+                    {/* Buttons for reset and delete actions */}
+                    <div className="delete-reset">
+                      <button
+                        type="button"
+                        onClick={() => handleResetRequest(product.id)}
+                      >
+                        <FaUndo className="icon" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteRequestedProduct(product.id)}
+                      >
+                        <FaTrash className="icon" />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* 3 dots icon for reset and delete actions */}
+
+                  <div className="like">
                     <button
                       type="button"
-                      onClick={() => handleResetRequest(product.id)}
+                      onClick={() => handleTogglePopup(product.id)}
+                      className="ellipsis"
                     >
-                      <FaUndo className="icon" />
+                      <MdMoreVert />
                     </button>
+
+                    {/* Button for incrementing request count */}
                     <button
                       type="button"
-                      onClick={() => handleDeleteRequestedProduct(product.id)}
+                      onClick={() => handleIncrementRequest(product.id, product.request_count)}
+                      className="button-like"
                     >
-                      <FaTrash className="icon" />
+                      <img className="icon" src="https://scontent.fkgl4-1.fna.fbcdn.net/m1/v/t6/An_Hu2MGghXfWhrGQLADBvMqHBUxBoVMkVyPd6nn5lnsrwR-vi4BbkvRAbUlxUY9vGSt_yQiOgk2XFidRDZtah01ve6N3Ln9ICuzKj0ZRWl7nKjEJUNFh5EMkRfQa4lMXQ.png?ccb=10-5&amp;oh=00_AfA29E8TGGwFzpSbPtpaDfTXHa_V0tMYVQ_HiZmf1QaAOA&amp;oe=65CE93EC&amp;_nc_sid=7da55a" alt="" style={{ height: '20px', width: '20px' }} />
+                      <span>{localRequestCount[product.id] || product.request_count}</span>
                     </button>
                   </div>
-                </div>
-
-                {/* 3 dots icon for reset and delete actions */}
-
-                <div className="like">
-                  <button
-                    type="button"
-                    onClick={() => handleTogglePopup(product.id)}
-                    className="ellipsis"
-                  >
-                    <MdMoreVert />
-                  </button>
-
-                  {/* Button for incrementing request count */}
-                  <button
-                    type="button"
-                    onClick={() => handleIncrementRequest(product.id, product.request_count)}
-                    className="button-like"
-                  >
-                    <img className="icon" src="https://scontent.fkgl4-1.fna.fbcdn.net/m1/v/t6/An_Hu2MGghXfWhrGQLADBvMqHBUxBoVMkVyPd6nn5lnsrwR-vi4BbkvRAbUlxUY9vGSt_yQiOgk2XFidRDZtah01ve6N3Ln9ICuzKj0ZRWl7nKjEJUNFh5EMkRfQa4lMXQ.png?ccb=10-5&amp;oh=00_AfA29E8TGGwFzpSbPtpaDfTXHa_V0tMYVQ_HiZmf1QaAOA&amp;oe=65CE93EC&amp;_nc_sid=7da55a" alt="" style={{ height: '20px', width: '20px' }} />
-                    <span>{localRequestCount[product.id] || product.request_count}</span>
-                  </button>
-                </div>
-              </li>
-            ))}
+                </li>
+              ))}
           </ul>
 
           {/* Form for adding requested products */}
