@@ -136,10 +136,11 @@ $ellipsis-hover-color: #f0f0f0;
 
         .delete-reset {
           display: flex;
-          gap: 8px;
+          gap: 10px;
           background: white;
           box-shadow: 0 -1px 16px rgba(0, 0, 0, 0.2);
           border-radius: 6px;
+          padding: 5px;
 
           button {
             // cursor: pointer;
