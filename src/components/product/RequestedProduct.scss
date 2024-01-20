@@ -152,7 +152,12 @@ $accent-color: #e44d26;
         .ellipsis {
           color: #65676bb7;
           cursor: pointer;
-          padding: 1rem 0.2rem;
+          padding: 0.5rem 0.5rem;
+          border-radius: 50%;
+
+          &:hover {
+            background-color: #f0f0f0;
+          }
         }
 
         .button-like {
