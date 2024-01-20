@@ -2,7 +2,7 @@ $main-color: #0a66c2;
 $main-color-hover: #094a80;
 $accent-color: #e44d26;
 
-$container-margin-bottom: 7rem;
+$container-margin-bottom: 7.5rem;
 $ellipsis-hover-color: #f0f0f0;
 
 // Mixins
@@ -237,7 +237,7 @@ $ellipsis-hover-color: #f0f0f0;
     form {
       position: sticky;
       bottom: 0;
-      margin-top: 0.5rem;
+      margin-top: 1.5rem;
       padding: 0;
       padding-bottom: 1rem;
       border-radius: 25px;
@@ -249,6 +249,11 @@ $ellipsis-hover-color: #f0f0f0;
         border-radius: 25px;
         border: 1px solid #ddd;
         background: #f0f2f5;
+
+        .loading-icon {
+          width: 2rem !important;
+          height: 2rem !important;
+        }
 
         #name {
           padding: 0.3rem 0.5rem;
