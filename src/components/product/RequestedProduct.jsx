@@ -15,6 +15,7 @@ import { LuSendHorizonal } from 'react-icons/lu';
 import { FaUndo, FaTrash } from 'react-icons/fa';
 import { MdMoreVert } from 'react-icons/md';
 import GridLoader from 'react-spinners/GridLoader';
+import { BiLoaderAlt } from 'react-icons/bi';
 
 // import actoins for requested products
 import {
@@ -44,6 +45,8 @@ const RequestedProduct = () => {
   const [localRequestCount, setLocalRequestCount] = useState(0);
   const [localDeletedProducts, setLocalDeletedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  // State for loading status of the form submission
+  const [loadingSubmit, setLoadingSubmit] = useState(false);
 
   // Memoize the sorted and mapped requested products
   const sortedAndMappedProducts = useMemo(() => (requestedProducts
@@ -125,6 +128,8 @@ const RequestedProduct = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoadingSubmit(true);
+
     const productData = {
       name,
       request_count: requestCount,
@@ -143,6 +148,8 @@ const RequestedProduct = () => {
           block: 'start',
           inline: 'nearest',
         });
+
+        setLoadingSubmit(false);
       });
 
     // Clear the input field after submission
@@ -257,7 +264,8 @@ const RequestedProduct = () => {
                 value={name}
                 required
                 onChange={(e) => setname(e.target.value)}
-                placeholder="Add the requested product... "
+                placeholder={loadingSubmit ? 'Adding...' : 'Add the requested product... '}
+                disabled={loadingSubmit}
               />
 
               {/* Hidden input for request count */}
@@ -271,12 +279,26 @@ const RequestedProduct = () => {
               />
 
               {/* Submit button for adding requested product */}
-              {showButton && !loading
+              {showButton && !loadingSubmit
                 && (
                 <button type="submit">
                   <LuSendHorizonal className="icon" style={{ color: '#0a66c2' }} />
                 </button>
                 )}
+
+              {/* Loading icon while submitting */}
+              {loadingSubmit && (
+                <BiLoaderAlt
+                  className="loading-icon"
+                  style={{
+                    color: '#0a66c2',
+                    animation: 'spin 1s linear infinite',
+                    width: '1.5rem',
+                    height: '1.5rem',
+                    strokeWidth: '0.5px',
+                  }}
+                />
+              )}
             </div>
           </form>
           <div id="to-bottom" ref={requestedProductsRef} />
