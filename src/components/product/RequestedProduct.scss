@@ -217,7 +217,7 @@ $ellipsis-hover-color: #f0f0f0;
 
   @media (min-width: 768px) {
     position: relative;
-    margin-bottom: -7rem;
+    margin-bottom: -$ellipsis-hover-color;
 
     .product-list {
       gap: 1.5rem;
