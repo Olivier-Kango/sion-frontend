@@ -74,7 +74,7 @@
 
 ## Preview <a name="preview"></a>
 
-![Desktop Preview](./src/assets/preview.png)
+![Desktop Preview](./src/assets/sion.png)
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
