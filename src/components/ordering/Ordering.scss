@@ -78,6 +78,16 @@ $main-color-hover: #c36d00;
         }
       }
 
+      // Styling for autofilled input fields
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+
+        // Applying an inset box shadow to indicate autofilled fields
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+      }
+
       select {
         padding: 10px;
         border: none;
