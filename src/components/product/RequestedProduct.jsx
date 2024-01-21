@@ -218,7 +218,7 @@ const RequestedProduct = () => {
 
           {loading && (
             <div className="loading-container">
-              <GridLoader color="#0a66c2" className="loading-icon" />
+              <GridLoader color="#f08804" className="loading-icon" />
               <p className="loading-message slide-in-out">Loading...</p>
             </div>
           )}
@@ -317,7 +317,7 @@ const RequestedProduct = () => {
                 <BiLoaderAlt
                   className="loading-icon"
                   style={{
-                    color: '#0a66c2',
+                    color: '#f08804',
                     animation: 'spin 1s linear infinite',
                     width: '1.5rem',
                     height: '1.5rem',
