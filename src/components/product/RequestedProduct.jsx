@@ -210,7 +210,7 @@ const RequestedProduct = () => {
 
   // Render the component
   return (
-    <div className="container">
+    <div className="container-requested">
       {user.role === 'admin' ? (
         <>
           {/* Title */}

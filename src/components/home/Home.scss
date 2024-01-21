@@ -2,6 +2,8 @@ $main-color: #f08804;
 $main-color-hover: #c36d00;
 
 .container {
+  padding-bottom: 1rem;
+
   .s {
     margin: 2rem 0;
 
@@ -71,21 +73,17 @@ $main-color-hover: #c36d00;
         height: inherit;
         text-align: center;
         align-items: center;
-        padding-top: 1rem;
+        padding-top: 1.1rem;
         display: flex;
         flex-direction: column;
         overflow: hidden;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
         img {
-          width: 250px;
-          height: 250px;
+          width: 265px;
+          height: 265px;
           object-fit: cover;
           transition: transform 0.5s ease;
-        }
-
-        img:hover {
-          transform: scale(1.1);
         }
 
         .card-body {
@@ -172,6 +170,8 @@ $main-color-hover: #c36d00;
   }
 
   @media screen and (max-width: 768px) {
+    padding-bottom: 3.5rem;
+  
     .home-cont {
       .swiper {
         align-items: center;
