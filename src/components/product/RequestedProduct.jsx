@@ -130,29 +130,44 @@ const RequestedProduct = () => {
     e.preventDefault();
     setLoadingSubmit(true);
 
-    const existingProduct = requestedProducts.find((product) => product.name === name);
+    // eslint-disable-next-line max-len
+    const existingProduct = requestedProducts.find((product) => product.name.toLowerCase() === name.toLowerCase());
 
-    const productData = {
-      name,
-      request_count: requestCount,
-    };
+    if (existingProduct) {
+      const updatedRequestedProductData = {
+        request_count: existingProduct.request_count + requestCount,
+      };
 
-    // Dispatch the action to add requested products and handle the scroll to the bottom
-    dispatch(addRequestedProducts(productData))
-      .then((action) => {
-        dispatch({
-          type: 'ADD_REQUESTED_PRODUCT/fulfilled',
-          payload: action.payload,
+      dispatch(incrementRequestCount({
+        id: existingProduct.id,
+        updatedRequestedProductData,
+      }))
+        .then(() => {
+          setLoadingSubmit(false);
         });
+    } else {
+      const productData = {
+        name,
+        request_count: requestCount,
+      };
 
-        requestedProductsRef.current?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest',
+      // Dispatch the action to add requested products and handle the scroll to the bottom
+      dispatch(addRequestedProducts(productData))
+        .then((action) => {
+          dispatch({
+            type: 'ADD_REQUESTED_PRODUCT/fulfilled',
+            payload: action.payload,
+          });
+
+          requestedProductsRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest',
+          });
+
+          setLoadingSubmit(false);
         });
-
-        setLoadingSubmit(false);
-      });
+    }
 
     // Clear the input field after submission
     setname('');
