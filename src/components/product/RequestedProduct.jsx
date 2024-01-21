@@ -130,6 +130,8 @@ const RequestedProduct = () => {
     e.preventDefault();
     setLoadingSubmit(true);
 
+    const existingProduct = requestedProducts.find((product) => product.name === name);
+
     const productData = {
       name,
       request_count: requestCount,
