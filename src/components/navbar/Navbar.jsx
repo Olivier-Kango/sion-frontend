@@ -18,6 +18,7 @@ import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
 import { userLogout } from '../../redux/users/users';
 import { resultName, updateSearchResults, setSearchQuery } from '../../redux/products/products';
+import sion from '../../assets/sion-logo.png';
 import './Navbar.scss';
 
 const Navbar = ({ handleLinkClick }) => {
@@ -166,7 +167,7 @@ const Navbar = ({ handleLinkClick }) => {
             <div className={!isMobile ? 'logo' : ''}>
               {!isMobile && (
                 <span>
-                  Sion
+                  <img src={sion} alt="sion" className="sion-logo" />
                 </span>
               )}
             </div>
