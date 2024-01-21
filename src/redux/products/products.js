@@ -85,8 +85,6 @@ const initialState = {
   showLeftBar: false,
   products: [
     {
-      id: 36, name: 'Fer à béton bar de 12', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242850/images_40_karc3v.jpg', unit_price: '6.5', quantity: 30, category: 'Hardware Store', unit_purchase_price: '6.37', created_at: '2023-09-09T07:01:04.588Z', updated_at: '2023-10-09T13:52:14.790Z', subcategory: 'Building',
-    }, {
       id: 39, name: 'Fer à béton bar de 6 ptf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694243012/images_42_dx9xtt.jpg', unit_price: '2.0', quantity: 30, category: 'Hardware Store', unit_purchase_price: '1.3', created_at: '2023-09-09T07:03:36.161Z', updated_at: '2023-10-09T13:52:44.972Z', subcategory: 'Building',
     }, {
       id: 171, name: 'Lampe 40W', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696861116/images_99_aufmlw.jpg', unit_price: '3.5', quantity: 2, category: 'Hardware Store', unit_purchase_price: '3.0', created_at: '2023-10-09T14:19:26.979Z', updated_at: '2023-10-09T14:20:46.271Z', subcategory: 'Electrical',
@@ -267,7 +265,7 @@ const initialState = {
     }, {
       id: 97, name: 'Cheville 12', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615813/cheville_zzzeht.jpg', unit_price: '2.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '1.5', created_at: '2023-09-13T14:36:58.703Z', updated_at: '2023-10-09T14:21:03.754Z', subcategory: 'Electrical',
     }, {
-      id: 98, name: 'Chevilles 6 \u0026 8', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615862/cheville_nhkfsp.jpg', unit_price: '1.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '1.0', created_at: '2023-09-13T14:37:51.319Z', updated_at: '2023-10-09T14:21:20.485Z', subcategory: 'Electrical',
+      id: 98, name: 'Chevilles 6 \\u0026 8', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615862/cheville_nhkfsp.jpg', unit_price: '1.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '1.0', created_at: '2023-09-13T14:37:51.319Z', updated_at: '2023-10-09T14:21:20.485Z', subcategory: 'Electrical',
     }, {
       id: 126, name: 'Prise Songrui', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695027949/prise_songrui_ncyxtb.jpg', unit_price: '0.8', quantity: 10, category: 'Hardware Store', unit_purchase_price: '0.45', created_at: '2023-09-18T09:06:11.366Z', updated_at: '2023-10-09T14:21:51.530Z', subcategory: 'Electrical',
     }, {
@@ -316,6 +314,20 @@ const initialState = {
       id: 173, name: 'Teflon 1/2"', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1698315470/images_-_2023-10-26T121739.908_xpcwwc.jpg', unit_price: '0.4', quantity: 30, category: 'Hardware Store', unit_purchase_price: '0.16', created_at: '2023-10-26T10:17:57.766Z', updated_at: '2023-10-26T10:18:24.861Z', subcategory: 'Plumbing',
     }, {
       id: 174, name: 'Charnière 4"', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1698315615/images_-_2023-10-26T121954.095_eaahx0.jpg', unit_price: '1.0', quantity: 12, category: 'Hardware Store', unit_purchase_price: '0.33', created_at: '2023-10-26T10:21:01.699Z', updated_at: '2023-10-26T10:21:01.699Z', subcategory: 'Building',
+    }, {
+      id: 1, name: 'Marteau', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1702349774/marteau_zuuqwc.jpg', unit_price: '4.0', quantity: 2, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-12-12T02:56:22.267Z', updated_at: '2023-12-12T02:56:22.267Z', subcategory: 'Tools',
+    }, {
+      id: 2, name: 'Sifon de sol', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1702349869/siphon-de-sol-polypropylene-gris_uszrcq.jpg', unit_price: '3.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.5', created_at: '2023-12-12T02:57:53.783Z', updated_at: '2023-12-12T02:57:53.783Z', subcategory: 'Plumbing',
+    }, {
+      id: 3, name: "Niveau d'eau", image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1702426866/niveau-d-eau-magnetique-45cm_jk1vur.png', unit_price: '3.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.5', created_at: '2023-12-13T00:21:43.105Z', updated_at: '2023-12-13T00:21:43.105Z', subcategory: 'Tools',
+    }, {
+      id: 4, name: 'Robinet évier', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1702427092/robinet-mitigeur-eviervasque-sureleve-chrome-basic_isyaoa.jpg', unit_price: '10.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '8.5', created_at: '2023-12-13T00:25:32.466Z', updated_at: '2023-12-13T00:25:32.466Z', subcategory: 'Plumbing',
+    }, {
+      id: 5, name: 'Robinet 1/2"', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1702427344/download_qkcwgs.jpg', unit_price: '5.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '4.5', created_at: '2023-12-13T00:30:53.103Z', updated_at: '2023-12-13T00:30:53.103Z', subcategory: 'Plumbing',
+    }, {
+      id: 6, name: 'Gaz 6Kg', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1705605784/n202205251515420188906_o34nvo.webp', unit_price: '10.0', quantity: 2, category: 'Gas Energy', unit_purchase_price: '9.5', created_at: '2024-01-18T19:24:28.098Z', updated_at: '2024-01-18T19:24:28.098Z', subcategory: 'Gas Energy',
+    }, {
+      id: 7, name: 'Gaz 12Kg', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1705605881/Total-Gas-12kg-Cylinder-Gas_ghcq4m.webp', unit_price: '20.0', quantity: 2, category: 'Gas Energy', unit_purchase_price: '19.0', created_at: '2024-01-18T19:25:10.202Z', updated_at: '2024-01-18T19:25:10.202Z', subcategory: 'Gas Energy',
     },
   ],
 };
