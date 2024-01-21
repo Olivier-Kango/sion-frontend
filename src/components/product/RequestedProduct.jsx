@@ -47,6 +47,7 @@ const RequestedProduct = () => {
   const [loading, setLoading] = useState(true);
   // State for loading status of the form submission
   const [loadingSubmit, setLoadingSubmit] = useState(false);
+  const [popupVisibleTimer, setPopupVisibleTimer] = useState(null);
 
   // Memoize the sorted and mapped requested products
   const sortedAndMappedProducts = useMemo(() => (requestedProducts
@@ -81,6 +82,14 @@ const RequestedProduct = () => {
   // Toggle the visibility of the popup for a specific product
   const handleTogglePopup = (productId) => {
     setOpenPopupId((prevId) => (prevId === productId ? null : productId));
+
+    clearTimeout(popupVisibleTimer);
+
+    const timerId = setTimeout(() => {
+      setOpenPopupId(null);
+    }, 2500);
+
+    setPopupVisibleTimer(timerId);
   };
 
   // Increment the request count for a specific product
