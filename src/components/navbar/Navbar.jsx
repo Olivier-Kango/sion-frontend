@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FiLogOut } from 'react-icons/fi';
 import {
   Link,
-  useNavigate,
   useParams,
   useLocation,
 } from 'react-router-dom';
@@ -23,7 +22,6 @@ import './Navbar.scss';
 
 const Navbar = ({ handleLinkClick }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const usern = useSelector((state) => state.user.data?.name);
   const products = useSelector((state) => state.products.products);
@@ -50,7 +48,6 @@ const Navbar = ({ handleLinkClick }) => {
 
   const handleLogout = () => {
     dispatch(userLogout());
-    navigate('/login-page');
   };
 
   const handlePopupClick = (e) => {
