@@ -90,13 +90,14 @@ $main-color-hover: #c36d00;
 
         .card-body {
           width: 100%;
-          background: blue;
 
           h2 {
             color: black;
             border-bottom: 4px dotted #ddd;
             padding-bottom: 10px;
-            background: red;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
           }
 
           div {
@@ -104,7 +105,6 @@ $main-color-hover: #c36d00;
               color: rgba(0, 0, 0, 0.443);
               padding-bottom: 0;
               margin-bottom: 0;
-              background: chocolate;
             }
 
             h2:hover {
@@ -142,7 +142,6 @@ $main-color-hover: #c36d00;
               margin-top: -14px;
               margin-bottom: 12px;
               padding: 0 2.5rem;
-              background: green;
 
               .trash,
               .pencil {
