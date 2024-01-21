@@ -157,13 +157,12 @@ $main-color-hover: #c36d00;
               .trash:active,
               .pencil:active {
                 color: black !important;
-                border: 30px;
+                border: none;
               }
 
               .trash:hover,
               .pencil:hover {
                 color: black !important;
-                height: 30px;
               }
             }
           }
