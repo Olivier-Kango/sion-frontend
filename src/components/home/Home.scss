@@ -66,24 +66,22 @@ $main-color-hover: #c36d00;
       }
 
       .swiper-slide {
-        width: 300px !important;
+        width: 300px;
+        background: white;
         height: inherit;
         text-align: center;
         align-items: center;
-        border-radius: 1.5rem;
         padding-top: 1rem;
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
         img {
           width: 250px;
           height: 250px;
-          border-radius: 5%;
-          border: 1px solid #ddd;
           object-fit: cover;
           transition: transform 0.5s ease;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         img:hover {
