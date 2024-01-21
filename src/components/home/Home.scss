@@ -147,6 +147,14 @@ $main-color-hover: #c36d00;
                 background-color: transparent !important;
               }
 
+              .trash:focus,
+              .pencil:focus,
+              .trash:active,
+              .pencil:active {
+                color: black !important;
+                border: none;
+              }
+
               .trash:hover,
               .pencil:hover {
                 color: black !important;
