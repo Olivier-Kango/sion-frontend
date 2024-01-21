@@ -1,7 +1,7 @@
 $main-color: #f08804;
 
 .splash-section {
-  background: url('../assets/pss-bg.jpg');
+  background: url('../assets/sion-bg.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 100vh;
@@ -11,7 +11,7 @@ $main-color: #f08804;
   }
 
   @media screen and (max-width: 768px) {
-    background: url('../assets/pss-bg-phone.jpg');
+    background: url('../assets/sion-bg-phone.jpg');
     background-size: 100% 100%;
 
     .splash-container {
@@ -20,7 +20,7 @@ $main-color: #f08804;
   }
 
   @media screen and (max-width: 479px) {
-    background: url('../assets/pss-bg-phone-small.jpg');
+    background: url('../assets/sion-bg-phone-small.jpg');
     background-size: 100% 100%;
   }
 }
