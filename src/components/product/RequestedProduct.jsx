@@ -211,7 +211,7 @@ const RequestedProduct = () => {
   // Render the component
   return (
     <div className="container-requested">
-      {user.role === 'admin' ? (
+      {user.role !== 'admin' ? (
         <>
           {/* Title */}
           <h1 className="title">Requested Products</h1>

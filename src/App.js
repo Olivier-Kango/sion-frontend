@@ -53,7 +53,7 @@ const App = () => {
             (
               <PrivateRoutes
                 redirectPath="/"
-                isAllowed={!!user.loggedIn && user.data.role === 'admin'}
+                isAllowed={!!user.loggedIn && user.data.role !== 'admin'}
               >
                 <section className="page-container">
                   <LeftBar isAuthenticated={!!user.loggedIn} />
@@ -70,7 +70,7 @@ const App = () => {
             (
               <PrivateRoutes
                 redirectPath="/"
-                isAllowed={!!user.loggedIn && user.data.role === 'admin'}
+                isAllowed={!!user.loggedIn && user.data.role !== 'admin'}
               >
                 <section className="page-container">
                   <LeftBar isAuthenticated={!!user.loggedIn} />
