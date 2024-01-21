@@ -122,7 +122,7 @@ const Home = () => {
                         &nbsp;$ (USD)
                       </p>
                       <br />
-                      {user.role === 'admin' ? (
+                      {user.role !== 'admin' ? (
                         <div className="pencil-trash">
                           <Link to={`/modify-product/${product.id}`}>
                             <button

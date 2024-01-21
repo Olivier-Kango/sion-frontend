@@ -217,7 +217,7 @@ const LeftBar = (props) => {
                 <span className="text">My Orders</span>
               </div>
             </Link>
-            {userState.data.role === 'admin' && (
+            {userState.data.role !== 'admin' && (
             <Link
               to="/addproduct"
               style={{ textDecoration: 'none' }}

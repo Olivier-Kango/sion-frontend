@@ -85,7 +85,7 @@ const Management = () => {
 
   return (
     <div className="project-management">
-      {user.role === 'admin' ? (
+      {user.role !== 'admin' ? (
         <div className="management">
           <h2 className="table-title">Product Information</h2>
           <div className="filter-input">
