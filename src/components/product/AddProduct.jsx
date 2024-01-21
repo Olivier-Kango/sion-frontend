@@ -108,7 +108,7 @@ const AddProduct = () => {
                 required
                 onChange={(e) => {
                   if (e.target.value >= 0) {
-                    setUnitPurchasePrice(e.target.value);
+                    setUnitPurchasePrice(e.target.value.slice(0, 7));
                   }
                 }}
                 placeholder="Enter Unit Purchase Price"
@@ -123,7 +123,7 @@ const AddProduct = () => {
                 required
                 onChange={(e) => {
                   if (e.target.value >= 0) {
-                    setUnitPrice(e.target.value);
+                    setUnitPrice(e.target.value.slice(0, 7));
                   }
                 }}
                 placeholder="Enter Unit Price"
@@ -138,7 +138,7 @@ const AddProduct = () => {
                 required
                 onChange={(e) => {
                   if (e.target.value >= 0) {
-                    setquantity(e.target.value);
+                    setquantity(e.target.value.slice(0, 7));
                   }
                 }}
                 placeholder="Enter Quantity"
