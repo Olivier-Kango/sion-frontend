@@ -45,13 +45,12 @@ $main-color-hover: #c36d00;
 
     .swiper {
       display: flex;
-      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      align-items: center;
       margin: 1rem auto;
-      width: 100%;
-      padding: 1rem 0;
       text-align: center;
-      margin-top: 4rem;
-      margin-bottom: 3rem;
 
       .swiper-scrollbar {
         display: none;
@@ -59,7 +58,6 @@ $main-color-hover: #c36d00;
 
       span {
         display: block;
-        color: red;
         width: 100%;
         text-align: center;
         align-self: center;
@@ -81,7 +79,7 @@ $main-color-hover: #c36d00;
         img {
           width: 250px;
           height: 250px;
-          border-radius: 50%;
+          border-radius: 5%;
           border: 1px solid #ddd;
           object-fit: cover;
           transition: transform 0.5s ease;
@@ -165,7 +163,6 @@ $main-color-hover: #c36d00;
   @media screen and (max-width: 768px) {
     .home-cont {
       .swiper {
-        flex-direction: column !important;
         align-items: center;
         gap: 1rem;
 
