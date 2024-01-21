@@ -87,7 +87,7 @@ const RequestedProduct = () => {
 
     const timerId = setTimeout(() => {
       setOpenPopupId(null);
-    }, 2500);
+    }, 3000);
 
     setPopupVisibleTimer(timerId);
   };
