@@ -98,14 +98,7 @@ const AddProduct = () => {
           <h2>Add Product</h2>
           <form onSubmit={handleSubmit} className="add-order-form">
             <div className="add-order-form-group">
-              <input
-                type="text"
-                id="name"
-                value={name}
-                required
-                onChange={(e) => setname(e.target.value.slice(0, 15))}
-                placeholder="Enter product's Name"
-              />
+              <input type="text" id="name" value={name} required onChange={(e) => setname(e.target.value)} placeholder="Enter product's Name" />
             </div>
             <div className="add-order-form-group">
               <input
@@ -115,7 +108,7 @@ const AddProduct = () => {
                 required
                 onChange={(e) => {
                   if (e.target.value >= 0) {
-                    setUnitPurchasePrice(e.target.value.slice(0, 10));
+                    setUnitPurchasePrice(e.target.value);
                   }
                 }}
                 placeholder="Enter Unit Purchase Price"
@@ -130,7 +123,7 @@ const AddProduct = () => {
                 required
                 onChange={(e) => {
                   if (e.target.value >= 0) {
-                    setUnitPrice(e.target.value.slice(0, 10));
+                    setUnitPrice(e.target.value);
                   }
                 }}
                 placeholder="Enter Unit Price"
@@ -145,7 +138,7 @@ const AddProduct = () => {
                 required
                 onChange={(e) => {
                   if (e.target.value >= 0) {
-                    setquantity(e.target.value.slice(0, 10));
+                    setquantity(e.target.value);
                   }
                 }}
                 placeholder="Enter Quantity"
