@@ -47,6 +47,7 @@ const RequestedProduct = () => {
   const [loading, setLoading] = useState(true);
   // State for loading status of the form submission
   const [loadingSubmit, setLoadingSubmit] = useState(false);
+  const [popupVisibleTimer, setPopupVisibleTimer] = useState(null);
 
   // Memoize the sorted and mapped requested products
   const sortedAndMappedProducts = useMemo(() => (requestedProducts
@@ -81,6 +82,14 @@ const RequestedProduct = () => {
   // Toggle the visibility of the popup for a specific product
   const handleTogglePopup = (productId) => {
     setOpenPopupId((prevId) => (prevId === productId ? null : productId));
+
+    clearTimeout(popupVisibleTimer);
+
+    const timerId = setTimeout(() => {
+      setOpenPopupId(null);
+    }, 3000);
+
+    setPopupVisibleTimer(timerId);
   };
 
   // Increment the request count for a specific product
@@ -130,27 +139,44 @@ const RequestedProduct = () => {
     e.preventDefault();
     setLoadingSubmit(true);
 
-    const productData = {
-      name,
-      request_count: requestCount,
-    };
+    // eslint-disable-next-line max-len
+    const existingProduct = requestedProducts.find((product) => product.name.toLowerCase() === name.toLowerCase());
 
-    // Dispatch the action to add requested products and handle the scroll to the bottom
-    dispatch(addRequestedProducts(productData))
-      .then((action) => {
-        dispatch({
-          type: 'ADD_REQUESTED_PRODUCT/fulfilled',
-          payload: action.payload,
+    if (existingProduct) {
+      const updatedRequestedProductData = {
+        request_count: existingProduct.request_count + requestCount,
+      };
+
+      dispatch(incrementRequestCount({
+        id: existingProduct.id,
+        updatedRequestedProductData,
+      }))
+        .then(() => {
+          setLoadingSubmit(false);
         });
+    } else {
+      const productData = {
+        name,
+        request_count: requestCount,
+      };
 
-        requestedProductsRef.current?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-          inline: 'nearest',
+      // Dispatch the action to add requested products and handle the scroll to the bottom
+      dispatch(addRequestedProducts(productData))
+        .then((action) => {
+          dispatch({
+            type: 'ADD_REQUESTED_PRODUCT/fulfilled',
+            payload: action.payload,
+          });
+
+          requestedProductsRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest',
+          });
+
+          setLoadingSubmit(false);
         });
-
-        setLoadingSubmit(false);
-      });
+    }
 
     // Clear the input field after submission
     setname('');
@@ -184,7 +210,7 @@ const RequestedProduct = () => {
 
   // Render the component
   return (
-    <div className="container">
+    <div className="container-requested">
       {user.role === 'admin' ? (
         <>
           {/* Title */}
@@ -192,7 +218,7 @@ const RequestedProduct = () => {
 
           {loading && (
             <div className="loading-container">
-              <GridLoader color="#0a66c2" className="loading-icon" />
+              <GridLoader color="#f08804" className="loading-icon" />
               <p className="loading-message slide-in-out">Loading...</p>
             </div>
           )}
@@ -208,7 +234,7 @@ const RequestedProduct = () => {
                   <span>{product.name}</span>
 
                   {/* Popup for reset and delete options */}
-                  <div className="popup" style={{ visibility: openPopupId === product.id ? 'visible' : 'hidden' }}>
+                  <div className={`popup ${openPopupId === product.id ? 'visible' : 'hidden'}`}>
                     <svg aria-hidden="true" height="12" viewBox="0 0 25 12" width="25" className="x10l6tqk xng853d xu8u0ou" fill="white" style={{ transform: 'scale(1, -1) translate(0px, 0px) rotateY(180deg)' }}>
                       <path d="M24.553.103c-2.791.32-5.922 1.53-7.78 3.455l-9.62 7.023c-2.45 2.54-5.78 1.645-5.78-2.487V2.085C1.373 1.191.846.422.1.102h24.453z" />
                     </svg>
@@ -291,7 +317,7 @@ const RequestedProduct = () => {
                 <BiLoaderAlt
                   className="loading-icon"
                   style={{
-                    color: '#0a66c2',
+                    color: '#f08804',
                     animation: 'spin 1s linear infinite',
                     width: '1.5rem',
                     height: '1.5rem',

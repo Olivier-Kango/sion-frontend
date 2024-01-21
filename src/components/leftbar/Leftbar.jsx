@@ -27,6 +27,7 @@ import {
   arrowDirection,
   subarrowDirection,
 } from '../../redux/products/products';
+import sion from '../../assets/sion-logo.png';
 import './Leftbar.scss';
 
 const LeftBar = (props) => {
@@ -128,7 +129,7 @@ const LeftBar = (props) => {
             >
               <div className="logo-pop">
                 <span>
-                  Sion
+                  <img src={sion} alt="sion" className="sion-logo" />
                 </span>
               </div>
             </Link>
@@ -248,7 +249,7 @@ const LeftBar = (props) => {
             >
               <div className="logo-pop">
                 <span>
-                  Sion
+                  <img src={sion} alt="sion" className="sion-logo" />
                 </span>
               </div>
             </Link>

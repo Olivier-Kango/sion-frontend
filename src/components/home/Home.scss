@@ -1,7 +1,9 @@
-$main-color: #0a66c2;
-$main-color-hover: #094a80;
+$main-color: #f08804;
+$main-color-hover: #c36d00;
 
 .container {
+  padding-bottom: 1rem;
+
   .s {
     margin: 2rem 0;
 
@@ -45,13 +47,12 @@ $main-color-hover: #094a80;
 
     .swiper {
       display: flex;
-      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      align-items: center;
       margin: 1rem auto;
-      width: 100%;
-      padding: 1rem 0;
       text-align: center;
-      margin-top: 4rem;
-      margin-bottom: 3rem;
 
       .swiper-scrollbar {
         display: none;
@@ -59,7 +60,6 @@ $main-color-hover: #094a80;
 
       span {
         display: block;
-        color: red;
         width: 100%;
         text-align: center;
         align-self: center;
@@ -68,43 +68,41 @@ $main-color-hover: #094a80;
       }
 
       .swiper-slide {
-        width: 300px !important;
+        width: 300px;
+        background: white;
         height: inherit;
         text-align: center;
         align-items: center;
-        border-radius: 1.5rem;
-        padding-top: 1rem;
+        padding-top: 1.1rem;
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
         img {
-          width: 250px;
-          height: 250px;
-          border-radius: 50%;
-          border: 1px solid #ddd;
+          width: 265px;
+          height: 265px;
           object-fit: cover;
           transition: transform 0.5s ease;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        img:hover {
-          transform: scale(1.1);
         }
 
         .card-body {
-          width: 240px;
+          width: 100%;
 
           h2 {
             color: black;
             border-bottom: 4px dotted #ddd;
             padding-bottom: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
           }
 
           div {
             p {
               color: rgba(0, 0, 0, 0.443);
-              padding-bottom: 0 !important;
+              padding-bottom: 0;
+              margin-bottom: 0;
             }
 
             h2:hover {
@@ -139,8 +137,9 @@ $main-color-hover: #094a80;
             .pencil-trash {
               display: flex !important;
               justify-content: space-between;
-              margin-bottom: 5px;
-              padding: 0;
+              margin-top: -14px;
+              margin-bottom: 12px;
+              padding: 0 2.5rem;
 
               .trash,
               .pencil {
@@ -149,6 +148,14 @@ $main-color-hover: #094a80;
                 padding: 0;
                 color: rgba(0, 0, 0, 0.443) !important;
                 background-color: transparent !important;
+              }
+
+              .trash:focus,
+              .pencil:focus,
+              .trash:active,
+              .pencil:active {
+                color: black !important;
+                border: none;
               }
 
               .trash:hover,
@@ -163,9 +170,10 @@ $main-color-hover: #094a80;
   }
 
   @media screen and (max-width: 768px) {
+    padding-bottom: 3.5rem;
+
     .home-cont {
       .swiper {
-        flex-direction: column !important;
         align-items: center;
         gap: 1rem;
 

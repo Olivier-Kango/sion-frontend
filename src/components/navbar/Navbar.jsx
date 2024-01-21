@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FiLogOut } from 'react-icons/fi';
 import {
   Link,
-  useNavigate,
   useParams,
   useLocation,
 } from 'react-router-dom';
@@ -19,11 +18,11 @@ import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
 import { userLogout } from '../../redux/users/users';
 import { resultName, updateSearchResults, setSearchQuery } from '../../redux/products/products';
+import sion from '../../assets/sion-logo.png';
 import './Navbar.scss';
 
 const Navbar = ({ handleLinkClick }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const usern = useSelector((state) => state.user.data?.name);
   const products = useSelector((state) => state.products.products);
@@ -50,7 +49,6 @@ const Navbar = ({ handleLinkClick }) => {
 
   const handleLogout = () => {
     dispatch(userLogout());
-    navigate('/login-page');
   };
 
   const handlePopupClick = (e) => {
@@ -169,7 +167,7 @@ const Navbar = ({ handleLinkClick }) => {
             <div className={!isMobile ? 'logo' : ''}>
               {!isMobile && (
                 <span>
-                  Sion
+                  <img src={sion} alt="sion" className="sion-logo" />
                 </span>
               )}
             </div>

@@ -1,5 +1,5 @@
-$main-color: #0a66c2;
-$main-color-hover: #094a80;
+$main-color: #f08804;
+$main-color-hover: #c36d00;
 $gray: #e4e6eb;
 
 .product-details {
@@ -12,10 +12,12 @@ $gray: #e4e6eb;
 
   h1 {
     color: black;
-    text-align: center;
+    text-align: left !important;
     margin: 10px 0;
     font-size: 26px;
     font-weight: 500;
+    overflow: hidden;
+    word-wrap: break-word;
   }
 
   .button-container {

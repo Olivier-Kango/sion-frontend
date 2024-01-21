@@ -1,4 +1,4 @@
-$main-color: #0a66c2;
+$main-color: #f08804;
 $breakpoints: (1050px, 1000px, 950px, 900px, 850px, 800px);
 $widths: (300px, 250px, 200px, 150px, 120px, 100px);
 
@@ -21,6 +21,10 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
     gap: 10px;
 
     .navbar-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       .logo {
         font-size: 24px;
         color: $main-color;
@@ -190,6 +194,10 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
         }
       }
     }
+  }
+
+  .sion-logo {
+    width: 50px;
   }
 
   @media screen and (max-width: 768px) {

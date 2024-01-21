@@ -1,5 +1,5 @@
-$main-color: #0a66c2;
-$main-color-hover: #094a80;
+$main-color: #f08804;
+$main-color-hover: #c36d00;
 
 .add-order-container {
   display: flex;
@@ -78,6 +78,16 @@ $main-color-hover: #094a80;
         }
       }
 
+      // Styling for autofilled input fields
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+
+        // Applying an inset box shadow to indicate autofilled fields
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+      }
+
       select {
         padding: 10px;
         border: none;
@@ -99,7 +109,7 @@ $main-color-hover: #094a80;
       gap: 5px;
       padding: 10px 20px;
       margin: 5px 0;
-      background-color: #cce0ff65;
+      background-color: #f08a0413;
       color: $main-color;
       border: none;
       border-radius: 5px;

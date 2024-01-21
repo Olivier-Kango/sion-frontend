@@ -1,5 +1,5 @@
-$main-color: #0a66c2;
-$main-color-hover: #094a80;
+$main-color: #f08804;
+$main-color-hover: #c36d00;
 $accent-color: #e44d26;
 
 $container-margin-bottom: 7.5rem;
@@ -17,11 +17,12 @@ $ellipsis-hover-color: #f0f0f0;
   }
 }
 
-.container {
+.container-requested {
   margin-bottom: $container-margin-bottom;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   .title {
     margin-bottom: 1rem;
@@ -127,6 +128,20 @@ $ellipsis-hover-color: #f0f0f0;
         right: 26px;
         transform: translateX(-50%);
         z-index: 3;
+        visibility: hidden;
+        transition: visibility 0s, transform 0.3s ease, opacity 0.3s ease;
+
+        &.visible {
+          visibility: visible;
+          transform: translateX(-50%) scale(1);
+          opacity: 1;
+        }
+
+        &.hidden {
+          visibility: hidden;
+          transform: translateX(-50%) scale(0);
+          opacity: 0;
+        }
 
         svg {
           border: none;
