@@ -52,6 +52,7 @@ const LeftBar = (props) => {
   } = props;
 
   const handleAddProductClick = () => {
+    navigate('/addproduct');
     dispatch(setSelectedCategory(''));
     dispatch(setSelectedSubcategory(''));
     dispatch(arrowDirection('down'));
@@ -217,18 +218,22 @@ const LeftBar = (props) => {
                 <span className="text">My Orders</span>
               </div>
             </Link>
-            {userState.data.role !== 'admin' && (
+            {userState.loggedIn && (
             <Link
               to="/addproduct"
               style={{ textDecoration: 'none' }}
               onClick={(e) => {
-                if (!userState.loggedIn || userState.data.role !== 'admin') {
-                  e.preventDefault();
-                }
+                // if (!userState.loggedIn || userState.data.role === 'admin') {
+                e.preventDefault();
+                // }
                 handleAddProductClick();
               }}
             >
-              <div className={pathname === '/addproduct' ? 'active' : 'item'}>
+              {/* eslint-disable-next-line max-len */}
+              {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+              <div
+                className={pathname === '/addproduct' ? 'active' : 'item'}
+              >
                 <span className="icon"><AiFillPlusCircle /></span>
                 <span className="text">Add Product</span>
               </div>
