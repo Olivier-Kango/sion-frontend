@@ -32,9 +32,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 PSS-DIGITAL <a name="about-project"></a>
+# 📖 Sion <a name="about-project"></a>
 
-**PSS-Digital** is a proven digital solution that makes online shopping easy, convenient, and enjoyable for customers. The application also helps other businesses maximize their customer base through e-commerce. With PSS Digital, we help you achieve success while also supporting you in efficient business management.
+**Sion** is a proven digital solution that makes online shopping easy, convenient, and enjoyable for customers. The application also helps other businesses maximize their customer base through e-commerce. With Sion, we help you achieve success while also supporting you in efficient business management.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -80,11 +80,11 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://pss-digital.netlify.app/)
+- [Live Demo Link](https://sion-digital.vercel.app/)
 
 ### Backend <a name="backend"></a>
 
-- [Backend repository](https://github.com/Olivier-Kango/pss-digital-backend)
+- [Backend repository](https://github.com/Olivier-Kango/sion-backend)
 
 ### 💻 Getting Started <a name="getting-started"></a>
 
@@ -105,7 +105,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/Olivier-Kango/pss-digital-frontend.git
+  git clone https://github.com/Olivier-Kango/sion-frontend.git
 ```
 
 ### Install
@@ -113,7 +113,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd pss-digital-frontend # Change directory into project folder
+  cd sion-frontend # Change directory into project folder
   npm install # Installs project dependencies
 ```
 
@@ -185,7 +185,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Olivier-Kango/pss-digital-frontend/issues/new).
+Feel free to check the [issues page](https://github.com/Olivier-Kango/sion-frontend/issues/new).
 
 <!-- SUPPORT -->
 
