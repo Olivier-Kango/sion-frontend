@@ -35,7 +35,7 @@ const StockMovements = () => {
     navigate('/login-page');
   };
 
-  if (user.role !== 'admin') {
+  if (user.role === 'admin') {
     return (
       <div className="warning">
         <h1>Accessing Stock Movement</h1>

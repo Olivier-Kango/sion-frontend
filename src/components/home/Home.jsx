@@ -17,7 +17,7 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
-  const user = useSelector((state) => state.user.data);
+  // const user = useSelector((state) => state.user.data);
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const { category, subcategory } = useParams();
 
@@ -122,32 +122,32 @@ const Home = () => {
                         &nbsp;$ (USD)
                       </p>
                       <br />
-                      {user.role !== 'admin' ? (
-                        <div className="pencil-trash">
-                          <Link to={`/modify-product/${product.id}`}>
-                            <button
-                              type="button"
-                              className="button pencil"
-                              style={{ color: 'black' }}
-                            >
-                              <BiPencil className="bi-icon" />
-                            </button>
-                          </Link>
-                          <br />
+                      {/* {user.role === 'admin' ? ( */}
+                      <div className="pencil-trash">
+                        <Link to={`/modify-product/${product.id}`}>
                           <button
                             type="button"
-                            className="button trash"
+                            className="button pencil"
                             style={{ color: 'black' }}
-                            onClick={() => {
-                              handleDelete(product.id);
-                            }}
                           >
-                            <BiTrash className="bi-icon" />
+                            <BiPencil className="bi-icon" />
                           </button>
-                        </div>
-                      ) : (
-                        ''
-                      )}
+                        </Link>
+                        <br />
+                        <button
+                          type="button"
+                          className="button trash"
+                          style={{ color: 'black' }}
+                          onClick={() => {
+                            handleDelete(product.id);
+                          }}
+                        >
+                          <BiTrash className="bi-icon" />
+                        </button>
+                      </div>
+                      {/* // ) : (
+                      //   ''
+                      // )} */}
                       <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
                         <Button
                           state="default"
