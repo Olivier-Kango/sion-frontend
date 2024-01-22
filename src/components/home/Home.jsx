@@ -122,32 +122,32 @@ const Home = () => {
                         &nbsp;$ (USD)
                       </p>
                       <br />
-                      {/* {user.role === 'admin' ? ( */}
-                      <div className="pencil-trash">
-                        <Link to={`/modify-product/${product.id}`}>
+                      {isAuthenticated ? (
+                        <div className="pencil-trash">
+                          <Link to={`/modify-product/${product.id}`}>
+                            <button
+                              type="button"
+                              className="button pencil"
+                              style={{ color: 'black' }}
+                            >
+                              <BiPencil className="bi-icon" />
+                            </button>
+                          </Link>
+                          <br />
                           <button
                             type="button"
-                            className="button pencil"
+                            className="button trash"
                             style={{ color: 'black' }}
+                            onClick={() => {
+                              handleDelete(product.id);
+                            }}
                           >
-                            <BiPencil className="bi-icon" />
+                            <BiTrash className="bi-icon" />
                           </button>
-                        </Link>
-                        <br />
-                        <button
-                          type="button"
-                          className="button trash"
-                          style={{ color: 'black' }}
-                          onClick={() => {
-                            handleDelete(product.id);
-                          }}
-                        >
-                          <BiTrash className="bi-icon" />
-                        </button>
-                      </div>
-                      {/* // ) : (
-                      //   ''
-                      // )} */}
+                        </div>
+                      ) : (
+                        ''
+                      )}
                       <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
                         <Button
                           state="default"
