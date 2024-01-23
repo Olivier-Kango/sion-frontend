@@ -51,15 +51,15 @@ const App = () => {
           path="/addproduct"
           element={
             (
-              // <PrivateRoutes
-              //   redirectPath="/"
-              //   // isAllowed={!!user.loggedIn && user.data.role === 'admin'}
-              // >
-              <section className="page-container">
-                <LeftBar isAuthenticated={!!user.loggedIn} />
-                <AddProduct />
-              </section>
-              // </PrivateRoutes>
+              <PrivateRoutes
+                redirectPath="/"
+                isAllowed={!!user.loggedIn && user.data.role === 'admin'}
+              >
+                <section className="page-container">
+                  <LeftBar isAuthenticated={!!user.loggedIn} />
+                  <AddProduct />
+                </section>
+              </PrivateRoutes>
             )
           }
         />
