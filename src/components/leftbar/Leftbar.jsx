@@ -218,7 +218,7 @@ const LeftBar = (props) => {
                 <span className="text">My Orders</span>
               </div>
             </Link>
-            {userState.loggedIn && (
+            {userState.data.role === 'admin' && (
             <Link
               to="/addproduct"
               style={{ textDecoration: 'none' }}
