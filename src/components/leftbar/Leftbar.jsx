@@ -223,14 +223,12 @@ const LeftBar = (props) => {
               to="/addproduct"
               style={{ textDecoration: 'none' }}
               onClick={(e) => {
-                // if (!userState.loggedIn || userState.data.role === 'admin') {
-                e.preventDefault();
-                // }
+                if (!userState.loggedIn || userState.data.role === 'admin') {
+                  e.preventDefault();
+                }
                 handleAddProductClick();
               }}
             >
-              {/* eslint-disable-next-line max-len */}
-              {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
               <div
                 className={pathname === '/addproduct' ? 'active' : 'item'}
               >
