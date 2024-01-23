@@ -51,15 +51,15 @@ const App = () => {
           path="/addproduct"
           element={
             (
-              // <PrivateRoutes
-              //   redirectPath="/"
-              //   // isAllowed={!!user.loggedIn && user.data.role === 'admin'}
-              // >
-              <section className="page-container">
-                <LeftBar isAuthenticated={!!user.loggedIn} />
-                <AddProduct />
-              </section>
-              // </PrivateRoutes>
+              <PrivateRoutes
+                redirectPath="/"
+                isAllowed={!!user.loggedIn && user.data.role === 'admin'}
+              >
+                <section className="page-container">
+                  <LeftBar isAuthenticated={!!user.loggedIn} />
+                  <AddProduct />
+                </section>
+              </PrivateRoutes>
             )
           }
         />
@@ -68,15 +68,15 @@ const App = () => {
           path="/modify-product/:id"
           element={
             (
-              // <PrivateRoutes
-              //   redirectPath="/"
-              //   // isAllowed={!!user.loggedIn && user.data.role === 'admin'}
-              // >
-              <section className="page-container">
-                <LeftBar isAuthenticated={!!user.loggedIn} />
-                <ModifyProduct />
-              </section>
-              // </PrivateRoutes>
+              <PrivateRoutes
+                redirectPath="/"
+                isAllowed={!!user.loggedIn && user.data.role === 'admin'}
+              >
+                <section className="page-container">
+                  <LeftBar isAuthenticated={!!user.loggedIn} />
+                  <ModifyProduct />
+                </section>
+              </PrivateRoutes>
             )
           }
         />

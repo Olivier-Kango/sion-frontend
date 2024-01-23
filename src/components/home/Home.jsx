@@ -17,7 +17,7 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
-  // const user = useSelector((state) => state.user.data);
+  const user = useSelector((state) => state.user.data);
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const { category, subcategory } = useParams();
 
@@ -122,7 +122,7 @@ const Home = () => {
                         &nbsp;$ (USD)
                       </p>
                       <br />
-                      {isAuthenticated ? (
+                      {user.role === 'admin' ? (
                         <div className="pencil-trash">
                           <Link to={`/modify-product/${product.id}`}>
                             <button
