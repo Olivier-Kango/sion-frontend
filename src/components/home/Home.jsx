@@ -108,13 +108,13 @@ const Home = () => {
                   className="swiper-slide"
                 >
                   <Link to={`/productdetails/${product.id}`}>
-                    <h2>{product.name}</h2>
-                  </Link>
-                  <Link to={`/productdetails/${product.id}`}>
                     <img src={product.image} alt={product.name} />
                   </Link>
 
                   <div className="card-body">
+                    <Link to={`/productdetails/${product.id}`}>
+                      <h2>{product.name}</h2>
+                    </Link>
                     <div>
                       <p>
                         Price:&nbsp;
