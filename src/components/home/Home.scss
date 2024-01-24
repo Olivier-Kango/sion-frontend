@@ -73,11 +73,19 @@ $main-color-hover: #c36d00;
         height: inherit;
         text-align: center;
         align-items: center;
-        padding-top: 1.1rem;
+        padding-top: 0.8rem;
         display: flex;
         flex-direction: column;
         overflow: hidden;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        h2 {
+          color: black;
+          padding-bottom: 10px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
 
         img {
           width: 265px;
@@ -88,15 +96,6 @@ $main-color-hover: #c36d00;
 
         .card-body {
           width: 100%;
-
-          h2 {
-            color: black;
-            border-bottom: 4px dotted #ddd;
-            padding-bottom: 10px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          }
 
           div {
             p {
