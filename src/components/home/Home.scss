@@ -73,7 +73,7 @@ $main-color-hover: #c36d00;
         height: inherit;
         text-align: center;
         align-items: center;
-        padding-top: 1.1rem;
+        padding-top: 0.8rem;
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -81,6 +81,7 @@ $main-color-hover: #c36d00;
 
         h2 {
           color: black;
+          align-self: flex-start;
           padding-bottom: 10px;
           overflow: hidden;
           white-space: nowrap;
