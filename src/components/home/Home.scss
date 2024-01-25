@@ -115,25 +115,6 @@ $main-color-hover: #c36d00;
               align-items: center;
             }
 
-            .add-cart {
-              display: inline-block;
-              cursor: pointer;
-              color: $main-color;
-              background-color: #edeef0 !important;
-              text-decoration: none;
-              width: 100px !important;
-              padding: 8px 20px;
-              border-radius: 4px;
-              margin: 0.3rem 10px;
-              font-size: 14px;
-              font-weight: 500;
-              transition: background-color 0.3s ease;
-            }
-
-            .add-cart:hover {
-              background-color: #d8dae0 !important;
-            }
-
             .pencil-trash {
               display: flex !important;
               justify-content: space-between;
@@ -162,6 +143,26 @@ $main-color-hover: #c36d00;
               .pencil:hover {
                 color: black !important;
               }
+
+              .add-cart {
+                // display: inline-block;
+                cursor: pointer;
+                color: white;
+                background-color: $main-color;
+                text-decoration: none;
+                width: 100px;
+                padding: 8px 20px;
+                border-radius: 4px;
+                margin: 0.3rem 10px;
+                font-size: 0.75rem;
+                font-weight: 500;
+                transition: background-color 0.3s ease;
+              }
+  
+              .add-cart:hover {
+                background-color: #d8dae0 !important;
+              }
+  
             }
           }
         }

@@ -5,7 +5,6 @@ import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiPencil, BiTrash } from 'react-icons/bi';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
-import Button from '../forms/Button/Button';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -148,11 +147,11 @@ const Home = () => {
                       ) : (
                         ''
                       )}
-                      <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
-                        <button type="button" className="button add-cart">ADD TO CART</button>
-                      </Link>
                     </div>
                   </div>
+                  <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
+                    <button type="button" className="add-cart">ADD TO CART</button>
+                  </Link>
                 </div>
               ))
             )}
