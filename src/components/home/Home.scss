@@ -101,6 +101,7 @@ $main-color-hover: #c36d00;
 
           div {
             padding: 0 !important;
+
             p {
               color: rgba(0, 0, 0, 0.443);
               text-align: left;
@@ -148,11 +149,11 @@ $main-color-hover: #c36d00;
               .trash:hover,
               .pencil:hover {
                 color: black !important;
-              }  
+              }
             }
           }
         }
-                          
+
         .add-cart {
           display: inline-block;
           cursor: pointer;
@@ -165,8 +166,8 @@ $main-color-hover: #c36d00;
           margin-bottom: 10px;
           font-size: 0.75rem;
           font-weight: 500;
-          transition: background-color 0.3s ease, box-shadow 0.3s ease;;
-          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2)
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
         }
 
         .add-cart:hover {

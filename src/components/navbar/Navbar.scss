@@ -101,7 +101,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
     .navbar-link.actived {
       color: black;
     }
-    
+
     .cart-link {
       // display: flex;
       // flex-direction: column;
@@ -117,7 +117,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
         width: 2rem;
         height: 2rem;
       }
-      
+
       .cart-text {
         position: absolute;
         top: 0;
@@ -135,7 +135,6 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
         color: white;
       }
     }
-
 
     // Profile
     .header-profile {
@@ -169,7 +168,7 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
         .popup {
           position: fixed;
           top: 54px !important;
-          right: 24px;
+          right: 395px;
           width: 150px;
           height: 10%;
           background-color: white;
