@@ -95,6 +95,16 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
 
       .cart-text {
         background: $main-color;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        height: 14px;
+        width: 14px;
+        // padding: 2px 4px;
+        font-weight: 700;
+        border-radius: 50%;
+        color: white;
       }
 
       &:hover {
