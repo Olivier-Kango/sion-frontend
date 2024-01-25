@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FiLogOut } from 'react-icons/fi';
-import { IoCartOutline } from 'react-icons/io5';
+import { MdOutlineShoppingCart } from 'react-icons/md';
 import {
   Link,
   useParams,
@@ -188,34 +188,6 @@ const Navbar = ({ handleLinkClick }) => {
         </div>
       </div>
       <div className="navbar-links">
-        <Link to="/" onClick={handlePortfolioClick}>
-          <div className="navbar-link">
-            <FontAwesomeIcon icon={faFolderOpen} className="nav-icon" />
-            <span className="text">Portfolio</span>
-          </div>
-        </Link>
-        <Link
-          to="/"
-          onClick={(event) => {
-            handleLinkClick(event, '');
-          }}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              setPopupOpen(!isPopupOpen);
-            }
-          }}
-        >
-          <div className={`navbar-link ${isManagement ? '' : 'actived'}`}>
-            <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
-            <span className="text">E-commerce</span>
-          </div>
-        </Link>
-        <Link to="/management">
-          <div className={`navbar-link ${isManagement ? 'actived' : ''}`}>
-            <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
-            <span className="text">Management</span>
-          </div>
-        </Link>
         <div className="header-profile">
           {isAuthenticated ? (
             <div
@@ -268,8 +240,36 @@ const Navbar = ({ handleLinkClick }) => {
             </Link>
           )}
         </div>
-        <div className={`navbar-link ${isManagement ? '' : 'actived'}`}>
-          <IoCartOutline className="nav-icon" />
+        <Link to="/" onClick={handlePortfolioClick}>
+          <div className="navbar-link">
+            <FontAwesomeIcon icon={faFolderOpen} className="nav-icon" />
+            <span className="text">Portfolio</span>
+          </div>
+        </Link>
+        <Link
+          to="/"
+          onClick={(event) => {
+            handleLinkClick(event, '');
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              setPopupOpen(!isPopupOpen);
+            }
+          }}
+        >
+          <div className={`navbar-link ${isManagement ? '' : 'actived'}`}>
+            <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
+            <span className="text">E-commerce</span>
+          </div>
+        </Link>
+        <Link to="/management">
+          <div className={`navbar-link ${isManagement ? 'actived' : ''}`}>
+            <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
+            <span className="text">Management</span>
+          </div>
+        </Link>
+        <div className={`cart-link ${isManagement ? '' : 'actived'}`}>
+          <MdOutlineShoppingCart className="cart-icon" />
           <span className="text cart-text">0</span>
         </div>
       </div>

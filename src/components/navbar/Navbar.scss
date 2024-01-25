@@ -93,20 +93,6 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
         padding: 0 !important;
       }
 
-      .cart-text {
-        background: $main-color;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        height: 14px;
-        width: 14px;
-        // padding: 2px 4px;
-        font-weight: 700;
-        border-radius: 50%;
-        color: white;
-      }
-
       &:hover {
         color: black;
       }
@@ -115,6 +101,41 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
     .navbar-link.actived {
       color: black;
     }
+    
+    .cart-link {
+      // display: flex;
+      // flex-direction: column;
+      // flex: 1 1 auto;
+      position: relative;
+      // width: 100px;
+      align-items: center;
+      margin-right: 20px;
+      color: #626262;
+      cursor: pointer;
+
+      .cart-icon {
+        width: 2rem;
+        height: 2rem;
+      }
+      
+      .cart-text {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $main-color;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        height: 14px;
+        width: 14px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        border-radius: 50%;
+        color: white;
+      }
+    }
+
 
     // Profile
     .header-profile {
