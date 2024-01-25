@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { addOrder } from '../../redux/actions/OrderActions';
+import { addOrder, allOrders } from '../../redux/actions/OrderActions';
 import './Ordering.scss';
 
 const AddOrder = () => {
@@ -14,9 +14,36 @@ const AddOrder = () => {
 
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
-  const [deliveryPoint, setDeliveryPoint] = useState('');
+  const [deliveryPoint, setDeliveryPoint] = useState('Goma');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+
+  // UseEffect to get user's location when the component mounts
+  useEffect(() => {
+    const getUserLocation = () => {
+      // if (navigator.geolocation) {
+      //   navigator.geolocation.getCurrentPosition(
+      //     (position) => {
+      //       const { latitude, longitude } = position.coords;
+      //       // Use latitude and longitude to get a meaningful address or set it directly
+      //       setDeliveryPoint(`Latitude: ${latitude}, Longitude: ${longitude}`);
+      //     },
+      //     (error) => {
+      //       console.error(error.message);
+      //       // Handle error or set a default location
+      //       setDeliveryPoint('Goma');
+      //     },
+      //   );
+      // } else {
+      //   console.error('Geolocation is not supported by this browser.');
+      //   // Handle no geolocation support or set a default location
+      //   setDeliveryPoint('Goma');
+      // }
+      setDeliveryPoint('Goma');
+    };
+
+    getUserLocation();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,6 +62,7 @@ const AddOrder = () => {
 
     if (response && response.id) {
       setIsSubmitted(true);
+      dispatch(allOrders());
     }
     setQuantity('');
     setDeliveryPoint('');

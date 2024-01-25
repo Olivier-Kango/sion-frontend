@@ -36,7 +36,6 @@ $main-color-hover: #c36d00;
     .title-bar {
       color: rgba(0, 0, 0, 0.306);
       font-weight: 500;
-      border-bottom: 4px dotted #ddd;
       padding-bottom: 10px;
       text-align: center;
 
@@ -49,9 +48,9 @@ $main-color-hover: #c36d00;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.2rem;
+      gap: 0.5rem;
       align-items: center;
-      margin: 1rem auto;
+      margin: 0 -0.5rem;
       text-align: center;
 
       .swiper-scrollbar {
@@ -68,40 +67,47 @@ $main-color-hover: #c36d00;
       }
 
       .swiper-slide {
-        width: 300px;
+        width: 183px;
         background: white;
         height: inherit;
         text-align: center;
         align-items: center;
-        padding-top: 0.8rem;
         display: flex;
         flex-direction: column;
+        border-radius: 5px;
         overflow: hidden;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
         img {
-          width: 265px;
-          height: 265px;
+          width: 183px;
+          height: 183px;
           object-fit: cover;
           transition: transform 0.5s ease;
         }
 
         .card-body {
+          padding: 0 0.5rem;
           width: 100%;
 
           h2 {
             color: black;
-            padding-bottom: 10px;
+            // padding-bottom: 5px;
+            text-align: left;
+            font-size: 1rem;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
           }
 
           div {
+            padding: 0 !important;
+
             p {
               color: rgba(0, 0, 0, 0.443);
-              padding-bottom: 0;
-              margin-bottom: 0;
+              text-align: left;
+              font-size: 0.75rem;
+              padding: 0;
+              margin: 5px 0 0 0;
             }
 
             h2:hover {
@@ -114,37 +120,20 @@ $main-color-hover: #c36d00;
               align-items: center;
             }
 
-            .homeButton {
-              display: inline-block;
-              cursor: pointer;
-              color: $main-color;
-              background-color: #edeef0;
-              text-decoration: none;
-              width: 100px !important;
-              padding: 8px 20px;
-              border-radius: 4px;
-              margin: 0.3rem 10px;
-              font-size: 14px;
-              font-weight: 500;
-              transition: background-color 0.3s ease;
-            }
-
-            .homeButton:hover {
-              background-color: #d8dae0 !important;
-            }
-
             .pencil-trash {
-              display: flex !important;
+              display: flex;
               justify-content: space-between;
               margin-top: -14px;
               margin-bottom: 12px;
-              padding: 0 2.5rem;
+              padding: 0.1rem;
 
               .trash,
               .pencil {
-                width: 24px !important;
-                font-size: 24px !important;
-                padding: 0;
+                width: 16px !important;
+                height: 16px !important;
+                font-size: 16px !important;
+                padding: 0 !important;
+                margin: 0 !important;
                 color: rgba(0, 0, 0, 0.443) !important;
                 background-color: transparent !important;
               }
@@ -164,6 +153,26 @@ $main-color-hover: #c36d00;
             }
           }
         }
+
+        .add-cart {
+          display: inline-block;
+          cursor: pointer;
+          color: white;
+          background-color: $main-color;
+          text-decoration: none;
+          width: 163px;
+          padding: 8px 16px;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          font-size: 0.75rem;
+          font-weight: 500;
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .add-cart:hover {
+          background-color: darken($main-color, 5%) !important;
+        }
       }
     }
   }
@@ -174,7 +183,6 @@ $main-color-hover: #c36d00;
     .home-cont {
       .swiper {
         align-items: center;
-        gap: 1rem;
 
         .swiper-slide {
           height: auto !important;

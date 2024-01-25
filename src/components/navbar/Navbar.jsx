@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FiLogOut } from 'react-icons/fi';
+import { MdOutlineShoppingCart } from 'react-icons/md';
 import {
   Link,
   useParams,
@@ -17,7 +18,11 @@ import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
 import { userLogout } from '../../redux/users/users';
-import { resultName, updateSearchResults, setSearchQuery } from '../../redux/products/products';
+import {
+  resultName,
+  updateSearchResults,
+  setSearchQuery,
+} from '../../redux/products/products';
 import sion from '../../assets/sion-logo.png';
 import './Navbar.scss';
 
@@ -36,9 +41,22 @@ const Navbar = ({ handleLinkClick }) => {
   const selectedCategoryFromRedux = useSelector((state) => state.products.selectedCategory);
   const selectedSubcategoryFromRedux = useSelector((state) => state.products.selectedSubcategory);
   const location = useLocation();
+  const orderData = useSelector((state) => state.orders);
+  const { orders } = orderData;
 
   // State for search
   const [searchResults, setSearchResults] = useState([]);
+  const [localOrders, setLocalOrders] = useState([]);
+  const [numOrders, setNumOrders] = useState(0);
+  const userOrders = localOrders.filter((order) => order.user_id === user.data?.id);
+
+  useEffect(() => {
+    setLocalOrders(orders[0] || []);
+  }, [orders]);
+
+  useEffect(() => {
+    setNumOrders(userOrders.length);
+  }, [userOrders]);
 
   const selectedCategory = category?.split('-')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -187,34 +205,6 @@ const Navbar = ({ handleLinkClick }) => {
         </div>
       </div>
       <div className="navbar-links">
-        <Link to="/" onClick={handlePortfolioClick}>
-          <div className="navbar-link">
-            <FontAwesomeIcon icon={faFolderOpen} className="nav-icon" />
-            <span className="text">Portfolio</span>
-          </div>
-        </Link>
-        <Link
-          to="/"
-          onClick={(event) => {
-            handleLinkClick(event, '');
-          }}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              setPopupOpen(!isPopupOpen);
-            }
-          }}
-        >
-          <div className={`navbar-link ${isManagement ? '' : 'actived'}`}>
-            <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
-            <span className="text">E-commerce</span>
-          </div>
-        </Link>
-        <Link to="/management">
-          <div className={`navbar-link ${isManagement ? 'actived' : ''}`}>
-            <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
-            <span className="text">Management</span>
-          </div>
-        </Link>
         <div className="header-profile">
           {isAuthenticated ? (
             <div
@@ -267,6 +257,40 @@ const Navbar = ({ handleLinkClick }) => {
             </Link>
           )}
         </div>
+        <Link to="/" onClick={handlePortfolioClick}>
+          <div className="navbar-link">
+            <FontAwesomeIcon icon={faFolderOpen} className="nav-icon" />
+            <span className="text">Portfolio</span>
+          </div>
+        </Link>
+        <Link
+          to="/"
+          onClick={(event) => {
+            handleLinkClick(event, '');
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              setPopupOpen(!isPopupOpen);
+            }
+          }}
+        >
+          <div className={`navbar-link ${isManagement ? '' : 'actived'}`}>
+            <FontAwesomeIcon icon={faShoppingCart} className="nav-icon" />
+            <span className="text">E-commerce</span>
+          </div>
+        </Link>
+        <Link to="/management">
+          <div className={`navbar-link ${isManagement ? 'actived' : ''}`}>
+            <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
+            <span className="text">Management</span>
+          </div>
+        </Link>
+        <Link to="ordering">
+          <div className={`cart-link ${isManagement ? '' : 'actived'}`}>
+            <MdOutlineShoppingCart className="cart-icon" />
+            <span className="text cart-text">{numOrders}</span>
+          </div>
+        </Link>
       </div>
     </div>
   );
