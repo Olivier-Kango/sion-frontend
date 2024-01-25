@@ -215,7 +215,7 @@ const LeftBar = (props) => {
             <Link to="/ordering" style={{ textDecoration: 'none' }} onClick={(event) => handleLinkClick(event, 'ordering')}>
               <div className={(pathname === '/ordering') ? 'active' : 'item'}>
                 <span className="icon"><FaShoppingCart /></span>
-                <span className="text">My Orders</span>
+                <span className="text">Cart</span>
               </div>
             </Link>
             {userState.data.role === 'admin' && (
