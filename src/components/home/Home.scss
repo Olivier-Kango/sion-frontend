@@ -89,12 +89,10 @@ $main-color-hover: #c36d00;
         .card-body {
           padding: 0 0.5rem;
           width: 100%;
-          background: red;
 
           h2 {
             color: black;
             // padding-bottom: 5px;
-            background: blue;
             text-align: left;
             font-size: 1rem;
             overflow: hidden;
@@ -103,15 +101,13 @@ $main-color-hover: #c36d00;
           }
 
           div {
-            background: green;
             padding: 0 !important;
             p {
               color: rgba(0, 0, 0, 0.443);
               text-align: left;
               font-size: 0.75rem;
-              background: yellow;
               padding: 0;
-              margin-bottom: 0;
+              margin: 5px 0 0 0;
             }
 
             h2:hover {
