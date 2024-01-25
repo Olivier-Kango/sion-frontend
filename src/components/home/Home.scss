@@ -68,7 +68,7 @@ $main-color-hover: #c36d00;
       }
 
       .swiper-slide {
-        width: 300px;
+        width: 170px;
         background: white;
         height: inherit;
         text-align: center;
@@ -80,8 +80,8 @@ $main-color-hover: #c36d00;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
         img {
-          width: 265px;
-          height: 265px;
+          width: 140px;
+          height: 140px;
           object-fit: cover;
           transition: transform 0.5s ease;
         }
