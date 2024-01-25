@@ -37,6 +37,8 @@ const Navbar = ({ handleLinkClick }) => {
   const selectedCategoryFromRedux = useSelector((state) => state.products.selectedCategory);
   const selectedSubcategoryFromRedux = useSelector((state) => state.products.selectedSubcategory);
   const location = useLocation();
+  const orderData = useSelector((state) => state.orders);
+  const { orders } = orderData;
 
   // State for search
   const [searchResults, setSearchResults] = useState([]);
@@ -268,10 +270,12 @@ const Navbar = ({ handleLinkClick }) => {
             <span className="text">Management</span>
           </div>
         </Link>
-        <div className={`cart-link ${isManagement ? '' : 'actived'}`}>
-          <MdOutlineShoppingCart className="cart-icon" />
-          <span className="text cart-text">0</span>
-        </div>
+        <Link to="ordering">
+          <div className={`cart-link ${isManagement ? '' : 'actived'}`}>
+            <MdOutlineShoppingCart className="cart-icon" />
+            <span className="text cart-text">0</span>
+          </div>
+        </Link>
       </div>
     </div>
   );
