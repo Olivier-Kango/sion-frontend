@@ -116,7 +116,7 @@ const Home = () => {
                     </Link>
                     <div>
                       <p>
-                        Price:&nbsp;
+                        {/* Price:&nbsp; */}
                         {product.unit_price}
                         &nbsp;$ (USD)
                       </p>
