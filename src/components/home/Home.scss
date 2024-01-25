@@ -164,12 +164,11 @@ $main-color-hover: #c36d00;
           font-size: 0.75rem;
           font-weight: 500;
           transition: background-color 0.3s ease, box-shadow 0.3s ease;;
-          box-shadow: 0 4px 8px rgba(207, 207, 207, 0.1);
+          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2)
         }
 
         .add-cart:hover {
-          background-color: darken($main-color, 10%) !important;
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2)
+          background-color: darken($main-color, 5%) !important;
         }
       }
     }
