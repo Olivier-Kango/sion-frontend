@@ -23,7 +23,6 @@ import {
   updateSearchResults,
   setSearchQuery,
 } from '../../redux/products/products';
-import { allOrders } from '../../redux/actions/OrderActions';
 import sion from '../../assets/sion-logo.png';
 import './Navbar.scss';
 
@@ -50,10 +49,6 @@ const Navbar = ({ handleLinkClick }) => {
   const [localOrders, setLocalOrders] = useState([]);
   const [numOrders, setNumOrders] = useState(0);
   const userOrders = localOrders.filter((order) => order.user_id === user.data?.id);
-
-  useEffect(() => {
-    dispatch(allOrders());
-  }, []);
 
   useEffect(() => {
     setLocalOrders(orders[0] || []);

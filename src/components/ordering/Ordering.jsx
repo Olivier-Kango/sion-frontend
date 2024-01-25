@@ -52,7 +52,10 @@ const Ordering = () => {
   }
 
   const handleDelete = (id) => {
-    dispatch(deleteOrder(id));
+    dispatch(deleteOrder(id))
+      .then((action) => {
+        dispatch(allOrders());
+      });
     setLocalOrders(localOrders.filter((order) => order.id !== id));
   };
 
