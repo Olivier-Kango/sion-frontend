@@ -75,7 +75,7 @@ $main-color-hover: #c36d00;
         align-items: center;
         display: flex;
         flex-direction: column;
-        border-radius: 7px;
+        border-radius: 5px;
         overflow: hidden;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -89,10 +89,8 @@ $main-color-hover: #c36d00;
         .card-body {
           padding: 0 0.5rem;
           width: 100%;
-          background: green;
 
           h2 {
-            background: red;
             color: black;
             // padding-bottom: 5px;
             font-size: 1rem;
@@ -107,7 +105,6 @@ $main-color-hover: #c36d00;
               font-size: 0.75rem;
               padding-bottom: 0;
               margin-bottom: 0;
-              background: blue;
             }
 
             h2:hover {
@@ -123,20 +120,19 @@ $main-color-hover: #c36d00;
             .pencil-trash {
               display: flex;
               justify-content: space-between;
-              // margin-top: -14px;
-              // margin-bottom: 12px;
-              padding: 0rem;
-              background: red;
+              margin-top: -14px;
+              margin-bottom: 12px;
+              padding: 0.1rem;
 
               .trash,
               .pencil {
                 width: 16px !important;
+                height: 16px !important;
                 font-size: 16px !important;
-                padding: 0;
-                margin: 0;
+                padding: 0 !important;
+                margin: 0 !important;
                 color: rgba(0, 0, 0, 0.443) !important;
                 background-color: transparent !important;
-                background: yellow;
               }
 
               .trash:focus,
@@ -161,17 +157,19 @@ $main-color-hover: #c36d00;
           color: white;
           background-color: $main-color;
           text-decoration: none;
-          width: 100px;
-          // padding: 8px 20px;
+          width: 163px;
+          padding: 8px 16px;
           border-radius: 4px;
-          margin: 0 10px;
+          margin-bottom: 10px;
           font-size: 0.75rem;
           font-weight: 500;
-          transition: background-color 0.3s ease;
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;;
+          box-shadow: 0 4px 8px rgba(207, 207, 207, 0.1);
         }
 
         .add-cart:hover {
-          background-color: #d8dae0 !important;
+          background-color: darken($main-color, 10%) !important;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2)
         }
       }
     }
