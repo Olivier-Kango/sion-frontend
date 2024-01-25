@@ -119,7 +119,7 @@ $main-color-hover: #c36d00;
               display: inline-block;
               cursor: pointer;
               color: $main-color;
-              background-color: #edeef0;
+              background-color: #edeef0 !important;
               text-decoration: none;
               width: 100px !important;
               padding: 8px 20px;

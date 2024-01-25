@@ -149,15 +149,7 @@ const Home = () => {
                         ''
                       )}
                       <Link to={isAuthenticated ? `/addorder/${product.id}` : '/login-page'}>
-                        <Button
-                          state="default"
-                          text="Order"
-                          showIcon={false}
-                          showText
-                          size="medium" // medium | large | small | icon
-                          variant="primary" // 'primary' | 'secondary' | 'subtle' | text
-                          className="button add-cart"
-                        />
+                        <button type="button" className="button add-cart">ADD TO CART</button>
                       </Link>
                     </div>
                   </div>
