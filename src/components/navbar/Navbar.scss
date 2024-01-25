@@ -93,6 +93,10 @@ $widths: (300px, 250px, 200px, 150px, 120px, 100px);
         padding: 0 !important;
       }
 
+      .cart-text {
+        background: $main-color;
+      }
+
       &:hover {
         color: black;
       }

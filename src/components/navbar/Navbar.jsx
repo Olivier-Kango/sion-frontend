@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FiLogOut } from 'react-icons/fi';
+import { IoCartOutline } from 'react-icons/io5';
 import {
   Link,
   useParams,
@@ -266,6 +267,10 @@ const Navbar = ({ handleLinkClick }) => {
               </div>
             </Link>
           )}
+        </div>
+        <div className={`navbar-link ${isManagement ? '' : 'actived'}`}>
+          <IoCartOutline className="nav-icon" />
+          <span className="text cart-text">0</span>
         </div>
       </div>
     </div>
