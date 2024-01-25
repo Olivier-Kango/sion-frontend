@@ -18,7 +18,12 @@ import { useMediaQuery } from '@mui/material';
 import PropTypes from 'prop-types';
 import profilePic from '../../assets/profile-pic.jpeg';
 import { userLogout } from '../../redux/users/users';
-import { resultName, updateSearchResults, setSearchQuery } from '../../redux/products/products';
+import {
+  resultName,
+  updateSearchResults,
+  setSearchQuery,
+} from '../../redux/products/products';
+import { allOrders } from '../../redux/actions/OrderActions';
 import sion from '../../assets/sion-logo.png';
 import './Navbar.scss';
 
@@ -42,6 +47,21 @@ const Navbar = ({ handleLinkClick }) => {
 
   // State for search
   const [searchResults, setSearchResults] = useState([]);
+  const [localOrders, setLocalOrders] = useState([]);
+  const [numOrders, setNumOrders] = useState(0);
+  const userOrders = localOrders.filter((order) => order.user_id === user.data?.id);
+
+  useEffect(() => {
+    dispatch(allOrders());
+  }, []);
+
+  useEffect(() => {
+    setLocalOrders(orders[0] || []);
+  }, [orders]);
+
+  useEffect(() => {
+    setNumOrders(userOrders.length);
+  }, [userOrders]);
 
   const selectedCategory = category?.split('-')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -273,7 +293,7 @@ const Navbar = ({ handleLinkClick }) => {
         <Link to="ordering">
           <div className={`cart-link ${isManagement ? '' : 'actived'}`}>
             <MdOutlineShoppingCart className="cart-icon" />
-            <span className="text cart-text">0</span>
+            <span className="text cart-text">{numOrders}</span>
           </div>
         </Link>
       </div>

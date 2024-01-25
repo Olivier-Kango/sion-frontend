@@ -68,7 +68,7 @@ const Ordering = () => {
           // eslint-disable-next-line max-len
           const product = Array.isArray(products) ? products.find((product) => product?.id === order.product_id) : null;
           const total_amount = total + (product?.unit_price * order.quantity);
-          return total_amount || 0;
+          return parseFloat(total_amount.toFixed(2)) || 0;
         }, 0)}
         {' '}
         $

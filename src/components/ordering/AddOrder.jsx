@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { addOrder } from '../../redux/actions/OrderActions';
+import { addOrder, allOrders } from '../../redux/actions/OrderActions';
 import './Ordering.scss';
 
 const AddOrder = () => {
@@ -35,6 +35,7 @@ const AddOrder = () => {
 
     if (response && response.id) {
       setIsSubmitted(true);
+      dispatch(allOrders());
     }
     setQuantity('');
     setDeliveryPoint('');
