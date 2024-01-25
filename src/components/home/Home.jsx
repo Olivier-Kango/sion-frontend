@@ -156,7 +156,7 @@ const Home = () => {
                           showText
                           size="medium" // medium | large | small | icon
                           variant="primary" // 'primary' | 'secondary' | 'subtle' | text
-                          className="button"
+                          className="button add-cart"
                         />
                       </Link>
                     </div>

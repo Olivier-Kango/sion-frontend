@@ -49,7 +49,7 @@ $main-color-hover: #c36d00;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0;
+      gap: 0.5rem;
       align-items: center;
       margin: 0 -0.5rem;
       text-align: center;
@@ -100,6 +100,7 @@ $main-color-hover: #c36d00;
           div {
             p {
               color: rgba(0, 0, 0, 0.443);
+              font-size: 0.75rem;
               padding-bottom: 0;
               margin-bottom: 0;
             }
@@ -114,7 +115,7 @@ $main-color-hover: #c36d00;
               align-items: center;
             }
 
-            .homeButton {
+            .add-cart {
               display: inline-block;
               cursor: pointer;
               color: $main-color;
@@ -129,7 +130,7 @@ $main-color-hover: #c36d00;
               transition: background-color 0.3s ease;
             }
 
-            .homeButton:hover {
+            .add-cart:hover {
               background-color: #d8dae0 !important;
             }
 
@@ -174,7 +175,6 @@ $main-color-hover: #c36d00;
     .home-cont {
       .swiper {
         align-items: center;
-        gap: 0.5rem;
 
         .swiper-slide {
           height: auto !important;
