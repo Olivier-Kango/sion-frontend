@@ -38,6 +38,7 @@ const RequestedProduct = () => {
   // Redux state for requested products and user
   const requestedProducts = useSelector((state) => state.requestedProducts.requestedProducts);
   const user = useSelector((state) => state.user.data);
+  const filterName = useSelector((state) => state.products.searchQuery);
 
   // local states
   const [openPopupId, setOpenPopupId] = useState(null);
@@ -225,6 +226,7 @@ const RequestedProduct = () => {
           <ul className="product-list">
             {sortedAndMappedProducts
               .filter((product) => !localDeletedProducts.includes(product.id))
+              .filter((product) => product.name.toLowerCase().includes(filterName.toLowerCase()))
               .map((product) => (
                 <li
                   key={product.id}
