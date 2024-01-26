@@ -1,4 +1,4 @@
-$main-color: #0a66c2;
+$main-color: #f08804;
 
 .project-management {
   overflow-x: hidden !important;
@@ -26,6 +26,8 @@ $main-color: #0a66c2;
     font-family: Arial, sans-serif;
     margin: 20px;
     padding-bottom: 45px;
+    overflow: auto;
+    max-height: 100vh;
 
     .filter-input {
       input {
@@ -71,9 +73,12 @@ $main-color: #0a66c2;
     }
 
     .styled-table thead th {
+      position: sticky;
+      top: 0;
       background-color: #f2f2f2;
       color: #333;
       font-weight: bold;
+      z-index: 1;
     }
 
     .styled-table tbody tr:hover {
@@ -81,13 +86,12 @@ $main-color: #0a66c2;
     }
 
     .styled-table img {
-      max-width: 100px;
+      width: 100px;
       height: 100px;
-      padding: 0 5px !important;
     }
 
     .vente {
-      color: red !important;
+      color: black;
     }
   }
 

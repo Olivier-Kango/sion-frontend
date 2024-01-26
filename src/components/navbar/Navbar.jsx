@@ -165,6 +165,7 @@ const Navbar = ({ handleLinkClick }) => {
   );
 
   const isManagement = location.pathname === '/management' || location.pathname === '/requested_products';
+  const isRequested = location.pathname === '/requested_products';
 
   return (
     <div className="navbar">
@@ -201,7 +202,7 @@ const Navbar = ({ handleLinkClick }) => {
             value={searchQuery}
             onChange={handleSearchInputChange}
           />
-          {searchQuery && renderSearchResults(handleResultClick)}
+          {searchQuery && !isRequested && renderSearchResults(handleResultClick)}
         </div>
       </div>
       <div className="navbar-links">

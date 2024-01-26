@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { FaCaretUp, FaCaretDown } from 'react-icons/fa';
 import { userLogout } from '../../redux/users/users';
+import { getAllProducts } from '../../redux/products/products';
 import './Management.scss';
 
 const Management = () => {
@@ -10,9 +11,9 @@ const Management = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.data);
   const products = useSelector((state) => state.products.products);
+  const filterName = useSelector((state) => state.products.searchQuery);
   const [sortOrder, setSortOrder] = useState('asc');
   const [sortName, setSortName] = useState('desc');
-  const [filterName, setFilterName] = useState('');
 
   const sortedProductsByName = [...products].sort((a, b) => {
     if (a.name < b.name) {
@@ -69,10 +70,6 @@ const Management = () => {
     setSortedProducts(sorted);
   };
 
-  const handleFilterNameChange = (event) => {
-    setFilterName(event.target.value);
-  };
-
   useEffect(() => {
     setSortedProducts(sortedProductsByName);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -83,19 +80,15 @@ const Management = () => {
     navigate('/login-page');
   };
 
+  useEffect(() => {
+    dispatch(getAllProducts());
+  }, [dispatch]);
+
   return (
     <div className="project-management">
       {user.role === 'admin' ? (
         <div className="management">
           <h2 className="table-title">Product Information</h2>
-          <div className="filter-input">
-            <input
-              type="text"
-              placeholder="Filter by Name"
-              value={filterName}
-              onChange={handleFilterNameChange}
-            />
-          </div>
           <table className="styled-table">
             <thead>
               <tr>
