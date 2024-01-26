@@ -26,11 +26,11 @@ const Management = () => {
   const [sortedProducts, setSortedProducts] = useState(sortedProductsByName);
 
   const toggleSortOrder = () => {
-    setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc');
+    setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
   };
 
   const toggleSortName = () => {
-    setSortName(sortName === 'asc' ? 'desc' : 'asc');
+    setSortName(sortName === 'desc' ? 'asc' : 'desc');
   };
 
   const handleProfitHeaderClick = () => {
