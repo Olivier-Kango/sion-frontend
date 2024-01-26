@@ -12,7 +12,7 @@ const Management = () => {
   const products = useSelector((state) => state.products.products);
   const [sortOrder, setSortOrder] = useState('asc');
   const [sortName, setSortName] = useState('desc');
-  const [filterName, setFilterName] = useState('');
+  // const [filterName, setFilterName] = useState('');
 
   const sortedProductsByName = [...products].sort((a, b) => {
     if (a.name < b.name) {
@@ -69,9 +69,9 @@ const Management = () => {
     setSortedProducts(sorted);
   };
 
-  const handleFilterNameChange = (event) => {
-    setFilterName(event.target.value);
-  };
+  // const handleFilterNameChange = (event) => {
+  //   setFilterName(event.target.value);
+  // };
 
   useEffect(() => {
     setSortedProducts(sortedProductsByName);
@@ -88,14 +88,14 @@ const Management = () => {
       {user.role === 'admin' ? (
         <div className="management">
           <h2 className="table-title">Product Information</h2>
-          <div className="filter-input">
+          {/* <div className="filter-input">
             <input
               type="text"
               placeholder="Filter by Name"
               value={filterName}
               onChange={handleFilterNameChange}
             />
-          </div>
+          </div> */}
           <table className="styled-table">
             <thead>
               <tr>
