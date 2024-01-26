@@ -219,9 +219,7 @@ const AddProduct = () => {
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
-                  <div className="loading-spinner">
-                    <FaSpinner className="spinner-icon" />
-                  </div>
+                  <FaSpinner className="icon" />
                   <span className="text">Adding...</span>
                 </>
               ) : (
