@@ -17,6 +17,7 @@ const AddProduct = () => {
   const [quantity, setquantity] = useState('');
   const [unitPrice, setUnitPrice] = useState('');
   const [unitPurchasePrice, setUnitPurchasePrice] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const showLeftbar = useSelector((state) => state.products.showLeftBar);
@@ -27,6 +28,8 @@ const AddProduct = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
     const productData = {
       name,
       image: image || null,
@@ -40,6 +43,7 @@ const AddProduct = () => {
     const response = await dispatch(addProduct(productData));
     if (response.type === 'ADD_PRODUCT/fulfilled') {
       setIsSubmitted(true);
+      setIsSubmitting(false);
     }
     setname('');
     setimage(null);
@@ -212,9 +216,18 @@ const AddProduct = () => {
                 </div>
               )}
             </div>
-            <button type="submit">
-              <span className="icon"><BiPlusCircle /></span>
-              <span className="text">Add Product</span>
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <FaSpinner className="icon" />
+                  <span className="text">Adding...</span>
+                </>
+              ) : (
+                <>
+                  <span className="icon"><BiPlusCircle /></span>
+                  <span className="text">Add Product</span>
+                </>
+              )}
             </button>
           </form>
         </>
