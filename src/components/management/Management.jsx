@@ -10,9 +10,9 @@ const Management = () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.data);
   const products = useSelector((state) => state.products.products);
+  const filterName = useSelector((state) => state.products.searchQuery);
   const [sortOrder, setSortOrder] = useState('asc');
   const [sortName, setSortName] = useState('desc');
-  // const [filterName, setFilterName] = useState('');
 
   const sortedProductsByName = [...products].sort((a, b) => {
     if (a.name < b.name) {
@@ -69,10 +69,6 @@ const Management = () => {
     setSortedProducts(sorted);
   };
 
-  // const handleFilterNameChange = (event) => {
-  //   setFilterName(event.target.value);
-  // };
-
   useEffect(() => {
     setSortedProducts(sortedProductsByName);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -88,14 +84,6 @@ const Management = () => {
       {user.role === 'admin' ? (
         <div className="management">
           <h2 className="table-title">Product Information</h2>
-          {/* <div className="filter-input">
-            <input
-              type="text"
-              placeholder="Filter by Name"
-              value={filterName}
-              onChange={handleFilterNameChange}
-            />
-          </div> */}
           <table className="styled-table">
             <thead>
               <tr>
