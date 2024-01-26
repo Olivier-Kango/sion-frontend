@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { FaCaretUp, FaCaretDown } from 'react-icons/fa';
 import { userLogout } from '../../redux/users/users';
+import { getAllProducts } from '../../redux/products/products';
 import './Management.scss';
 
 const Management = () => {
@@ -78,6 +79,10 @@ const Management = () => {
     dispatch(userLogout());
     navigate('/login-page');
   };
+
+  useEffect(() => {
+    dispatch(getAllProducts());
+  }, [dispatch]);
 
   return (
     <div className="project-management">
