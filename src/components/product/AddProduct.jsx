@@ -43,7 +43,6 @@ const AddProduct = () => {
     const response = await dispatch(addProduct(productData));
     if (response.type === 'ADD_PRODUCT/fulfilled') {
       setIsSubmitted(true);
-      setIsSubmitting(false);
     }
     setname('');
     setimage(null);
@@ -52,6 +51,7 @@ const AddProduct = () => {
     setcategory('');
     setsubcategory('');
     setquantity('');
+    setIsSubmitting(false);
   };
 
   const handleContinueShopping = () => {
@@ -219,7 +219,9 @@ const AddProduct = () => {
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
-                  <FaSpinner className="icon" />
+                  <div className="loading-spinner">
+                    <FaSpinner className="spinner-icon" />
+                  </div>
                   <span className="text">Adding...</span>
                 </>
               ) : (
