@@ -22,8 +22,14 @@ $main-color-hover: #c36d00;
     width: 100%;
 
     .pub-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f3c54d;
+      
       .pub-sion {
         margin-bottom: 1rem;
+        width: 65%;
       }
     }
 
