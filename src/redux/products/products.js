@@ -105,13 +105,9 @@ const initialState = {
     }, {
       id: 154, name: 'Cadenas 50mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646652/IMG_20231003_155800_461_n9bsic.jpg', unit_price: '1.4', quantity: 4, category: 'Hardware Store', unit_purchase_price: '0.66', created_at: '2023-10-03T14:41:08.336Z', updated_at: '2023-10-09T14:46:19.656Z', subcategory: 'General',
     }, {
-      id: 165, name: 'Balais gf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696680213/t%C3%A9l%C3%A9chargement_7_o3c2im.jpg', unit_price: '3.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.25', created_at: '2023-10-07T12:04:05.862Z', updated_at: '2023-10-09T14:47:13.675Z', subcategory: 'Cleaning',
-    }, {
       id: 169, name: 'Balais mf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696681213/images_91_vqczex.jpg', unit_price: '2.7', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-10-07T12:20:18.275Z', updated_at: '2023-10-09T14:48:15.674Z', subcategory: 'Cleaning',
     }, {
       id: 38, name: 'Fer à béton bar de 6 gdf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242968/images_42_g3dzax.jpg', unit_price: '2.5', quantity: 30, category: 'Hardware Store', unit_purchase_price: '2.2', created_at: '2023-09-09T07:02:52.476Z', updated_at: '2023-10-12T11:44:43.001Z', subcategory: 'Building',
-    }, {
-      id: 34, name: 'Bache 4MX5M', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242751/71phb8j7NaL._AC_UF1000_1000_QL80__vzfyiz.jpg', unit_price: '4.0', quantity: 5, category: 'Hardware Store', unit_purchase_price: '3.0', created_at: '2023-09-09T06:59:15.859Z', updated_at: '2023-10-12T11:50:01.318Z', subcategory: 'Building',
     }, {
       id: 156, name: 'Cadenas Sky Yan 32mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696427983/images_77_yruclb.jpg', unit_price: '0.8', quantity: 12, category: 'Hardware Store', unit_purchase_price: '0.4', created_at: '2023-10-04T13:59:48.745Z', updated_at: '2023-10-12T12:27:17.050Z', subcategory: 'General',
     }, {
@@ -237,13 +233,9 @@ const initialState = {
     }, {
       id: 109, name: "Boîte d'encastrement", image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694616858/images_3_hwmzvg.jpg', unit_price: '0.6', quantity: 20, category: 'Hardware Store', unit_purchase_price: '0.3', created_at: '2023-09-13T14:54:23.683Z', updated_at: '2023-10-09T14:30:54.132Z', subcategory: 'Electrical',
     }, {
-      id: 117, name: 'Brosse toilette', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695021397/brosse_toilette_ihwt2w.webp', unit_price: '2.5', quantity: 2, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-18T07:19:47.074Z', updated_at: '2023-10-10T19:01:36.146Z', subcategory: 'Cleaning',
-    }, {
       id: 123, name: 'Jeux 7 Tournevis', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695022670/jeux_tournevis_lmfeih.webp', unit_price: '7.0', quantity: 2, category: 'Hardware Store', unit_purchase_price: '5.5', created_at: '2023-09-18T07:38:14.868Z', updated_at: '2023-10-09T14:31:53.932Z', subcategory: 'Electrical',
     }, {
       id: 152, name: 'Cadenas 32mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646609/IMG_20231003_155800_461_phgsrf.jpg', unit_price: '1.0', quantity: 4, category: 'Hardware Store', unit_purchase_price: '0.5', created_at: '2023-10-03T14:39:23.447Z', updated_at: '2023-10-09T14:45:55.855Z', subcategory: 'General',
-    }, {
-      id: 148, name: 'BavChlore (5L)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695917341/Bav_j0ol4q.jpg', unit_price: '3.2', quantity: 2, category: 'Hardware Store', unit_purchase_price: '1.6', created_at: '2023-09-28T16:09:47.818Z', updated_at: '2023-10-10T19:02:15.293Z', subcategory: 'Cleaning',
     }, {
       id: 128, name: 'Fer à béton bar de 10', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695612908/images_41_vt22wb.jpg', unit_price: '5.0', quantity: 30, category: 'Hardware Store', unit_purchase_price: '4.57', created_at: '2023-09-25T03:35:30.134Z', updated_at: '2023-10-12T11:44:11.299Z', subcategory: 'Building',
     }, {
@@ -299,10 +291,6 @@ const initialState = {
     }, {
       id: 138, name: 'Rallonge', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695828099/rallonge_w5uja8.jpg', unit_price: '5.0', quantity: 2, category: 'Hardware Store', unit_purchase_price: '3.5', created_at: '2023-09-27T15:21:48.204Z', updated_at: '2023-10-09T14:32:14.522Z', subcategory: 'Electrical',
     }, {
-      id: 120, name: 'Balais pf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695022258/images_4_vfnqbi.jpg', unit_price: '2.5', quantity: 3, category: 'Hardware Store', unit_purchase_price: '1.6', created_at: '2023-09-18T07:31:08.440Z', updated_at: '2023-10-09T14:35:04.301Z', subcategory: 'Cleaning',
-    }, {
-      id: 119, name: 'Balais en bois', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695021704/balais_planche_k7mzzf.jpg', unit_price: '2.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-09-18T07:22:21.288Z', updated_at: '2023-10-09T14:35:15.794Z', subcategory: 'Cleaning',
-    }, {
       id: 155, name: 'Savon multi-usage (5L)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696346640/PhotoGrid_Site_1696346588231_jaipfo.jpg', unit_price: '3.2', quantity: 10, category: 'Hardware Store', unit_purchase_price: '1.6', created_at: '2023-10-03T15:25:44.426Z', updated_at: '2023-10-09T14:36:37.118Z', subcategory: 'Cleaning',
     }, {
       id: 153, name: 'Cadenas 38mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646636/IMG_20231003_155800_461_wuvev6.jpg', unit_price: '1.2', quantity: 4, category: 'Hardware Store', unit_purchase_price: '0.58', created_at: '2023-10-03T14:40:24.645Z', updated_at: '2023-10-09T14:46:05.538Z', subcategory: 'General',
@@ -323,11 +311,23 @@ const initialState = {
     }, {
       id: 4, name: 'Robinet évier', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1702427092/robinet-mitigeur-eviervasque-sureleve-chrome-basic_isyaoa.jpg', unit_price: '10.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '8.5', created_at: '2023-12-13T00:25:32.466Z', updated_at: '2023-12-13T00:25:32.466Z', subcategory: 'Plumbing',
     }, {
+      id: 148, name: 'BavChlore (5L)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695917341/Bav_j0ol4q.jpg', unit_price: '1.85', quantity: 2, category: 'Hardware Store', unit_purchase_price: '1.5', created_at: '2023-09-28T16:09:47.818Z', updated_at: '2024-01-26T13:53:22.705Z', subcategory: 'Cleaning',
+    }, {
       id: 5, name: 'Robinet 1/2"', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1702427344/download_qkcwgs.jpg', unit_price: '5.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '4.5', created_at: '2023-12-13T00:30:53.103Z', updated_at: '2023-12-13T00:30:53.103Z', subcategory: 'Plumbing',
     }, {
       id: 6, name: 'Gaz 6Kg', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1705605784/n202205251515420188906_o34nvo.webp', unit_price: '10.0', quantity: 2, category: 'Gas Energy', unit_purchase_price: '9.5', created_at: '2024-01-18T19:24:28.098Z', updated_at: '2024-01-18T19:24:28.098Z', subcategory: 'Gas Energy',
     }, {
       id: 7, name: 'Gaz 12Kg', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1705605881/Total-Gas-12kg-Cylinder-Gas_ghcq4m.webp', unit_price: '20.0', quantity: 2, category: 'Gas Energy', unit_purchase_price: '19.0', created_at: '2024-01-18T19:25:10.202Z', updated_at: '2024-01-18T19:25:10.202Z', subcategory: 'Gas Energy',
+    }, {
+      id: 21, name: 'Gloss Thinner', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706046495/basco-thinner-300x300_exld3z.jpg', unit_price: '4.5', quantity: 6, category: 'Hardware Store', unit_purchase_price: '3.58', created_at: '2024-01-23T21:50:19.869Z', updated_at: '2024-01-23T21:50:19.869Z', subcategory: 'Paint',
+    }, {
+      id: 23, name: 'Serrure Renz', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706276639/BN-RENZ-ezgif.com-webp-to-jpg-converter_-_Copy_kbeoh4.jpg', unit_price: '12.0', quantity: 3, category: 'Hardware Store', unit_purchase_price: '7.5', created_at: '2024-01-26T13:44:27.857Z', updated_at: '2024-01-26T13:44:27.857Z', subcategory: 'General',
+    }, {
+      id: 26, name: 'Col tangite 500mg', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706277442/file_6857_712_6861_wt028z.jpg', unit_price: '5.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '4.0', created_at: '2024-01-26T13:58:00.226Z', updated_at: '2024-01-26T13:58:00.226Z', subcategory: 'Plumbing',
+    }, {
+      id: 117, name: 'Brosse toilette', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706277899/477614_1_477614_WH_B_v1_6aba_vphham.webp', unit_price: '2.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '1.25', created_at: '2023-09-18T07:19:47.074Z', updated_at: '2024-01-26T14:07:28.205Z', subcategory: 'Cleaning',
+    }, {
+      id: 22, name: 'Jus Naturel Sion | 5 L', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706047491/159-1593158_juice-wallpaper_t34hfr.jpg', unit_price: '5.0', quantity: 48, category: 'Beverage Store', unit_purchase_price: '3.94', created_at: '2024-01-23T22:00:53.409Z', updated_at: '2024-01-26T14:10:11.815Z', subcategory: 'Beverage Store',
     },
   ],
 };
