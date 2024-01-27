@@ -191,8 +191,15 @@ $main-color-hover: #c36d00;
     padding-bottom: 3.5rem;
 
     .home-cont {
+      .pub-container {
+        .pub-sion {
+          border-radius: 5px;
+        }
+      }
+
       .swiper {
         align-items: center;
+        margin-top: 0;
 
         .swiper-slide {
           height: auto !important;

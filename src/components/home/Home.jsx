@@ -4,7 +4,6 @@ import { RingLoader } from 'react-spinners';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiPencil, BiTrash } from 'react-icons/bi';
-import { useMediaQuery } from '@mui/material';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
 import pubSion from '../../assets/pub-sion.jpg';
 import './Home.scss';
