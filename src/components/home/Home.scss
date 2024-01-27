@@ -22,15 +22,12 @@ $main-color-hover: #c36d00;
     width: 100%;
 
     .pub-container {
+      margin-top: -15px;
       display: flex;
-      margin-bottom: 1rem;
+      width: 105%;
+      margin-bottom: 0.5rem;
       justify-content: center;
       align-items: center;
-
-      .pub-sion {
-        width: 59.5%;
-        border-radius: 10px;
-      }
     }
 
     h1 {
@@ -63,6 +60,7 @@ $main-color-hover: #c36d00;
       gap: 0.5rem;
       align-items: center;
       margin: 0 -0.5rem;
+      margin-top: -200px;
       text-align: center;
 
       .swiper-scrollbar {

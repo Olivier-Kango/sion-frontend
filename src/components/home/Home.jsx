@@ -96,8 +96,6 @@ const Home = () => {
         </div>
       ) : (
         <div className="home-cont">
-          <h1>Our Products</h1>
-          <p className="title-bar">Please select a Product</p>
           <div className="pub-container">
             <img src={pubSion} alt="pubSion" className="pub-sion" />
           </div>
