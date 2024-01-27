@@ -97,6 +97,7 @@ const Home = () => {
         <div className="home-cont">
           <h1>Our Products</h1>
           <p className="title-bar">Please select a Product</p>
+          <>Hello World</>
           <div className="swiper">
             {filteredProducts.length === 0 ? (
               <span>Add Product first!!!</span>
