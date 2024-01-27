@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiPencil, BiTrash } from 'react-icons/bi';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
+import pubSion from '../../assets/pub-sion.png';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -97,7 +98,7 @@ const Home = () => {
         <div className="home-cont">
           <h1>Our Products</h1>
           <p className="title-bar">Please select a Product</p>
-          <>Hello World</>
+          <img src={pubSion} alt="pubSion" />
           <div className="swiper">
             {filteredProducts.length === 0 ? (
               <span>Add Product first!!!</span>
