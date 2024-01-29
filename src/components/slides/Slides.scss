@@ -1,5 +1,14 @@
+$main-color: #f08804;
+$main-color-hover: #c36d00;
+$accent-color: #e44d26;
+
 .slides {
-  // padding-top: 10rem;
-  background: red;
-  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    position: relative;
+  }
 }
