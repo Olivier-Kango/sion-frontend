@@ -1,5 +1,7 @@
 import React from 'react';
 import HeroSlider, { Slide, MenuNav } from 'hero-slider';
+import sion from '../../assets/pub-sion.jpg';
+import elec from '../../assets/elec.jpg';
 // import HeroSlider, { Overlay, Slide, MenuNav } from 'hero-slider';
 // import Wrapper from './components/Wrapper';
 // import Title from './components/Title';
@@ -8,23 +10,23 @@ import HeroSlider, { Slide, MenuNav } from 'hero-slider';
 // importation of the styling from Requested Products
 import './Slides.scss';
 
-const bogliasco = 'https://i.imgur.com/Gu5Cznz.jpg';
+// const bogliasco = 'https://i.imgur.com/Gu5Cznz.jpg';
 const countyClare = 'https://i.imgur.com/idjXzVQ.jpg';
 const craterRock = 'https://i.imgur.com/8DYumaY.jpg';
-const giauPass = 'https://i.imgur.com/8IuucQZ.jpg';
+// const giauPass = 'https://i.imgur.com/8IuucQZ.jpg';
 
 // Functional component for managing requested products
 const Slides = () => (
   <HeroSlider
-    height="100vh"
+    // height="100vh"
     autoplay
     // initialSlide={1}
-    // animation="fade"
+    animation="left_to_right"
     // navigation={{ show: false }}
     controller={{
       initialSlide: 1,
-      slidingAnimation: 'fade',
-      slidingDuration: 250,
+      slidingAnimation: 'left_to_right',
+      slidingDuration: 150,
       slidingDelay: 100,
       onSliding: (nextSlide) => console.debug('onSliding(nextSlide): ', nextSlide),
       onBeforeSliding: (previousSlide, nextSlide) => console.debug(
@@ -52,7 +54,7 @@ const Slides = () => (
       shouldRenderMask
       label="Giau Pass - Italy"
       background={{
-        backgroundImageSrc: giauPass,
+        backgroundImageSrc: sion,
       }}
     />
 
@@ -60,7 +62,7 @@ const Slides = () => (
       shouldRenderMask
       label="Bogliasco - Italy"
       background={{
-        backgroundImageSrc: bogliasco,
+        backgroundImageSrc: elec,
       }}
     />
 
