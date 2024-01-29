@@ -18,10 +18,13 @@ const Slides = () => (
   <HeroSlider
     height="100vh"
     autoplay
+    // initialSlide={1}
+    // animation="fade"
+    // navigation={{ show: false }}
     controller={{
       initialSlide: 1,
-      // slidingAnimation: 'fade',
-      slidingDuration: 500,
+      slidingAnimation: 'fade',
+      slidingDuration: 250,
       slidingDelay: 100,
       onSliding: (nextSlide) => console.debug('onSliding(nextSlide): ', nextSlide),
       onBeforeSliding: (previousSlide, nextSlide) => console.debug(
@@ -30,6 +33,10 @@ const Slides = () => (
         nextSlide,
       ),
       onAfterSliding: (nextSlide) => console.debug('onAfterSliding(nextSlide): ', nextSlide),
+    }}
+    style={{
+      backgroundColor: 'black',
+      overflow: 'hidden',
     }}
   >
     {/* <Overlay>
