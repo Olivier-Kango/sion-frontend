@@ -1,8 +1,9 @@
 import React from 'react';
-import HeroSlider, { Overlay, Slide, MenuNav } from 'hero-slider';
-import Wrapper from './components/Wrapper';
-import Title from './components/Title';
-import Subtitle from './components/Subtitle';
+import HeroSlider, { Slide, MenuNav } from 'hero-slider';
+// import HeroSlider, { Overlay, Slide, MenuNav } from 'hero-slider';
+// import Wrapper from './components/Wrapper';
+// import Title from './components/Title';
+// import Subtitle from './components/Subtitle';
 
 // importation of the styling from Requested Products
 import './Slides.scss';
@@ -19,6 +20,7 @@ const Slides = () => (
     autoplay
     controller={{
       initialSlide: 1,
+      // slidingAnimation: 'fade',
       slidingDuration: 500,
       slidingDelay: 100,
       onSliding: (nextSlide) => console.debug('onSliding(nextSlide): ', nextSlide),
@@ -30,14 +32,14 @@ const Slides = () => (
       onAfterSliding: (nextSlide) => console.debug('onAfterSliding(nextSlide): ', nextSlide),
     }}
   >
-    <Overlay>
+    {/* <Overlay>
       <Wrapper>
         <Title>Basic Setup</Title>
         <Subtitle>
           Check out the documentation for more advanced examples.
         </Subtitle>
       </Wrapper>
-    </Overlay>
+    </Overlay> */}
 
     <Slide
       shouldRenderMask
