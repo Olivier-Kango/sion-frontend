@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiPencil, BiTrash } from 'react-icons/bi';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
-import pubSion from '../../assets/pub-sion.jpg';
+import Slides from '../slides/Slides';
 // import elec from '../../assets/elec.jpg';
 import './Home.scss';
 import 'swiper/css';
@@ -98,7 +98,7 @@ const Home = () => {
       ) : (
         <div className="home-cont">
           <div className="pub-container">
-            <img src={pubSion} alt="pubSion" className="pub-sion" />
+            <Slides />
             {/* <img src={elec} alt="elec" className="elec" /> */}
           </div>
           <div className="swiper">
