@@ -16,6 +16,7 @@ import Footer from './components/footer/Footer';
 import PrivateRoutes from './components/protectedRoute/PrivateRoutes';
 import LeftBar from './components/leftbar/Leftbar';
 import RequestedProduct from './components/product/RequestedProduct';
+import Slides from './components/slides/Slides';
 
 // pages
 import Splash from './pages/Splash';
@@ -80,6 +81,7 @@ const App = () => {
             )
           }
         />
+        <Route path="/slides" element={<Slides />} />
       </Routes>
     </div>
   );
