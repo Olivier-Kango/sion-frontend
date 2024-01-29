@@ -21,7 +21,7 @@ import {
   getAllProducts,
   setShowLeftBar,
 } from '../../redux/products/products';
-// import Navbar from '../navbar/Navbar';
+import Navbar from '../navbar/Navbar';
 
 import './PrivateRoutes.scss';
 
@@ -151,7 +151,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
           onMouseUp: handleMouseUp,
         })}
       >
-        {/* <Navbar handleLinkClick={(event, link) => handleLinkClick(event, link)} /> */}
+        <Navbar handleLinkClick={(event, link) => handleLinkClick(event, link)} />
         {isMobile ? (
           <>
             <div
