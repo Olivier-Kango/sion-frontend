@@ -5,8 +5,8 @@ import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { BiPencil, BiTrash } from 'react-icons/bi';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
-import Slides from '../slides/Slides';
-// import elec from '../../assets/elec.jpg';
+// import Slides from '../slides/Slides';
+import pubSion from '../../assets/pub-sion.jpg';
 import './Home.scss';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -98,8 +98,8 @@ const Home = () => {
       ) : (
         <div className="home-cont">
           <div className="pub-container">
-            <Slides />
-            {/* <img src={elec} alt="elec" className="elec" /> */}
+            {/* <Slides /> */}
+            <img src={pubSion} alt="elec" className="elec" />
           </div>
           <div className="swiper">
             {filteredProducts.length === 0 ? (
