@@ -207,6 +207,30 @@ $main-color-hover: #c36d00;
       }
     }
   }
+
+  @media screen and (max-width: 400px) {
+    .home-cont {
+      .swiper {
+        margin: 0 -0.65rem;
+        .swiper-slide {
+          min-width: 170px;
+          width: 48.6%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .home-cont {
+      .swiper {
+        margin: 0 -0.65rem;
+        .swiper-slide {
+          min-width: 148px;
+          width: 47.6%;
+        }
+      }
+    }
+  }
 }
 
 .swiper-button-next,
