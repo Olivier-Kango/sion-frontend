@@ -328,6 +328,8 @@ const initialState = {
       id: 117, name: 'Brosse toilette', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706277899/477614_1_477614_WH_B_v1_6aba_vphham.webp', unit_price: '2.5', quantity: 1, category: 'Hardware Store', unit_purchase_price: '1.25', created_at: '2023-09-18T07:19:47.074Z', updated_at: '2024-01-26T14:07:28.205Z', subcategory: 'Cleaning',
     }, {
       id: 22, name: 'Jus Naturel Sion | 5 L', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706047491/159-1593158_juice-wallpaper_t34hfr.jpg', unit_price: '5.0', quantity: 48, category: 'Beverage Store', unit_purchase_price: '3.94', created_at: '2024-01-23T22:00:53.409Z', updated_at: '2024-01-26T14:10:11.815Z', subcategory: 'Beverage Store',
+    }, {
+      id: 47, name: 'Rechaud à Gaz Kit Complet', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706732128/Complete-Gas-cooking-set--1024x1024_cd8aqf.webp', unit_price: '135.0', quantity: 1, category: 'Gas Energy', unit_purchase_price: '67.5', created_at: '2024-01-31T20:16:31.797Z', updated_at: '2024-01-31T20:16:31.797Z', subcategory: 'Gas Energy',
     },
   ],
 };
