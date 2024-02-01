@@ -215,7 +215,8 @@ $main-color-hover: #c36d00;
   @media screen and (max-width: 400px) {
     .home-cont {
       .swiper {
-        margin: 0 -0.65rem;
+        // margin: 0 -0.65rem;
+        margin-top: -135%;
 
         .swiper-slide {
           min-width: 170px;
@@ -228,7 +229,7 @@ $main-color-hover: #c36d00;
   @media screen and (max-width: 350px) {
     .home-cont {
       .swiper {
-        margin: 0 -0.65rem;
+        // margin: 0 -0.65rem;
 
         .swiper-slide {
           min-width: 148px;
