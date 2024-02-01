@@ -3,5 +3,8 @@ $main-color-hover: #c36d00;
 $accent-color: #e44d26;
 
 .hero-slider {
-  // width: 100%;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

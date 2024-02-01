@@ -1,7 +1,8 @@
 import React from 'react';
-import HeroSlider, { Slide, MenuNav } from 'hero-slider';
-import sion from '../../assets/pub-sion.jpg';
-import gaz from '../../assets/gaz.jpg';
+import HeroSlider, { MenuNav } from 'hero-slider';
+// import HeroSlider, { Slide, MenuNav } from 'hero-slider';
+// import sion from '../../assets/pub-sion.jpg';
+// import gaz from '../../assets/gaz.jpg';
 // import HeroSlider, { Overlay, Slide, MenuNav } from 'hero-slider';
 // import Wrapper from './components/Wrapper';
 // import Title from './components/Title';
@@ -9,6 +10,7 @@ import gaz from '../../assets/gaz.jpg';
 
 // importation of the styling from Requested Products
 import './Slides.scss';
+// import { display } from '@mui/system';
 
 // const bogliasco = 'https://i.imgur.com/Gu5Cznz.jpg';
 // const countyClare = 'https://i.imgur.com/idjXzVQ.jpg';
@@ -37,7 +39,7 @@ const Slides = () => (
       onAfterSliding: (nextSlide) => console.debug('onAfterSliding(nextSlide): ', nextSlide),
     }}
     style={{
-      backgroundColor: 'black',
+      // backgroundColor: 'black',
       overflow: 'hidden',
     }}
   >
@@ -50,21 +52,31 @@ const Slides = () => (
       </Wrapper>
     </Overlay> */}
 
-    <Slide
+    <MenuNav
+      style={{
+        position: 'absolute',
+        top: '50%',
+        right: 0,
+        transform: 'translateY(-50%)',
+        zIndex: 1000,
+      }}
+    />
+
+    {/* <Slide
       shouldRenderMask
       label="Giau Pass - Italy"
       background={{
         backgroundImageSrc: sion,
       }}
-    />
+    /> */}
 
-    <Slide
+    {/* <Slide
       shouldRenderMask
       label="Bogliasco - Italy"
       background={{
         backgroundImageSrc: gaz,
       }}
-    />
+    /> */}
 
     {/* <Slide
       shouldRenderMask
@@ -81,8 +93,6 @@ const Slides = () => (
         backgroundImageSrc: craterRock,
       }}
     /> */}
-
-    <MenuNav />
   </HeroSlider>
 );
 
