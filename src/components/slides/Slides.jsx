@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroSlider, { Slide, MenuNav } from 'hero-slider';
 import sion from '../../assets/pub-sion.jpg';
-import elec from '../../assets/elec.jpg';
+import gaz from '../../assets/gaz.jpg';
 // import HeroSlider, { Overlay, Slide, MenuNav } from 'hero-slider';
 // import Wrapper from './components/Wrapper';
 // import Title from './components/Title';
@@ -11,8 +11,8 @@ import elec from '../../assets/elec.jpg';
 import './Slides.scss';
 
 // const bogliasco = 'https://i.imgur.com/Gu5Cznz.jpg';
-const countyClare = 'https://i.imgur.com/idjXzVQ.jpg';
-const craterRock = 'https://i.imgur.com/8DYumaY.jpg';
+// const countyClare = 'https://i.imgur.com/idjXzVQ.jpg';
+// const craterRock = 'https://i.imgur.com/8DYumaY.jpg';
 // const giauPass = 'https://i.imgur.com/8IuucQZ.jpg';
 
 // Functional component for managing requested products
@@ -62,11 +62,11 @@ const Slides = () => (
       shouldRenderMask
       label="Bogliasco - Italy"
       background={{
-        backgroundImageSrc: elec,
+        backgroundImageSrc: gaz,
       }}
     />
 
-    <Slide
+    {/* <Slide
       shouldRenderMask
       label="County Clare - Ireland"
       background={{
@@ -80,7 +80,7 @@ const Slides = () => (
       background={{
         backgroundImageSrc: craterRock,
       }}
-    />
+    /> */}
 
     <MenuNav />
   </HeroSlider>
