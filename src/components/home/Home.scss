@@ -23,6 +23,8 @@ $main-color-hover: #c36d00;
 
     .pub-container {
       margin-top: -15px;
+      align-items: flex-start;
+      overflow: none;
       display: flex;
       width: 105%;
       margin-bottom: 0.5rem;
@@ -192,6 +194,9 @@ $main-color-hover: #c36d00;
 
     .home-cont {
       .pub-container {
+        margin-top: 0px;
+        margin-bottom: 0.5rem;
+
         .pub-sion {
           border-radius: 5px;
         }
