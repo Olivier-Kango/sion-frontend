@@ -11,13 +11,16 @@ $accent-color: #e44d26;
     align-items: center;
     justify-content: center;
 
+
     .hero-slider-previous {
-      background: green;
       transform: scaleX(-1);
+      position: absolute;
+      left: 0;
     }
 
     .hero-slider-next {
-      background: yellow;
+      position: absolute;
+      right: 0;
     }
   }
 }
