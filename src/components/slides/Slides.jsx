@@ -1,8 +1,7 @@
 import React from 'react';
-import HeroSlider, { MenuNav } from 'hero-slider';
-// import HeroSlider, { Slide, MenuNav } from 'hero-slider';
-// import sion from '../../assets/pub-sion.jpg';
-// import gaz from '../../assets/gaz.jpg';
+import HeroSlider, { Slide, MenuNav } from 'hero-slider';
+import sion from '../../assets/pub-sion.jpg';
+import gaz from '../../assets/gaz.jpg';
 // import HeroSlider, { Overlay, Slide, MenuNav } from 'hero-slider';
 // import Wrapper from './components/Wrapper';
 // import Title from './components/Title';
@@ -62,21 +61,21 @@ const Slides = () => (
       }}
     />
 
-    {/* <Slide
+    <Slide
       shouldRenderMask
       label="Giau Pass - Italy"
       background={{
         backgroundImageSrc: sion,
       }}
-    /> */}
+    />
 
-    {/* <Slide
+    <Slide
       shouldRenderMask
       label="Bogliasco - Italy"
       background={{
         backgroundImageSrc: gaz,
       }}
-    /> */}
+    />
 
     {/* <Slide
       shouldRenderMask

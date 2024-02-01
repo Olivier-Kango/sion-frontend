@@ -10,9 +10,11 @@ $accent-color: #e44d26;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
 
     .hero-slider-previous {
+      background: green;
       transform: scaleX(-1);
       position: absolute;
       left: 0;
