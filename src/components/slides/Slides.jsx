@@ -62,7 +62,7 @@ const Slides = () => (
     />
 
     <Slide
-      shouldRenderMask
+      // shouldRenderMask
       label="Giau Pass - Italy"
       background={{
         backgroundImageSrc: sion,
@@ -70,7 +70,7 @@ const Slides = () => (
     />
 
     <Slide
-      shouldRenderMask
+      // shouldRenderMask
       label="Bogliasco - Italy"
       background={{
         backgroundImageSrc: gaz,

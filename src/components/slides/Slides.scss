@@ -3,13 +3,12 @@ $main-color-hover: #c36d00;
 $accent-color: #e44d26;
 
 .hero-slider {
-
   .hero-slider-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-
+    background-repeat: no-repeat;
 
     .hero-slider-previous {
       transform: scaleX(-1);
