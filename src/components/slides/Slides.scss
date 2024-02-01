@@ -4,7 +4,20 @@ $accent-color: #e44d26;
 
 .hero-slider {
   background: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  .hero-slider-wrapper {
+    background: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .hero-slider-previous {
+      background: green;
+      transform: scaleX(-1);
+    }
+
+    .hero-slider-next {
+      background: yellow;
+    }
+  }
 }
