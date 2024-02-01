@@ -3,10 +3,8 @@ $main-color-hover: #c36d00;
 $accent-color: #e44d26;
 
 .hero-slider {
-  background: red;
 
   .hero-slider-wrapper {
-    background: blue;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +12,6 @@ $accent-color: #e44d26;
 
 
     .hero-slider-previous {
-      background: green;
       transform: scaleX(-1);
       position: absolute;
       left: 0;
