@@ -11,11 +11,13 @@ $accent-color: #e44d26;
     .hero-slider-previous {
       transform: scaleX(-1);
       position: absolute;
+      top: 50%;
       left: 0;
     }
 
     .hero-slider-next {
       position: absolute;
+      top: 50%;
       right: 0;
     }
   }
