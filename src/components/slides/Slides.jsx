@@ -27,11 +27,11 @@ const Slides = () => {
       // height="100vh"
       autoplay
       // initialSlide={1}
-      animation="left_to_right"
+      animation="fade"
       // navigation={{ show: false }}
       controller={{
         initialSlide: 1,
-        slidingAnimation: 'left_to_right',
+        slidingAnimation: 'fade',
         slidingDuration: 150,
         slidingDelay: 100,
         onSliding: (nextSlide) => console.debug('onSliding(nextSlide): ', nextSlide),
