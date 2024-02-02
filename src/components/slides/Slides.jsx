@@ -5,33 +5,18 @@ import sion from '../../assets/pub-sion.jpg';
 import gaz from '../../assets/gaz.jpg';
 import sionPhone from '../../assets/sion-phone.jpg';
 import gazPhone from '../../assets/gaz-phone.jpg';
-// import HeroSlider, { Overlay, Slide, MenuNav } from 'hero-slider';
-// import Wrapper from './components/Wrapper';
-// import Title from './components/Title';
-// import Subtitle from './components/Subtitle';
-
-// importation of the styling from Requested Products
 import './Slides.scss';
-// import { display } from '@mui/system';
-
-// const bogliasco = 'https://i.imgur.com/Gu5Cznz.jpg';
-// const countyClare = 'https://i.imgur.com/idjXzVQ.jpg';
-// const craterRock = 'https://i.imgur.com/8DYumaY.jpg';
-// const giauPass = 'https://i.imgur.com/8IuucQZ.jpg';
 
 // Functional component for managing requested products
 const Slides = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
   return (
     <HeroSlider
-      // height="100vh"
       autoplay
-      // initialSlide={1}
-      animation="left_to_right"
-      // navigation={{ show: false }}
+      animation="fade"
       controller={{
         initialSlide: 1,
-        slidingAnimation: 'left_to_right',
+        slidingAnimation: 'fade',
         slidingDuration: 150,
         slidingDelay: 100,
         onSliding: (nextSlide) => console.debug('onSliding(nextSlide): ', nextSlide),
@@ -47,15 +32,6 @@ const Slides = () => {
         overflow: 'hidden',
       }}
     >
-      {/* <Overlay>
-        <Wrapper>
-          <Title>Basic Setup</Title>
-          <Subtitle>
-            Check out the documentation for more advanced examples.
-          </Subtitle>
-        </Wrapper>
-      </Overlay> */}
-
       <MenuNav
         style={{
           position: 'absolute',
@@ -79,22 +55,6 @@ const Slides = () => {
           backgroundImageSrc: isMobile ? gazPhone : gaz,
         }}
       />
-
-      {/* <Slide
-        shouldRenderMask
-        label="County Clare - Ireland"
-        background={{
-          backgroundImageSrc: countyClare,
-        }}
-      />
-
-      <Slide
-        shouldRenderMask
-        label="Crater Rock, OR - United States"
-        background={{
-          backgroundImageSrc: craterRock,
-        }}
-      /> */}
     </HeroSlider>
   );
 };

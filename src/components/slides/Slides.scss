@@ -3,10 +3,19 @@ $main-color-hover: #c36d00;
 $accent-color: #e44d26;
 
 .hero-slider {
+  width: 100% !important;
+  background-size: cover;
   .hero-slider-wrapper {
     display: flex;
     position: relative;
     background-repeat: no-repeat;
+    width: 100% !important;
+
+    .hero-slider-slide-background-image {
+      width: 100vw !important;
+      background-size: cover !important;
+      background-position: center; 
+    }
 
     .hero-slider-previous {
       transform: scaleX(-1);
@@ -23,6 +32,9 @@ $accent-color: #e44d26;
   }
 
   @media screen and (max-width: 768px) {
+    .hero-slider-slide-background-image {
+      border-radius: 5px !important;
+    }
     .hero-slider-previous,
     .hero-slider-next {
       top: 20% !important;
