@@ -193,6 +193,8 @@ $main-color-hover: #c36d00;
     .home-cont {
       .pub-container {
         margin-bottom: 0.5rem;
+        height: 344px !important;
+        border-radius: 5px !important;
 
         .pub-sion {
           border-radius: 5px;
@@ -201,7 +203,7 @@ $main-color-hover: #c36d00;
 
       .swiper {
         align-items: center;
-        margin-top: -55%;
+        margin-top: 0px !important;
 
         .swiper-slide {
           height: auto !important;
@@ -210,11 +212,11 @@ $main-color-hover: #c36d00;
     }
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 450px) {
     .home-cont {
       .swiper {
-        // margin: 0 -0.65rem;
-        margin-top: -135%;
+        margin: 0 -0.65rem;
+        // margin-top: -115% !important;
 
         .swiper-slide {
           min-width: 170px;
@@ -227,7 +229,8 @@ $main-color-hover: #c36d00;
   @media screen and (max-width: 350px) {
     .home-cont {
       .swiper {
-        // margin: 0 -0.65rem;
+        margin: 0 -0.65rem;
+        // margin-top: -60% !important;
 
         .swiper-slide {
           min-width: 148px;
