@@ -151,7 +151,6 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
           onMouseUp: handleMouseUp,
         })}
       >
-        <Navbar handleLinkClick={(event, link) => handleLinkClick(event, link)} />
         {isMobile ? (
           <>
             <div
@@ -197,6 +196,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
           />
         )}
         <div className="home">
+          <Navbar handleLinkClick={(event, link) => handleLinkClick(event, link)} className="navbar" />
           <Outlet />
         </div>
       </section>
