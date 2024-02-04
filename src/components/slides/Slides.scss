@@ -5,6 +5,7 @@ $accent-color: #e44d26;
 .hero-slider {
   width: 100% !important;
   background-size: cover;
+
   .hero-slider-wrapper {
     display: flex;
     position: relative;
@@ -14,7 +15,7 @@ $accent-color: #e44d26;
     .hero-slider-slide-background-image {
       width: 100vw !important;
       background-size: cover !important;
-      background-position: center; 
+      background-position: center;
     }
 
     .hero-slider-previous {
@@ -35,6 +36,7 @@ $accent-color: #e44d26;
     .hero-slider-slide-background-image {
       border-radius: 5px !important;
     }
+
     .hero-slider-previous,
     .hero-slider-next {
       top: 20% !important;
