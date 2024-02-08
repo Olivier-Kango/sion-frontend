@@ -10,6 +10,7 @@ import './Slides.scss';
 // Functional component for managing requested products
 const Slides = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
+
   return (
     <Carousel>
       <Carousel.Item>
