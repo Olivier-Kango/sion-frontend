@@ -1,6 +1,5 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import { Slide } from 'hero-slider';
 import { useMediaQuery } from '@mui/material';
 import sion from '../../assets/pub-sion.jpg';
 import gaz from '../../assets/gaz.jpg';
@@ -14,11 +13,10 @@ const Slides = () => {
   return (
     <Carousel>
       <Carousel.Item>
-        <Slide
-          label="First Slide"
-          background={{
-            backgroundImageSrc: isMobile ? gazPhone : gaz,
-          }}
+        <img
+          className="d-block w-100"
+          src={isMobile ? gazPhone : gaz}
+          alt="First slide"
         />
         <Carousel.Caption>
           <h3>First slide label</h3>
@@ -26,11 +24,10 @@ const Slides = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <Slide
-          label="Second Slide"
-          background={{
-            backgroundImageSrc: isMobile ? sionPhone : sion,
-          }}
+        <img
+          className="d-block w-100"
+          src={isMobile ? sionPhone : sion}
+          alt="Second slide"
         />
         <Carousel.Caption>
           <h3>Second slide label</h3>
@@ -38,11 +35,10 @@ const Slides = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <Slide
-          label="Third Slide"
-          background={{
-            backgroundImageSrc: isMobile ? gazPhone : gaz,
-          }}
+        <img
+          className="d-block w-100"
+          src={isMobile ? sionPhone : sion}
+          alt="Second slide"
         />
         <Carousel.Caption>
           <h3>Third slide label</h3>
