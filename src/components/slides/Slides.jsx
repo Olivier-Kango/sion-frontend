@@ -1,5 +1,6 @@
 import React from 'react';
-import HeroSlider, { Slide, MenuNav } from 'hero-slider';
+import Carousel from 'react-bootstrap/Carousel';
+import { Slide } from 'hero-slider';
 import { useMediaQuery } from '@mui/material';
 import sion from '../../assets/pub-sion.jpg';
 import gaz from '../../assets/gaz.jpg';
@@ -11,51 +12,46 @@ import './Slides.scss';
 const Slides = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
   return (
-    <HeroSlider
-      autoplay
-      animation="fade"
-      controller={{
-        initialSlide: 1,
-        slidingAnimation: 'fade',
-        slidingDuration: 150,
-        slidingDelay: 100,
-        onSliding: (nextSlide) => console.debug('onSliding(nextSlide): ', nextSlide),
-        onBeforeSliding: (previousSlide, nextSlide) => console.debug(
-          'onBeforeSliding(previousSlide, nextSlide): ',
-          previousSlide,
-          nextSlide,
-        ),
-        onAfterSliding: (nextSlide) => console.debug('onAfterSliding(nextSlide): ', nextSlide),
-      }}
-      style={{
-        // backgroundColor: 'black',
-        overflow: 'hidden',
-      }}
-    >
-      <MenuNav
-        style={{
-          position: 'absolute',
-          top: '50%',
-          right: 0,
-          transform: 'translateY(-50%)',
-          zIndex: 1000,
-        }}
-      />
-
-      <Slide
-        label="Giau Pass - Italy"
-        background={{
-          backgroundImageSrc: isMobile ? sionPhone : sion,
-        }}
-      />
-
-      <Slide
-        label="Bogliasco - Italy"
-        background={{
-          backgroundImageSrc: isMobile ? gazPhone : gaz,
-        }}
-      />
-    </HeroSlider>
+    <Carousel>
+      <Carousel.Item>
+        <Slide
+          label="First Slide"
+          background={{
+            backgroundImageSrc: isMobile ? gazPhone : gaz,
+          }}
+        />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <Slide
+          label="Second Slide"
+          background={{
+            backgroundImageSrc: isMobile ? sionPhone : sion,
+          }}
+        />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <Slide
+          label="Third Slide"
+          background={{
+            backgroundImageSrc: isMobile ? gazPhone : gaz,
+          }}
+        />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
   );
 };
 
