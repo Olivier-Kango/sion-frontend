@@ -3,7 +3,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import { useMediaQuery } from '@mui/material';
 import sion from '../../assets/pub-sion.jpg';
 import coussin from '../../assets/coussin.jpg';
-import elec from '../../assets/elec.jpg';
 import gaz from '../../assets/gaz.jpg';
 import sionPhone from '../../assets/sion-phone.jpg';
 import gazPhone from '../../assets/gaz-phone.jpg';
@@ -34,13 +33,6 @@ const Slides = () => {
           className="d-block w-100"
           src={coussin}
           alt="Third slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={elec}
-          alt="Fourth slide"
         />
       </Carousel.Item>
     </Carousel>
