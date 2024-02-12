@@ -5,8 +5,9 @@ a:hover {
 }
 
 .App {
+  overflow-y: auto;
   .home {
-    overflow-y: auto;
+    // overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: center;
