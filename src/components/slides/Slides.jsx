@@ -14,21 +14,21 @@ const Slides = () => {
 
   return (
     <Carousel>
-      <Carousel.Item>
+      <Carousel.Item style={{ marginRight: 0, marginLeft: 0 }}>
         <img
           className="d-block w-100"
           src={isMobile ? gazPhone : gaz}
           alt="First slide"
         />
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item style={{ marginRight: 0, marginLeft: 0 }}>
         <img
           className="d-block w-100"
           src={isMobile ? sionPhone : sion}
           alt="Second slide"
         />
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item style={{ marginRight: 0, marginLeft: 0 }}>
         <img
           className="d-block w-100"
           src={coussin}
