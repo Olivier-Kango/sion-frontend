@@ -11,37 +11,31 @@ import './Slides.scss';
 // Functional component for managing requested products
 const Slides = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const carouselContainerStyle = {
-    display: 'flex',
-    overflow: 'hidden',
-  };
 
   return (
-    <div style={carouselContainerStyle}>
-      <Carousel style={{ flex: 1 }}>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={isMobile ? gazPhone : gaz}
-            alt="First slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={isMobile ? sionPhone : sion}
-            alt="Second slide"
-          />
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src={coussin}
-            alt="Third slide"
-          />
-        </Carousel.Item>
-      </Carousel>
-    </div>
+    <Carousel>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={isMobile ? gazPhone : gaz}
+          alt="First slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={isMobile ? sionPhone : sion}
+          alt="Second slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={coussin}
+          alt="Third slide"
+        />
+      </Carousel.Item>
+    </Carousel>
   );
 };
 
