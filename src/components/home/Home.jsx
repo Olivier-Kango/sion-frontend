@@ -167,6 +167,10 @@ const Home = () => {
               ))
             )}
           </div>
+          {filteredProducts.length > displayedProducts && (
+          // eslint-disable-next-line react/button-has-type
+          <button onClick={loadMore} className="load-more-btn">Voir plus</button>
+          )}
         </div>
       )}
     </div>
