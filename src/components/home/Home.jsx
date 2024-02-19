@@ -16,6 +16,8 @@ import 'swiper/css/scrollbar';
 
 const Home = () => {
   const [done, setDone] = useState(undefined);
+  const [displayedProducts, setDisplayedProducts] = useState(10);
+  const productsPerPage = 10;
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
@@ -78,6 +80,10 @@ const Home = () => {
     }
     return 0;
   });
+
+  const loadMore = () => {
+    setDisplayedProducts(displayedProducts + productsPerPage);
+  };
 
   return (
     <div className="container">
@@ -161,6 +167,10 @@ const Home = () => {
               ))
             )}
           </div>
+          {filteredProducts.length > displayedProducts && (
+          // eslint-disable-next-line react/button-has-type
+          <button onClick={loadMore} className="load-more-btn">Voir plus</button>
+          )}
         </div>
       )}
     </div>
