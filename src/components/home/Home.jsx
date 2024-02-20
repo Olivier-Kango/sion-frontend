@@ -16,8 +16,8 @@ import 'swiper/css/scrollbar';
 
 const Home = () => {
   const [done, setDone] = useState(undefined);
-  const [displayedProducts, setDisplayedProducts] = useState(10);
-  const productsPerPage = 10;
+  const [displayedProducts, setDisplayedProducts] = useState(6);
+  const productsPerPage = 6;
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
@@ -74,11 +74,17 @@ const Home = () => {
     );
   }
 
+  // filteredProducts.sort((a, b) => {
+  //   if (a && a.name && b && b.name) {
+  //     return a.name.localeCompare(b.name);
+  //   }
+  //   return 0;
+  // });
+
   filteredProducts.sort((a, b) => {
-    if (a && a.name && b && b.name) {
-      return a.name.localeCompare(b.name);
-    }
-    return 0;
+    const profitA = a.unit_price - a.unit_purchase_price;
+    const profitB = b.unit_price - b.unit_purchase_price;
+    return profitB - profitA;
   });
 
   const loadMore = () => {
@@ -169,7 +175,7 @@ const Home = () => {
           </div>
           {filteredProducts.length > displayedProducts && (
           // eslint-disable-next-line react/button-has-type
-          <button onClick={loadMore} className="load-more-btn">Voir plus</button>
+          <button onClick={loadMore} className="load-more-btn">See more</button>
           )}
         </div>
       )}
