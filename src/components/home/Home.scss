@@ -187,7 +187,9 @@ $main-color-hover: #c36d00;
     }
 
     .load-more-btn {
-      color: #007185;;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
