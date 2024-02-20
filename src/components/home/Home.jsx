@@ -74,11 +74,17 @@ const Home = () => {
     );
   }
 
+  // filteredProducts.sort((a, b) => {
+  //   if (a && a.name && b && b.name) {
+  //     return a.name.localeCompare(b.name);
+  //   }
+  //   return 0;
+  // });
+
   filteredProducts.sort((a, b) => {
-    if (a && a.name && b && b.name) {
-      return a.name.localeCompare(b.name);
-    }
-    return 0;
+    const profitA = a.unit_price - a.unit_purchase_price;
+    const profitB = b.unit_price - b.unit_purchase_price;
+    return profitB - profitA;
   });
 
   const loadMore = () => {
