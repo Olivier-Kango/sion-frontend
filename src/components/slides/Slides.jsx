@@ -14,7 +14,7 @@ const Slides = () => {
 
   return (
     <Carousel>
-      <Carousel.Item>
+      <Carousel.Item interval={null}>
         <img
           className="d-block w-100"
           src={isMobile ? gazPhone : gaz}
