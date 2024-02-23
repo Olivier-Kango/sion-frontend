@@ -5,14 +5,12 @@ $accent-color: #e44d26;
 .carousel {
   width: 100% !important;
   background-size: cover;
+  background: red;
 
   .carousel-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: fit-content;
     // height: 100vh; // Rendre les slides plein écran
     overflow: hidden;
-    background: red;
   }
 
   .carousel-inner {
