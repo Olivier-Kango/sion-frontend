@@ -13,8 +13,8 @@ const Slides = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   return (
-    <Carousel>
-      <Carousel.Item interval={null}>
+    <Carousel interval={null}>
+      <Carousel.Item>
         <img
           className="d-block w-100"
           src={isMobile ? gazPhone : gaz}
