@@ -263,8 +263,6 @@ const initialState = {
     }, {
       id: 104, name: 'Cable 1 x 2.5', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694616492/file_yulan_y9xwig.jpg', unit_price: '38.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '34.0', created_at: '2023-09-13T14:48:48.821Z', updated_at: '2023-10-09T14:27:25.830Z', subcategory: 'Electrical',
     }, {
-      id: 103, name: 'Cable Yulan 2 X 1.5', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694616422/rouleau_ekpyx6.jpg', unit_price: '35.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '30.0', created_at: '2023-09-13T14:47:13.361Z', updated_at: '2023-10-09T14:28:01.655Z', subcategory: 'Electrical',
-    }, {
       id: 105, name: 'Vis à bois', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694616585/vis_%C3%A0_bois_crwxil.jpg', unit_price: '0.04', quantity: 725, category: 'Hardware Store', unit_purchase_price: '0.01', created_at: '2023-09-13T14:49:49.444Z', updated_at: '2023-10-09T14:29:28.027Z', subcategory: 'Electrical',
     }, {
       id: 107, name: 'Lampe rotative multicolore ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695823522/ampoule_40w_sgpggd.jpg', unit_price: '4.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '3.5', created_at: '2023-09-13T14:51:35.413Z', updated_at: '2023-10-09T14:29:54.345Z', subcategory: 'Electrical',
