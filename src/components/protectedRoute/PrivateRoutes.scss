@@ -15,6 +15,11 @@ $main-color-hover: #c36d00;
     align-items: flex-start;
     background: #f8f8f8;
     padding-top: 50px !important;
+
+    .toggle-button {
+      color: red;
+      z-index: 999;
+    }
   }
 
   @media screen and (max-width: 768px) {

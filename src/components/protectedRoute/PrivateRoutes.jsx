@@ -37,6 +37,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
 
   const [isSwiping, setIsSwiping] = useState(false);
   const [startX, setStartX] = useState(null);
+  const [gridTemplate, setGridTemplate] = useState('22% 78%');
 
   // const isManagement = location.pathname === '/management';
 
@@ -52,6 +53,11 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
 
   const handleHamburgerClick = () => {
     dispatch(setShowLeftBar(!showLeftbar));
+  };
+
+  const handleToggleClick = () => {
+    setGridTemplate(gridTemplate === '0% 100%' ? '22% 78%' : '0% 100%');
+    dispatch(setShowLeftBar(gridTemplate !== '0% 100%'));
   };
 
   const handleSearch = () => {
@@ -139,6 +145,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
       <section
         // className={`page-container ${(isManagement && !isMobile) ? 'grid-remove' : ''}`}
         className="page-container"
+        style={{ gridTemplateColumns: gridTemplate }}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...(isMobile && showLeftbar && {
           role: 'button',
@@ -197,6 +204,17 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
           />
         )}
         <div className="home">
+          {!isMobile
+            && (
+            <button
+              className="toggle-button"
+              onClick={handleToggleClick}
+              type="button"
+              tabIndex={0}
+            >
+              {gridTemplate === '0% 100%' ? '>' : '<'}
+            </button>
+            )}
           <Outlet />
         </div>
       </section>
