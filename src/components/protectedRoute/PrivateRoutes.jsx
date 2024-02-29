@@ -206,14 +206,14 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
         <div className="home">
           {!isMobile
             && (
-            <di
+            <button
               className="toggle-button"
               onClick={handleToggleClick}
               type="button"
               tabIndex={0}
             >
               {/* {gridTemplate === '0% 100%' ? '>' : '<'} */}
-            </di>
+            </button>
             )}
           <Outlet />
         </div>
