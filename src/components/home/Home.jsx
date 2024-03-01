@@ -111,7 +111,6 @@ const Home = () => {
       ) : (
         <div className="home-cont">
           <div className="pub-container">
-            {/* <img src={pubSion} alt="pubsion" className="pubsion" /> */}
             <Slides />
           </div>
           <div className="swiper">
