@@ -221,8 +221,6 @@ const initialState = {
     }, {
       id: 125, name: 'Interrupteur Songrui', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695023204/images_5_jbokcp.jpg', unit_price: '0.8', quantity: 10, category: 'Hardware Store', unit_purchase_price: '0.45', created_at: '2023-09-18T07:46:48.837Z', updated_at: '2023-10-09T14:22:00.233Z', subcategory: 'Electrical',
     }, {
-      id: 102, name: 'Cable Yulan 2 X 2.5', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694616124/rouleau_imo1h5.jpg', unit_price: '40.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '35.0', created_at: '2023-09-13T14:42:09.522Z', updated_at: '2023-10-09T14:28:25.380Z', subcategory: 'Electrical',
-    }, {
       id: 96, name: 'Toile isolante', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694615742/toile_ppi1th.jpg', unit_price: '0.4', quantity: 18, category: 'Hardware Store', unit_purchase_price: '0.16', created_at: '2023-09-13T14:35:47.185Z', updated_at: '2023-10-09T14:20:17.430Z', subcategory: 'Electrical',
     }, {
       id: 108, name: 'Boîte attaches 8 mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694616737/attache_bwlgvb.jpg', unit_price: '1.0', quantity: 4, category: 'Hardware Store', unit_purchase_price: '0.5', created_at: '2023-09-13T14:52:21.893Z', updated_at: '2023-10-09T14:30:29.555Z', subcategory: 'Electrical',
@@ -236,6 +234,8 @@ const initialState = {
       id: 152, name: 'Cadenas 32mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646609/IMG_20231003_155800_461_phgsrf.jpg', unit_price: '1.0', quantity: 4, category: 'Hardware Store', unit_purchase_price: '0.5', created_at: '2023-10-03T14:39:23.447Z', updated_at: '2023-10-09T14:45:55.855Z', subcategory: 'General',
     }, {
       id: 78, name: 'Powerbank Veger', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694487483/verger_fytsty.jpg', unit_price: '20.0', quantity: 2, category: 'Electronics', unit_purchase_price: '12.5', created_at: '2023-09-12T02:58:31.671Z', updated_at: '2024-02-03T02:35:22.105Z', subcategory: 'Telephony',
+    }, {
+      id: 102, name: 'Cable Yulan 2 X 2.5', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694616124/rouleau_imo1h5.jpg', unit_price: '37.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '35.0', created_at: '2023-09-13T14:42:09.522Z', updated_at: '2024-03-02T06:32:04.683Z', subcategory: 'Electrical',
     }, {
       id: 128, name: 'Fer à béton bar de 10', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695612908/images_41_vt22wb.jpg', unit_price: '5.0', quantity: 30, category: 'Hardware Store', unit_purchase_price: '4.57', created_at: '2023-09-25T03:35:30.134Z', updated_at: '2023-10-12T11:44:11.299Z', subcategory: 'Building',
     }, {
