@@ -25,6 +25,7 @@ import {
 import Navbar from '../navbar/Navbar';
 
 import './PrivateRoutes.scss';
+import { Diversity1Outlined } from '@mui/icons-material';
 
 const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -207,14 +208,16 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
         <div className="home">
           {!isMobile
             && (
-            <button
+            // eslint-disable-next-line max-len
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+            <div
               className="toggle-button"
               onClick={handleToggleClick}
-              type="button"
-              tabIndex={0}
             >
-              {gridTemplate === '0% 100%' ? <FaAngleRight className="icon-style" /> : <FaAngleLeft className="icon-style" />}
-            </button>
+              {gridTemplate === '0% 100%'
+                ? <FaAngleRight className="icon-style" />
+                : <FaAngleLeft className="icon-style" />}
+            </div>
             )}
           <Outlet />
         </div>
