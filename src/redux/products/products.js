@@ -171,8 +171,6 @@ const initialState = {
     }, {
       id: 42, name: 'Poignet ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694243159/images_44_ztmjdt.jpg', unit_price: '3.0', quantity: 6, category: 'Hardware Store', unit_purchase_price: '0.83', created_at: '2023-09-09T07:06:04.162Z', updated_at: '2023-10-09T13:54:39.769Z', subcategory: 'Building',
     }, {
-      id: 78, name: 'Powerbank Veger', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694487483/verger_fytsty.jpg', unit_price: '15.0', quantity: 2, category: 'Electronics', unit_purchase_price: '12.5', created_at: '2023-09-12T02:58:31.671Z', updated_at: '2023-10-12T12:35:07.021Z', subcategory: 'Telephony',
-    }, {
       id: 49, name: 'Lame de scie ', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245498/t%C3%A9l%C3%A9chargement_ygcdcg.png', unit_price: '1.5', quantity: 20, category: 'Hardware Store', unit_purchase_price: '1.0', created_at: '2023-09-09T07:45:25.358Z', updated_at: '2023-10-09T13:55:58.777Z', subcategory: 'Tools',
     }, {
       id: 48, name: 'Mètre (3m)', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694245371/t%C3%A9l%C3%A9chargement_2_yiep2n.webp', unit_price: '1.5', quantity: 12, category: 'Hardware Store', unit_purchase_price: '0.66', created_at: '2023-09-09T07:42:54.453Z', updated_at: '2023-10-09T13:56:48.431Z', subcategory: 'Tools',
@@ -236,6 +234,8 @@ const initialState = {
       id: 123, name: 'Jeux 7 Tournevis', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695022670/jeux_tournevis_lmfeih.webp', unit_price: '7.0', quantity: 2, category: 'Hardware Store', unit_purchase_price: '5.5', created_at: '2023-09-18T07:38:14.868Z', updated_at: '2023-10-09T14:31:53.932Z', subcategory: 'Electrical',
     }, {
       id: 152, name: 'Cadenas 32mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646609/IMG_20231003_155800_461_phgsrf.jpg', unit_price: '1.0', quantity: 4, category: 'Hardware Store', unit_purchase_price: '0.5', created_at: '2023-10-03T14:39:23.447Z', updated_at: '2023-10-09T14:45:55.855Z', subcategory: 'General',
+    }, {
+      id: 78, name: 'Powerbank Veger', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694487483/verger_fytsty.jpg', unit_price: '20.0', quantity: 2, category: 'Electronics', unit_purchase_price: '12.5', created_at: '2023-09-12T02:58:31.671Z', updated_at: '2024-02-03T02:35:22.105Z', subcategory: 'Telephony',
     }, {
       id: 128, name: 'Fer à béton bar de 10', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1695612908/images_41_vt22wb.jpg', unit_price: '5.0', quantity: 30, category: 'Hardware Store', unit_purchase_price: '4.57', created_at: '2023-09-25T03:35:30.134Z', updated_at: '2023-10-12T11:44:11.299Z', subcategory: 'Building',
     }, {
@@ -313,10 +313,6 @@ const initialState = {
     }, {
       id: 5, name: 'Robinet 1/2"', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1702427344/download_qkcwgs.jpg', unit_price: '5.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '4.5', created_at: '2023-12-13T00:30:53.103Z', updated_at: '2023-12-13T00:30:53.103Z', subcategory: 'Plumbing',
     }, {
-      id: 6, name: 'Gaz 6Kg', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1705605784/n202205251515420188906_o34nvo.webp', unit_price: '10.0', quantity: 2, category: 'Gas Energy', unit_purchase_price: '9.5', created_at: '2024-01-18T19:24:28.098Z', updated_at: '2024-01-18T19:24:28.098Z', subcategory: 'Gas Energy',
-    }, {
-      id: 7, name: 'Gaz 12Kg', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1705605881/Total-Gas-12kg-Cylinder-Gas_ghcq4m.webp', unit_price: '20.0', quantity: 2, category: 'Gas Energy', unit_purchase_price: '19.0', created_at: '2024-01-18T19:25:10.202Z', updated_at: '2024-01-18T19:25:10.202Z', subcategory: 'Gas Energy',
-    }, {
       id: 21, name: 'Gloss Thinner', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706046495/basco-thinner-300x300_exld3z.jpg', unit_price: '4.5', quantity: 6, category: 'Hardware Store', unit_purchase_price: '3.58', created_at: '2024-01-23T21:50:19.869Z', updated_at: '2024-01-23T21:50:19.869Z', subcategory: 'Paint',
     }, {
       id: 23, name: 'Serrure Renz', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706276639/BN-RENZ-ezgif.com-webp-to-jpg-converter_-_Copy_kbeoh4.jpg', unit_price: '12.0', quantity: 3, category: 'Hardware Store', unit_purchase_price: '7.5', created_at: '2024-01-26T13:44:27.857Z', updated_at: '2024-01-26T13:44:27.857Z', subcategory: 'General',
@@ -328,6 +324,18 @@ const initialState = {
       id: 22, name: 'Jus Naturel Sion | 5 L', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706047491/159-1593158_juice-wallpaper_t34hfr.jpg', unit_price: '5.0', quantity: 48, category: 'Beverage Store', unit_purchase_price: '3.94', created_at: '2024-01-23T22:00:53.409Z', updated_at: '2024-01-26T14:10:11.815Z', subcategory: 'Beverage Store',
     }, {
       id: 47, name: 'Rechaud à Gaz Kit Complet', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706732128/Complete-Gas-cooking-set--1024x1024_cd8aqf.webp', unit_price: '135.0', quantity: 1, category: 'Gas Energy', unit_purchase_price: '67.5', created_at: '2024-01-31T20:16:31.797Z', updated_at: '2024-01-31T20:16:31.797Z', subcategory: 'Gas Energy',
+    }, {
+      id: 7, name: 'Gaz 12Kg - Recharge', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1705605881/Total-Gas-12kg-Cylinder-Gas_ghcq4m.webp', unit_price: '20.0', quantity: 2, category: 'Gas Energy', unit_purchase_price: '19.0', created_at: '2024-01-18T19:25:10.202Z', updated_at: '2024-01-31T20:20:52.229Z', subcategory: 'Gas Energy',
+    }, {
+      id: 6, name: 'Gaz 6Kg - Recharge', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1705605784/n202205251515420188906_o34nvo.webp', unit_price: '10.0', quantity: 2, category: 'Gas Energy', unit_purchase_price: '9.5', created_at: '2024-01-18T19:24:28.098Z', updated_at: '2024-01-31T20:21:33.965Z', subcategory: 'Gas Energy',
+    }, {
+      id: 50, name: 'Casque', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1706775817/images_12_pnyxqi.jpg', unit_price: '3.0', quantity: 3, category: 'Hardware Store', unit_purchase_price: '2.5', created_at: '2024-02-01T08:24:03.995Z', updated_at: '2024-02-01T08:24:03.995Z', subcategory: 'Electrical',
+    }, {
+      id: 60, name: 'Testeur', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1708397446/tournevis-testeur-presence-tension-230v-longueur-14cm_zw2h73.png', unit_price: '1.0', quantity: 10, category: 'Hardware Store', unit_purchase_price: '0.45', created_at: '2024-02-20T02:51:10.359Z', updated_at: '2024-02-20T02:51:10.359Z', subcategory: 'Electrical',
+    }, {
+      id: 64, name: 'Niveau petit format', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709316646/niveau_jy67bb.jpg', unit_price: '3.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2024-03-01T18:11:18.418Z', updated_at: '2024-03-01T18:11:18.418Z', subcategory: 'Tools',
+    }, {
+      id: 72, name: 'MacBook Air M1, 2020', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709358244/Mac-ezgif.com-webp-to-png-converter_bt6zuh.png', unit_price: '1000.0', quantity: 1, category: 'Electronics', unit_purchase_price: '700.0', created_at: '2024-03-02T05:44:27.885Z', updated_at: '2024-03-02T05:44:27.885Z', subcategory: 'IT Services',
     },
   ],
 };

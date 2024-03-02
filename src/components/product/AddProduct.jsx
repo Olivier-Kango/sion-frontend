@@ -189,6 +189,7 @@ const AddProduct = () => {
                 <option value="Plumbing">Plumbing</option>
                 <option value="Paint">Paint</option>
                 <option value="Electrical">Electrical</option>
+                <option value="Electronics">Electronics</option>
                 <option value="Cleaning">Cleaning</option>
                 <option value="General">General</option>
                 <option value="Telephony">Telephony</option>
