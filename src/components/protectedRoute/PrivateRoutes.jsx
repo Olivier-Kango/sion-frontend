@@ -25,7 +25,6 @@ import {
 import Navbar from '../navbar/Navbar';
 
 import './PrivateRoutes.scss';
-import { Diversity1Outlined } from '@mui/icons-material';
 
 const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
   const isMobile = useMediaQuery('(max-width: 768px)');
