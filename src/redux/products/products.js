@@ -85,6 +85,8 @@ const initialState = {
   showLeftBar: false,
   products: [
     {
+      id: 84, name: 'Conception site web', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709504378/site_szikrr.png', unit_price: '2000.0', quantity: 1, category: 'IT Services', unit_purchase_price: '2000.0', created_at: '2024-03-03T22:20:03.341Z', updated_at: '2024-03-03T22:20:03.341Z', subcategory: 'IT Services',
+    }, {
       id: 39, name: 'Fer à béton bar de 6 ptf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694243012/images_42_dx9xtt.jpg', unit_price: '2.0', quantity: 30, category: 'Hardware Store', unit_purchase_price: '1.3', created_at: '2023-09-09T07:03:36.161Z', updated_at: '2023-10-09T13:52:44.972Z', subcategory: 'Building',
     }, {
       id: 171, name: 'Lampe 40W', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696861116/images_99_aufmlw.jpg', unit_price: '3.5', quantity: 2, category: 'Hardware Store', unit_purchase_price: '3.0', created_at: '2023-10-09T14:19:26.979Z', updated_at: '2023-10-09T14:20:46.271Z', subcategory: 'Electrical',
@@ -105,9 +107,13 @@ const initialState = {
     }, {
       id: 154, name: 'Cadenas 50mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696646652/IMG_20231003_155800_461_n9bsic.jpg', unit_price: '1.4', quantity: 4, category: 'Hardware Store', unit_purchase_price: '0.66', created_at: '2023-10-03T14:41:08.336Z', updated_at: '2023-10-09T14:46:19.656Z', subcategory: 'General',
     }, {
+      id: 85, name: 'Conception Design', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709504543/CNLE_-_Corrig%C3%A9e_jpg_-_Copy_2_oguuxt.jpg', unit_price: '200.0', quantity: 1, category: 'IT Services', unit_purchase_price: '200.0', created_at: '2024-03-03T22:23:25.583Z', updated_at: '2024-03-03T22:23:25.583Z', subcategory: 'IT Services',
+    }, {
       id: 169, name: 'Balais mf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696681213/images_91_vqczex.jpg', unit_price: '2.7', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2023-10-07T12:20:18.275Z', updated_at: '2023-10-09T14:48:15.674Z', subcategory: 'Cleaning',
     }, {
       id: 38, name: 'Fer à béton bar de 6 gdf', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1694242968/images_42_g3dzax.jpg', unit_price: '2.5', quantity: 30, category: 'Hardware Store', unit_purchase_price: '2.2', created_at: '2023-09-09T07:02:52.476Z', updated_at: '2023-10-12T11:44:43.001Z', subcategory: 'Building',
+    }, {
+      id: 86, name: 'Creation logos', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709504677/logo_ampoule_new_light_engineering_png_u5wk02.png', unit_price: '100.0', quantity: 1, category: 'IT Services', unit_purchase_price: '100.0', created_at: '2024-03-03T22:24:59.537Z', updated_at: '2024-03-03T22:24:59.537Z', subcategory: 'IT Services',
     }, {
       id: 156, name: 'Cadenas Sky Yan 32mm', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1696427983/images_77_yruclb.jpg', unit_price: '0.8', quantity: 12, category: 'Hardware Store', unit_purchase_price: '0.4', created_at: '2023-10-04T13:59:48.745Z', updated_at: '2023-10-12T12:27:17.050Z', subcategory: 'General',
     }, {
