@@ -174,6 +174,7 @@ const ModifyProduct = () => {
                 <option value="Gas Energy">Gas Energy</option>
                 <option value="Real Estate">Real Estate</option>
                 <option value="Agri-food">Agri-food</option>
+                <option value="Home Deco">Home Deco</option>
               </select>
             </div>
             <div className="add-order-form-group">
@@ -199,6 +200,7 @@ const ModifyProduct = () => {
                 <option value="Gas Energy">Gas Energy</option>
                 <option value="Real Estate">Real Estate</option>
                 <option value="Agri-food">Agri-food</option>
+                <option value="Home Deco">Home Deco</option>
               </select>
             </div>
             <div className="add-order-form-group">
