@@ -335,7 +335,7 @@ const initialState = {
     }, {
       id: 64, name: 'Niveau petit format', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709316646/niveau_jy67bb.jpg', unit_price: '3.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2024-03-01T18:11:18.418Z', updated_at: '2024-03-01T18:11:18.418Z', subcategory: 'Tools',
     }, {
-      id: 72, name: 'MacBook Air M1, 2020', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709358244/Mac-ezgif.com-webp-to-png-converter_bt6zuh.png', unit_price: '1000.0', quantity: 1, category: 'Electronics', unit_purchase_price: '700.0', created_at: '2024-03-02T05:44:27.885Z', updated_at: '2024-03-02T05:44:27.885Z', subcategory: 'IT Services',
+      id: 72, name: 'MacBook Air M1, 2020', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709492298/Mac-ezgif.com-webp-to-png-converter_q297wx.png', unit_price: '1000.0', quantity: 1, category: 'Electronics', unit_purchase_price: '700.0', created_at: '2024-03-02T05:44:27.885Z', updated_at: '2024-03-03T18:58:23.082Z', subcategory: 'IT Services',
     },
   ],
 };
