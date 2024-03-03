@@ -336,6 +336,12 @@ const initialState = {
       id: 64, name: 'Niveau petit format', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709316646/niveau_jy67bb.jpg', unit_price: '3.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2024-03-01T18:11:18.418Z', updated_at: '2024-03-01T18:11:18.418Z', subcategory: 'Tools',
     }, {
       id: 72, name: 'MacBook Air M1, 2020', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709492298/Mac-ezgif.com-webp-to-png-converter_q297wx.png', unit_price: '1000.0', quantity: 1, category: 'Electronics', unit_purchase_price: '700.0', created_at: '2024-03-02T05:44:27.885Z', updated_at: '2024-03-03T18:58:23.082Z', subcategory: 'IT Services',
+    }, {
+      id: 77, name: 'Couvre lit', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709499837/antilo-couvre-lit-matelasse-dual-esmeralda-31108_zy11uv.jpg', unit_price: '25.0', quantity: 19, category: 'Home Deco', unit_purchase_price: '15.0', created_at: '2024-03-03T21:04:02.878Z', updated_at: '2024-03-03T21:04:02.878Z', subcategory: 'Home Deco',
+    }, {
+      id: 79, name: 'Lapin', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709500085/lapin_qwyjq5.jpg', unit_price: '10.0', quantity: 19, category: 'Agri Food', unit_purchase_price: '3.0', created_at: '2024-03-03T21:08:22.031Z', updated_at: '2024-03-03T21:08:22.031Z', subcategory: 'Agri Food',
+    }, {
+      id: 82, name: 'Parcelle à vendre', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709502928/terrain_2_rlqgt3.jpg', unit_price: '13000.0', quantity: 1, category: 'Real Estate', unit_purchase_price: '13000.0', created_at: '2024-03-03T21:55:48.008Z', updated_at: '2024-03-03T21:55:48.008Z', subcategory: 'Real Estate',
     },
   ],
 };

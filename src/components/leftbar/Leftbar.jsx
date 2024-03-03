@@ -88,7 +88,7 @@ const LeftBar = (props) => {
     { id: 5, name: 'IT Services', icon: <GiProcessor /> },
     { id: 6, name: 'Gas Energy', icon: <GiFire /> },
     { id: 7, name: 'Real Estate', icon: <FaHome /> },
-    { id: 8, name: 'Agri-food', icon: <FaWheatAwn /> },
+    { id: 8, name: 'Agri Food', icon: <FaWheatAwn /> },
     { id: 9, name: 'Home Deco', icon: <FaCouch /> },
   ];
 

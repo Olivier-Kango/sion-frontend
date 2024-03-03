@@ -173,7 +173,7 @@ const ModifyProduct = () => {
                 <option value="IT Services">IT Services</option>
                 <option value="Gas Energy">Gas Energy</option>
                 <option value="Real Estate">Real Estate</option>
-                <option value="Agri-food">Agri-food</option>
+                <option value="Agri Food">Agri Food</option>
                 <option value="Home Deco">Home Deco</option>
               </select>
             </div>
@@ -199,7 +199,7 @@ const ModifyProduct = () => {
                 <option value="IT Services">IT Services</option>
                 <option value="Gas Energy">Gas Energy</option>
                 <option value="Real Estate">Real Estate</option>
-                <option value="Agri-food">Agri-food</option>
+                <option value="Agri Food">Agri Food</option>
                 <option value="Home Deco">Home Deco</option>
               </select>
             </div>
