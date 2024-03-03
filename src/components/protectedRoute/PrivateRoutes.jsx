@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+// import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 import {
   Outlet,
   Navigate,
@@ -206,14 +207,16 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
         <div className="home">
           {!isMobile
             && (
-            <button
+            // eslint-disable-next-line max-len
+            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+            <div
               className="toggle-button"
               onClick={handleToggleClick}
-              type="button"
-              tabIndex={0}
             >
-              {/* {gridTemplate === '0% 100%' ? '>' : '<'} */}
-            </button>
+              {/* {gridTemplate === '0% 100%'
+                ? <FaAngleRight className="icon-style" />
+                : <FaAngleLeft className="icon-style" />} */}
+            </div>
             )}
           <Outlet />
         </div>
