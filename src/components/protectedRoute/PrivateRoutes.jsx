@@ -212,6 +212,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
             <div
               className="toggle-button"
               onClick={handleToggleClick}
+              style={{ left: gridTemplate === '0% 100%' ? '0%' : '22%' }}
             >
               {gridTemplate === '0% 100%'
                 ? <MdOutlineArrowRight className="icon-style" />
