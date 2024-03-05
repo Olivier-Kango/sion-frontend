@@ -24,6 +24,10 @@ $main-color-hover: #c36d00;
       z-index: 999;
       width: 0;
       cursor: pointer;
+      position: fixed;
+      top: 64.7%;
+      left: 22%;
+      transform: translate(-50%, -50%);
 
       .icon-style {
         color: white;
