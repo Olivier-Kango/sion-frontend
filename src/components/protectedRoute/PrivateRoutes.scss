@@ -22,13 +22,14 @@ $main-color-hover: #c36d00;
 
     .toggle-button {
       z-index: 999;
+      width: 0;
+      cursor: pointer;
 
       .icon-style {
         color: white;
-        font-size: 15px;
-        width: 15px;
+        font-size: 25px;
+        width: 30px;
         height: 50px;
-        background: red;
       }
     }
   }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import { MdOutlineArrowLeft, MdOutlineArrowRight } from 'react-icons/md';
 import {
   Outlet,
   Navigate,
@@ -213,9 +213,9 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               className="toggle-button"
               onClick={handleToggleClick}
             >
-              {/* {gridTemplate === '0% 100%'
-                ? <FaAngleRight className="icon-style" />
-                : <FaAngleLeft className="icon-style" />} */}
+              {gridTemplate === '0% 100%'
+                ? <MdOutlineArrowRight className="icon-style" />
+                : <MdOutlineArrowLeft className="icon-style" />}
             </div>
             )}
           <Outlet />
