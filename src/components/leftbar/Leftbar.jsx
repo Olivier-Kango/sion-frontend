@@ -100,6 +100,7 @@ const LeftBar = (props) => {
     { id: 5, name: 'Electrical' },
     { id: 6, name: 'Cleaning' },
     { id: 7, name: 'General' },
+    { id: 8, name: 'Welding' },
   ];
 
   const shouldShowLeftbar = location.pathname !== '/management' && location.pathname !== '/requested_products';
