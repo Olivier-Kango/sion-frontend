@@ -191,6 +191,7 @@ const ModifyProduct = () => {
                 <option value="Plumbing">Plumbing</option>
                 <option value="Paint">Paint</option>
                 <option value="Electrical">Electrical</option>
+                <option value="Welding">Welding</option>
                 <option value="Cleaning">Cleaning</option>
                 <option value="General">General</option>
                 <option value="Telephony">Telephony</option>
