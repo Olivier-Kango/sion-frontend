@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { addOrder, allOrders } from '../../redux/actions/OrderActions';
 import './Ordering.scss';
 
 const AddOrder = () => {
+  const formRef = useRef(null);
   const { id } = useParams();
   const productId = parseInt(id, 10);
   const userId = useSelector((state) => state.user?.data.id);
@@ -21,24 +22,6 @@ const AddOrder = () => {
   // UseEffect to get user's location when the component mounts
   useEffect(() => {
     const getUserLocation = () => {
-      // if (navigator.geolocation) {
-      //   navigator.geolocation.getCurrentPosition(
-      //     (position) => {
-      //       const { latitude, longitude } = position.coords;
-      //       // Use latitude and longitude to get a meaningful address or set it directly
-      //       setDeliveryPoint(`Latitude: ${latitude}, Longitude: ${longitude}`);
-      //     },
-      //     (error) => {
-      //       console.error(error.message);
-      //       // Handle error or set a default location
-      //       setDeliveryPoint('Goma');
-      //     },
-      //   );
-      // } else {
-      //   console.error('Geolocation is not supported by this browser.');
-      //   // Handle no geolocation support or set a default location
-      //   setDeliveryPoint('Goma');
-      // }
       setDeliveryPoint('Goma');
     };
 
@@ -89,7 +72,7 @@ const AddOrder = () => {
           <h2>
             {product.name}
           </h2>
-          <form onSubmit={handleSubmit} className="add-order-form">
+          <form ref={formRef} onSubmit={handleSubmit} className="add-order-form">
             {showAlert && (
             <div style={{ color: 'red', fontSize: '16px', marginBottom: '4px' }}>
               Quantity must be at least 1.
