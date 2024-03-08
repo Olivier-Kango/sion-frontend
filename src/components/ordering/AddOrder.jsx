@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart, FaSpinner } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { addOrder, allOrders } from '../../redux/actions/OrderActions';
@@ -18,6 +18,7 @@ const AddOrder = () => {
   const [deliveryPoint, setDeliveryPoint] = useState('Goma');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // UseEffect to get user's location when the component mounts
   useEffect(() => {
@@ -30,6 +31,7 @@ const AddOrder = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     if (quantity < 1) {
       setShowAlert(true);
@@ -46,6 +48,7 @@ const AddOrder = () => {
     if (response && response.id) {
       setIsSubmitted(true);
       dispatch(allOrders());
+      setIsSubmitting(false);
     }
     setQuantity('');
     setDeliveryPoint('');
@@ -103,9 +106,20 @@ const AddOrder = () => {
             <div className="add-order-form-group">
               <input type="hidden" id="userId" value={userId} />
             </div>
-            <button type="submit">
-              <span className="icon"><FaShoppingCart /></span>
-              <span className="text">Order</span>
+
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <FaSpinner className="icon" />
+                  <span className="icon"><FaShoppingCart /></span>
+                  <span className="text">Ordering...</span>
+                </>
+              ) : (
+                <>
+                  <span className="icon"><FaShoppingCart /></span>
+                  <span className="text">Order</span>
+                </>
+              )}
             </button>
           </form>
         </>
