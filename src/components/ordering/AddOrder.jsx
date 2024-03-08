@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { addOrder, allOrders } from '../../redux/actions/OrderActions';
+import Spinner from '../spinner/Spinner';
 import './Ordering.scss';
 
 const AddOrder = () => {
+  const formRef = useRef(null);
   const { id } = useParams();
   const productId = parseInt(id, 10);
   const userId = useSelector((state) => state.user?.data.id);
@@ -17,28 +19,11 @@ const AddOrder = () => {
   const [deliveryPoint, setDeliveryPoint] = useState('Goma');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // UseEffect to get user's location when the component mounts
   useEffect(() => {
     const getUserLocation = () => {
-      // if (navigator.geolocation) {
-      //   navigator.geolocation.getCurrentPosition(
-      //     (position) => {
-      //       const { latitude, longitude } = position.coords;
-      //       // Use latitude and longitude to get a meaningful address or set it directly
-      //       setDeliveryPoint(`Latitude: ${latitude}, Longitude: ${longitude}`);
-      //     },
-      //     (error) => {
-      //       console.error(error.message);
-      //       // Handle error or set a default location
-      //       setDeliveryPoint('Goma');
-      //     },
-      //   );
-      // } else {
-      //   console.error('Geolocation is not supported by this browser.');
-      //   // Handle no geolocation support or set a default location
-      //   setDeliveryPoint('Goma');
-      // }
       setDeliveryPoint('Goma');
     };
 
@@ -47,6 +32,7 @@ const AddOrder = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     if (quantity < 1) {
       setShowAlert(true);
@@ -63,6 +49,7 @@ const AddOrder = () => {
     if (response && response.id) {
       setIsSubmitted(true);
       dispatch(allOrders());
+      setIsSubmitting(false);
     }
     setQuantity('');
     setDeliveryPoint('');
@@ -89,7 +76,7 @@ const AddOrder = () => {
           <h2>
             {product.name}
           </h2>
-          <form onSubmit={handleSubmit} className="add-order-form">
+          <form ref={formRef} onSubmit={handleSubmit} className="add-order-form">
             {showAlert && (
             <div style={{ color: 'red', fontSize: '16px', marginBottom: '4px' }}>
               Quantity must be at least 1.
@@ -120,9 +107,20 @@ const AddOrder = () => {
             <div className="add-order-form-group">
               <input type="hidden" id="userId" value={userId} />
             </div>
-            <button type="submit">
-              <span className="icon"><FaShoppingCart /></span>
-              <span className="text">Order</span>
+
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <Spinner />
+                  <span className="icon"><FaShoppingCart /></span>
+                  <span className="text">Ordering...</span>
+                </>
+              ) : (
+                <>
+                  <span className="icon"><FaShoppingCart /></span>
+                  <span className="text">Order</span>
+                </>
+              )}
             </button>
           </form>
         </>
