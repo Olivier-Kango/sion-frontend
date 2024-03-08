@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaShoppingCart, FaSpinner } from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { addOrder, allOrders } from '../../redux/actions/OrderActions';
+import Spinner from '../spinner/Spinner';
 import './Ordering.scss';
 
 const AddOrder = () => {
@@ -110,7 +111,7 @@ const AddOrder = () => {
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
-                  <FaSpinner className="icon" />
+                  <Spinner />
                   <span className="icon"><FaShoppingCart /></span>
                   <span className="text">Ordering...</span>
                 </>

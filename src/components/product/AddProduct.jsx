@@ -5,6 +5,7 @@ import { FaSpinner } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { addProduct, setShowLeftBar } from '../../redux/products/products';
+import Spinner from '../spinner/Spinner';
 import '../ordering/Ordering.scss';
 import './Product.scss';
 
@@ -223,7 +224,7 @@ const AddProduct = () => {
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? (
                 <>
-                  <FaSpinner className="icon" />
+                  <Spinner />
                   <span className="text">Adding...</span>
                 </>
               ) : (
