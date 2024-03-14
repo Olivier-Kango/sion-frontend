@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { MdOutlineArrowLeft, MdOutlineArrowRight } from 'react-icons/md';
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import {
   Outlet,
   Navigate,
@@ -215,8 +215,8 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               style={{ left: gridTemplate === '0% 100%' ? '0%' : '22%' }}
             >
               {gridTemplate === '0% 100%'
-                ? <MdOutlineArrowRight className="icon-style" />
-                : <MdOutlineArrowLeft className="icon-style" />}
+                ? <BsChevronCompactRight className="icon-style" />
+                : <BsChevronCompactLeft className="icon-style" />}
             </div>
             )}
           <Outlet />
