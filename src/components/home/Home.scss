@@ -64,15 +64,12 @@ $main-color-hover: #c36d00;
       margin-top: -26%;
       text-align: center;
 
-      span {
-        color: red;
-      }
-
       .swiper-scrollbar {
         display: none;
       }
 
       span {
+        color: red;
         display: block;
         width: 100%;
         text-align: center;
@@ -200,7 +197,7 @@ $main-color-hover: #c36d00;
       font-size: 16px;
       margin-top: 20px;
       cursor: pointer;
-    
+
       &:hover {
         text-decoration: underline;
       }
