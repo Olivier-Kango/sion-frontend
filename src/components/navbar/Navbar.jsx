@@ -121,9 +121,9 @@ const Navbar = ({ handleLinkClick }) => {
     };
   }, []);
 
-  const handlePortfolioClick = () => {
-    window.location.href = 'https://olivier-kango.netlify.app/';
-  };
+  // const handlePortfolioClick = () => {
+  //   window.location.href = 'https://olivier-kango.netlify.app/';
+  // };
 
   const handleSearchInputChange = (e) => {
     const query = e.target.value;
@@ -258,7 +258,7 @@ const Navbar = ({ handleLinkClick }) => {
             </Link>
           )}
         </div>
-        <Link to="/" onClick={handlePortfolioClick}>
+        <Link to="/portfolio">
           <div className="navbar-link">
             <FontAwesomeIcon icon={faFolderOpen} className="nav-icon" />
             <span className="text">Portfolio</span>
