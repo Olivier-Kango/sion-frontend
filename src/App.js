@@ -21,6 +21,7 @@ import Slides from './components/slides/Slides';
 // pages
 import Splash from './pages/Splash';
 import Management from './components/management/Management';
+import Portfolio from './components/portfolio/Portfolio';
 import StockMovement from './components/stockMovement/stockMovement';
 import ModifyProduct from './components/product/ModifyProduct';
 
@@ -38,6 +39,7 @@ const App = () => {
           }
         >
           <Route path="/management" element={<Management />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/stock-movement" element={<StockMovement />} />
           <Route path="/requested_products" element={<RequestedProduct />} />
           <Route path="/" element={<Home />} />
