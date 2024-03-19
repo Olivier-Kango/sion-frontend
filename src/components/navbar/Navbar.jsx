@@ -273,7 +273,7 @@ const Navbar = ({ handleLinkClick }) => {
             <span className="text">E-commerce</span>
           </div>
         </Link>
-        {user.role === 'admin' ? (
+        {user.data?.role === 'admin' ? (
           <Link to="/management">
             <div className={`navbar-link ${isManagement ? 'actived' : ''}`}>
               <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
