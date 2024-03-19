@@ -1,8 +1,9 @@
 import React from 'react';
+import Header from './Header';
 
 const Portfolio = () => (
   <div>
-    Coming Soon...
+    <Header />
   </div>
 );
 
