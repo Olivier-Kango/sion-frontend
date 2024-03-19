@@ -1,10 +1,10 @@
 import React from 'react';
 import './Sion.scss';
 
-const Header = () => (
+const Sion = () => (
   <div>
     Sion...
   </div>
 );
 
-export default Header;
+export default Sion;
