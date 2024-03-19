@@ -1,8 +1,9 @@
 import React from 'react';
+import Sion from './sion/Sion';
 
 const Portfolio = () => (
-  <div>
-    Comming Soon...
+  <div className="container">
+    <Sion />
   </div>
 );
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import './Header.scss';
+import './Sion.scss';
 
 const Header = () => (
   <div>
-    Header
+    Sion...
   </div>
 );
 
