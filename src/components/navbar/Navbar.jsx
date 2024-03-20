@@ -273,16 +273,12 @@ const Navbar = ({ handleLinkClick }) => {
             <span className="text">E-commerce</span>
           </div>
         </Link>
-        {user.data?.role === 'admin' ? (
-          <Link to="/management">
-            <div className={`navbar-link ${isManagement ? 'actived' : ''}`}>
-              <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
-              <span className="text">Management</span>
-            </div>
-          </Link>
-        ) : (
-          ''
-        )}
+        <Link to="/management">
+          <div className={`navbar-link ${isManagement ? 'actived' : ''}`}>
+            <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
+            <span className="text">Management</span>
+          </div>
+        </Link>
         <Link to="ordering">
           <div className={`cart-link ${isManagement ? '' : 'actived'}`}>
             <MdOutlineShoppingCart className="cart-icon" />
