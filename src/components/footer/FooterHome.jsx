@@ -1,10 +1,11 @@
 import React from 'react';
+import './FooterHome.scss';
 
 const FooterHome = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer-home">
+    <footer className="footer">
       <br />
       <h2>Contact Us!</h2>
       <br />
