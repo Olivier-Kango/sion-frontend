@@ -1,7 +1,6 @@
 import React from 'react';
 
 const FooterHome = () => {
-  // Obtenir l'année actuelle
   const currentYear = new Date().getFullYear();
 
   return (
@@ -10,7 +9,7 @@ const FooterHome = () => {
       {' '}
       {currentYear}
       {' '}
-      Olivier Kango
+      Footer
     </div>
   );
 };
