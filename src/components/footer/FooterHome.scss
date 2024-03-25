@@ -17,7 +17,7 @@ footer {
     text-align: center;
     color: #f5f5ff;
   }
-  
+
   form {
     div {
       padding: 0;
@@ -46,7 +46,7 @@ footer {
       padding-bottom: 40px;
       border-bottom: 2px solid #646369;
     }
-  }    
+  }
 
   input[type="text"]:valid,
   input[type="email"]:valid,
@@ -54,7 +54,7 @@ footer {
     border: 1px solid rgba(240, 136, 4, 0.45);
     background-image: linear-gradient(to top, rgba(240, 136, 4, 0.176), rgba(240, 136, 4, 0.046));
   }
-    
+
   /* VALIDATION FORM */
   input:focus,
   textarea:focus {
@@ -120,7 +120,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
-    
+
   #bottom {
     margin: 0;
     padding: 0;
@@ -138,18 +138,17 @@ footer {
   border-radius: 4px;
   border: none;
   padding: 12px;
+  margin: 0 auto;
   margin-bottom: 12px;
   cursor: pointer;
   transition: all 0.3s;
   display: flex;
-  margin: 0 auto;
   touch-action: manipulation;
 
   &:hover {
     background: $main-color-hover;
   }
 }
-
 
 .social-icone {
   margin-top: 80px;
