@@ -89,7 +89,7 @@ const FooterHome = () => (
             </a>
           </li>
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/+243974894633"
             target="_blank"
             rel="noreferrer"
           >
