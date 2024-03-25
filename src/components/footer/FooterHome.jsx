@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  FaGithub,
   FaLinkedin,
   FaWhatsapp,
   FaTwitter,
@@ -65,18 +64,16 @@ const FooterHome = () => (
     </form>
     <br />
     <br />
-    <br />
-    <br />
     <div className="social-icone" id="social">
       <nav className="flex-nav">
         <ul>
           <li className="social">
             <a
-              href="https://github.com/Olivier-Kango"
+              href="https://wa.me/+243974894633"
               target="_blank"
               rel="noreferrer"
             >
-              <FaGithub style={{ color: '#4078c0' }} />
+              <FaWhatsapp style={{ color: '#25D366' }} />
             </a>
           </li>
           <li className="social">
@@ -88,13 +85,6 @@ const FooterHome = () => (
               <FaLinkedin style={{ color: '#0077b5' }} />
             </a>
           </li>
-          <a
-            href="https://wa.me/+243974894633"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaWhatsapp style={{ color: '#25D366' }} />
-          </a>
           <li className="social">
             <a
               href="https://twitter.com/olivierkango1"
