@@ -182,7 +182,7 @@ const Home = () => {
       <br />
       <div className="contact-us" style={{ display: 'flex', alignItems: 'center' }}>
         <div />
-        <h2 style={{ margin: '0 10px' }}>Contact Us!</h2>
+        <h2 style={{ margin: '0 30px' }}>Contact Us!</h2>
         <div />
       </div>
       <br />
