@@ -145,19 +145,39 @@ footer {
 }
 
 .social-icone {
-  margin-top: 80px;
   display: flex;
   padding: 0;
   justify-content: center;
+  margin-bottom: 20px;
 
-  .flex-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
+  .flex-nav {
+    width: 100%;
+    ul {
+      width: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+  
+        span {
+          margin-left: 10px;
+          font-size: 16px; 
+        }
+      }
+    }
+  } 
 }
 
 /* FOR DESKTOP */

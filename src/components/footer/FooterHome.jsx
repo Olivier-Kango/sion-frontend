@@ -2,7 +2,7 @@ import React from 'react';
 import {
   FaLinkedin,
   FaWhatsapp,
-  FaTwitter,
+  FaFacebook,
 } from 'react-icons/fa';
 import { AiOutlineMail } from 'react-icons/ai';
 import './FooterHome.scss';
@@ -70,25 +70,28 @@ const FooterHome = () => (
               target="_blank"
               rel="noreferrer"
             >
-              <FaWhatsapp style={{ color: '#25D366' }} />
+              <FaWhatsapp style={{ color: '#25D366', fontSize: '24px' }} />
+              <span>+243974894633</span>
             </a>
           </li>
           <li className="social">
             <a
-              href="https://www.linkedin.com/in/olivier-kango/"
+              href="https://www.linkedin.com/company/kangooo"
               target="_blank"
               rel="noreferrer"
             >
-              <FaLinkedin style={{ color: '#0077b5' }} />
+              <FaLinkedin style={{ color: '#0077b5', fontSize: '24px' }} />
+              <span>LinkedIn</span>
             </a>
           </li>
           <li className="social">
             <a
-              href="https://twitter.com/olivierkango1"
+              href="https://web.facebook.com/SionEcommerce"
               target="_blank"
               rel="noreferrer"
             >
-              <FaTwitter style={{ color: '#1da1f2' }} />
+              <FaFacebook style={{ color: '#0866ff', fontSize: '24px' }} />
+              <span>Facebook</span>
             </a>
           </li>
           <li className="social">
@@ -98,7 +101,8 @@ const FooterHome = () => (
               target="_blank"
               rel="noreferrer"
             >
-              <strong><AiOutlineMail style={{ color: '#db4437' }} /></strong>
+              <strong><AiOutlineMail style={{ color: '#db4437', fontSize: '24px' }} /></strong>
+              <span>olivierkango@gmail.com</span>
             </a>
           </li>
         </ul>
