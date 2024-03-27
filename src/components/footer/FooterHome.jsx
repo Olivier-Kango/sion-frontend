@@ -9,9 +9,6 @@ import './FooterHome.scss';
 
 const FooterHome = () => (
   <footer className="footer">
-    <br />
-    <h2>Contact Us!</h2>
-    <br />
     {/* CONTACT FORM */}
     <form
       noValidate

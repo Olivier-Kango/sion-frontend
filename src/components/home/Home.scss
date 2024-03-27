@@ -204,6 +204,15 @@ $main-color-hover: #c36d00;
     }
   }
 
+  .contact-us {
+    h2 {
+      margin-top: 100px;
+      font-weight: 500;
+      font-size: 32px;
+      text-align: center;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     padding-bottom: 3.5rem;
 

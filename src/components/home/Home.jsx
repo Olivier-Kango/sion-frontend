@@ -179,6 +179,13 @@ const Home = () => {
           )}
         </div>
       )}
+      <br />
+      <div className="contact-us" style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ flex: '1', height: '1px', backgroundColor: 'black' }} />
+        <h2 style={{ margin: '0 10px' }}>Contact Us!</h2>
+        <div style={{ flex: '1', height: '1px', backgroundColor: 'black' }} />
+      </div>
+      <br />
       <FooterHome />
     </div>
   );
