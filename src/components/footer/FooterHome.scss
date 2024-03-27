@@ -2,13 +2,6 @@ $main-color: #f08804;
 $main-color-hover: #c36d00;
 
 footer {
-  h2 {
-    margin-top: 100px;
-    font-weight: 500;
-    font-size: 32px;
-    text-align: center;
-  }
-
   p {
     font-style: normal;
     font-weight: 400;
@@ -19,6 +12,7 @@ footer {
   }
 
   form {
+    // width: 50%;
     div {
       padding: 0;
       margin: 0;
@@ -51,8 +45,8 @@ footer {
   input[type="text"]:valid,
   input[type="email"]:valid,
   textarea:valid {
-    border: 1px solid rgba(240, 136, 4, 0.45);
-    background-image: linear-gradient(to top, rgba(240, 136, 4, 0.176), rgba(240, 136, 4, 0.046));
+    border: 1px solid rgba(128, 128, 128, 0.45);
+    background-image: linear-gradient(to top, rgba(128, 128, 128, 0.176), rgba(128, 128, 128, 0.046));
   }
 
   /* VALIDATION FORM */
@@ -151,19 +145,39 @@ footer {
 }
 
 .social-icone {
-  margin-top: 80px;
   display: flex;
   padding: 0;
   justify-content: center;
+  margin-bottom: 20px;
 
-  .flex-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
+  .flex-nav {
+    width: 100%;
+    ul {
+      width: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+  
+        span {
+          margin-left: 10px;
+          font-size: 16px; 
+        }
+      }
+    }
+  } 
 }
 
 /* FOR DESKTOP */

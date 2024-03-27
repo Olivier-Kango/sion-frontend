@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { BiPencil, BiTrash } from 'react-icons/bi';
 import { getAllProducts, deleteProduct } from '../../redux/products/products';
 import Slides from '../slides/Slides';
-// import FooterHome from '../footer/FooterHome';
+import FooterHome from '../footer/FooterHome';
 // import pubSion from '../../assets/pub-sion.jpg';
 // import gaz from '../../assets/gaz.jpg';
 import './Home.scss';
@@ -179,7 +179,14 @@ const Home = () => {
           )}
         </div>
       )}
-      {/* <FooterHome /> */}
+      <br />
+      <div className="contact-us" style={{ display: 'flex', alignItems: 'center' }}>
+        <div />
+        <h2 style={{ margin: '0 30px' }}>Contact Us!</h2>
+        <div />
+      </div>
+      <br />
+      <FooterHome />
     </div>
   );
 };
