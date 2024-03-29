@@ -2,6 +2,9 @@ $main-color: #f08804;
 $main-color-hover: #c36d00;
 
 footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   p {
     font-style: normal;
     font-weight: 400;
@@ -12,7 +15,8 @@ footer {
   }
 
   form {
-    // width: 50%;
+    width: 60%;
+    
     div {
       padding: 0;
       margin: 0;
@@ -145,6 +149,7 @@ footer {
 }
 
 .social-icone {
+  width: 100%;
   display: flex;
   padding: 0;
   justify-content: center;
@@ -158,7 +163,7 @@ footer {
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       gap: 15px;
 
       a {
@@ -182,7 +187,6 @@ footer {
   @media (max-width: 768px) { 
     .flex-nav {
       ul {
-        justify-content: space-around;
         span {
           display: none;
         }
