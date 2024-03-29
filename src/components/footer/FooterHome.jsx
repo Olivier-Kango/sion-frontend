@@ -22,7 +22,7 @@ const FooterHome = () => (
           name="Names"
           className="input-field"
           id="name"
-          placeholder="Olivier Kango"
+          placeholder="Your name"
           maxLength="30"
         />
         <small id="errorName" />
@@ -33,7 +33,7 @@ const FooterHome = () => (
           name="email"
           id="email"
           className="input-field"
-          placeholder="olivierkango@gmail.com"
+          placeholder="Your E - mail"
         />
         <small id="errorEmail" />
       </div>
