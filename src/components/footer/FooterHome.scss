@@ -177,20 +177,17 @@ footer {
         }
       }
     }
-  } 
-}
-
-/* FOR DESKTOP */
-@media (min-width: 768px) {
-  footer h2 {
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 24px;
   }
-
-  footer {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+  
+  @media (max-width: 768px) { 
+    .flex-nav {
+      ul {
+        justify-content: space-around;
+        span {
+          display: none;
+        }
+      }
+    }
   }
 }
+
