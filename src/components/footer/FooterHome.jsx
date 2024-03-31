@@ -33,7 +33,7 @@ const FooterHome = () => (
           name="email"
           id="email"
           className="input-field"
-          placeholder="Your E - mail"
+          placeholder="Your email"
         />
         <small id="errorEmail" />
       </div>
