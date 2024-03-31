@@ -44,7 +44,7 @@ const FooterHome = () => (
           id="message"
           cols="30"
           rows="10"
-          placeholder="Enter your text here !!!"
+          placeholder="Your message..."
           maxLength="401"
         />
         <small id="errorMsg" />
