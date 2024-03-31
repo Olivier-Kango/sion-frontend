@@ -33,7 +33,7 @@ const FooterHome = () => (
           name="email"
           id="email"
           className="input-field"
-          placeholder="Your E - mail"
+          placeholder="Your email"
         />
         <small id="errorEmail" />
       </div>
@@ -44,7 +44,7 @@ const FooterHome = () => (
           id="message"
           cols="30"
           rows="10"
-          placeholder="Enter your text here !!!"
+          placeholder="Your message..."
           maxLength="401"
         />
         <small id="errorMsg" />
