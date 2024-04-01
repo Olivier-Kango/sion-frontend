@@ -341,13 +341,29 @@ const initialState = {
     }, {
       id: 64, name: 'Niveau petit format', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709316646/niveau_jy67bb.jpg', unit_price: '3.0', quantity: 1, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2024-03-01T18:11:18.418Z', updated_at: '2024-03-01T18:11:18.418Z', subcategory: 'Tools',
     }, {
-      id: 72, name: 'MacBook Air M1, 2020', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709492298/Mac-ezgif.com-webp-to-png-converter_q297wx.png', unit_price: '1000.0', quantity: 1, category: 'Electronics', unit_purchase_price: '700.0', created_at: '2024-03-02T05:44:27.885Z', updated_at: '2024-03-03T18:58:23.082Z', subcategory: 'IT Services',
-    }, {
       id: 77, name: 'Couvre lit', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709499837/antilo-couvre-lit-matelasse-dual-esmeralda-31108_zy11uv.jpg', unit_price: '25.0', quantity: 19, category: 'Home Deco', unit_purchase_price: '15.0', created_at: '2024-03-03T21:04:02.878Z', updated_at: '2024-03-03T21:04:02.878Z', subcategory: 'Home Deco',
     }, {
       id: 79, name: 'Lapin', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709500085/lapin_qwyjq5.jpg', unit_price: '10.0', quantity: 19, category: 'Agri Food', unit_purchase_price: '3.0', created_at: '2024-03-03T21:08:22.031Z', updated_at: '2024-03-03T21:08:22.031Z', subcategory: 'Agri Food',
     }, {
       id: 82, name: 'Parcelle à vendre', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709502928/terrain_2_rlqgt3.jpg', unit_price: '13000.0', quantity: 1, category: 'Real Estate', unit_purchase_price: '13000.0', created_at: '2024-03-03T21:55:48.008Z', updated_at: '2024-03-03T21:55:48.008Z', subcategory: 'Real Estate',
+    }, {
+      id: 176, name: 'Baguette de soudure', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709727829/baquette-a-soudure_ip15xz.jpg', unit_price: '5.0', quantity: 8, category: 'Hardware Store', unit_purchase_price: '3.5', created_at: '2024-03-06T12:24:22.934Z', updated_at: '2024-03-06T12:24:22.934Z', subcategory: 'Welding',
+    }, {
+      id: 177, name: 'Disque à couper', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709728031/disque_ufmd2s.png', unit_price: '2.5', quantity: 25, category: 'Hardware Store', unit_purchase_price: '1.8', created_at: '2024-03-06T12:28:17.806Z', updated_at: '2024-03-06T12:28:17.806Z', subcategory: 'Welding',
+    }, {
+      id: 178, name: 'Antirouille 4L', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1709728523/P115_kq6dvl.png', unit_price: '10.0', quantity: 4, category: 'Hardware Store', unit_purchase_price: '8.0', created_at: '2024-03-06T12:36:35.154Z', updated_at: '2024-03-06T12:36:35.154Z', subcategory: 'Welding',
+    }, {
+      id: 179, name: 'Bâche 4 X 5m', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1710405449/b%C3%A2che_cjtmy6.jpg', unit_price: '7.0', quantity: 2, category: 'Hardware Store', unit_purchase_price: '5.5', created_at: '2024-03-14T08:44:08.465Z', updated_at: '2024-03-14T08:44:08.465Z', subcategory: 'Building',
+    }, {
+      id: 180, name: 'Multiprise', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1711609462/UK-Plastic-Bakelite-Adaptor-Multi-Function-Plug_jxwftm.webp', unit_price: '1.5', quantity: 24, category: 'Hardware Store', unit_purchase_price: '0.88', created_at: '2024-03-28T07:05:04.521Z', updated_at: '2024-03-28T07:05:04.521Z', subcategory: 'Electrical',
+    }, {
+      id: 181, name: 'Tenaille', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1711609618/images_teh6z4.jpg', unit_price: '4.0', quantity: 2, category: 'Hardware Store', unit_purchase_price: '2.0', created_at: '2024-03-28T07:07:11.503Z', updated_at: '2024-03-28T07:07:11.503Z', subcategory: 'Tools',
+    }, {
+      id: 182, name: 'Pinceau 1.5"', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1711609693/images_1_ztp7o6.jpg', unit_price: '0.35', quantity: 12, category: 'Hardware Store', unit_purchase_price: '0.25', created_at: '2024-03-28T07:09:12.164Z', updated_at: '2024-03-28T07:09:12.164Z', subcategory: 'Paint',
+    }, {
+      id: 183, name: 'Niveau petit format', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1711609845/images_2_jfvjok.jpg', unit_price: '3.0', quantity: 3, category: 'Hardware Store', unit_purchase_price: '1.5', created_at: '2024-03-28T07:11:24.741Z', updated_at: '2024-03-28T07:11:24.741Z', subcategory: 'Tools',
+    }, {
+      id: 184, name: 'Toile isolante premium', image: 'https://res.cloudinary.com/du1qvhkp2/image/upload/v1711609958/66561545_1_vbpc4h.jpg', unit_price: '1.0', quantity: 10, category: 'Hardware Store', unit_purchase_price: '0.3', created_at: '2024-03-28T07:13:29.365Z', updated_at: '2024-03-28T07:13:29.365Z', subcategory: 'Electrical',
     },
   ],
 };
