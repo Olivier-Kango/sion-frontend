@@ -5,6 +5,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   p {
     font-style: normal;
     font-weight: 400;
@@ -16,7 +17,7 @@ footer {
 
   form {
     width: 60%;
-    
+
     div {
       padding: 0;
       margin: 0;
@@ -125,7 +126,7 @@ footer {
     text-align: center;
   }
 
-  @media (max-width: 768px) { 
+  @media (max-width: 768px) {
     form {
       width: 100%;
     }
@@ -163,6 +164,7 @@ footer {
 
   .flex-nav {
     width: 100%;
+
     ul {
       width: 100%;
       list-style: none;
@@ -177,20 +179,20 @@ footer {
         align-items: center;
         text-decoration: none;
         color: #333;
-  
+
         &:hover {
           text-decoration: underline;
         }
-  
+
         span {
           margin-left: 10px;
-          font-size: 16px; 
+          font-size: 16px;
         }
       }
     }
   }
-  
-  @media (max-width: 768px) { 
+
+  @media (max-width: 768px) {
     .flex-nav {
       ul {
         span {
@@ -200,4 +202,3 @@ footer {
     }
   }
 }
-

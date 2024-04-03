@@ -17,8 +17,8 @@ import 'swiper/css/scrollbar';
 
 const Home = () => {
   const [done, setDone] = useState(undefined);
-  const [displayedProducts, setDisplayedProducts] = useState(8);
-  const productsPerPage = 8;
+  const [displayedProducts, setDisplayedProducts] = useState(12);
+  const productsPerPage = 12;
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
