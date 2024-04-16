@@ -71,7 +71,7 @@ const FooterHome = () => (
               rel="noreferrer"
             >
               <FaWhatsapp style={{ color: '#25D366', fontSize: '24px' }} />
-              <span>+243974894633</span>
+              {/* <span>+243974894633</span> */}
             </a>
           </li>
           <li className="social">
@@ -81,7 +81,7 @@ const FooterHome = () => (
               rel="noreferrer"
             >
               <FaLinkedin style={{ color: '#0077b5', fontSize: '24px' }} />
-              <span>LinkedIn</span>
+              {/* <span>LinkedIn</span> */}
             </a>
           </li>
           <li className="social">
@@ -91,7 +91,7 @@ const FooterHome = () => (
               rel="noreferrer"
             >
               <FaFacebook style={{ color: '#0866ff', fontSize: '24px' }} />
-              <span>Facebook</span>
+              {/* <span>Facebook</span> */}
             </a>
           </li>
           <li className="social">
@@ -102,7 +102,7 @@ const FooterHome = () => (
               rel="noreferrer"
             >
               <strong><AiOutlineMail style={{ color: '#db4437', fontSize: '24px' }} /></strong>
-              <span>olivierkango@gmail.com</span>
+              {/* <span>olivierkango@gmail.com</span> */}
             </a>
           </li>
         </ul>
