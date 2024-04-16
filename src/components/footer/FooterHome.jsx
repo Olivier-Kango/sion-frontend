@@ -91,7 +91,7 @@ const FooterHome = () => (
               rel="noreferrer"
             >
               <FaFacebook style={{ color: '#0866ff', fontSize: '24px' }} />
-              <span>Facebook</span>
+              {/* <span>Facebook</span> */}
             </a>
           </li>
           <li className="social">
