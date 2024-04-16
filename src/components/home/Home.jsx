@@ -17,11 +17,12 @@ import 'swiper/css/scrollbar';
 
 const Home = () => {
   const [done, setDone] = useState(undefined);
-  const [displayedProducts, setDisplayedProducts] = useState(8);
-  const productsPerPage = 8;
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
+  const [displayedProducts, setDisplayedProducts] = useState(products.length);
+  const productsPerPage = products.length;
+
   const user = useSelector((state) => state.user.data);
   const isAuthenticated = useSelector((state) => state.user.loggedIn);
   const { category, subcategory } = useParams();
