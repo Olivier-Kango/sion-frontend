@@ -102,7 +102,7 @@ const FooterHome = () => (
               rel="noreferrer"
             >
               <strong><AiOutlineMail style={{ color: '#db4437', fontSize: '24px' }} /></strong>
-              <span>olivierkango@gmail.com</span>
+              {/* <span>olivierkango@gmail.com</span> */}
             </a>
           </li>
         </ul>
