@@ -71,7 +71,7 @@ const FooterHome = () => (
               rel="noreferrer"
             >
               <FaWhatsapp style={{ color: '#25D366', fontSize: '24px' }} />
-              <span>+243974894633</span>
+              {/* <span>+243974894633</span> */}
             </a>
           </li>
           <li className="social">
