@@ -81,7 +81,7 @@ const FooterHome = () => (
               rel="noreferrer"
             >
               <FaLinkedin style={{ color: '#0077b5', fontSize: '24px' }} />
-              <span>LinkedIn</span>
+              {/* <span>LinkedIn</span> */}
             </a>
           </li>
           <li className="social">
