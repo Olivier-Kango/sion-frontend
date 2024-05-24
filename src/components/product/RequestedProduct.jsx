@@ -245,12 +245,14 @@ const RequestedProduct = () => {
                     <div className="delete-reset">
                       <button
                         type="button"
+                        aria-label="Reset"
                         onClick={() => handleResetRequest(product.id)}
                       >
                         <FaUndo className="icon" />
                       </button>
                       <button
                         type="button"
+                        aria-label="DeleteRequest"
                         onClick={() => handleDeleteRequestedProduct(product.id)}
                       >
                         <FaTrash className="icon" />
@@ -263,6 +265,7 @@ const RequestedProduct = () => {
                   <div className="like">
                     <button
                       type="button"
+                      aria-label="Like"
                       onClick={() => handleTogglePopup(product.id)}
                       className="ellipsis"
                     >
@@ -309,7 +312,7 @@ const RequestedProduct = () => {
               {/* Submit button for adding requested product */}
               {showButton && !loadingSubmit
                 && (
-                <button type="submit">
+                <button type="submit" aria-label="showButton">
                   <LuSendHorizonal className="icon" style={{ color: '#0a66c2' }} />
                 </button>
                 )}

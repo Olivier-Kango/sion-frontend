@@ -209,7 +209,7 @@ const ModifyProduct = () => {
               {image && (
               <div className="image-preview">
                 <img src={image} alt="Uploaded" />
-                <button type="button" onClick={deleteImage} className="remove-image">
+                <button type="button" onClick={deleteImage} className="remove-image" aria-label="Modify-Product">
                   <BiTrash />
                 </button>
               </div>

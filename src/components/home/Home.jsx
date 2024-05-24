@@ -144,6 +144,7 @@ const Home = () => {
                           <Link to={`/modify-product/${product.id}`}>
                             <button
                               type="button"
+                              aria-label="Modify"
                               className="button pencil"
                               style={{ color: 'black' }}
                             >
@@ -153,6 +154,7 @@ const Home = () => {
                           <br />
                           <button
                             type="button"
+                            aria-label="Trash"
                             className="button trash"
                             style={{ color: 'black' }}
                             onClick={() => {
