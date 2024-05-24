@@ -7,8 +7,6 @@ import gaz from '../../assets/gaz.jpg';
 import sionPhone from '../../assets/sion-phone.jpg';
 import gazPhone from '../../assets/gaz-phone.jpg';
 import coussinPhone from '../../assets/coussin-phone.jpg';
-import mac from '../../assets/mac.jpg';
-import macPhone from '../../assets/mac-phone.jpg';
 import './Slides.scss';
 
 // Functional component for managing requested products
@@ -36,13 +34,6 @@ const Slides = () => {
           className="d-block w-100"
           src={isMobile ? coussinPhone : coussin}
           alt="Third slide"
-        />
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={isMobile ? macPhone : mac}
-          alt="Fourth slide"
         />
       </Carousel.Item>
     </Carousel>
