@@ -64,12 +64,11 @@ $accent-color: #e44d26;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s, color 0.3s;
 
-
       &:hover {
-      background-color: $main-color;
-      color: white;
+        background-color: $main-color;
+        color: white;
 
-        &:before {
+        &::before {
           border-color: white;
         }
       }
