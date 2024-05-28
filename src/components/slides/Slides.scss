@@ -84,5 +84,10 @@ $accent-color: #e44d26;
     .hero-slider-next {
       top: 20% !important;
     }
+
+    a.carousel-control-prev,
+    a.carousel-control-next {
+      display: none;
+    }
   }
 }
