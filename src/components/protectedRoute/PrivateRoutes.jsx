@@ -165,6 +165,7 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
             <div
               className={`hamburger-button${showLeftbar ? ' open' : ''}`}
               onClick={handleHamburgerClick}
+              aria-label="Hamburger"
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   handleHamburgerClick();

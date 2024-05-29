@@ -7,7 +7,24 @@ $accent-color: #e44d26;
   background-size: cover;
 
   .carousel-item {
+    position: relative;
     overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30%; // Adjust this value to control the height of the gradient
+      background: linear-gradient(to top, #f9f9fb, transparent);
+      pointer-events: none; // Ensure the pseudo-element doesn't interfere with interaction
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
   }
 
   .carousel-inner {
@@ -29,6 +46,35 @@ $accent-color: #e44d26;
     display: none;
   }
 
+  a.carousel-control-prev,
+  a.carousel-control-next {
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+      position: absolute;
+      top: 20%; // Adjust this value to position the buttons higher or lower
+      background-color: $main-color;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $main-color;
+      font-size: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: $main-color;
+        color: white;
+
+        &::before {
+          border-color: white;
+        }
+      }
+    }
+  }
+
   @media screen and (max-width: 768px) {
     .hero-slider-slide-background-image {
       border-radius: 5px !important;
@@ -37,6 +83,11 @@ $accent-color: #e44d26;
     .hero-slider-previous,
     .hero-slider-next {
       top: 20% !important;
+    }
+
+    a.carousel-control-prev,
+    a.carousel-control-next {
+      display: none;
     }
   }
 }
