@@ -79,7 +79,7 @@ $main-color-hover: #c36d00;
       gap: 0.5rem;
       align-items: center;
       margin: 0 -0.5rem;
-      margin-top: -29%;
+      margin-top: -36%;
       text-align: center;
 
       .swiper-scrollbar {
@@ -252,6 +252,7 @@ $main-color-hover: #c36d00;
     .home-cont {
       .swiper {
         margin: 0 -0.65rem;
+        margin-top: -29% !important;
 
         .swiper-slide {
           min-width: 170px;
@@ -265,6 +266,7 @@ $main-color-hover: #c36d00;
     .home-cont {
       .swiper {
         margin: 0 -0.65rem;
+        margin-top: -29% !important;
 
         .swiper-slide {
           min-width: 148px;
