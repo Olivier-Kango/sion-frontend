@@ -210,7 +210,7 @@ const AddProduct = () => {
               {image && (
                 <div className="image-preview">
                   <img src={image} alt="Uploaded" />
-                  <button type="button" onClick={deleteImage} className="remove-image">
+                  <button type="button" onClick={deleteImage} className="remove-image" aria-label="Delete">
                     <BiTrash />
                   </button>
                 </div>

@@ -13,7 +13,6 @@ $main-color-hover: #c36d00;
     }
   }
 
-
   .contact-us {
     display: flex;
     align-items: center;
@@ -80,7 +79,7 @@ $main-color-hover: #c36d00;
       gap: 0.5rem;
       align-items: center;
       margin: 0 -0.5rem;
-      margin-top: -26%;
+      margin-top: -29%;
       text-align: center;
 
       .swiper-scrollbar {
@@ -228,6 +227,7 @@ $main-color-hover: #c36d00;
 
     .home-cont {
       .pub-container {
+        width: 100vw;
         margin-bottom: 0.5rem;
         height: 344px !important;
         border-radius: 5px !important;
@@ -239,7 +239,7 @@ $main-color-hover: #c36d00;
 
       .swiper {
         align-items: center;
-        margin-top: 0 !important;
+        margin-top: -29% !important;
 
         .swiper-slide {
           height: auto !important;
@@ -252,7 +252,6 @@ $main-color-hover: #c36d00;
     .home-cont {
       .swiper {
         margin: 0 -0.65rem;
-        margin-top: 0 !important;
 
         .swiper-slide {
           min-width: 170px;
@@ -266,7 +265,6 @@ $main-color-hover: #c36d00;
     .home-cont {
       .swiper {
         margin: 0 -0.65rem;
-        margin-top: 0 !important;
 
         .swiper-slide {
           min-width: 148px;
