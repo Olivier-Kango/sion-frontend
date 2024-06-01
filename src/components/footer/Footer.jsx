@@ -10,7 +10,7 @@ const Footer = () => {
       {' '}
       {currentYear}
       {' '}
-      Olivier Kango
+      Sion E-Commerce
     </div>
   );
 };
