@@ -46,33 +46,35 @@ $accent-color: #e44d26;
     display: none;
   }
 
-  a.carousel-control-prev,
-  a.carousel-control-next {
-    .carousel-control-next-icon,
-    .carousel-control-prev-icon {
-      position: absolute;
-      top: 20%; // Adjust this value to position the buttons higher or lower
-      background-color: $main-color;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: $main-color;
-      font-size: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s, color 0.3s;
+  // Next and Prev buttons
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
 
-      &:hover {
-        background-color: $main-color;
-        color: white;
-
-        &::before {
-          border-color: white;
-        }
-      }
+    &:hover {
+      background-color: #ffffffd6; 
     }
+  }
+
+  .carousel-control-prev {
+    left: 30px;
+  }
+
+  .carousel-control-next {
+    right: 30px;
   }
 
   @media screen and (max-width: 768px) {
