@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { useMediaQuery } from '@mui/material';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import sion from '../../assets/pub-sion.jpg';
 import coussin from '../../assets/coussin.jpg';
 import gaz from '../../assets/gaz.jpg';
@@ -16,7 +17,11 @@ const Slides = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   return (
-    <Carousel fade>
+    <Carousel
+      fade
+      prevIcon={<FiChevronLeft size={30} color="#000" />}
+      nextIcon={<FiChevronRight size={30} color="#000" />}
+    >
       <Carousel.Item>
         <img
           className="d-block w-100"

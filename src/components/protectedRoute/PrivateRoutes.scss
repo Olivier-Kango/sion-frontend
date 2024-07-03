@@ -22,18 +22,25 @@ $main-color-hover: #c36d00;
 
     .toggle-button {
       z-index: 999;
-      width: 0;
+      width: 50px;
+      height: 50px;
       cursor: pointer;
       position: fixed;
       top: 57%;
-      left: 22%;
+      left: 25%;
       transform: translate(-50%, -50%);
+      border-radius: 50%;
+      // display: flex;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
       .icon-style {
         color: white;
         font-size: 25px;
         width: 30px;
-        height: 50px;
+        height: 30px;
       }
     }
   }
