@@ -47,6 +47,14 @@ $accent-color: #e44d26;
   }
 
   // Next and Prev buttons
+  .carousel-control-prev {
+    left: 30px;
+  }
+
+  .carousel-control-next {
+    right: 30px;
+  }
+
   .carousel-control-prev,
   .carousel-control-next {
     position: absolute;
@@ -65,16 +73,8 @@ $accent-color: #e44d26;
     transition: background-color 0.3s, color 0.3s;
 
     &:hover {
-      background-color: #ffffffd6; 
+      background-color: #ffffffd6;
     }
-  }
-
-  .carousel-control-prev {
-    left: 30px;
-  }
-
-  .carousel-control-next {
-    right: 30px;
   }
 
   @media screen and (max-width: 768px) {
