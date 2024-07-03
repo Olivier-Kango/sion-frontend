@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+// import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+// import { GiHamburgerMenu } from 'react-icons/gi';
 import {
   Outlet,
   Navigate,
@@ -24,6 +25,8 @@ import {
 } from '../../redux/products/products';
 import Navbar from '../navbar/Navbar';
 
+import prevIcon from '../../assets/prev-icon.svg';
+import nextIcon from '../../assets/next-icon.svg';
 import './PrivateRoutes.scss';
 
 const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
@@ -216,8 +219,8 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               style={{ left: gridTemplate === '0% 100%' ? '0%' : '22%' }}
             >
               {gridTemplate === '0% 100%'
-                ? <BsChevronCompactRight className="icon-style" />
-                : <BsChevronCompactLeft className="icon-style" />}
+                ? <img src={nextIcon} alt="Next Icon" className="icon-style" />
+                : <img src={prevIcon} alt="Previous Icon" className="icon-style" />}
             </div>
             )}
           <Outlet />
