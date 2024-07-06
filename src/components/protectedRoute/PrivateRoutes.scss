@@ -8,6 +8,7 @@ $main-color-hover: #c36d00;
   grid-template-columns: 22% 78%;
   background: #f8f8f8;
   position: relative;
+  transition: all 0.3s;
 
   .leftbar-container {
     // height: 100vh;
@@ -22,25 +23,39 @@ $main-color-hover: #c36d00;
 
     .toggle-button {
       z-index: 999;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       cursor: pointer;
       position: fixed;
-      top: 57%;
-      left: 25%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      // display: flex;
-      display: none;
+      top: 62px;
+      transform: translate(-145%, 25%);
+      border-radius: 0.5rem;
+      display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s;
 
       .icon-style {
-        color: white;
         font-size: 25px;
         width: 30px;
         height: 30px;
+        opacity: 0.5;
+      }
+
+      .next {
+        width: 35px;
+        height: 33px;
+        transform: translate(170%, -55%);
+        background: #ffffff;
+        border-radius: 0.5rem;
+
+        &:hover {
+          background: #ffffff7a;
+        }
+      }
+
+      &:hover {
+        background: #7d7d7d2b;
       }
     }
   }
