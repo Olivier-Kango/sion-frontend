@@ -25,8 +25,9 @@ import {
 } from '../../redux/products/products';
 import Navbar from '../navbar/Navbar';
 
-import prevIcon from '../../assets/prev-icon.svg';
-import nextIcon from '../../assets/next-icon.svg';
+// import prevIcon from '../../assets/prev-icon.svg';
+// import nextIcon from '../../assets/next-icon.svg';
+import toggle from '../../assets/toggle.svg';
 import './PrivateRoutes.scss';
 
 const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
@@ -219,8 +220,8 @@ const PrivateRoutes = ({ isAllowed, children, redirectPath }) => {
               style={{ left: gridTemplate === '0% 100%' ? '0%' : '22%' }}
             >
               {gridTemplate === '0% 100%'
-                ? <img src={nextIcon} alt="Next Icon" className="icon-style" />
-                : <img src={prevIcon} alt="Previous Icon" className="icon-style" />}
+                ? <img src={toggle} alt="Next Icon" className="icon-style next" />
+                : <img src={toggle} alt="Previous Icon" className="icon-style previous" />}
             </div>
             )}
           <Outlet />
