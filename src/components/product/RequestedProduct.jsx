@@ -50,6 +50,9 @@ const RequestedProduct = () => {
   const [loadingSubmit, setLoadingSubmit] = useState(false);
   const [popupVisibleTimer, setPopupVisibleTimer] = useState(null);
 
+  // Timer Countdown
+  const [countdown, setCountdown] = useState(50);
+
   // Memoize the sorted and mapped requested products
   const sortedAndMappedProducts = useMemo(() => (requestedProducts
     ? requestedProducts
@@ -79,6 +82,11 @@ const RequestedProduct = () => {
         setLoading(true);
       });
   }, [dispatch]);
+
+  useEffect(() => {
+    const timer = countdown > 0 && setInterval(() => setCountdown(countdown - 1), 1000);
+    return () => clearInterval(timer);
+  }, [countdown]);
 
   // Toggle the visibility of the popup for a specific product
   const handleTogglePopup = (productId) => {
@@ -220,7 +228,11 @@ const RequestedProduct = () => {
           {loading && (
             <div className="loading-container">
               <GridLoader color="#f08804" className="loading-icon" />
-              <p className="loading-message slide-in-out">Loading...</p>
+              <p className="loading-message slide-in-out">
+                Loading...
+                {countdown}
+                s
+              </p>
             </div>
           )}
           {/* Product list */}
