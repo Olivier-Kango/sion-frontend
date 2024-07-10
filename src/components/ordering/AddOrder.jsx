@@ -50,6 +50,7 @@ const AddOrder = () => {
       setIsSubmitted(true);
       dispatch(allOrders());
       setIsSubmitting(false);
+      console.log(response);
     }
     setQuantity('');
     setDeliveryPoint('');
