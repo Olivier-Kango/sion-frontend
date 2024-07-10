@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LuSendHorizonal } from 'react-icons/lu';
 import { FaUndo, FaTrash } from 'react-icons/fa';
 import { MdMoreVert } from 'react-icons/md';
-import GridLoader from 'react-spinners/GridLoader';
+// import GridLoader from 'react-spinners/GridLoader';
 import { BiLoaderAlt } from 'react-icons/bi';
 
 // import actoins for requested products
@@ -45,13 +45,10 @@ const RequestedProduct = () => {
   const [openPopupId, setOpenPopupId] = useState(null);
   const [localRequestCount, setLocalRequestCount] = useState(0);
   const [localDeletedProducts, setLocalDeletedProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   // State for loading status of the form submission
   const [loadingSubmit, setLoadingSubmit] = useState(false);
   const [popupVisibleTimer, setPopupVisibleTimer] = useState(null);
-
-  // Timer Countdown
-  const [countdown, setCountdown] = useState(50);
 
   // Memoize the sorted and mapped requested products
   const sortedAndMappedProducts = useMemo(() => (requestedProducts
@@ -70,23 +67,18 @@ const RequestedProduct = () => {
 
   // Fetch all requested products on component mount
   useEffect(() => {
-    setLoading(true);
+    // setLoading(true);
 
-    dispatch(getAllRequestedProducts())
-      .then((action) => {
-        if (action.type === 'GET_ALL_REQUESTED_PRODUCTS/fulfilled') {
-          setLoading(false);
-        }
-      })
-      .catch(() => {
-        setLoading(true);
-      });
+    dispatch(getAllRequestedProducts());
+    // .then((action) => {
+    //   if (action.type === 'GET_ALL_REQUESTED_PRODUCTS/fulfilled') {
+    //     setLoading(false);
+    //   }
+    // })
+    // .catch(() => {
+    //   setLoading(true);
+    // });
   }, [dispatch]);
-
-  useEffect(() => {
-    const timer = countdown > 0 && setInterval(() => setCountdown(countdown - 1), 1000);
-    return () => clearInterval(timer);
-  }, [countdown]);
 
   // Toggle the visibility of the popup for a specific product
   const handleTogglePopup = (productId) => {
@@ -224,17 +216,15 @@ const RequestedProduct = () => {
         <>
           {/* Title */}
           <h1 className="title">Requested Products</h1>
-
+          {/*
           {loading && (
             <div className="loading-container">
               <GridLoader color="#f08804" className="loading-icon" />
               <p className="loading-message slide-in-out">
                 Loading...
-                {countdown}
-                s
               </p>
             </div>
-          )}
+          )} */}
           {/* Product list */}
           <ul className="product-list">
             {sortedAndMappedProducts
