@@ -20,7 +20,7 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
-  const [displayedProducts, setDisplayedProducts] = useState(products.length);
+  const [displayedProducts, setDisplayedProducts] = useState(14);
   const productsPerPage = products.length;
 
   const user = useSelector((state) => state.user.data);
