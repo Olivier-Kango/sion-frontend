@@ -20,7 +20,7 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.products);
-  const [displayedProducts, setDisplayedProducts] = useState(products.length);
+  const [displayedProducts, setDisplayedProducts] = useState(14);
   const productsPerPage = products.length;
 
   const user = useSelector((state) => state.user.data);
@@ -75,13 +75,6 @@ const Home = () => {
       (product) => product.name === resultNameValue,
     );
   }
-
-  // filteredProducts.sort((a, b) => {
-  //   if (a && a.name && b && b.name) {
-  //     return a.name.localeCompare(b.name);
-  //   }
-  //   return 0;
-  // });
 
   filteredProducts.sort((a, b) => {
     const profitA = a.unit_price - a.unit_purchase_price;
