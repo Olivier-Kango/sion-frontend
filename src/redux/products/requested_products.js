@@ -42,45 +42,51 @@ const initialState = {
   requestedProducts: [{
     id: 9, name: 'Ciment', request_count: 12, created_at: '2024-07-08T08:58:14.482Z', updated_at: '2024-07-17T07:08:11.839Z',
   }, {
-    id: 53, name: 'Clous', request_count: 8, created_at: '2024-07-10T05:22:18.895Z', updated_at: '2024-07-11T06:49:46.076Z',
+    id: 75, name: 'Clous de 6, 8, 3', request_count: 8, created_at: '2024-07-18T09:17:38.412Z', updated_at: '2024-07-18T09:19:21.592Z',
   }, {
     id: 17, name: 'Ficelle', request_count: 7, created_at: '2024-07-08T09:03:04.266Z', updated_at: '2024-07-16T13:34:33.511Z',
   }, {
-    id: 2, name: 'Tenaille', request_count: 5, created_at: '2024-07-08T08:56:40.581Z', updated_at: '2024-07-16T13:33:52.415Z',
-  }, {
     id: 16, name: 'Triplex', request_count: 5, created_at: '2024-07-08T09:02:44.062Z', updated_at: '2024-07-10T06:53:56.940Z',
   }, {
-    id: 72, name: 'Toile isolante', request_count: 5, created_at: '2024-07-13T11:21:41.694Z', updated_at: '2024-07-13T11:22:05.253Z',
-  }, {
-    id: 14, name: 'Coude 63', request_count: 4, created_at: '2024-07-08T09:01:48.226Z', updated_at: '2024-07-10T08:35:37.385Z',
+    id: 2, name: 'Tenaille', request_count: 5, created_at: '2024-07-08T08:56:40.581Z', updated_at: '2024-07-16T13:33:52.415Z',
   }, {
     id: 64, name: 'Goulotte', request_count: 4, created_at: '2024-07-10T08:04:59.869Z', updated_at: '2024-07-15T14:06:39.569Z',
   }, {
-    id: 5, name: 'Col Freemaçon', request_count: 4, created_at: '2024-07-08T08:57:25.365Z', updated_at: '2024-07-10T08:35:48.425Z',
+    id: 58, name: 'Traillis gdf', request_count: 4, created_at: '2024-07-10T05:24:58.145Z', updated_at: '2024-07-17T07:08:05.219Z',
+  }, {
+    id: 6, name: 'PVC Elec', request_count: 4, created_at: '2024-07-08T08:57:36.279Z', updated_at: '2024-07-16T08:35:39.334Z',
   }, {
     id: 63, name: 'Pince', request_count: 4, created_at: '2024-07-10T05:28:26.904Z', updated_at: '2024-07-10T08:36:35.340Z',
   }, {
     id: 52, name: 'Ampoules', request_count: 4, created_at: '2024-07-10T05:21:03.382Z', updated_at: '2024-07-10T08:36:44.486Z',
   }, {
-    id: 61, name: 'Lâme de Scie', request_count: 4, created_at: '2024-07-10T05:26:38.131Z', updated_at: '2024-07-10T08:38:14.125Z',
+    id: 55, name: 'Tole', request_count: 4, created_at: '2024-07-10T05:23:18.263Z', updated_at: '2024-07-10T05:23:25.531Z',
   }, {
-    id: 31, name: 'Boîte carrée', request_count: 4, created_at: '2024-07-10T05:12:40.500Z', updated_at: '2024-07-10T08:37:58.559Z',
-  }, {
-    id: 6, name: 'PVC Elec', request_count: 4, created_at: '2024-07-08T08:57:36.279Z', updated_at: '2024-07-16T08:35:39.334Z',
+    id: 5, name: 'Col Freemaçon', request_count: 4, created_at: '2024-07-08T08:57:25.365Z', updated_at: '2024-07-10T08:35:48.425Z',
   }, {
     id: 22, name: 'PVC 110', request_count: 4, created_at: '2024-07-08T09:04:58.999Z', updated_at: '2024-07-10T08:32:47.275Z',
   }, {
-    id: 55, name: 'Tole', request_count: 4, created_at: '2024-07-10T05:23:18.263Z', updated_at: '2024-07-10T05:23:25.531Z',
+    id: 14, name: 'Coude 63', request_count: 4, created_at: '2024-07-08T09:01:48.226Z', updated_at: '2024-07-10T08:35:37.385Z',
   }, {
-    id: 58, name: 'Traillis gdf', request_count: 4, created_at: '2024-07-10T05:24:58.145Z', updated_at: '2024-07-17T07:08:05.219Z',
+    id: 31, name: 'Boîte carrée', request_count: 4, created_at: '2024-07-10T05:12:40.500Z', updated_at: '2024-07-10T08:37:58.559Z',
+  }, {
+    id: 61, name: 'Lâme de Scie', request_count: 4, created_at: '2024-07-10T05:26:38.131Z', updated_at: '2024-07-10T08:38:14.125Z',
+  }, {
+    id: 62, name: 'Marteau', request_count: 3, created_at: '2024-07-10T05:27:00.036Z', updated_at: '2024-07-10T05:27:08.890Z',
+  }, {
+    id: 4, name: 'Col à Bois', request_count: 3, created_at: '2024-07-08T08:57:09.810Z', updated_at: '2024-07-10T08:37:36.538Z',
   }, {
     id: 59, name: 'Pioche', request_count: 3, created_at: '2024-07-10T05:25:41.612Z', updated_at: '2024-07-10T05:25:51.141Z',
   }, {
+    id: 26, name: 'Clous de Béton', request_count: 3, created_at: '2024-07-08T09:05:54.625Z', updated_at: '2024-07-08T09:06:00.315Z',
+  }, {
+    id: 28, name: 'Fer à Béton', request_count: 3, created_at: '2024-07-08T09:06:18.046Z', updated_at: '2024-07-08T09:06:25.005Z',
+  }, {
     id: 29, name: "Equerre d'ajustage", request_count: 3, created_at: '2024-07-08T09:06:48.194Z', updated_at: '2024-07-08T09:06:53.856Z',
   }, {
-    id: 12, name: 'Vernis', request_count: 3, created_at: '2024-07-08T09:01:06.957Z', updated_at: '2024-07-08T09:07:28.280Z',
-  }, {
     id: 3, name: 'Viserie (Lit)', request_count: 3, created_at: '2024-07-08T08:56:58.633Z', updated_at: '2024-07-10T08:37:43.316Z',
+  }, {
+    id: 12, name: 'Vernis', request_count: 3, created_at: '2024-07-08T09:01:06.957Z', updated_at: '2024-07-08T09:07:28.280Z',
   }, {
     id: 49, name: 'Cadenas Tri-Cycle', request_count: 3, created_at: '2024-07-10T05:19:08.070Z', updated_at: '2024-07-10T05:19:23.381Z',
   }, {
@@ -88,9 +94,13 @@ const initialState = {
   }, {
     id: 39, name: 'Gants', request_count: 3, created_at: '2024-07-10T05:16:00.664Z', updated_at: '2024-07-10T05:19:41.737Z',
   }, {
+    id: 19, name: 'Truelle', request_count: 3, created_at: '2024-07-08T09:03:32.568Z', updated_at: '2024-07-10T05:30:57.264Z',
+  }, {
     id: 45, name: 'Sifon de Sol', request_count: 3, created_at: '2024-07-10T05:17:44.047Z', updated_at: '2024-07-10T05:20:21.497Z',
   }, {
-    id: 19, name: 'Truelle', request_count: 3, created_at: '2024-07-08T09:03:32.568Z', updated_at: '2024-07-10T05:30:57.264Z',
+    id: 43, name: 'Carreaux ', request_count: 3, created_at: '2024-07-10T05:16:57.790Z', updated_at: '2024-07-18T08:16:35.520Z',
+  }, {
+    id: 60, name: 'Bêche', request_count: 3, created_at: '2024-07-10T05:26:07.004Z', updated_at: '2024-07-10T08:34:01.220Z',
   }, {
     id: 15, name: 'Fils Elec || Panneau', request_count: 3, created_at: '2024-07-08T09:02:24.870Z', updated_at: '2024-07-08T09:02:35.788Z',
   }, {
@@ -102,25 +112,15 @@ const initialState = {
   }, {
     id: 66, name: 'PVC 63', request_count: 3, created_at: '2024-07-10T08:33:00.532Z', updated_at: '2024-07-10T08:37:17.482Z',
   }, {
-    id: 60, name: 'Bêche', request_count: 3, created_at: '2024-07-10T05:26:07.004Z', updated_at: '2024-07-10T08:34:01.220Z',
-  }, {
-    id: 4, name: 'Col à Bois', request_count: 3, created_at: '2024-07-08T08:57:09.810Z', updated_at: '2024-07-10T08:37:36.538Z',
-  }, {
     id: 65, name: 'Col tangite 125 g', request_count: 3, created_at: '2024-07-10T08:24:32.240Z', updated_at: '2024-07-10T08:24:37.079Z',
   }, {
-    id: 26, name: 'Clous de Béton', request_count: 3, created_at: '2024-07-08T09:05:54.625Z', updated_at: '2024-07-08T09:06:00.315Z',
-  }, {
-    id: 62, name: 'Marteau', request_count: 3, created_at: '2024-07-10T05:27:00.036Z', updated_at: '2024-07-10T05:27:08.890Z',
-  }, {
-    id: 28, name: 'Fer à Béton', request_count: 3, created_at: '2024-07-08T09:06:18.046Z', updated_at: '2024-07-08T09:06:25.005Z',
-  }, {
-    id: 33, name: 'Cylindre Renz', request_count: 2, created_at: '2024-07-10T05:13:29.884Z', updated_at: '2024-07-10T05:13:32.711Z',
+    id: 1, name: 'Etain', request_count: 2, created_at: '2024-07-08T08:56:32.084Z', updated_at: '2024-07-08T08:56:36.263Z',
   }, {
     id: 74, name: 'Charnière', request_count: 2, created_at: '2024-07-16T13:33:52.614Z', updated_at: '2024-07-16T13:34:08.618Z',
   }, {
     id: 32, name: 'Bâche Bleu', request_count: 2, created_at: '2024-07-10T05:13:06.014Z', updated_at: '2024-07-10T05:13:09.214Z',
   }, {
-    id: 1, name: 'Etain', request_count: 2, created_at: '2024-07-08T08:56:32.084Z', updated_at: '2024-07-08T08:56:36.263Z',
+    id: 33, name: 'Cylindre Renz', request_count: 2, created_at: '2024-07-10T05:13:29.884Z', updated_at: '2024-07-10T05:13:32.711Z',
   }, {
     id: 10, name: 'Poignet Armoire', request_count: 2, created_at: '2024-07-08T08:59:04.541Z', updated_at: '2024-07-08T08:59:07.505Z',
   }, {
@@ -138,8 +138,6 @@ const initialState = {
   }, {
     id: 51, name: 'Mastique métal ', request_count: 2, created_at: '2024-07-10T05:20:42.901Z', updated_at: '2024-07-10T05:20:48.651Z',
   }, {
-    id: 43, name: 'Carreaux ', request_count: 2, created_at: '2024-07-10T05:16:57.790Z', updated_at: '2024-07-10T08:38:39.903Z',
-  }, {
     id: 57, name: 'Traillis vert', request_count: 2, created_at: '2024-07-10T05:24:16.856Z', updated_at: '2024-07-10T05:32:03.124Z',
   }, {
     id: 70, name: 'Basco 4 litres', request_count: 2, created_at: '2024-07-13T09:29:12.729Z', updated_at: '2024-07-13T11:21:03.173Z',
@@ -150,35 +148,37 @@ const initialState = {
   }, {
     id: 67, name: 'Agraphe', request_count: 2, created_at: '2024-07-10T08:34:31.506Z', updated_at: '2024-07-10T08:34:33.901Z',
   }, {
-    id: 47, name: 'Huile hydrolique', request_count: 1, created_at: '2024-07-10T05:18:22.618Z', updated_at: '2024-07-10T05:18:22.618Z',
+    id: 36, name: 'Pile appareil de mesure', request_count: 1, created_at: '2024-07-10T05:14:16.986Z', updated_at: '2024-07-10T05:32:01.664Z',
   }, {
-    id: 46, name: 'Ramasse fer ', request_count: 1, created_at: '2024-07-10T05:17:54.791Z', updated_at: '2024-07-10T05:17:54.791Z',
-  }, {
-    id: 37, name: 'Brouette', request_count: 1, created_at: '2024-07-10T05:15:47.416Z', updated_at: '2024-07-10T05:15:47.416Z',
+    id: 7, name: 'Huile de Frein', request_count: 1, created_at: '2024-07-08T08:57:46.330Z', updated_at: '2024-07-08T08:57:46.330Z',
   }, {
     id: 27, name: 'Fer à Souder', request_count: 1, created_at: '2024-07-08T09:06:08.634Z', updated_at: '2024-07-08T09:06:08.634Z',
   }, {
     id: 44, name: 'Jeux de lumière ', request_count: 1, created_at: '2024-07-10T05:17:25.655Z', updated_at: '2024-07-10T05:17:25.655Z',
   }, {
-    id: 35, name: 'Appareil de mesure', request_count: 1, created_at: '2024-07-10T05:14:02.610Z', updated_at: '2024-07-10T05:14:02.610Z',
+    id: 46, name: 'Ramasse fer ', request_count: 1, created_at: '2024-07-10T05:17:54.791Z', updated_at: '2024-07-10T05:17:54.791Z',
   }, {
     id: 24, name: 'Arrosoir', request_count: 1, created_at: '2024-07-08T09:05:20.718Z', updated_at: '2024-07-08T09:05:20.718Z',
   }, {
     id: 23, name: 'Gaudiot', request_count: 1, created_at: '2024-07-08T09:05:15.364Z', updated_at: '2024-07-08T09:05:15.364Z',
   }, {
+    id: 35, name: 'Appareil de mesure', request_count: 1, created_at: '2024-07-10T05:14:02.610Z', updated_at: '2024-07-10T05:14:02.610Z',
+  }, {
     id: 41, name: 'Bouchon PPR', request_count: 1, created_at: '2024-07-10T05:16:32.543Z', updated_at: '2024-07-10T05:16:32.543Z',
+  }, {
+    id: 37, name: 'Brouette', request_count: 1, created_at: '2024-07-10T05:15:47.416Z', updated_at: '2024-07-10T05:15:47.416Z',
   }, {
     id: 34, name: 'Couteau Maquette ', request_count: 1, created_at: '2024-07-10T05:13:43.207Z', updated_at: '2024-07-10T05:13:43.207Z',
   }, {
-    id: 69, name: 'Shoka', request_count: 1, created_at: '2024-07-11T06:49:45.501Z', updated_at: '2024-07-11T06:49:45.501Z',
+    id: 50, name: 'Ramassette', request_count: 1, created_at: '2024-07-10T05:20:00.203Z', updated_at: '2024-07-10T05:20:00.203Z',
   }, {
-    id: 36, name: 'Pile appareil de mesure', request_count: 1, created_at: '2024-07-10T05:14:16.986Z', updated_at: '2024-07-10T05:32:01.664Z',
+    id: 47, name: 'Huile hydrolique', request_count: 1, created_at: '2024-07-10T05:18:22.618Z', updated_at: '2024-07-10T05:18:22.618Z',
   }, {
     id: 68, name: 'Attaches ', request_count: 1, created_at: '2024-07-10T13:04:49.278Z', updated_at: '2024-07-10T13:04:49.278Z',
   }, {
-    id: 7, name: 'Huile de Frein', request_count: 1, created_at: '2024-07-08T08:57:46.330Z', updated_at: '2024-07-08T08:57:46.330Z',
+    id: 69, name: 'Shoka', request_count: 1, created_at: '2024-07-11T06:49:45.501Z', updated_at: '2024-07-11T06:49:45.501Z',
   }, {
-    id: 50, name: 'Ramassette', request_count: 1, created_at: '2024-07-10T05:20:00.203Z', updated_at: '2024-07-10T05:20:00.203Z',
+    id: 72, name: 'Toile isolante', request_count: 0, created_at: '2024-07-13T11:21:41.694Z', updated_at: '2024-07-17T13:43:59.867Z',
   }],
 };
 
