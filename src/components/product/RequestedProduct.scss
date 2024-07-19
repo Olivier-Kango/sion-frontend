@@ -26,9 +26,42 @@ $ellipsis-hover-color: #f0f0f0;
 
   .title {
     margin-bottom: 1rem;
-    margin-top: 12px;
+    margin-top: 15px;
     font-weight: 500;
     font-size: 26px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    #statusTag {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      transition: background-color 0.3s ease-in-out;
+      background: radial-gradient(circle at 30% 30%, #fff, #e0e0e0 40%, #b3b3b3);
+      box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+
+    #statusTag.green {
+      background: radial-gradient(circle at 30% 30%, #cfc, #6c6 40%, #393);
+    }
+
+    #statusTag.red {
+      background: radial-gradient(circle at 30% 30%, #fcc, #f66 40%, #c00);
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
   }
 
   .loading-container {
