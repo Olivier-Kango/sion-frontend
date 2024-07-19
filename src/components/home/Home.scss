@@ -1,5 +1,6 @@
 $main-color: #f08804;
 $main-color-hover: #c36d00;
+$pink-color: #6366f1;
 
 .container {
   padding-bottom: 1rem;
@@ -121,9 +122,9 @@ $main-color-hover: #c36d00;
 
           h2 {
             color: black;
-            // padding-bottom: 5px;
             text-align: left;
             font-size: 1rem;
+            font-weight: 200;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -185,8 +186,8 @@ $main-color-hover: #c36d00;
         }
 
         .add-cart {
-          display: inline-block;
           cursor: pointer;
+          display: inline-block;
           color: white;
           background-color: $main-color;
           text-decoration: none;
@@ -198,10 +199,20 @@ $main-color-hover: #c36d00;
           font-weight: 500;
           transition: background-color 0.3s ease, box-shadow 0.3s ease;
           box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+          opacity: 0;
         }
 
         .add-cart:hover {
           background-color: darken($main-color, 5%) !important;
+        }
+
+        &:hover {
+          transform: scale(1.004);
+          transition: transform 0.3s ease;
+
+          .add-cart {
+            opacity: 1;
+          }
         }
       }
     }
