@@ -29,6 +29,16 @@ $ellipsis-hover-color: #f0f0f0;
     margin-top: 12px;
     font-weight: 500;
     font-size: 26px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    #redTag {
+      width: 25px;
+      height: 25px;
+      background-color: red;
+      border-radius: 50%;
+    }
   }
 
   .loading-container {

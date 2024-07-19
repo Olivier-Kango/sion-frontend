@@ -215,7 +215,10 @@ const RequestedProduct = () => {
       {user.role === 'admin' ? (
         <>
           {/* Title */}
-          <h1 className="title">Requested Products</h1>
+          <h1 className="title">
+            Requested Products
+            <div id="redTag" />
+          </h1>
           {/*
           {loading && (
             <div className="loading-container">
