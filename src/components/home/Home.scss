@@ -1,6 +1,6 @@
 $main-color: #f08804;
 $main-color-hover: #c36d00;
-$pink-color: #6366F1;
+$pink-color: #6366f1;
 
 .container {
   padding-bottom: 1rem;
@@ -122,9 +122,9 @@ $pink-color: #6366F1;
 
           h2 {
             color: black;
-            // padding-bottom: 5px;
             text-align: left;
             font-size: 1rem;
+            font-weight: 200;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
