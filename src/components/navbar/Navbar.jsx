@@ -273,7 +273,7 @@ const Navbar = ({ handleLinkClick }) => {
             <span className="text">E-commerce</span>
           </div>
         </Link>
-        <Link to="/management">
+        <Link to="/requested_products">
           <div className={`navbar-link ${isManagement ? 'actived' : ''}`}>
             <FontAwesomeIcon icon={faBriefcase} className="nav-icon" />
             <span className="text">Management</span>
